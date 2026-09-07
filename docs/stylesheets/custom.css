@@ -258,45 +258,40 @@ body {
 .md-header__home:hover {
   color: var(--md-default-fg-color);
 }
-/* repo link: the sidebar carries the badge whenever the sidebar is on
- * screen, and the header widget fills the gaps. The theme swaps them
- * below 60em (drawer badge, no widget); the media query continues the
- * swap above 76.25em, where the primary sidebar sits inline. The
- * widget keeps the band between, where the sidebar is off canvas, and
- * the Home page, whose front matter hides the sidebar — that guard is
- * the :not([hidden]) on the widget rule. */
-.md-header__source .md-source__repository {
+/* repo link: one GitHub icon in the header row, between the
+ * zoompilot.ai link and the dark-mode toggle — the JS in main.html
+ * pulls the theme's far-right repo widget into that slot. The icon is
+ * on screen at every width, so it is the repo's only nav home: the
+ * sidebar badge (and the drawer copy below 60em) is off. The name text
+ * stays hidden — noise next to the wordmark; the icon is the link. */
+.md-nav__source {
   display: none;
+}
+.md-header__source {
+  display: block;
+  width: auto;
+  max-width: none;
+  margin: 0;
 }
 .md-header__source .md-source {
   display: block;
-  padding: 0.3rem 0;
+  margin: 0.2rem;
+  padding: 0.4rem;
 }
-/* the badge itself: quiet. The theme dresses it in primary-red — the
- * one Material variable the paint system never remaps — so it glowed
- * orange against the sidebar. Paint-tinted icon, muted name, and no
- * star/fork row: the counts stay 0 until the theme fills them. */
-.md-nav__source {
-  padding: 0.2rem 0.2rem 0.4rem;
-  background-color: transparent;
-  color: var(--md-default-fg-color--light);
-}
-.md-nav__source .md-source__icon {
-  color: var(--zp-tint);
-}
-.md-nav__source .md-source__facts {
+.md-header__source .md-source__repository {
   display: none;
 }
-.md-nav__source .md-source:hover {
-  color: var(--md-default-fg-color);
+.md-header__source .md-source__icon {
+  display: block;
+  width: auto;
+  height: auto;
 }
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--primary .md-nav__source {
-    display: block;
-  }
-  body:has(.md-sidebar--primary:not([hidden])) .md-header__source {
-    display: none;
-  }
+.md-header__source .md-source__icon svg {
+  margin: 0;
+  /* FontAwesome fills its viewBox edge to edge; the Material icons
+   * around it keep ~12% padding (github 0.95 fill, moon 0.76). Scale
+   * the mark down so every header glyph reads the same size. */
+  transform: scale(0.8);
 }
 /* build line: the install branch + the build the wiki documents. Lives
  * in the hero (under the Install button) and at the top of the install

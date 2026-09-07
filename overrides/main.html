@@ -77,6 +77,13 @@
       } else {
         innerEl.append(home);
       }
+      /* GitHub icon: right after the zoompilot.ai link, ahead of the
+       * dark-mode toggle — the theme parks the repo widget at the far
+       * end of the row. */
+      var repo = innerEl.querySelector(".md-header__source");
+      if (repo) {
+        home.after(repo);
+      }
     }
 
     /* header entry point: palette button + chip panel */
@@ -98,13 +105,8 @@
       panel = tpl.content.firstElementChild.cloneNode(true);
       panel.hidden = true;
       wrap.append(btn, panel);
-      /* before the repo block, so it never lands past the content edge */
-      var source = inner.querySelector(".md-header__source");
-      if (source) {
-        source.before(wrap);
-      } else {
-        inner.append(wrap);
-      }
+      /* last in the row — the repo icon moved up next to the home link */
+      inner.append(wrap);
     }
 
     function setOpen(open) {
