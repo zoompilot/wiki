@@ -66,6 +66,8 @@ A factory reset clears all settings back to these values. See
 
 ## Steering
 
+<details class="zp-collapse">
+<summary>Steering screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/steering.png" alt="The Steering settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -74,6 +76,7 @@ A factory reset clears all settings back to these values. See
   <img src="../assets/settings/tici/steering.png" alt="The Steering settings panel on comma 3/3X" loading="lazy">
   <figcaption>comma 3/3X</figcaption>
 </figure>
+</details>
 
 Steering settings control lateral (steering) behavior: MADS, lane
 changes, and torque tuning. Some of these settings are covered in more
@@ -83,6 +86,8 @@ depth on [Steering improvements](../features/steering.md).
 
 ## Cruise
 
+<details class="zp-collapse">
+<summary>Cruise screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/cruise.png" alt="The Cruise settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -91,6 +96,7 @@ depth on [Steering improvements](../features/steering.md).
   <img src="../assets/settings/tici/cruise.png" alt="The Cruise settings panel on comma 3/3X" loading="lazy">
   <figcaption>comma 3/3X</figcaption>
 </figure>
+</details>
 
 Cruise settings control speed and distance behavior. See
 [Smart cruise](../features/smart-cruise.md) and
@@ -100,6 +106,8 @@ Cruise settings control speed and distance behavior. See
 
 ## Models
 
+<details class="zp-collapse">
+<summary>Models screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/models.png" alt="The Models settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -108,6 +116,7 @@ Cruise settings control speed and distance behavior. See
   <img src="../assets/settings/tici/models.png" alt="The Models settings panel on comma 3/3X" loading="lazy">
   <figcaption>comma 3/3X</figcaption>
 </figure>
+</details>
 
 Model behavior settings: steering delay, turn speeds, and camera offset.
 
@@ -116,7 +125,7 @@ Model behavior settings: steering delay, turn speeds, and camera offset.
 ## Visuals
 
 <details class="zp-collapse">
-<summary>Screens on both devices</summary>
+<summary>Visuals screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/visuals.png" alt="The Visuals settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -133,6 +142,8 @@ Display-only settings. None of them change how the car drives.
 
 ## Toggles
 
+<details class="zp-collapse">
+<summary>Toggles screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/toggles.png" alt="The Toggles settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -141,6 +152,7 @@ Display-only settings. None of them change how the car drives.
   <img src="../assets/settings/tici/toggles.png" alt="The Toggles settings panel on comma 3/3X" loading="lazy">
   <figcaption>comma 3/3X</figcaption>
 </figure>
+</details>
 
 Core on/off switches.
 
@@ -148,6 +160,8 @@ Core on/off switches.
 
 ## Device
 
+<details class="zp-collapse">
+<summary>Device screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/device.png" alt="The Device settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -156,6 +170,7 @@ Core on/off switches.
   <img src="../assets/settings/tici/device.png" alt="The Device settings panel on comma 3/3X" loading="lazy">
   <figcaption>comma 3/3X</figcaption>
 </figure>
+</details>
 
 Device behavior. See [Connect to comma](https://docs.comma.ai/how-to/connect-to-comma/)
 for the hardware basics.
@@ -164,6 +179,8 @@ for the hardware basics.
 
 ## Software
 
+<details class="zp-collapse">
+<summary>Software screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/software.png" alt="The Software settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -172,11 +189,14 @@ for the hardware basics.
   <img src="../assets/settings/tici/software.png" alt="The Software settings panel on comma 3/3X" loading="lazy">
   <figcaption>comma 3/3X</figcaption>
 </figure>
+</details>
 
 <div class="zp-panel-cards" data-panel="Software"></div>
 
 ## Developer
 
+<details class="zp-collapse">
+<summary>Developer screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/developer.png" alt="The Developer settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -185,6 +205,7 @@ for the hardware basics.
   <img src="../assets/settings/tici/developer.png" alt="The Developer settings panel on comma 3/3X" loading="lazy">
   <figcaption>comma 3/3X</figcaption>
 </figure>
+</details>
 
 Power-user and debug settings. Test-only items are **not for road use**.
 
