@@ -701,6 +701,21 @@ body[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li .twemoji,
 body[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li .icon {
   color: var(--zp-deep);
 }
+/* homepage cards: the whole plate clicks through to the card link */
+.md-typeset .zp-cards > ul > li {
+  position: relative;
+  cursor: pointer;
+}
+.md-typeset .zp-cards > ul > li > p:last-child > a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+/* links inside a card description stay clickable above the stretched hit area */
+.md-typeset .zp-cards > ul > li p:not(:last-child) a {
+  position: relative;
+  z-index: 1;
+}
 
 /* ---- tables: hairline ledger, no zebra ---- */
 /* wide tables scroll inside their wrapper instead of widening the page

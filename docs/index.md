@@ -48,7 +48,7 @@ Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026
 
 <div class="zoom-eyebrow">01 · start driving</div>
 
-<div class="grid cards" markdown>
+<div class="grid cards zp-cards" markdown>
 
 - :material-car-side: __Getting started__
 
@@ -57,7 +57,7 @@ Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026
     Supported Mazdas, hardware you need, and how to install `zoompilot/main`
     on a comma device.
 
-    [Start here](getting-started/what-is-zoompilot.md)
+    [Start here](getting-started/index.md)
 
 - :material-shield-alert: __Safety__
 
@@ -75,13 +75,13 @@ Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026
     What zoompilot adds on top of sunnypilot: steering, cruise enhancements,
     sensor readouts, and alpha longitudinal.
 
-    [Browse features](features/steering.md)
+    [Browse features](features/index.md)
 
 </div>
 
 <div class="zoom-eyebrow">02 · go deeper</div>
 
-<div class="grid cards" markdown>
+<div class="grid cards zp-cards" markdown>
 
 - :material-flask: __Technical notes__
 
@@ -113,7 +113,7 @@ Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026
 
 <div class="zoom-eyebrow">03 · community</div>
 
-<div class="grid cards" markdown>
+<div class="grid cards zp-cards" markdown>
 
 - :material-account-group: __Get involved__
 
@@ -122,7 +122,7 @@ Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026
     Get help, give feedback, and contribute on GitHub or Discord. Common
     questions are answered in the [FAQ](community/faq.md).
 
-    [Join in](community/contribute.md)
+    [Join in](community/index.md)
 
 - :material-history: __Releases__
 
