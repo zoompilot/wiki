@@ -115,6 +115,8 @@ Model behavior settings: steering delay, turn speeds, and camera offset.
 
 ## Visuals
 
+<details class="zp-collapse">
+<summary>Screens on both devices</summary>
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Settings panel screenshot, scrolls sideways">
   <img src="../assets/settings/visuals.png" alt="The Visuals settings panel on comma four" loading="lazy">
   <figcaption>comma four</figcaption>
@@ -123,6 +125,7 @@ Model behavior settings: steering delay, turn speeds, and camera offset.
   <img src="../assets/settings/tici/visuals.png" alt="The Visuals settings panel on comma 3/3X" loading="lazy">
   <figcaption>comma 3/3X</figcaption>
 </figure>
+</details>
 
 Display-only settings. None of them change how the car drives.
 

@@ -93,6 +93,12 @@
     overflow-wrap: break-word;
   }
 
+  /* collapsed blocks print open — but a section the settings explorer
+   * hid stays hidden */
+  .md-typeset details:not([hidden]):not([open]) > *:not(summary) {
+    display: block;
+  }
+
   /* page breaks: keep admonitions, figures, and table rows whole */
   .md-typeset .admonition,
   .md-typeset figure,
