@@ -19,6 +19,28 @@ The card data lives in
 the release files that define it — see
 [Where the defaults come from](#where-the-defaults-come-from).
 
+## zoompilot defaults
+
+Fresh installs on Mazdas with a 2022-25 CX-5 EPS are not stock
+sunnypilot. zoompilot seeds the torque-control stack once, on the first
+start:
+
+| Setting | Seeded value |
+| --- | --- |
+| Enforce Torque Lateral Control | On |
+| Self-Tune | On |
+| Speed-Dependent Self-Tune | On |
+| Torque Control Tune Version | v2.0 |
+
+The seed runs only once, on any Mazda carrying the 2022-25 CX-5 EPS —
+factory-fitted or swapped in — because it keys on that motor's
+steer-to-zero flag. After it runs, you can turn any of these off and
+zoompilot keeps your choice. Everything else starts at the defaults in
+the cards below.
+
+A factory reset clears all settings back to these values. See
+[Install](../getting-started/install.md).
+
 <div class="device-switch" data-device-switch role="group" aria-label="Which device's settings screens to show">
   <button type="button" data-device="mici" aria-pressed="true">comma four</button>
   <button type="button" data-device="tici" aria-pressed="false">comma 3/3X</button>
@@ -41,28 +63,6 @@ and the
 [params keys](https://github.com/zoompilot/zoompilot/blob/develop/openpilot/common/params_keys.h).
 
 </noscript>
-
-## Defaults on a fresh Mazda install
-
-Fresh installs on Mazdas with a 2022-25 CX-5 EPS are not stock
-sunnypilot. zoompilot seeds the torque-control stack once, on the first
-start:
-
-| Setting | Seeded value |
-| --- | --- |
-| Enforce Torque Lateral Control | On |
-| Self-Tune | On |
-| Speed-Dependent Self-Tune | On |
-| Torque Control Tune Version | v2.0 |
-
-The seed runs only once, on any Mazda carrying the 2022-25 CX-5 EPS —
-factory-fitted or swapped in — because it keys on that motor's
-steer-to-zero flag. After it runs, you can turn any of these off and
-zoompilot keeps your choice. Everything else starts at the defaults in
-the cards below.
-
-A factory reset clears all settings back to these values. See
-[Install](../getting-started/install.md).
 
 ## Steering
 

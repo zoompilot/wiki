@@ -74,4 +74,4 @@ Turn **Enable Custom Tuning** off. Self-tune resumes with its cached
 values; nothing was lost while custom tuning was on. A factory reset
 clears everything back to the seeded defaults (self-tune on,
 speed-dependent on, tune version v2.0). See
-[Settings](../settings/index.md#defaults-on-a-fresh-mazda-install).
+[Settings](../settings/index.md#zoompilot-defaults).
