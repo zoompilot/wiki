@@ -261,7 +261,7 @@ body {
 /* repo link: the sidebar carries the badge whenever the sidebar is on
  * screen, and the header widget fills the gaps. The theme swaps them
  * below 60em (drawer badge, no widget); the media query continues the
- * swap above 76.23em, where the primary sidebar sits inline. The
+ * swap above 76.25em, where the primary sidebar sits inline. The
  * widget keeps the band between, where the sidebar is off canvas, and
  * the Home page, whose front matter hides the sidebar — that guard is
  * the :not([hidden]) on the widget rule. */
@@ -272,12 +272,27 @@ body {
   display: block;
   padding: 0.3rem 0;
 }
-@media screen and (min-width: 76.234375em) {
+/* the badge itself: quiet. The theme dresses it in primary-red — the
+ * one Material variable the paint system never remaps — so it glowed
+ * orange against the sidebar. Paint-tinted icon, muted name, and no
+ * star/fork row: the counts stay 0 until the theme fills them. */
+.md-nav__source {
+  padding: 0.2rem 0.2rem 0.4rem;
+  background-color: transparent;
+  color: var(--md-default-fg-color--light);
+}
+.md-nav__source .md-source__icon {
+  color: var(--zp-tint);
+}
+.md-nav__source .md-source__facts {
+  display: none;
+}
+.md-nav__source .md-source:hover {
+  color: var(--md-default-fg-color);
+}
+@media screen and (min-width: 76.25em) {
   .md-sidebar--primary .md-nav__source {
     display: block;
-    padding: 0 0.2rem;
-    background-color: var(--md-primary-fg-color--dark);
-    color: var(--md-primary-bg-color);
   }
   body:has(.md-sidebar--primary:not([hidden])) .md-header__source {
     display: none;
@@ -966,19 +981,23 @@ body[data-md-color-scheme="default"] .md-typeset details {
   color: var(--zp-dim);
   font-size: 0.72rem;
 }
-.md-typeset details.zp-demo > summary {
+.md-typeset details.zp-demo > summary,
+.md-typeset details.zp-collapse > summary {
   list-style: none;
 }
-.md-typeset details.zp-demo > summary::-webkit-details-marker {
+.md-typeset details.zp-demo > summary::-webkit-details-marker,
+.md-typeset details.zp-collapse > summary::-webkit-details-marker {
   display: none;
 }
-.md-typeset details.zp-demo > summary::after {
+.md-typeset details.zp-demo > summary::after,
+.md-typeset details.zp-collapse > summary::after {
   content: "+";
   float: right;
   font-weight: 400;
   color: var(--zp-faint);
 }
-.md-typeset details.zp-demo[open] > summary::after {
+.md-typeset details.zp-demo[open] > summary::after,
+.md-typeset details.zp-collapse[open] > summary::after {
   content: "−";
 }
 
