@@ -24,17 +24,17 @@ the release files that define it — see
 zoompilot is intended to be ready to drive after install. For your
 convenience, these settings come preconfigured:
 
-| Setting | First value |
+| Setting | Value |
 | --- | --- |
 | Enforce Torque Lateral Control | On |
 | Self-Tune | On |
 | Speed-Dependent Self-Tune | On |
 | Torque Control Tune Version | v2.0 |
 
-On Mazdas with a 2022-25 CX-5 EPS — factory-fitted or swapped in —
-this happens once, on the first start. After that, you can turn any of
-these off and zoompilot keeps your choice. Everything else starts at
-the defaults in the cards below.
+zoompilot stores your settings on the device, so they survive reboots.
+Turn one of these off, and it stays off. The values above apply on
+Mazdas with a 2022-25 CX-5 EPS — factory-fitted or swapped in.
+Everything else starts at the defaults in the cards below.
 
 A factory reset clears all settings back to these values. See
 [Install](../getting-started/install.md).
