@@ -21,22 +21,20 @@ the release files that define it — see
 
 ## zoompilot defaults
 
-Fresh installs on Mazdas with a 2022-25 CX-5 EPS are not stock
-sunnypilot. zoompilot seeds the torque-control stack once, on the first
-start:
+The first time zoompilot starts on a Mazda with a 2022-25 CX-5 EPS, it
+turns on its torque steering settings:
 
-| Setting | Seeded value |
+| Setting | First value |
 | --- | --- |
 | Enforce Torque Lateral Control | On |
 | Self-Tune | On |
 | Speed-Dependent Self-Tune | On |
 | Torque Control Tune Version | v2.0 |
 
-The seed runs only once, on any Mazda carrying the 2022-25 CX-5 EPS —
-factory-fitted or swapped in — because it keys on that motor's
-steer-to-zero flag. After it runs, you can turn any of these off and
-zoompilot keeps your choice. Everything else starts at the defaults in
-the cards below.
+This runs once, on any Mazda with this steering motor — factory-fitted
+or swapped in. After that, you can turn any of these off and zoompilot
+keeps your choice. Everything else starts at the defaults in the cards
+below.
 
 A factory reset clears all settings back to these values. See
 [Install](../getting-started/install.md).

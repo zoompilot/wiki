@@ -133,10 +133,10 @@ settings from a previous fork cause hard-to-explain faults. See
   on, and custom tune is off. See
   [Settings](settings/index.md#steering) and
   [First drive](getting-started/first-drive.md).
-- Give self-tune a few drives. Fresh installs start from learned CX-5
-  seeds, but your motor still needs some miles.
+- Give self-tune a few drives. Fresh installs start from values learned
+  on a CX-5, but your motor still needs some miles.
 - CX-9 owners: speed-dependent torque takes longer to learn, because the
-  starting seeds come from a CX-5.
+  starting values come from a CX-5.
 
 ## zoompilot will not engage
 

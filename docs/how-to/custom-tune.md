@@ -28,8 +28,8 @@ zoompilot learns your motor while you drive:
   (how much torque a request is worth) and the **friction** (the
   baseline torque that fights the motion).
 - The learner only accepts sane results: values are clipped to a band
-  around the CX-5 seeds. Fresh installs start from those seeds, so the
-  first drive already steers well.
+  around the CX-5 starting values. Fresh installs start from those
+  values, so the first drive already steers well.
 - Learned values are cached on the device and restored on the next
   boot. A cache that fails its checks is thrown out whole, so a bad
   value never half-survives a restart.
@@ -43,7 +43,7 @@ The full learner design, with every constant and route, is in
 | --- | --- |
 | Enable Custom Tuning | Replaces the learned values with two fixed numbers you enter: **Lateral Acceleration Factor** (0.1–5.0, default 2.5) and **Friction** (0.0–1.0, default 0.1). |
 | Manual Real-Time Tuning | Forces your fixed values onto every frame, overriding self-tune even while it runs. Needs Enable Custom Tuning. |
-| Torque Control Tune Version | Picks the controller generation: v0.0, v1.0, or v2.0. Mazda steer-to-zero cars are seeded with v2.0. Leave it there. |
+| Torque Control Tune Version | Picks the controller generation: v0.0, v1.0, or v2.0. Mazdas with the 2022-25 CX-5 EPS start with v2.0. Leave it there. |
 
 A fixed tune cannot adapt. It uses one gain and one friction at every
 speed, on a motor whose behavior changes with speed — and whose output
@@ -72,6 +72,6 @@ dashboard throws errors, turn custom tuning back off.
 
 Turn **Enable Custom Tuning** off. Self-tune resumes with its cached
 values; nothing was lost while custom tuning was on. A factory reset
-clears everything back to the seeded defaults (self-tune on,
+clears everything back to the starting defaults (self-tune on,
 speed-dependent on, tune version v2.0). See
 [Settings](../settings/index.md#zoompilot-defaults).
