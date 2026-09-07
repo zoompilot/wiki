@@ -21,8 +21,8 @@ the release files that define it — see
 
 ## zoompilot defaults
 
-The first time zoompilot starts on a Mazda with a 2022-25 CX-5 EPS, it
-turns on its torque steering settings:
+zoompilot is intended to be ready to drive after install. For your
+convenience, these settings come preconfigured:
 
 | Setting | First value |
 | --- | --- |
@@ -31,10 +31,10 @@ turns on its torque steering settings:
 | Speed-Dependent Self-Tune | On |
 | Torque Control Tune Version | v2.0 |
 
-This runs once, on any Mazda with this steering motor — factory-fitted
-or swapped in. After that, you can turn any of these off and zoompilot
-keeps your choice. Everything else starts at the defaults in the cards
-below.
+On Mazdas with a 2022-25 CX-5 EPS — factory-fitted or swapped in —
+this happens once, on the first start. After that, you can turn any of
+these off and zoompilot keeps your choice. Everything else starts at
+the defaults in the cards below.
 
 A factory reset clears all settings back to these values. See
 [Install](../getting-started/install.md).
