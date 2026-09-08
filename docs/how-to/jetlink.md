@@ -88,8 +88,8 @@ details the cause.
 - The big model takes over once you disengage and re-engage:
   "Big Model Available, disengage to switch".
 - You'll drop back to the small model if the link is lost while
-  engaged: "Big Model Lost". Re-engage. The link rejoins on its own
-  and swaps back at the next disengaged moment.
+  engaged: "Big Model Lost". Disengage and re-engage. The link
+  rejoins on its own and swaps back at the next disengaged moment.
 - The big model is released while parked: the icon returns to normal
   within a minute. That is not a fault.
 
