@@ -31,8 +31,8 @@ parked with both devices online.
 
 ## Jetson setup
 
-Enter each line into your terminal. The git clone is small. The long
-step is the docker build — it pulls a CUDA base image, several GB.
+Enter each line into your terminal. The last line (docker build) is
+a substantial download, roughly 6 GB.
 
 ```bash
 sudo apt update && sudo apt install -y git docker.io nvidia-container
