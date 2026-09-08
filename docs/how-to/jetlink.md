@@ -31,8 +31,8 @@ parked with both devices online.
 
 ## Jetson setup
 
-Enter each line into your terminal. The last line (docker build) is
-a substantial download, roughly 6 GB.
+Run the lines one at a time, letting each finish before the next. The
+last line is the long one: it downloads about 6 GB.
 
 ```bash
 sudo apt update && sudo apt install -y git docker.io nvidia-container
