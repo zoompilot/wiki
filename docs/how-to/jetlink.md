@@ -90,8 +90,6 @@ details the cause.
 - You'll drop back to the small model if the link is lost while
   engaged: "Big Model Lost". Disengage and re-engage. The link
   rejoins on its own and swaps back at the next disengaged moment.
-- The big model is released while parked: the icon returns to normal
-  within a minute. That is not a fault.
 
 ## After the drive
 
@@ -108,6 +106,7 @@ toggle off.
 | Toggle on, no Accelerator Model row | the USB link did not come up; the offroad alert has the reason |
 | Icon never pulses after plugging in | the Jetson does not see the comma: wrong port, charge-only cable, or the server is down |
 | Orange icon, download failed | the comma needs Wi-Fi; toggle the link off and on to retry |
+| Icon back to normal a minute after parking | the model is released while parked, not a fault |
 | Big model drops out every 30 to 45 s | one side is browning out; separate supplies |
 | "Speed Error: nan", no path at all | modeld crashed; send the logs |
 
