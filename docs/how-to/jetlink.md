@@ -41,8 +41,9 @@ git clone https://github.com/zoompilot/jetlink.git && cd jetlink
 sudo docker/build.sh
 ```
 
-Then this. Keep the `sed` line unless the Jetson is on an always-on
-supply and you want it to sleep between drives.
+Then this — it installs the server and sets it to start at every
+boot. Keep the line starting `sudo sed` unless the Jetson is on an
+always-on supply and you want it to sleep between drives.
 
 ```bash
 sudo systemctl mask systemd-networkd-wait-online.service
@@ -57,8 +58,8 @@ sudo udevadm control --reload-rules && sudo systemctl daemon-reload
 sudo systemctl enable --now jetlink-server
 ```
 
-Done. The server starts at every boot and waits for the comma. To watch
-it: `sudo journalctl -u jetlink-server -f`.
+Done. The server waits for the comma. To watch it:
+`sudo journalctl -u jetlink-server -f`.
 
 ## comma setup
 
