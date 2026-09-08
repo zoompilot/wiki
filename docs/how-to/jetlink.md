@@ -73,11 +73,12 @@ working: `sudo journalctl -u jetlink-server -f`.
    comma's USB-C port. Never plug the C end into the Jetson's USB-C
    port.
 
-The icon on the comma's home button pulses while the model downloads,
-roughly 1 GB. The comma sends the model to the Jetson which takes
-about 2 minutes. Once finished, the icon turns green to indicate it's
-ready to run. Orange means it failed, and the alert on the home
-screen says why.
+The icon on comma's home button pulses while the model downloads,
+roughly 1 GB. comma then sends the model to Jetson. This takes about
+2 minutes and is only performed once after big model installs. Once
+finished, the icon turns green to indicate the big model is ready to
+run. An orange icon means it failed, and the alert on the home screen
+details the cause.
 
 ## Drive
 
