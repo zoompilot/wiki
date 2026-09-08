@@ -87,11 +87,11 @@ details the cause.
   has loaded: "Big Model Ready".
 - The big model takes over once you disengage and re-engage:
   "Big Model Available, disengage to switch".
-- Link lost while engaged: soft disable, "Big Model Lost". Re-engage on
-  the small model; it rejoins on its own and swaps back at the next
-  disengaged moment.
-- After a drive the icon returns to normal within a minute. That is
-  the model being released while parked, not a fault.
+- You'll drop back to the small model if the link is lost while
+  engaged: "Big Model Lost". Re-engage. The link rejoins on its own
+  and swaps back at the next disengaged moment.
+- The big model is released while parked: the icon returns to normal
+  within a minute. That is not a fault.
 
 ## After the drive
 
