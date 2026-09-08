@@ -72,12 +72,12 @@ working: `sudo journalctl -u jetlink-server -f`.
 3. **Cable.** Plug the cable into the Jetson's USB-A port and the
    comma's USB-C port. Never plug the C end into the Jetson's USB-C
    port. The icon on the comma's home button pulses while the model
-   downloads, roughly 1 GB, and the comma sends it to the Jetson,
-   which makes it ready to run (about 2 minutes). Then the icon turns
-   green. This happens once. Orange means it failed, and the alert on
-   the home screen says why. After a drive the icon returns to normal
-   within a minute. That is the model being released while parked,
-   not a fault.
+   downloads, roughly 1 GB. The comma sends the model to the Jetson
+   which takes about 2 minutes. Once finished, the icon turns green
+   to indicate it's ready to run. Orange means it failed, and the
+   alert on the home screen says why. After a drive the icon returns
+   to normal within a minute. That is the model being released while
+   parked, not a fault.
 
 ## Drive
 
