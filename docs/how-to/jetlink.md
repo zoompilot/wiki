@@ -28,7 +28,7 @@ parked with both devices online.
     back to the small model on its own; while engaged that is a soft
     disable. Hands on the wheel.
 
-## Jetson, once
+## Jetson setup
 
 Paste and wait. The build is mostly a several-GB download.
 
@@ -58,7 +58,7 @@ sudo systemctl enable --now jetlink-server
 Done. The server starts at every boot and waits for the comma. To watch
 it: `sudo journalctl -u jetlink-server -f`.
 
-## comma
+## comma setup
 
 1. **Branch.** Settings → Software → Target Branch → `jetson-trt`
    (under Non-Prebuilt Branches). Update, reboot, and wait out the build
