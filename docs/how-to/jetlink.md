@@ -64,18 +64,20 @@ working: `sudo journalctl -u jetlink-server -f`.
 ## comma setup
 
 1. **Branch.** Settings → Software → Target Branch → `jetson-trt`
-   (under Non-Prebuilt Branches). Update, reboot, and wait out the build
-   screen.
+   (under Non-Prebuilt Branches), the branch with Accelerator Link on
+   it. Update, reboot, and wait out the build screen. It can take a
+   while.
 2. **Link.** Turn on **Accelerator Link** under Settings → Models.
    Within seconds an **Accelerator Model** row appears, set to
-   Cinque Terre. Leave it.
+   Cinque Terre, the big driving model. Leave it.
 3. **Cable.** Jetson USB-A to comma USB-C. Never the Jetson's USB-C
-   port. The icon on the comma's home button pulses while it downloads
-   the model (766 MB), sends it to the Jetson, and the Jetson builds the
-   engine (about 2 minutes), then turns green. Orange means it failed,
-   and the alert on the home screen says why. This happens once. The
-   icon going back to normal a minute later is the parked release, not
-   a fault.
+   port. The icon on the comma's home button pulses while the comma
+   downloads the model (766 MB) and sends it to the Jetson, which
+   makes it ready to run (about 2 minutes). Then the icon turns
+   green. This happens once. Orange means it failed, and the alert on
+   the home screen says why. After a drive the icon returns to normal
+   within a minute. That is the model being released while parked,
+   not a fault.
 
 ## Drive
 
