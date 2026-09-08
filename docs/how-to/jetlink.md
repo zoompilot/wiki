@@ -74,8 +74,9 @@ working: `sudo journalctl -u jetlink-server -f`.
    port.
 
 The icon on comma's home button pulses while the model downloads,
-roughly 1 GB. comma then sends the model to Jetson. This takes about
-2 minutes and is only performed once after big model installs. Once
+roughly 1 GB. comma then sends the model to Jetson. This transfer
+takes about 2 minutes and is only performed once after big model
+installs. Once
 finished, the icon turns green to indicate the big model is ready to
 run. An orange icon means it failed, and the alert on the home screen
 details the cause.
