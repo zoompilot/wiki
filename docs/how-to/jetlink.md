@@ -82,9 +82,9 @@ details the cause.
 
 ## Drive
 
-- At first the small model drives alone. About a minute after the
-  crank on switched power, "Big Model Ready" chimes as the Jetson
-  comes up.
+- Initially the small model is used until the big model loads. This
+  takes approximately a minute. You'll be alerted when the big model
+  has loaded: "Big Model Ready".
 - The swap waits until you are disengaged: "Big Model Available,
   disengage to switch".
 - The path draws much further ahead on the big model.
