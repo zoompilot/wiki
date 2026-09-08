@@ -26,6 +26,7 @@ comma 3X or an identical clone works in its place:
 | --- | --- | --- |
 | Nav SD card | Lets the LKAS camera read speed-limit signs and supplies map data. The cheapest way to unlock features your hardware already supports | [Speed-Limit Assist](../features/speed-limit-assist.md) sign reading, map-based Smart Cruise |
 | Chestnut eGPU | External GPU for big driving models | Large models that no longer fit on-device |
+| Jetson Orin Nano Super | Dev board that runs a big driving model, linked to the comma over USB | [Testing jetlink](../how-to/jetlink.md) |
 
 ## Physical install
 

@@ -160,6 +160,7 @@ nav:
       - how-to/privacy.md
       - how-to/ecu-reset.md
       - how-to/custom-tune.md
+      - how-to/jetlink.md
   - Community:
       - community/index.md
       - community/contribute.md

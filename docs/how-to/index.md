@@ -37,4 +37,13 @@ that matches what you are trying to do.
 
     [Open the guide](privacy.md)
 
+- :material-developer-board: __Testing jetlink__
+
+    ---
+
+    Run a bigger driving model on a Jetson next to your comma. The
+    tester setup, start to finish.
+
+    [Open the guide](jetlink.md)
+
 </div>
