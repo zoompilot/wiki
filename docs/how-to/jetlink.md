@@ -19,6 +19,7 @@ You need:
   (ignition-switched is simplest)
 
 Jetson is configured from a terminal. comma setup is done on device.
+
 Initial setup can take some time. Allow for two hours, mostly waiting,
 parked with both devices online.
 
