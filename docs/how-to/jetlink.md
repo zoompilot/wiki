@@ -18,8 +18,9 @@ You need:
 - a 9 to 20 V supply for the Jetson's barrel jack, sized for 25 W
   (ignition-switched is simplest)
 
-The Jetson needs a terminal once. The comma is done on its screen. Allow
-two hours, mostly waiting, parked, with both devices online.
+Jetson is configured from a terminal. comma setup is done on device.
+Initial setup can take some time. Allow for two hours, mostly waiting,
+parked with both devices online.
 
 !!! warning "Experimental"
 
