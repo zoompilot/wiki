@@ -58,8 +58,8 @@ sudo udevadm control --reload-rules && sudo systemctl daemon-reload
 sudo systemctl enable --now jetlink-server
 ```
 
-Done on the Jetson. The server waits for the comma. To see it working:
-`sudo journalctl -u jetlink-server -f`.
+The Jetson server is set up and now listening for the comma. To see it
+working: `sudo journalctl -u jetlink-server -f`.
 
 ## comma setup
 
