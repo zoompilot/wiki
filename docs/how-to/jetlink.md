@@ -71,13 +71,13 @@ working: `sudo journalctl -u jetlink-server -f`.
    Cinque Terre, the big driving model.
 3. **Cable.** Plug the cable into the Jetson's USB-A port and the
    comma's USB-C port. Never plug the C end into the Jetson's USB-C
-   port. The icon on the comma's home button pulses while the model
-   downloads, roughly 1 GB. The comma sends the model to the Jetson
-   which takes about 2 minutes. Once finished, the icon turns green
-   to indicate it's ready to run. Orange means it failed, and the
-   alert on the home screen says why. After a drive the icon returns
-   to normal within a minute. That is the model being released while
-   parked, not a fault.
+   port.
+
+The icon on the comma's home button pulses while the model downloads,
+roughly 1 GB. The comma sends the model to the Jetson which takes
+about 2 minutes. Once finished, the icon turns green to indicate it's
+ready to run. Orange means it failed, and the alert on the home
+screen says why.
 
 ## Drive
 
@@ -89,6 +89,8 @@ working: `sudo journalctl -u jetlink-server -f`.
 - Link lost while engaged: soft disable, "Big Model Lost". Re-engage on
   the small model; it rejoins on its own and swaps back at the next
   disengaged moment.
+- After a drive the icon returns to normal within a minute. That is
+  the model being released while parked, not a fault.
 
 Send back the dongle ID (Settings → Device), the time of the drive, and
 what you saw and heard, on the
