@@ -64,9 +64,8 @@ working: `sudo journalctl -u jetlink-server -f`.
 ## comma setup
 
 1. **Branch.** Settings → Software → Target Branch → `jetson-trt`
-   (under Non-Prebuilt Branches), the branch with Accelerator Link on
-   it. Update, reboot, and wait out the build screen. It can take a
-   while.
+   (under Non-Prebuilt Branches). Update, reboot, and wait out the
+   build screen. It may take a while.
 2. **Link.** Turn on **Accelerator Link** under Settings → Models.
    Within seconds an **Accelerator Model** row appears, set to
    Cinque Terre, the big driving model. Leave it.
