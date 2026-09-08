@@ -25,9 +25,7 @@ parked with both devices online.
 
 !!! warning "Experimental"
 
-    The small model drives until the Jetson joins. A lost link falls
-    back to the small model on its own; while engaged that is a soft
-    disable. Hands on the wheel.
+    The small model drives until the Jetson joins. Hands on the wheel.
 
 ## Jetson setup
 
@@ -108,15 +106,19 @@ toggle off.
 | You see | It means |
 | --- | --- |
 | No Accelerator Link toggle | the branch did not install; Settings → Software shows which branch you are on |
-| Toggle on, no Accelerator Model row | the USB gadget did not come up; the offroad alert has the reason |
+| Toggle on, no Accelerator Model row | the USB link did not come up; the offroad alert has the reason |
 | Icon never pulses after plugging in | the Jetson does not see the comma: wrong port, charge-only cable, or the server is down |
 | Orange icon, download failed | the comma needs Wi-Fi; toggle the link off and on to retry |
 | Big model drops out every 30 to 45 s | one side is browning out; separate supplies |
 | "Speed Error: nan", no path at all | modeld crashed; send the logs |
 
-Logs, only when asked. On the comma: Settings → Device → Enable SSH,
-SSH Keys set to your GitHub username, address on the Wi-Fi row in
-Settings → Network. Then:
+Logs, only when asked. On the comma:
+
+1. Enable SSH under Settings → Device.
+2. Set **SSH Keys** to your GitHub username.
+3. The comma's address is on the Wi-Fi row in Settings → Network.
+
+Then:
 
 ```bash
 ssh comma@<comma-ip> 'tar czf - /data/log' > comma-log.tgz          # laptop

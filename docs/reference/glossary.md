@@ -143,3 +143,11 @@ accelerator command. Central to the
 
 **DTR** — a community driving model; DTRv6 is a popular pick in the
 Models panel. See [First drive](../getting-started/first-drive.md).
+
+**Accelerator Link** — the Models-panel toggle that lets the comma run
+a big driving model from a Jetson over USB. See
+[Testing jetlink](../how-to/jetlink.md).
+
+**jetlink** — the zoompilot project behind Accelerator Link: it
+serves a big driving model to the comma from a Jetson. See
+[Testing jetlink](../how-to/jetlink.md).
