@@ -41,9 +41,9 @@ git clone https://github.com/zoompilot/jetlink.git && cd jetlink
 sudo docker/build.sh
 ```
 
-Then this — it installs the server and sets it to start at every
-boot. Keep the line starting `sudo sed` unless the Jetson is on an
-always-on supply and you want it to sleep between drives.
+Next, install the server so it starts at every boot. Keep the line
+starting `sudo sed` unless the Jetson is on an always-on supply and
+you want it to sleep between drives.
 
 ```bash
 sudo systemctl mask systemd-networkd-wait-online.service
