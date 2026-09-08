@@ -91,13 +91,6 @@ details the cause.
   engaged: "Big Model Lost". Disengage and re-engage. The link
   rejoins on its own and swaps back at the next disengaged moment.
 
-## After the drive
-
-Send back the dongle ID (Settings → Device), the time of the drive,
-and what you saw and heard, on the
-[Discord](https://discord.gg/jFWkHC2uhh). To stop, turn the same
-toggle off.
-
 ## If something is off
 
 | You see | It means |
