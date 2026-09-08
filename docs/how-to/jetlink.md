@@ -68,10 +68,11 @@ working: `sudo journalctl -u jetlink-server -f`.
    build screen. It may take a while.
 2. **Link.** Turn on **Accelerator Link** under Settings → Models.
    Within seconds an **Accelerator Model** row appears, set to
-   Cinque Terre, the big driving model.
+   Cinque Terre, the big driving model. Do not pick Lebowski or Be
+   Right Here: they are over the frame budget on this Jetson.
 3. **Cable.** Plug the cable into the Jetson's USB-A port and the
    comma's USB-C port. Never plug the C end into the Jetson's USB-C
-   port.
+   port. Do not power either device from the other.
 
 The icon on comma's home button pulses while the model downloads,
 roughly 1 GB. comma then sends the model to Jetson. This transfer
@@ -85,8 +86,9 @@ details the cause.
 
 - The small model drives from the first second.
 - "Big Model Ready" chimes once the Jetson is up, about a minute after
-  the crank on switched power. The swap waits until you are disengaged:
-  "Big Model Available, disengage to switch".
+  the crank on switched power.
+- The swap waits until you are disengaged: "Big Model Available,
+  disengage to switch".
 - The path draws much further ahead on the big model.
 - Link lost while engaged: soft disable, "Big Model Lost". Re-engage on
   the small model; it rejoins on its own and swaps back at the next
@@ -94,12 +96,12 @@ details the cause.
 - After a drive the icon returns to normal within a minute. That is
   the model being released while parked, not a fault.
 
-Send back the dongle ID (Settings → Device), the time of the drive, and
-what you saw and heard, on the
-[Discord](https://discord.gg/jFWkHC2uhh). To stop, turn the same toggle
-off. Do not power either device from the other, and do not pick Lebowski
-or Be Right Here as the model: they are over the frame budget on this
-Jetson.
+## After the drive
+
+Send back the dongle ID (Settings → Device), the time of the drive,
+and what you saw and heard, on the
+[Discord](https://discord.gg/jFWkHC2uhh). To stop, turn the same
+toggle off.
 
 ## If something is off
 
