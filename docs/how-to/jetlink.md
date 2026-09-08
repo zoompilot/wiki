@@ -68,7 +68,7 @@ working: `sudo journalctl -u jetlink-server -f`.
    build screen. It may take a while.
 2. **Link.** Turn on **Accelerator Link** under Settings → Models.
    Within seconds an **Accelerator Model** row appears, set to
-   Cinque Terre, the big driving model. Leave it.
+   Cinque Terre, the big driving model.
 3. **Cable.** Jetson USB-A to comma USB-C. Never the Jetson's USB-C
    port. The icon on the comma's home button pulses while the comma
    downloads the model (766 MB) and sends it to the Jetson, which
