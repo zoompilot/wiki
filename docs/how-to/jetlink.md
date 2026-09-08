@@ -85,9 +85,8 @@ details the cause.
 - Initially the small model is used until the big model loads. This
   takes approximately a minute. You'll be alerted when the big model
   has loaded: "Big Model Ready".
-- The swap waits until you are disengaged: "Big Model Available,
+- The big model takes over once you disengage: "Big Model Available,
   disengage to switch".
-- The path draws much further ahead on the big model.
 - Link lost while engaged: soft disable, "Big Model Lost". Re-engage on
   the small model; it rejoins on its own and swaps back at the next
   disengaged moment.
