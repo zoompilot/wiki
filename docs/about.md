@@ -28,8 +28,8 @@ their work.
   speed-dependent torque tuning and ICBM fixes.
 - [@yummydirt](https://github.com/yummydirt) — reverse engineering and
   implementation of Mazda alpha longitudinal.
-- [@mzdnick](https://github.com/mzdnick) — VIN and EPS fingerprinting,
-  zoompilot UI branding, cruise fixes.
+- [@mzdnick](https://github.com/mzdnick) (Nick) — VIN and EPS
+  fingerprinting, zoompilot UI branding, cruise fixes.
 - The [zoompilot Discord](https://discord.gg/jFWkHC2uhh) community —
   logs, routes, testing, and patience.
 
