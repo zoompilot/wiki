@@ -4,7 +4,7 @@
  * A symptom picker above the full text: pick what you see, get the
  * first moves. It is a shortcut, not a replacement — the hand-written
  * sections below stay the full answer, and everything here links into
- * them.
+ * them. Keep the labels and hrefs in step with the section headings.
  */
 (function () {
   "use strict";
@@ -25,7 +25,17 @@
       more: "Dashboard errors",
     },
     {
-      label: "Cruise blocked after switching forks",
+      label: "Cruise blocked after flipping alpha longitudinal",
+      steps: [
+        "Turning alpha longitudinal off can leave the radar unhappy: park, turn the car fully off, start again.",
+        "Drive once with zoompilot not engaged.",
+        "Still blocked? Follow the dashboard-error reset.",
+      ],
+      href: "#cruise-blocked-after-flipping-alpha-longitudinal",
+      more: "Cruise blocked",
+    },
+    {
+      label: "Weird behavior after switching forks",
       steps: [
         "Factory-reset the device, then install zoompilot/main fresh.",
         "Stale settings from the old fork cause hard-to-explain faults.",
@@ -63,6 +73,15 @@
       more: "Speed limits",
     },
     {
+      label: "Fixed alerts: Cruise Fault, NO PANDA",
+      steps: [
+        "Both were bugs in older releases, fixed in the 2026.08 releases.",
+        "Update to the latest zoompilot/main.",
+      ],
+      href: "#cruise-fault-restart-the-car-on-a-cold-start",
+      more: "Fixed alerts",
+    },
+    {
       label: "Something else / need humans",
       steps: [
         "Work through the three 'before you troubleshoot' steps below.",
@@ -83,19 +102,27 @@
 
   var row = document.createElement("div");
   row.className = "zp-triage-symptoms";
+  row.setAttribute("role", "group");
+  row.setAttribute("aria-label", "Symptoms");
   var out = document.createElement("div");
   out.className = "zp-triage-out";
+  out.id = "zp-triage-out";
+  out.setAttribute("role", "region");
+  out.setAttribute("aria-label", "Suggested first moves");
+  out.setAttribute("aria-live", "polite");
 
   SYMPTOMS.forEach(function (s) {
     var b = document.createElement("button");
     b.type = "button";
     b.className = "zp-triage-btn";
     b.textContent = s.label;
+    b.setAttribute("aria-pressed", "false");
+    b.setAttribute("aria-controls", "zp-triage-out");
     b.addEventListener("click", function () {
       mount.querySelectorAll(".zp-triage-btn").forEach(function (x) {
-        x.classList.remove("is-active");
+        x.setAttribute("aria-pressed", "false");
       });
-      b.classList.add("is-active");
+      b.setAttribute("aria-pressed", "true");
       out.innerHTML = "";
       var ol = document.createElement("ol");
       s.steps.forEach(function (step) {

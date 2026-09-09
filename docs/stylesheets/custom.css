@@ -1208,9 +1208,13 @@ body[data-md-color-scheme="default"] .md-typeset details {
   cursor: pointer;
 }
 .md-typeset .zp-triage-btn:hover,
-.md-typeset .zp-triage-btn.is-active {
+.md-typeset .zp-triage-btn[aria-pressed="true"] {
   border-color: var(--zp-tint);
   color: var(--zp-tint);
+}
+.md-typeset .zp-triage-btn:focus-visible {
+  outline: 2px solid var(--md-default-fg-color);
+  outline-offset: 2px;
 }
 .md-typeset .zp-triage-out {
   margin-top: 0.9rem;
