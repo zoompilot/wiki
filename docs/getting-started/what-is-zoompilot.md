@@ -25,8 +25,8 @@ Mazda-specific work. Today it spans:
    signs, [ICBM](../features/icbm.md) presses the cruise buttons. They come from sunnypilot, and
    zoompilot fixes them for Mazda. See
    [Smart Cruise](../features/smart-cruise.md).
-4. **Sensors** — the forward radar, blind-spot monitors, and speed-limit
-   signs are wired into openpilot. See
+4. **Sensors** — the forward radar, blind-spot monitors, and traffic sign
+   recognition are wired into openpilot. See
    [Sensor readouts](../features/sensor-readouts.md).
 5. **Alpha longitudinal** — openpilot drives gas and brakes instead of the
    stock radar cruise. Work in progress, with real trade-offs. See
