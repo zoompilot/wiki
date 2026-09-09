@@ -128,8 +128,8 @@ Factors that can impact performance include:
 ### Cruise and collision warning
 
 ACC and FCW do not allow careless or inattentive driving. Pay
-close attention to your surroundings, and be ready to retake the gas and
-the brake at all times.
+close attention to your surroundings, and be prepared to take control at
+all times.
 
 Factors that can impact performance include:
 
