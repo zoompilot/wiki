@@ -23,10 +23,10 @@ their work.
 
 ## zoompilot contributors
 
-- Alex Frutkin ([@yummydirt](https://github.com/yummydirt)) — reverse
-  engineering and implementation of Mazda alpha longitudinal.
 - Zeph ([@zephleggett](https://github.com/zephleggett)) — fork setup,
   releases, TJA, and the Firehose default driving model.
+- Alex Frutkin ([@yummydirt](https://github.com/yummydirt)) — reverse
+  engineering and implementation of Mazda alpha longitudinal.
 - [@mzdnick](https://github.com/mzdnick) — VIN and EPS fingerprinting,
   zoompilot UI branding, cruise fixes.
 - The [zoompilot Discord](https://discord.gg/jFWkHC2uhh) community —
