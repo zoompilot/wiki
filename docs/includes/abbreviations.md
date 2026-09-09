@@ -10,7 +10,6 @@ unambiguous; the full terms live in the glossary.
 *[ALC]: Automated Lane Centering
 *[BSM]: blind spot monitoring
 *[CAN]: controller area network, the car's internal bus
-*[DM]: driver monitoring
 *[EPS]: electric power steering
 *[FCW]: Forward Collision Warning
 *[ICBM]: Intelligent Cruise Button Management

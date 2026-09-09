@@ -95,9 +95,8 @@ yourself, and decide what you are comfortable running.
 The lists below are adapted from comma.ai's
 [openpilot safety documentation](https://docs.comma.ai/concepts/safety/)
 (MIT). zoompilot inherits these limitations. They do not reduce your
-responsibility as the driver. The lists use three short names: LDW is
-lane-departure warning, FCW is forward-collision warning, and DM is
-driver monitoring.
+responsibility as the driver. The lists use two short names: LDW is
+lane-departure warning and FCW is forward-collision warning.
 
 ### Lane keeping and lane departure
 
@@ -159,15 +158,15 @@ Factors that can impact performance include:
 
 ### Driver monitoring
 
-openpilot DM is not an exact measurement of driver alertness. Factors
-that can impact performance include:
+Driver monitoring in openpilot is not an exact measurement of driver
+alertness. Factors that can impact performance include:
 
 - Low light, such as at night or in dark tunnels.
 - Bright light, such as oncoming headlights or direct sunlight.
 - A face partially or completely outside the cabin camera view.
 - A cabin camera that is obstructed, covered, or damaged.
 
-Do not rely on DM to assess your level of attention.
+Do not rely on driver monitoring to assess your level of attention.
 
 The list above does not cover every situation. **It is the driver's
 responsibility to be in control of the vehicle at all times.**
