@@ -7,11 +7,9 @@ reviewed: 2026-09
 zoompilot is a [Mazda-optimized fork](https://zoompilot.ai) of
 [sunnypilot](https://sunnypilot.ai), which is itself a fork of
 [openpilot](https://comma.ai) by comma.ai. A fork starts as a copy of
-its parent project. It keeps everything the parent has, then makes its
-own changes. openpilot holds the lane and keeps a set speed while you
-watch the road and stay ready to take over. zoompilot runs on a
-[comma device](hardware.md), tuned to what the car's own hardware can
-actually do — measured, not assumed.
+its parent project, keeping everything the parent has and making its
+own changes on top. zoompilot runs on a [comma device](hardware.md) or
+an identical clone.
 
 ## What zoompilot changes
 
