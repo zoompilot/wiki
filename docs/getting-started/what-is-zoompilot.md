@@ -20,8 +20,10 @@ Mazda-specific work. Today it spans:
    across seven speed ranges. See [Steering improvements](../features/steering.md).
 2. **Alerts** — known false Mazda alerts are gone. Real faults stay
    active. See [Alert fixes](../features/alerts.md).
-3. **Cruise** — three features work together on your set speed:
-   [ICBM](../features/icbm.md), Speed-Limit Assist, and Smart Cruise. See
+3. **Cruise** — three features adjust your set speed as you drive: Smart
+   Cruise slows for curves, Speed-Limit Assist adjusts to speed limit
+   signs, [ICBM](../features/icbm.md) presses the cruise buttons. They come from sunnypilot, and
+   zoompilot fixes them for Mazda. See
    [Smart Cruise](../features/smart-cruise.md).
 4. **Sensors** — the forward radar, blind-spot monitors, and speed-limit
    signs are wired into openpilot. See
