@@ -109,7 +109,8 @@ const result = await evalJs(`(async () => {
   }
 
   // per-scheme contrast pair for the active interactive text (if any)
-  const probe = out.mount ? mount.querySelector("button") : document.querySelector("a");
+  // (mount, not out.mount — the report object is always truthy)
+  const probe = mount ? mount.querySelector("button") : document.querySelector("a");
   const schemes = {};
   if (probe) {
     for (const s of ["slate", "default"]) {
