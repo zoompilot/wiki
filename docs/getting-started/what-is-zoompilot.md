@@ -38,10 +38,6 @@ Every feature has its own page — see [Features](../features/index.md).
 
 zoompilot is a community project.
 [@zephleggett](https://github.com/zephleggett) (ariste) is the lead
-developer and maintainer of zoompilot. Contributions include
-speed-dependent torque tuning and ICBM fixes.
-[@yummydirt](https://github.com/yummydirt) did the reverse engineering
-and implementation for alpha longitudinal. [@mzdnick](https://github.com/mzdnick) (Nick) added VIN and EPS
-fingerprinting.
-The source lives at [github.com/zoompilot/zoompilot](https://github.com/zoompilot/zoompilot).
+developer and maintainer of zoompilot. The source lives at
+[github.com/zoompilot/zoompilot](https://github.com/zoompilot/zoompilot).
 Full credits are on the [About & credits](../about.md) page.
