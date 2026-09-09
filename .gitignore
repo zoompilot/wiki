@@ -9,3 +9,5 @@ node_modules/
 .playwright-mcp/
 .zcode/
 contrib/demo/*.mp4
+.agents/
+SKILLS-PLAN.md
