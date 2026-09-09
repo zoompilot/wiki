@@ -63,8 +63,8 @@ Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026
 
     ---
 
-    Read this before you drive with zoompilot. Alpha longitudinal turns off
-    your radar, automatic emergency braking, and forward collision warning.
+    Read this before you drive with zoompilot. Alpha longitudinal turns off your
+    radar, disabling automatic emergency braking and forward collision warnings.
 
     [Read first](safety.md)
 
