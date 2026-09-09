@@ -4,7 +4,7 @@ reviewed: 2026-09
 
 # Safety
 
-Read this page before using zoompilot.
+Read this page in full before using zoompilot.
 
 ## zoompilot safety
 
@@ -21,8 +21,6 @@ Read this page before using zoompilot.
   completely off to reset. See [ECU reset](how-to/ecu-reset.md).
 - Driver monitoring stays active in zoompilot. Do not disable or weaken
   it.
-- Keep the device mounted high and centered, and keep the windscreen
-  clean.
 
 ## openpilot safety
 
