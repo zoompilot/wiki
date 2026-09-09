@@ -6,7 +6,29 @@ reviewed: 2026-09
 
 Read this page before using zoompilot.
 
+## zoompilot-specific warnings
+
+!!! danger "Alpha longitudinal turns off your radar"
+
+    If [alpha longitudinal](features/alpha-longitudinal.md) is enabled,
+    the car's radar is turned off. **Automatic Emergency Braking (AEB)
+    and Forward Collision Alerts are DISABLED.** Understand this before
+    you enable the toggle.
+
+- zoompilot is experimental software. You drive the car, follow the law,
+  and carry all the risk.
+- If your dashboard shows cruise, LKAS, or radar errors, turn the car
+  completely off to reset. See [ECU reset](how-to/ecu-reset.md).
+- Driver monitoring stays active in zoompilot. Do not disable or weaken
+  it.
+- Keep the device mounted high and centered, and keep the windscreen
+  clean.
+
 ## The openpilot safety basis
+
+This section is adapted from comma.ai's
+[openpilot safety documentation](https://docs.comma.ai/concepts/safety/)
+(MIT).
 
 openpilot is an Adaptive Cruise Control (ACC) and Automated Lane Centering
 (ALC) system. Like other ACC and ALC systems, openpilot is a failsafe
@@ -42,33 +64,17 @@ shape the system:
 
 For safety implementation details, refer to the
 [panda safety model](https://github.com/commaai/panda#safety-model) and
-[opendbc safety](https://github.com/commaai/opendbc/tree/master/opendbc/safety/safety).
+[opendbc safety](https://github.com/commaai/opendbc/tree/master/opendbc/safety).
 
 [^1]: For these actuator limits, ISO 11270 and ISO 15622 apply. The
       lateral limits there translate to 0.9 seconds of maximum actuation
       to achieve a 1 m lateral deviation.
 
-## zoompilot-specific warnings
-
-!!! danger "Alpha longitudinal turns off your radar"
-
-    If [alpha longitudinal](features/alpha-longitudinal.md) is enabled,
-    the car's radar is turned off. **Automatic Emergency Braking (AEB)
-    and Forward Collision Alerts are DISABLED.** Understand this before
-    you enable the toggle.
-
-- zoompilot is experimental software. You drive the car, follow the law,
-  and carry all the risk.
-- If your dashboard throws cruise, LKAS, or radar errors, turn the car
-  completely off to reset. See [ECU reset](how-to/ecu-reset.md).
-- Driver monitoring stays active in zoompilot. Do not disable or weaken
-  it.
-- Keep the device mounted high and centered, and keep the windscreen
-  clean.
-
 ## Forks of openpilot
 
-comma.ai states these rules for openpilot forks:
+A fork is a copy of openpilot with its own changes. comma.ai states
+[these rules](https://docs.comma.ai/concepts/safety/#forks-of-openpilot)
+for openpilot forks:
 
 - Do not disable or nerf
   [driver monitoring](https://github.com/commaai/openpilot/tree/master/openpilot/selfdrive/monitoring).
@@ -83,13 +89,17 @@ comma.ai states these rules for openpilot forks:
 zoompilot modifies the Mazda safety code to support its features. Safety
 changes are discussed openly in the repository and on the
 [Discord](https://discord.gg/jFWkHC2uhh). Review the
-[safety test suite](https://github.com/zoompilot/zoompilot/tree/develop/opendbc/safety/tests)
+[safety test suite](https://github.com/zoompilot/opendbc/tree/develop/opendbc/safety/tests)
 yourself, and decide what you are comfortable running.
 
 ## Limitations
 
-zoompilot inherits the openpilot limitations below. They do not reduce
-your responsibility as the driver.
+The lists below are adapted from comma.ai's
+[openpilot safety documentation](https://docs.comma.ai/concepts/safety/)
+(MIT). zoompilot inherits these limitations. They do not reduce your
+responsibility as the driver. The lists use three short names: LDW is
+lane-departure warning, FCW is forward-collision warning, and DM is
+driver monitoring.
 
 ### Lane keeping and lane departure
 
