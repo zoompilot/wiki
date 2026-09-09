@@ -11,7 +11,7 @@ its parent project, keeping everything the parent has and making its
 own changes on top. zoompilot runs on a [comma device](hardware.md) or
 an identical clone.
 
-## What zoompilot changes
+## zoompilot changes
 
 zoompilot keeps openpilot's [safety model](../safety.md) and adds
 Mazda-specific work. Today it spans:
