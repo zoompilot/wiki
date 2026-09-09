@@ -29,8 +29,9 @@ Mazda-specific work. Today it spans:
    blind-spot monitors, and traffic sign recognition are wired into
    openpilot.
 5. [**Alpha longitudinal**](../features/alpha-longitudinal.md) —
-   openpilot drives gas and brakes instead of the stock radar cruise.
-   Work in progress, with real trade-offs.
+   zoompilot controls gas and brakes instead of the stock Mazda radar
+   cruise control. Work in progress, disables Automatic Emergency
+   Braking and Forward Collision Warnings.
 
 Every feature has its own page — see [Features](../features/index.md).
 
