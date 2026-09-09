@@ -15,7 +15,7 @@ the car's camera harness, which gives it access to the car's network.
 Its own road camera watches the road, and a neural network model reads
 it. The planners — one for steering, one for speed — turn what the model
 sees into steering and speed requests. The car's own computers do the
-physical work: the EPS motor turns the
+physical work: the electric power steering (EPS) motor turns the
 wheel, and the powertrain control module (PCM) manages speed.
 
 <div class="diagram">
@@ -76,7 +76,7 @@ keeps reaching deeper into it.
 
 ## Steering: asking the motor for torque
 
-The electric power steering (EPS) motor is what turns the front wheels.
+The EPS motor is what turns the front wheels.
 openpilot does not move the steering wheel directly — it asks the EPS
 for a torque, many times a second, and the motor delivers what it can.
 
@@ -100,27 +100,29 @@ to your motor.
 
 The motor's firmware also decides what zoompilot may do. The 2022-25
 CX-5 EPS motor is the only one that may steer from 0 mph, and it is
-the key that unlocks alpha longitudinal. That check is the
+the key that unlocks alpha longitudinal. zoompilot checks which motor
+your Mazda has by reading the car's firmware. The result is the
 [steer-to-zero flag](../technical/mazda-fingerprinting.md), and it is
-why [EPS swaps](../technical/eps-swap.md) work: an older Mazda with that motor gets
-the same treatment.
+why [EPS swaps](../technical/eps-swap.md) work: an older Mazda with
+that motor gets the same treatment.
 
 ## Speed: who owns the gas and brakes
 
 With stock software, Mazda's radar cruise computer — the MRCC radar —
-controls speed, and openpilot cannot command its pedals. zoompilot's
+controls speed, and openpilot cannot command the gas and brakes. zoompilot's
 [ICBM](../features/icbm.md) servo presses the cruise buttons so the dash
 set speed follows the plan; the radar does the rest on its own. zoompilot
-adds its cruise features on top of this: curve slowdowns, speed-limit
-awareness, and a [cruise arbiter](../technical/cruise-arbiter.md) that
-keeps your set speed yours. Dismiss a speed-limit change once, and it
+adds its cruise features on top of this: [curve slowdowns](../features/smart-cruise.md),
+[speed-limit awareness](../features/speed-limit-assist.md), and a
+[cruise arbiter](../technical/cruise-arbiter.md) that keeps your set
+speed yours. Dismiss a speed-limit change once, and it
 stays dismissed until the limit on the road actually changes.
 
 [Alpha longitudinal](../features/alpha-longitudinal.md) removes the
 middleman: zoompilot's own planner drives gas and brakes directly. That
 is the experimental mode. It comes with a hard trade-off — the radar
-    goes dark, and with it AEB and forward collision warning. Read that
-page before enabling it.
+goes dark, and with it automatic emergency braking and forward
+collision warning. Read that page before enabling it.
 
 ## Sensors: what the car already knows
 
