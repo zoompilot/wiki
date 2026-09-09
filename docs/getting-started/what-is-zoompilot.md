@@ -34,7 +34,7 @@ Mazda-specific work. Today it spans:
 
 Every feature has its own page — see [Features](../features/index.md).
 
-## Who builds it
+## Contributors
 
 zoompilot is a community project. Alex Frutkin
 ([@yummydirt](https://github.com/yummydirt)) did the reverse engineering
