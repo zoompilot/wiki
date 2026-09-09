@@ -4,7 +4,7 @@ reviewed: 2026-09
 
 # What is zoompilot?
 
-zoompilot is a [Mazda-optimized fork](https://zoompilot.ai) of
+[zoompilot](https://zoompilot.ai) is a Mazda-optimized fork of
 [sunnypilot](https://sunnypilot.ai), which is itself a fork of
 [openpilot](https://comma.ai) by comma.ai. A fork starts as a copy of
 its parent project, keeping everything the parent has and making its
