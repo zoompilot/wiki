@@ -12,8 +12,8 @@ Read this page in full before using zoompilot.
 
     If [alpha longitudinal](features/alpha-longitudinal.md) is enabled,
     the car's radar is turned off. **Automatic Emergency Braking (AEB)
-    and Forward Collision Warning are DISABLED.** Understand this before
-    you enable the toggle.
+    and Forward Collision Warnings (FCW) are DISABLED.** Understand this
+    before you enable the toggle.
 
 - zoompilot is experimental software. You drive the car, follow the law,
   and carry all the risk.
