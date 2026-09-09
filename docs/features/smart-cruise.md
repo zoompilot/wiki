@@ -1,6 +1,6 @@
 ---
 title: Smart Cruise
-reviewed: 2026-09
+reviewed: 2026-09-05
 ---
 
 # Smart Cruise (curve speed control)

@@ -1,6 +1,6 @@
 ---
 title: How zoompilot works
-reviewed: 2026-09
+reviewed: 2026-09-09
 ---
 
 # How zoompilot works

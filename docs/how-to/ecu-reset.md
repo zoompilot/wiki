@@ -1,6 +1,6 @@
 ---
 title: ECU reset
-reviewed: 2026-09
+reviewed: 2026-09-06
 ---
 
 # ECU reset

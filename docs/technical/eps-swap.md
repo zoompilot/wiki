@@ -1,6 +1,6 @@
 ---
 title: EPS swap
-reviewed: 2026-09
+reviewed: 2026-09-06
 ---
 
 # The EPS swap: a 2022-25 CX-5 steering motor in an older Mazda

@@ -1,6 +1,6 @@
 ---
 title: Custom tune
-reviewed: 2026-09
+reviewed: 2026-09-07
 ---
 
 # Custom tune: what it is, and why it stays off

@@ -1,6 +1,6 @@
 ---
 title: Testing jetlink
-reviewed: 2026-09
+reviewed: 2026-09-08
 ---
 
 # Testing jetlink in the car

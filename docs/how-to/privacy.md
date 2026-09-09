@@ -1,6 +1,6 @@
 ---
 title: Privacy
-reviewed: 2026-09
+reviewed: 2026-09-06
 ---
 
 # Privacy

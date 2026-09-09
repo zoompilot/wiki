@@ -1,6 +1,6 @@
 ---
 title: Alpha longitudinal
-reviewed: 2026-09
+reviewed: 2026-09-09
 ---
 
 # Alpha longitudinal (work in progress)

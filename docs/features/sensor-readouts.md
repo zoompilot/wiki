@@ -1,6 +1,6 @@
 ---
 title: Sensor readouts
-reviewed: 2026-09
+reviewed: 2026-09-09
 ---
 
 # Sensor readouts

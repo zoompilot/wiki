@@ -22,6 +22,27 @@ file on GitHub. The header icon and the edit links are both built from
 `repo_url` in `mkdocs.yml`; that is the only place the wiki's own
 repository URL is written, so a repo move is a one-line change there.
 
+## Review stamps
+
+A page that finished a full review pass carries a stamp in its front
+matter, and the theme shows it under the page content:
+
+```yaml
+---
+title: Page title
+reviewed: 2026-09-06
+---
+```
+
+Stamp a page only after its facts were checked against the `zoompilot`
+repository. Write the date of the last finished pass in full
+(`2026-09-06`, not `2026-09`). To see which pages carry the stamp and
+which are still waiting, run:
+
+```bash
+python3 contrib/review-status.py
+```
+
 ## Content rules
 
 - **Simple English.** Short sentences, one idea per sentence. Active
