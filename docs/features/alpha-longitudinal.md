@@ -46,8 +46,8 @@ brakes, instead of Mazda's stock radar cruise.
 !!! danger "Safety features disabled"
 
     If alpha longitudinal is enabled, **the car's radar is turned off**.
-    Automatic Emergency Braking (AEB) and Forward Collision Warning are
-    **DISABLED** while alpha longitudinal is on.
+    Automatic Emergency Braking (AEB) and Forward Collision Warnings
+    (FCW) are **DISABLED** while alpha longitudinal is on.
 
     If this trade-off is not acceptable to you, do not enable alpha
     longitudinal.
