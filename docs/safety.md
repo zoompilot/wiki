@@ -127,7 +127,7 @@ Factors that can impact performance include:
 
 ### Cruise and collision warning
 
-openpilot ACC and FCW do not allow careless or inattentive driving. Pay
+ACC and FCW do not allow careless or inattentive driving. Pay
 close attention to your surroundings, and be ready to retake the gas and
 the brake at all times.
 
