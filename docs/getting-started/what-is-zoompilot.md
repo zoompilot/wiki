@@ -37,9 +37,9 @@ Every feature has its own page — see [Features](../features/index.md).
 ## Contributors
 
 zoompilot is a community project.
-[@zephleggett](https://github.com/zephleggett) is the lead developer
-and maintainer of zoompilot. Contributions include the fork setup,
-TJA, and the Firehose default driving model.
+[@zephleggett](https://github.com/zephleggett) (ariste) is the lead
+developer and maintainer of zoompilot. Contributions include
+speed-dependent torque tuning and ICBM fixes.
 [@yummydirt](https://github.com/yummydirt) did the reverse engineering
 and implementation for alpha longitudinal. Contributors including
 [@mzdnick](https://github.com/mzdnick) added VIN and EPS fingerprinting.
