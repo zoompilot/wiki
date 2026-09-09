@@ -57,7 +57,7 @@ and part of [Speed-Limit Assist](../features/speed-limit-assist.md).
 ## What happens to AEB with alpha longitudinal?
 
 It is disabled. Alpha longitudinal turns off the car's radar, which takes
-automatic emergency braking and forward collision alerts with it. See
+automatic emergency braking and forward collision warning with it. See
 [Alpha longitudinal](../features/alpha-longitudinal.md).
 
 ## Do fresh installs need tuning?

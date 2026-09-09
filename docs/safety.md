@@ -12,7 +12,7 @@ Read this page in full before using zoompilot.
 
     If [alpha longitudinal](features/alpha-longitudinal.md) is enabled,
     the car's radar is turned off. **Automatic Emergency Braking (AEB)
-    and Forward Collision Alerts are DISABLED.** Understand this before
+    and Forward Collision Warning are DISABLED.** Understand this before
     you enable the toggle.
 
 - zoompilot is experimental software. You drive the car, follow the law,
@@ -153,7 +153,7 @@ Factors that can impact performance include:
 !!! note "Radar and alpha longitudinal"
 
     The radar cautions above assume the stock radar is active. With
-    alpha longitudinal, the radar is off and forward collision alerting
+    alpha longitudinal, the radar is off and forward collision warning
     is disabled entirely.
 
 ### Driver monitoring

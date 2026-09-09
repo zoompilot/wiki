@@ -30,4 +30,4 @@ See [Hardware](../getting-started/hardware.md).
 
     If you enable [alpha longitudinal](alpha-longitudinal.md), the car's
     radar is turned off. The radar readouts above do not apply in that
-    mode, and AEB and forward collision alerts are disabled.
+    mode, and AEB and forward collision warning are disabled.

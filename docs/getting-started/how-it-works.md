@@ -119,7 +119,7 @@ stays dismissed until the limit on the road actually changes.
 [Alpha longitudinal](../features/alpha-longitudinal.md) removes the
 middleman: zoompilot's own planner drives gas and brakes directly. That
 is the experimental mode. It comes with a hard trade-off — the radar
-goes dark, and with it AEB and forward collision alerts. Read that
+    goes dark, and with it AEB and forward collision warning. Read that
 page before enabling it.
 
 ## Sensors: what the car already knows
