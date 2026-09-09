@@ -6,7 +6,7 @@ reviewed: 2026-09
 
 Read this page before using zoompilot.
 
-## zoompilot-specific warnings
+## zoompilot safety
 
 !!! danger "Alpha longitudinal turns off your radar"
 
@@ -24,7 +24,7 @@ Read this page before using zoompilot.
 - Keep the device mounted high and centered, and keep the windscreen
   clean.
 
-## The openpilot safety basis
+## openpilot safety
 
 This section is adapted from comma.ai's
 [openpilot safety documentation](https://docs.comma.ai/concepts/safety/)
