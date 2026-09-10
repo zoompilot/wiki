@@ -20,55 +20,53 @@ physical work: the electric power steering (EPS) motor turns the
 wheel, and the powertrain control module (PCM) manages speed.
 
 <div class="diagram">
-<svg viewBox="0 0 800 284" role="img" aria-label="Module diagram: the comma device's own road camera feeds the driving model. The lateral planner and torque controller steer the Mazda EPS. On stock cruise the longitudinal planner's target flows through ICBM, a button servo that walks the dash set speed, to the MRCC radar, which runs its own ACC loop and drives the PCM for gas and brakes; under alpha longitudinal the planner drives the PCM directly. Radar, speed signs from the car's LKAS camera, and blind spots feed the planners. Self-tune learns the EPS motor. The driver supervises and can brake or cancel at any time.">
+<svg viewBox="0 0 800 228" role="img" aria-label="Module diagram, two rows: the comma device's own road camera feeds the driving model, and the model feeds two chains. Steering: the lateral planner and torque controller steer the Mazda EPS. Speed: the longitudinal planner's target flows through ICBM, a button servo that walks the dash set speed, to the MRCC radar, which runs its own ACC loop and drives the PCM for gas and brakes; under alpha longitudinal the planner drives the PCM directly. Radar, speed signs from the car's LKAS camera, and blind spots feed the planners. Self-tune learns the EPS motor.">
   <defs>
     <marker id="zp-arrow" class="m-dim" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker>
     <marker id="zp-arrow-a" class="m-acc" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker>
   </defs>
-  <rect class="d-box" x="20" y="84" width="100" height="48"/>
-  <text class="d-hi" x="70" y="104" text-anchor="middle">road camera</text>
-  <text x="70" y="120" text-anchor="middle">on the device</text>
-  <line class="d-flow" x1="124" y1="108" x2="186" y2="108"/>
-  <rect class="d-box" x="190" y="84" width="130" height="48"/>
-  <text class="d-hi" x="255" y="104" text-anchor="middle">driving model</text>
-  <text x="255" y="120" text-anchor="middle">vision</text>
-  <line class="d-flow" x1="324" y1="96" x2="346" y2="56"/>
-  <line class="d-flow" x1="255" y1="136" x2="255" y2="148"/>
-  <rect class="d-box" x="350" y="32" width="140" height="48"/>
-  <text class="d-hi" x="420" y="52" text-anchor="middle">lateral planner</text>
-  <text x="420" y="68" text-anchor="middle">where in the lane</text>
-  <line class="d-flow" x1="494" y1="56" x2="551" y2="56"/>
-  <rect class="d-box" x="555" y="32" width="115" height="48"/>
-  <text class="d-hi" x="612" y="52" text-anchor="middle">torque controller</text>
-  <text x="612" y="68" text-anchor="middle">7 learned bands</text>
-  <line class="d-flow" x1="674" y1="56" x2="701" y2="56"/>
-  <rect class="d-box" x="705" y="32" width="80" height="48"/>
-  <text class="d-hi" x="745" y="52" text-anchor="middle">EPS</text>
-  <text x="745" y="68" text-anchor="middle">steering</text>
-  <rect class="d-box" x="190" y="152" width="140" height="48"/>
-  <text class="d-hi" x="260" y="172" text-anchor="middle">longitudinal planner</text>
-  <text x="260" y="188" text-anchor="middle">how fast, how far</text>
-  <line class="d-flow" x1="334" y1="176" x2="356" y2="176"/>
-  <rect class="d-box" x="360" y="152" width="100" height="48"/>
-  <text class="d-hi" x="410" y="172" text-anchor="middle">ICBM</text>
-  <text x="410" y="188" text-anchor="middle">button servo</text>
-  <line class="d-flow" x1="464" y1="176" x2="486" y2="176"/>
-  <rect class="d-box" x="490" y="152" width="110" height="48"/>
-  <text class="d-hi" x="545" y="172" text-anchor="middle">MRCC radar</text>
-  <text x="545" y="188" text-anchor="middle">stock cruise</text>
-  <line class="d-flow" x1="604" y1="176" x2="626" y2="176"/>
-  <rect class="d-box" x="630" y="152" width="100" height="48"/>
-  <text class="d-hi" x="680" y="172" text-anchor="middle">PCM</text>
-  <text x="680" y="188" text-anchor="middle">gas · brakes</text>
-  <path class="d-flow-accent" style="stroke-dasharray: 5 4" d="M230,204 V232 H680 V204"/>
-  <text class="d-acc" x="455" y="226" text-anchor="middle">alpha longitudinal</text>
-  <path class="d-flow-accent" d="M745,84 V104 H612 V84"/>
-  <text class="d-acc" x="678" y="98" text-anchor="middle">learned values</text>
-  <line class="d-flow-accent" x1="166" y1="176" x2="186" y2="176"/>
-  <text class="d-acc" x="100" y="164" text-anchor="middle">radar · blind spots</text>
-  <text class="d-acc" x="100" y="180" text-anchor="middle">speed signs (LKAS)</text>
-  <line class="d-lane" x1="20" y1="252" x2="785" y2="252"/>
-  <text x="402" y="272" text-anchor="middle">you: supervise · brake or cancel ends it</text>
+  <rect class="d-box" x="20" y="32" width="100" height="48"/>
+  <text class="d-hi" x="70" y="52" text-anchor="middle">road camera</text>
+  <text x="70" y="68" text-anchor="middle">on the device</text>
+  <line class="d-flow" x1="124" y1="56" x2="150" y2="56"/>
+  <rect class="d-box" x="154" y="32" width="130" height="48"/>
+  <text class="d-hi" x="219" y="52" text-anchor="middle">driving model</text>
+  <text x="219" y="68" text-anchor="middle">vision</text>
+  <line class="d-flow" x1="288" y1="56" x2="314" y2="56"/>
+  <rect class="d-box" x="318" y="32" width="140" height="48"/>
+  <text class="d-hi" x="388" y="52" text-anchor="middle">lateral planner</text>
+  <text x="388" y="68" text-anchor="middle">where in the lane</text>
+  <line class="d-flow" x1="462" y1="56" x2="488" y2="56"/>
+  <rect class="d-box" x="492" y="32" width="115" height="48"/>
+  <text class="d-hi" x="549" y="52" text-anchor="middle">torque controller</text>
+  <text x="549" y="68" text-anchor="middle">7 learned bands</text>
+  <line class="d-flow" x1="611" y1="56" x2="637" y2="56"/>
+  <rect class="d-box" x="641" y="32" width="80" height="48"/>
+  <text class="d-hi" x="681" y="52" text-anchor="middle">EPS</text>
+  <text x="681" y="68" text-anchor="middle">steering</text>
+  <line class="d-flow" x1="219" y1="84" x2="219" y2="128"/>
+  <rect class="d-box" x="190" y="132" width="140" height="48"/>
+  <text class="d-hi" x="260" y="152" text-anchor="middle">longitudinal planner</text>
+  <text x="260" y="168" text-anchor="middle">how fast, how far</text>
+  <line class="d-flow" x1="334" y1="156" x2="356" y2="156"/>
+  <rect class="d-box" x="360" y="132" width="100" height="48"/>
+  <text class="d-hi" x="410" y="152" text-anchor="middle">ICBM</text>
+  <text x="410" y="168" text-anchor="middle">button servo</text>
+  <line class="d-flow" x1="464" y1="156" x2="486" y2="156"/>
+  <rect class="d-box" x="490" y="132" width="110" height="48"/>
+  <text class="d-hi" x="545" y="152" text-anchor="middle">MRCC radar</text>
+  <text x="545" y="168" text-anchor="middle">stock cruise</text>
+  <line class="d-flow" x1="604" y1="156" x2="626" y2="156"/>
+  <rect class="d-box" x="630" y="132" width="100" height="48"/>
+  <text class="d-hi" x="680" y="152" text-anchor="middle">PCM</text>
+  <text x="680" y="168" text-anchor="middle">gas · brakes</text>
+  <path class="d-flow-accent" style="stroke-dasharray: 5 4" d="M260,184 V212 H680 V184"/>
+  <text class="d-acc" x="470" y="206" text-anchor="middle">alpha longitudinal</text>
+  <path class="d-flow-accent" d="M681,84 V102 H549 V84"/>
+  <text class="d-acc" x="615" y="96" text-anchor="middle">learned values</text>
+  <line class="d-flow-accent" x1="166" y1="156" x2="186" y2="156"/>
+  <text class="d-acc" x="100" y="144" text-anchor="middle">radar · blind spots</text>
+  <text class="d-acc" x="100" y="160" text-anchor="middle">speed signs (LKAS)</text>
 </svg>
 </div>
 
