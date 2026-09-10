@@ -102,8 +102,7 @@ Fresh installs start from a tune learned on a real CX-5, then refine it
 to your motor.
 
 The motor's firmware also decides what zoompilot may do. The 2022-25
-CX-5 EPS motor is the only one that may steer from 0 mph, and it is
-the key that unlocks alpha longitudinal. zoompilot checks which motor
+CX-5 EPS motor is the only one that may steer from 0 mph. zoompilot checks which motor
 your Mazda has by reading the car's firmware. The result is the
 [steer-to-zero flag](../technical/mazda-fingerprinting.md), and it is
 why [EPS swaps](../technical/eps-swap.md) work: an older Mazda with
