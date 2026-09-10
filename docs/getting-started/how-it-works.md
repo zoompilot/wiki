@@ -135,8 +135,8 @@ and feeds [Speed-Limit Assist](../features/speed-limit-assist.md). See
 
 ## You
 
-You are in control of the car at all times. zoompilot is only a driver
-assist — not a replacement for an attentive driver. Engage zoompilot
+The driver — you — are in control of the car at all times. zoompilot
+is only a driver assist — not a replacement for an attentive driver. Engage zoompilot
 with the stock steering-wheel cruise controls while driving. On Mazdas
 with a 2022-25 CX-5 EPS, your car can steer down to a standstill.
 Cancel cruise control at any time and the car is fully yours again.
