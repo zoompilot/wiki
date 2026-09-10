@@ -80,7 +80,7 @@ longitudinal.
 
 The EPS motor is what turns the front wheels.
 openpilot does not move the steering wheel directly — it asks the EPS
-for a torque, many times a second, and the motor delivers what it can.
+for torque, many times a second, and the motor delivers what it can.
 
 Two facts about the 2022-25 CX-5 EPS motor shaped zoompilot's steering
 work:
