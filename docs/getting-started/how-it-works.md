@@ -13,8 +13,9 @@ zoompilot changes on the way. No prior openpilot knowledge needed.
 openpilot is software that runs on a comma device. The device sits on
 the car's camera harness, which gives it access to the car's network.
 Its own road camera watches the road, and a neural network model reads
-it. The planners — one for steering, one for speed — turn what the model
-sees into steering and speed requests. The car's own computers do the
+it. The planners — one for steering (lateral), one for speed
+(longitudinal) — turn what the model sees into steering and speed
+requests. The car's own computers do the
 physical work: the electric power steering (EPS) motor turns the
 wheel, and the powertrain control module (PCM) manages speed.
 
