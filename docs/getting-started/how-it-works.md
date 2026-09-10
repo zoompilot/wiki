@@ -20,7 +20,7 @@ physical work: the electric power steering (EPS) motor turns the
 wheel, and the powertrain control module (PCM) manages speed.
 
 <div class="diagram">
-<svg viewBox="0 0 800 284" role="img" aria-label="Module diagram: the comma device's own road camera feeds the driving model. The lateral planner and torque controller steer the Mazda EPS. On stock cruise the longitudinal planner's target flows through ICBM, a button servo that walks the dash set speed, to the MRCC radar, which runs its own ACC loop and drives the PCM for gas and brakes; under alpha long the planner drives the PCM directly. Radar, speed signs from the car's LKAS camera, and blind spots feed the planners. Self-tune learns the EPS motor. The driver supervises and can brake or cancel at any time.">
+<svg viewBox="0 0 800 284" role="img" aria-label="Module diagram: the comma device's own road camera feeds the driving model. The lateral planner and torque controller steer the Mazda EPS. On stock cruise the longitudinal planner's target flows through ICBM, a button servo that walks the dash set speed, to the MRCC radar, which runs its own ACC loop and drives the PCM for gas and brakes; under alpha longitudinal the planner drives the PCM directly. Radar, speed signs from the car's LKAS camera, and blind spots feed the planners. Self-tune learns the EPS motor. The driver supervises and can brake or cancel at any time.">
   <defs>
     <marker id="zp-arrow" class="m-dim" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker>
     <marker id="zp-arrow-a" class="m-acc" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker>
@@ -61,7 +61,7 @@ wheel, and the powertrain control module (PCM) manages speed.
   <text class="d-hi" x="680" y="172" text-anchor="middle">PCM</text>
   <text x="680" y="188" text-anchor="middle">gas · brakes</text>
   <path class="d-flow-accent" style="stroke-dasharray: 5 4" d="M230,204 V232 H680 V204"/>
-  <text class="d-acc" x="455" y="226" text-anchor="middle">alpha long</text>
+  <text class="d-acc" x="455" y="226" text-anchor="middle">alpha longitudinal</text>
   <path class="d-flow-accent" d="M745,84 V104 H612 V84"/>
   <text class="d-acc" x="678" y="98" text-anchor="middle">learned values</text>
   <line class="d-flow-accent" x1="166" y1="176" x2="186" y2="176"/>
@@ -72,8 +72,9 @@ wheel, and the powertrain control module (PCM) manages speed.
 </svg>
 </div>
 
-zoompilot rewrites how this stack drives a Mazda — and the work
-keeps reaching deeper into it.
+zoompilot rewrites how this stack drives a Mazda — wiring in Mazda
+sensors, modifying the steering torque tuning, and enabling alpha
+longitudinal.
 
 ## Steering: asking the motor for torque
 
