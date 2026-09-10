@@ -25,15 +25,15 @@ stock radar cruise.
 | Model | Year | Steer-to-zero | Alpha longitudinal |
 | :---: | :---: | :---: | :---: |
 | CX-5 | 2022–2025 | ✓ | ✓ |
-| CX-5 | 2017–2021 | ✓ with swap | ✓ |
-| CX-5 | 2016.5 | ✓ with swap | ? |
-| CX-9 | 2021–2023 | ✓ with swap | ✓ |
-| CX-9 | 2016–2020 | ✓ with swap | ? |
-| Mazda 3 | 2017–2018 | ✓ with swap | ? |
-| Mazda 6 | 2017–2021 | ✓ with swap | ? |
+| CX-5 | 2017–2021 | with swap | ✓ |
+| CX-5 | 2016.5 | with swap | ? |
+| CX-9 | 2021–2023 | with swap | ✓ |
+| CX-9 | 2016–2020 | with swap | ? |
+| Mazda 3 | 2017–2018 | with swap | ? |
+| Mazda 6 | 2017–2021 | with swap | ? |
 
 - **✓** — works as the car ships.
-- **✓ with swap** — works once a 2022-25 CX-5 EPS motor is swapped in.
+- **with swap** — works once a 2022-25 CX-5 EPS motor is swapped in.
   See [EPS swap](../technical/eps-swap.md).
 - **?** — expected to work, not yet validated on that platform. The
   Mazda 3 and Mazda 6 are community-reported only, with fewer test
