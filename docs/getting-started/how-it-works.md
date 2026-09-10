@@ -133,7 +133,7 @@ automatic lane changes. The car's LKAS camera reads speed-limit signs
 and feeds [Speed-Limit Assist](../features/speed-limit-assist.md). See
 [Sensor readouts](../features/sensor-readouts.md).
 
-## The driver's part
+## You
 
 You stay in the loop. Engage with the stock steering-wheel cruise
 controls while driving; on Mazdas with a 2022-25 CX-5 EPS, steering
