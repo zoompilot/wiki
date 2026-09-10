@@ -73,7 +73,7 @@ wheel, and the powertrain control module (PCM) manages speed.
 </div>
 
 zoompilot rewrites how this stack drives a Mazda — wiring in Mazda
-sensors, modifying the steering torque tuning, and enabling alpha
+sensors, adding a custom steering torque tune, and enabling alpha
 longitudinal.
 
 ## Steering: asking the motor for torque
