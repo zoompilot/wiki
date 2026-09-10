@@ -13,7 +13,7 @@ missing.
 ## Is my Mazda supported?
 
 zoompilot runs on every Mazda platform in its support list: the CX-5
-2017–2025, the CX-9 2016–2023, and — on community reports so far — the
+2016.5–2025, the CX-9 2016–2023, and — on community reports so far — the
 Mazda 3 2017–2018 and the Mazda 6 2017–2021. The steering motor sets
 the envelope. The 2022-25 CX-5 EPS steers to zero and unlocks alpha
 longitudinal; it is factory-fitted in the CX-5 2022–2025, and an older

@@ -25,21 +25,23 @@ stock radar cruise.
 | Model | Year | Steer-to-zero | Alpha longitudinal |
 | :---: | :---: | :---: | :---: |
 | CX-5 | 2022–2025 | ✓ | ✓ |
-| CX-5 | 2017–2021 | ✓ with swap | ✓ with swap |
-| CX-9 | 2021–2023 | ✓ with swap | ✓ with swap |
-| CX-9 | 2016–2020 | ✓ with swap | — |
+| CX-5 | 2017–2021 | ✓ with swap | ✓ |
+| CX-5 | 2016.5 | ✓ with swap | ? |
+| CX-9 | 2021–2023 | ✓ with swap | ✓ |
+| CX-9 | 2016–2020 | ✓ with swap | ? |
 | Mazda 3 | 2017–2018 | ✓ with swap | ? |
 | Mazda 6 | 2017–2021 | ✓ with swap | ? |
 
 - **✓** — works as the car ships.
 - **✓ with swap** — works once a 2022-25 CX-5 EPS motor is swapped in.
   See [EPS swap](../technical/eps-swap.md).
-- **—** — a hard limit. The 2016–2020 CX-9's radar does not publish the
-  track data zoompilot needs, so alpha longitudinal stays off even with
-  the swap.
 - **?** — expected to work, not yet validated on that platform. The
   Mazda 3 and Mazda 6 are community-reported only, with fewer test
   miles than the CX-5 and CX-9.
+
+Alpha longitudinal includes stop-and-go, so it needs the same steering
+motor as the steer-to-zero column. On the swapped cars, its ✓ means
+once the swap is in.
 
 While alpha longitudinal is on, the stock radar and automatic
 emergency braking (AEB) are off.
