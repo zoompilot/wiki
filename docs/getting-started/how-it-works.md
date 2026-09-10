@@ -76,7 +76,7 @@ zoompilot rewrites how this stack drives a Mazda — wiring in Mazda
 sensors, adding a custom steering torque tune, and enabling alpha
 longitudinal.
 
-## Steering: asking the motor for torque
+## Steering
 
 The EPS motor is what turns the front wheels.
 openpilot does not move the steering wheel directly — it asks the EPS
@@ -108,7 +108,7 @@ your Mazda has by reading the car's firmware. The result is the
 why [EPS swaps](../technical/eps-swap.md) work: an older Mazda with
 that motor gets the same treatment.
 
-## Speed: who owns the gas and brakes
+## Speed
 
 With stock software, Mazda's radar cruise computer — the MRCC radar —
 controls speed, and openpilot cannot command the gas and brakes. zoompilot's
@@ -126,7 +126,7 @@ is the experimental mode. It comes with a hard trade-off — the radar
 goes dark, and with it automatic emergency braking and forward
 collision warning. Read that page before enabling it.
 
-## Sensors: what the car already knows
+## Sensors
 
 Supported Mazdas carry sensors that stock openpilot does not use.
 zoompilot wires them in. The forward radar reports up to four cars
