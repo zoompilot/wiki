@@ -86,9 +86,9 @@ Two facts about the 2022-25 CX-5 EPS motor shaped zoompilot's steering
 work:
 
 - **The motor is stronger than stock openpilot assumes.** openpilot
-  caps its request at one conservative value for all speeds. The motor
-  can deliver about 44% more where it matters, and zoompilot asks for
-  it. See [Steering improvements](../features/steering.md).
+  caps its request at one conservative value for all speeds. At low
+  speeds the EPS can deliver up to 44% more, and zoompilot uses it.
+  See [Steering improvements](../features/steering.md).
 - **The motor behaves differently at every speed.** Its output scale
   even drops from 1200 to 800 counts near 32 mph. One fixed steering
   tune cannot fit both parking lots and highways.
