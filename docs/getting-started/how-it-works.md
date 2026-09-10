@@ -135,11 +135,13 @@ and feeds [Speed-Limit Assist](../features/speed-limit-assist.md). See
 
 ## You
 
-You stay in the loop. Engage with the stock steering-wheel cruise
-controls while driving; on Mazdas with a 2022-25 CX-5 EPS, steering
-help is available from 0 mph. The device's driver-monitoring camera watches
-your attention, and warns then disengages if it loses you. Brake or
-press cancel, and the car is fully yours again. Read the
+You are in control of the car at all times. zoompilot only assists —
+it adds steering and speed help on top of the car you already drive.
+You engage it with the stock steering-wheel cruise controls while
+driving. On Mazdas with a 2022-25 CX-5 EPS, steering help is available
+from 0 mph. Cancel cruise control at any time — or brake — and the car
+is fully yours again. The device's driver-monitoring camera watches
+your attention, and warns then disengages if it loses you. Read the
 [safety page](../safety.md) before your first drive.
 
 ## Where to go next
