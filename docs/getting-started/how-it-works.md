@@ -93,10 +93,11 @@ work:
   even drops from 1200 to 800 counts near 32 mph. One fixed steering
   tune cannot fit both parking lots and highways.
 
-zoompilot's answer is [**self-tune**](../reference/glossary.md).
-Driving is sorted into seven speed bands, from parking speeds to
-highway. For each band, self-tune measures two numbers — the torque
-gain and the friction — and keeps a separate steering tune per band.
+zoompilot's answer is a speed-dependent torque tune. Driving is sorted
+into seven speed bands, from parking speeds to
+highway. For each band, [**self-tune**](../reference/glossary.md)
+measures two numbers — the torque gain and the friction — and keeps a
+separate steering tune per band.
 Fresh installs start from a tune learned on a real CX-5, then refine it
 to your motor.
 
