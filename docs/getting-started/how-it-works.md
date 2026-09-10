@@ -8,7 +8,7 @@ reviewed: 2026-09-09
 This page follows one drive from camera to wheels, and shows what
 zoompilot changes on the way. No prior openpilot knowledge needed.
 
-## The stack, in one picture
+## The stack
 
 openpilot is software that runs on a comma device. The device sits on
 the car's camera harness, which gives it access to the car's network.
