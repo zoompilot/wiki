@@ -11,7 +11,7 @@ speed, down to a standstill. Fingerprinting identifies the motor and
 turns the capability on by itself.
 
 zoompilot runs on every Mazda platform in its support list: the CX-5,
-the CX-9, the Mazda 3, and the Mazda 6. The steering motor your car
+the CX-8, the CX-9, the Mazda 3, and the Mazda 6. The steering motor your car
 carries sets the steering envelope — how the steering behaves — not
 whether zoompilot runs.
 
@@ -27,6 +27,7 @@ stock radar cruise.
 | CX-5 | 2022–2025 | ✓ | ✓ |
 | CX-5 | 2017–2021 | with swap | ✓ |
 | CX-5 | 2016.5 | with swap | ? |
+| CX-8 | 2023 | ✓ | ? |
 | CX-9 | 2021–2023 | with swap | ✓ |
 | CX-9 | 2016–2020 | with swap | ? |
 | Mazda 3 | 2017–2018 | with swap | ? |
