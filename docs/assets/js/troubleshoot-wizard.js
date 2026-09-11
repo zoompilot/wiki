@@ -1,5 +1,5 @@
 /*
- * Triage wizard for docs/troubleshooting.md.
+ * Triage wizard for docs/help/troubleshooting.md.
  *
  * A symptom picker above the full text: pick what you see, get the
  * first moves. It is a shortcut, not a replacement — the hand-written

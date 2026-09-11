@@ -1,5 +1,7 @@
 ---
 title: Testing jetlink
+type: task
+description: Tester guide for jetlink — run a bigger driving model on a Jetson Orin Nano next to your comma device.
 reviewed: 2026-09-08
 ---
 
@@ -9,10 +11,15 @@ jetlink runs a bigger driving model on a Jetson computer next to your
 comma. The comma drives on its own small model from the first second and
 switches to the Jetson's model once it is ready. The code lives at
 [github.com/zoompilot/jetlink](https://github.com/zoompilot/jetlink).
+{ .zp-lede }
+
+This is a tester guide: it assumes you are comfortable in a terminal.
+A driving model is the neural network that watches the road and plans
+the drive; see [Glossary](../help/glossary.md#driving-model).
 
 You need:
 
-- a comma 3X or comma four running zoompilot
+- a [comma 3X](../getting-started/hardware.md) or comma four running zoompilot
 - a Jetson Orin Nano Super 8 GB on JetPack 6.2
 - a USB 3 A-to-C data cable
 - a 9 to 20 V supply for the Jetson's barrel jack, sized for 25 W

@@ -24,3 +24,27 @@
 /settings/explorer /settings/ 301
 /technical/lateral-tune-roadmap/ /technical/lateral-tune/ 301
 /technical/lateral-tune-roadmap /technical/lateral-tune/ 301
+# v2 information architecture (2026-09): Guides and Reference folded
+# into Help, contributor pages moved under Community.
+/troubleshooting/ /help/troubleshooting/ 301
+/troubleshooting /help/troubleshooting/ 301
+/how-to/ /help/ 301
+/how-to /help/ 301
+/how-to/ecu-reset/ /help/ecu-reset/ 301
+/how-to/ecu-reset /help/ecu-reset/ 301
+/how-to/privacy/ /help/privacy/ 301
+/how-to/privacy /help/privacy/ 301
+/how-to/custom-tune/ /settings/custom-tune/ 301
+/how-to/custom-tune /settings/custom-tune/ 301
+/how-to/jetlink/ /community/jetlink/ 301
+/how-to/jetlink /community/jetlink/ 301
+/community/faq/ /help/faq/ 301
+/community/faq /help/faq/ 301
+/reference/ /help/ 301
+/reference /help/ 301
+/reference/glossary/ /help/glossary/ 301
+/reference/glossary /help/glossary/ 301
+/reference/site-sync/ /community/site-sync/ 301
+/reference/site-sync /community/site-sync/ 301
+/about/ /community/about/ 301
+/about /community/about/ 301

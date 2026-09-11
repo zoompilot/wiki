@@ -1,14 +1,22 @@
 ---
 title: Custom tune
+type: explanation
+description: What self-tune, custom tuning, and manual real-time tuning do in the Steering settings — and why the learned tune stays on.
 reviewed: 2026-09-07
 ---
 
 # Custom tune: what it is, and why it stays off
 
-The Steering panel has three ways to produce torque values: self-tune
-(the default), a hand-entered custom tune, and a manual real-time
-override. This page explains what each one does, so the settings stop
-being a mystery. The short version first:
+Short version: leave the steering tune alone. zoompilot learns your
+steering motor while you drive, and the learned values beat hand-entered
+ones.
+{ .zp-lede }
+
+The Steering panel has three ways to produce torque values — the
+numbers that set how hard the steering motor pushes: self-tune (the
+default), a hand-entered custom tune, and a manual real-time override.
+This page explains what each one does, so the settings stop being a
+mystery.
 
 !!! warning "Recommended off"
 
@@ -53,9 +61,9 @@ at about +18% too much torque below the step and −19% too little above
 it. See [Lateral tune](../technical/lateral-tune.md).
 
 There is also a cautionary tale. One hand-tuning attempt raised the
-controller gains by 21% and railed the EPS ceiling in the 25–32 mph
+controller gains by 21% and railed the [EPS](../help/glossary.md#eps) ceiling in the 25–32 mph
 band — the exact wobble it was trying to fix — and was reverted. Small
-hand changes hit the envelope faster than they feel like they would.
+hand changes hit the [envelope](../help/glossary.md#torque-envelope) faster than they feel like they would.
 
 ## If you still want to try
 
@@ -74,4 +82,13 @@ Turn **Enable Custom Tuning** off. Self-tune resumes with its cached
 values; nothing was lost while custom tuning was on. A factory reset
 clears everything back to the starting defaults (self-tune on,
 speed-dependent on, tune version v2.0). See
-[Settings](../settings/index.md#zoompilot-defaults).
+[Settings](index.md#zoompilot-defaults).
+
+<div class="zp-next" markdown>
+
+- [Steering improvements](../features/steering.md)
+  What the learned tune does on the road
+- [Settings](index.md#steering)
+  Every Steering switch
+
+</div>

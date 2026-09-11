@@ -107,6 +107,9 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/custom.css
+  # v2 components (lede, glance, steps, journey, next-step cards) and
+  # reading rhythm; documented on community/style-guide.md
+  - stylesheets/v2.css
   - stylesheets/print.css
 
 extra_javascript:
@@ -134,58 +137,68 @@ extra:
       name: zoompilot.ai
 
 nav:
+  # v2 structure: seven tabs, each one page type for one reader.
+  # Start here is a linear path (What is it -> car -> hardware -> safety
+  # -> install -> first drive), then two "understand it" pages. safety.md
+  # stays at the root on purpose: /safety/ is linked from the announce
+  # bar on every page and from zoompilot.ai. Every moved page has a 301
+  # in contrib/_redirects.
   - Home: index.md
-  - Safety: safety.md
-  - Getting started:
+  - Start here:
       - getting-started/index.md
       - getting-started/what-is-zoompilot.md
-      - getting-started/how-it-works.md
       - getting-started/supported-cars.md
-      - getting-started/comparison.md
       - getting-started/hardware.md
+      - safety.md
       - getting-started/install.md
       - getting-started/first-drive.md
+      - getting-started/how-it-works.md
+      - getting-started/comparison.md
   - Features:
       - features/index.md
       - features/steering.md
       - features/smart-cruise.md
-      - features/icbm.md
       - features/speed-limit-assist.md
+      - features/icbm.md
       - features/sensor-readouts.md
-      - features/alpha-longitudinal.md
       - features/alerts.md
-  - Settings: settings/index.md
-  - Guides:
-      - how-to/index.md
-      - how-to/privacy.md
-      - how-to/ecu-reset.md
-      - how-to/custom-tune.md
-      - how-to/jetlink.md
+      - features/alpha-longitudinal.md
+  - Settings:
+      - settings/index.md
+      - settings/custom-tune.md
+  - Help:
+      - help/index.md
+      - help/troubleshooting.md
+      - help/ecu-reset.md
+      - help/share-a-route.md
+      - help/faq.md
+      - help/glossary.md
+      - help/privacy.md
+  - Technical:
+      # Technical pages mirror the zoompilot repo's docs/zoompilot and
+      # carry no front matter (the site sync parses them); short nav
+      # labels live here instead.
+      - technical/index.md
+      - Mazda lateral: technical/mazda-lateral.md
+      - Lateral tune: technical/lateral-tune.md
+      - technical/eps-swap.md
+      - Mazda longitudinal: technical/mazda-longitudinal.md
+      - Cruise arbiter: technical/cruise-arbiter.md
+      - ICBM design: technical/icbm.md
+      - Curve & limit speed planning: technical/scc-curve-planning.md
+      - Mazda fingerprinting: technical/mazda-fingerprinting.md
+      - technical/rejected.md
+      - Route library: technical/route-library.md
   - Community:
       - community/index.md
-      - community/contribute.md
       - community/feedback.md
+      - community/contribute.md
+      - community/jetlink.md
       - community/roadmap.md
-  - Reference:
-      - reference/index.md
-      - community/faq.md
-      - reference/glossary.md
-      - reference/site-sync.md
-      - troubleshooting.md
       - Releases: releases/changelog.md
-      - About & credits: about.md
-      - Technical notes:
-          - technical/index.md
-          - technical/route-library.md
-          - technical/mazda-lateral.md
-          - technical/eps-swap.md
-          - technical/mazda-longitudinal.md
-          - technical/mazda-fingerprinting.md
-          - technical/lateral-tune.md
-          - technical/cruise-arbiter.md
-          - technical/icbm.md
-          - technical/scc-curve-planning.md
-          - technical/rejected.md
+      - community/about.md
+      - community/style-guide.md
+      - community/site-sync.md
 
 validation:
   omitted_files: warn

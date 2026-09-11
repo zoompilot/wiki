@@ -1,4 +1,13 @@
+---
+title: Roadmap
+type: explanation
+description: What zoompilot is working on now, and where to follow upstream plans.
+---
+
 # Roadmap
+
+What is being worked on now, and where to follow what comes next.
+{ .zp-lede }
 
 ## zoompilot
 
@@ -17,7 +26,7 @@ in the [changelog](../releases/changelog.md).
 
 ## Upstream
 
-zoompilot syncs from sunnypilot and openpilot regularly:
+zoompilot syncs from [sunnypilot](../help/glossary.md#sunnypilot) and [openpilot](../help/glossary.md#openpilot) regularly:
 
 - [openpilot roadmap](https://github.com/commaai/openpilot/blob/master/docs/contributing/roadmap.md)
   and [milestones](https://github.com/commaai/openpilot/milestones)

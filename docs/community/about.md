@@ -1,9 +1,15 @@
+---
+title: About & credits
+type: explanation
+description: What this wiki is, who builds zoompilot, the projects it stands on, and the licensing notes.
+---
+
 # About & credits
 
 ## What this wiki is
 
 This wiki is the central documentation source for
-[zoompilot](https://zoompilot.ai), a Mazda-optimized fork of sunnypilot.
+[zoompilot](https://zoompilot.ai), a Mazda-optimized [fork](../help/glossary.md#fork) of [sunnypilot](../help/glossary.md#sunnypilot).
 It is maintained as markdown in the open: the GitHub icon in the header
 opens the wiki repository, and every push to its main branch deploys
 the site.
@@ -27,9 +33,9 @@ their work.
   developer and maintainer of zoompilot. Contributions include
   speed-dependent torque tuning and ICBM fixes.
 - [@yummydirt](https://github.com/yummydirt) — reverse engineering and
-  implementation of Mazda alpha longitudinal.
-- [@mzdnick](https://github.com/mzdnick) (Nick) — VIN and EPS
-  fingerprinting, zoompilot UI branding, cruise fixes.
+  implementation of Mazda [alpha longitudinal](../features/alpha-longitudinal.md).
+- [@mzdnick](https://github.com/mzdnick) (Nick) — VIN and [EPS](../help/glossary.md#eps)
+  [fingerprinting](../help/glossary.md#fingerprint), zoompilot UI branding, cruise fixes.
 - The [zoompilot Discord](https://discord.gg/jFWkHC2uhh) community —
   logs, routes, testing, and patience.
 
@@ -42,7 +48,7 @@ their work.
   [sunnypilot/user-docs](https://github.com/sunnypilot/user-docs), which
   is MIT licensed. Adapted pages credit the source above.
 - The openpilot safety and limitations text on the
-  [safety page](safety.md) comes from the openpilot project (MIT).
+  [safety page](../safety.md) comes from the openpilot project (MIT).
 
 ## Disclaimers
 

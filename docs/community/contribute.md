@@ -1,6 +1,13 @@
+---
+title: Contribute
+type: explanation
+description: Ways to help zoompilot — Discord answers, issues with routes, code, and improving this wiki.
+---
+
 # Contribute
 
 zoompilot is a small, fast-moving project. Help is welcome in every form.
+{ .zp-lede }
 
 ## Ask and answer on Discord
 
@@ -17,7 +24,7 @@ The source lives at
 - Pull requests are welcome. Read
   [CONTRIBUTING](https://github.com/zoompilot/zoompilot/blob/develop/docs/CONTRIBUTING.md)
   in the repository first.
-- To set up a development environment, start with the openpilot guide
+- To set up a development environment, start with the [openpilot](../help/glossary.md#openpilot) guide
   [Turn the speed blue](https://docs.comma.ai/how-to/turn-the-speed-blue/),
   then [Connect to comma](https://docs.comma.ai/how-to/connect-to-comma/).
 - To add support for a new car, start with comma's
@@ -32,7 +39,9 @@ wiki repository on GitHub, and the GitHub icon in the header opens the
 repository itself. Fix a typo, update a setting description, or add a
 missing section. The wiki source lives in its own repository, so doc
 changes never block code changes. `CONTRIBUTING.md` at the root of the
-repository has the workflow and the writing rules.
+repository has the workflow and the writing rules, and the
+[wiki style guide](style-guide.md) shows the page types and building
+blocks in use.
 
 ## Share driving feedback
 
