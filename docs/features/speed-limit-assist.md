@@ -1,9 +1,30 @@
 ---
 title: Speed-Limit Assist
+type: feature
+description: Speed-Limit Assist reads speed limits from signs and maps, shows them, and can set your cruise speed to match.
 reviewed: 2026-09-06
 ---
 
 # Speed-Limit Assist (SLA)
+
+Speed-Limit Assist knows the speed limit where you are driving — from
+signs and from map data. It can show the limit, warn you, or set your
+cruise speed to match it.
+{ .zp-lede }
+
+<div class="zp-glance" markdown>
+
+- **Status** Out of the box it shows the limit (Information mode).
+- **Works on** Every supported Mazda.
+- **Settings** `Settings → Cruise → Speed Limit Assist Mode`{ .zp-path }
+  — Off, Information, Warning, or Assist. Assist changes your set speed
+  and needs [ICBM](icbm.md) or [alpha longitudinal](alpha-longitudinal.md). The source and
+  offset settings sit next to it — see
+  [Settings](../settings/index.md#cruise).
+- **Needs** Reading speed signs needs the nav SD card. See
+  [What you need](../getting-started/hardware.md).
+
+</div>
 
 Speed-Limit Assist adjusts your cruise speed automatically when you pass
 a speed sign. You confirm the change, or let it stick — the behavior is

@@ -1,12 +1,32 @@
 ---
 title: Alpha longitudinal
+type: feature
+description: The experimental mode where zoompilot controls your Mazda's gas and brakes itself. It turns off the radar, automatic emergency braking, and forward collision warning.
 reviewed: 2026-09-09
 ---
 
 # Alpha longitudinal (work in progress)
 
-Alpha longitudinal lets openpilot take full control of the gas and
-brakes, instead of Mazda's stock radar cruise.
+Alpha longitudinal lets [openpilot](../help/glossary.md#openpilot) take full control of the gas and
+brakes, instead of Mazda's stock radar cruise. "Longitudinal" means
+speed — forward and back — as opposed to steering. "Alpha" means it is
+early, experimental work.
+{ .zp-lede }
+
+<div class="zp-glance" markdown>
+
+- **Status** <span class="zp-badge zp-badge--experimental">Experimental</span>
+  Off out of the box.
+- **The trade** The car's radar turns off. Automatic emergency braking
+  and forward collision warning stop working while it is on.
+- **Works on** See [Availability](#availability) below. Recommended
+  with a 2022-25 CX-5 [EPS](../help/glossary.md#eps) motor, which steers down to a stop.
+- **Turn it on** `Settings → Developer → Alpha Longitudinal`{ .zp-path }
+  (on comma 3/3X it reads "sunnypilot Longitudinal Control (Alpha)").
+  A confirm page warns you first. The change applies once you are
+  stopped, and zoompilot restarts.
+
+</div>
 
 <div class="diagram">
 <svg viewBox="0 0 800 190" role="img" aria-label="Stock radar cruise versus alpha longitudinal: stock runs radar to PCM with AEB active; alpha runs the vision model and long planner to the PCM with the radar off">
@@ -76,11 +96,11 @@ and implementation for this feature.
 ## Dash errors while on alpha longitudinal
 
 If your dashboard throws cruise, LKAS, or radar errors, run the
-[ECU reset](../how-to/ecu-reset.md), but go straight to the long wait:
+[ECU reset](../help/ecu-reset.md), but go straight to the long wait:
 park, turn the car completely off for **15 minutes**, then drive again.
 A short power-down does not clear this fault.
 
-See also [Troubleshooting](../troubleshooting.md).
+See also [Troubleshooting](../help/troubleshooting.md).
 
 ## Availability
 

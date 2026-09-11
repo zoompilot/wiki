@@ -1,13 +1,36 @@
 ---
 title: ICBM
+type: feature
+description: ICBM changes your Mazda's cruise speed by pressing the car's own cruise buttons for you.
 reviewed: 2026-09-06
 ---
 
 # Intelligent Cruise Button Management (ICBM)
 
+Your Mazda's own radar cruise controls the gas and brakes. So
+zoompilot changes your speed the way you do: with the cruise buttons on
+the steering wheel. ICBM presses them for you, so features like Smart
+Cruise and Speed-Limit Assist can change your set speed.
+{ .zp-lede }
+
+<div class="zp-glance" markdown>
+
+- **Status** <span class="zp-badge zp-badge--alpha">Alpha</span> Off
+  out of the box.
+- **Works on** Every supported Mazda.
+- **Turn it on** `Settings → Cruise → Intelligent Cruise Button Management (ICBM) (Alpha)`{ .zp-path }
+  — see [Settings](../settings/index.md#cruise).
+- **Also unlocks** Custom step sizes for your cruise buttons, and the
+  Assist mode of [Speed-Limit Assist](speed-limit-assist.md).
+- **What you will notice** The set speed on your dash changes on its
+  own, as if you pressed the buttons. Press a button yourself and you
+  are back in control at once.
+
+</div>
+
 ICBM is the core system that lets zoompilot safely manage your cruise set
 speed through the car's own cruise buttons. On cars without direct
-longitudinal control, openpilot cannot command acceleration itself — ICBM
+longitudinal control, [openpilot](../help/glossary.md#openpilot) cannot command acceleration itself — ICBM
 presses the stock cruise buttons for you, at the right moments.
 
 <div class="diagram">
@@ -41,7 +64,7 @@ presses the stock cruise buttons for you, at the right moments.
 
 ## What it does for you
 
-- **Restores your speed exactly.** The servo presses until the ECU's
+- **Restores your speed exactly.** The [servo](../help/glossary.md#servo) presses until the ECU's
   readback matches the target speed.
 - **Hands control back instantly.** Press a cruise button yourself in the
   middle of an adjustment, and zoompilot stops and gives you control

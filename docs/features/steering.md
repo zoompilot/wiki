@@ -1,9 +1,31 @@
 ---
 title: Steering improvements
+type: feature
+description: How zoompilot gets more steering out of your Mazda's steering motor, tuned for every speed and learned while you drive.
 reviewed: 2026-09-07
 ---
 
 # Steering improvements
+
+zoompilot steers your Mazda with the full strength of its steering
+motor. It tunes the steering separately for every speed, from parking
+lots to the highway, and learns your car while you drive. You do not
+need to adjust anything.
+{ .zp-lede }
+
+<div class="zp-glance" markdown>
+
+- **Status** <span class="zp-badge zp-badge--ok">On by default</span>
+  on Mazdas with a 2022-25 CX-5 steering motor (EPS)
+- **Works on** Every supported Mazda. Steering down to a stop needs the
+  2022-25 CX-5 EPS motor, factory-fitted or swapped in.
+- **Settings** `Settings → Steering`{ .zp-path } — Self-Tune,
+  Speed-Dependent Self-Tune, and Enforce Torque Lateral Control. Leave
+  them on. See [Settings](../settings/index.md#steering).
+- **What you will notice** Confident steering at low speed, fewer
+  wobbles on the highway, and better steering over your first drives.
+
+</div>
 
 zoompilot reverse-engineered the Mazda steering hardware — the electric
 power steering (EPS) motor — and asks it for what it can actually
@@ -12,7 +34,7 @@ and validated against thousands of miles of driving.
 
 ## The speed-dependent tune
 
-Stock openpilot uses one lateral acceleration factor for all speeds.
+Stock [openpilot](../help/glossary.md#openpilot) uses one lateral acceleration factor for all speeds.
 zoompilot encodes the EPS's full torque curve instead. The result is more
 confident steering in neighborhoods and fewer wobbles on the highway.
 
@@ -49,7 +71,7 @@ real figures, then refined against driving data.
 ## Steering to zero
 
 On a 2022-25 CX-5 EPS motor — factory-fitted, or swapped into an older
-Mazda — zoompilot steers down to 0 mph. Fingerprinting identifies the
+Mazda — zoompilot steers down to 0 mph. [Fingerprinting](../help/glossary.md#fingerprint) identifies the
 motor either way. See [Supported cars](../getting-started/supported-cars.md).
 
 ## Design details
@@ -58,3 +80,5 @@ The full evidence and design record lives in the technical section:
 
 - [Mazda lateral: evidence and design notes](../technical/mazda-lateral.md)
 - [Lateral tune: v2 torque controller](../technical/lateral-tune.md)
+- Tempted to tune by hand? Read [Custom tune](../settings/custom-tune.md)
+  first.
