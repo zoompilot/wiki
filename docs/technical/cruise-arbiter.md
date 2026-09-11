@@ -6,8 +6,9 @@
     and your own button presses all want it: setpoint ownership, SLA
     sessions, dismiss semantics, and the reconciler. It is the
     engineering record, written for readers who know openpilot. The
-    plain-words page is [Speed-Limit Assist](../features/speed-limit-
-    assist.md) and [Smart Cruise](../features/smart-cruise.md).
+    plain-words pages are
+    [Speed-Limit Assist](../features/speed-limit-assist.md) and
+    [Smart Cruise](../features/smart-cruise.md).
 
 ??? info "Code and tests"
 
