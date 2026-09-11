@@ -148,8 +148,9 @@ firmware. Decides what zoompilot is allowed to do.
 { #fingerprint }
 
 **steer-to-zero flag** — `STEER_TO_ZERO_EPS`: the flag that marks the
-2022-25 CX-5 motor, wherever it is fitted. Unlocks 0 mph steering, the
-full torque envelope, and alpha longitudinal.
+2022-25 CX-5 motor, wherever it is fitted. Unlocks 0 mph steering and
+the full torque envelope. It is the recommended motor for alpha
+longitudinal.
 { #steer-to-zero-flag }
 
 **torque envelope** — what the EPS may be asked for: 1200/12/12 on the
@@ -178,7 +179,9 @@ lateral acceleration is worth; the main learned number.
 { #laf }
 
 **MADS** — Modular Assistive Driving System: steering can stay engaged
-without cruise.
+without cruise. On by default. The brake pedal and the cancel button
+stop cruise control but leave steering on; turning the cruise off with
+its main button releases steering too.
 { #mads }
 
 **UEM** — unified engagement mode: one pedal action engages steering

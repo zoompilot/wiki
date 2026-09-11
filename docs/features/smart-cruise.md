@@ -15,14 +15,16 @@ original speed back after it.
 <div class="zp-glance" markdown>
 
 - **Status** Off out of the box.
-- **Works on** Every supported Mazda. With the stock radar cruise, it
-  changes your set speed through [ICBM](icbm.md); with alpha
-  longitudinal, zoompilot controls the speed directly.
+- **Works on** Every supported Mazda. With the stock radar cruise
+  (MRCC, the default), it changes your set speed through
+  [ICBM](icbm.md), so ICBM must be on. With alpha longitudinal,
+  zoompilot controls the speed directly.
 - **Turn it on** `Settings → Cruise → Smart Cruise Control: Vision`{ .zp-path }
   (curves from the camera) and
   `Settings → Cruise → Smart Cruise Control: Map`{ .zp-path } (curves
   from map data) — see [Settings](../settings/index.md#cruise).
-- **Needs** Map mode needs the nav SD card. See
+- **Needs** [ICBM](icbm.md) turned on, unless you run alpha
+  longitudinal. Map mode also needs the nav SD card. See
   [What you need](../getting-started/hardware.md).
 - **What you will notice** The set speed on your dash drops before a
   curve and climbs back after it.

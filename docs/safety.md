@@ -16,8 +16,10 @@ this wiki every driver must read.
     - **You are the driver.** zoompilot is a driver assist, not a
       replacement for an attentive driver. Keep your eyes on the road
       and be ready to steer and brake at all times.
-    - **You can always take over.** Cancel cruise control, and the car
-      is fully yours again.
+    - **You can always take over.** Turn the cruise off with its main
+      button, and steering and speed are both yours again. With MADS,
+      which is on by default, the brake pedal and the cancel button stop
+      cruise control but leave steering on.
     - **A camera watches your attention.** If you look away, zoompilot
       warns you, then turns itself off.
     - **Alpha longitudinal turns the radar off.** Automatic emergency
@@ -40,6 +42,11 @@ this wiki every driver must read.
   completely off to reset. See [ECU reset](help/ecu-reset.md).
 - Driver monitoring stays active in zoompilot. Do not disable or weaken
   it.
+- [MADS](help/glossary.md#mads) is on by default: steering can stay
+  active without cruise control. Pressing the brake pedal or the cancel button stops
+  cruise control, but steering stays on. To hand steering back, turn the
+  cruise off with its main button. See
+  [Settings](settings/index.md#steering).
 
 ## openpilot safety
 

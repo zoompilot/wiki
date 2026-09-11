@@ -106,11 +106,12 @@ See also [Troubleshooting](../help/troubleshooting.md).
 
 - CX-5 2022-25: supported since the first zoompilot release.
 - Mazdas with a swapped 2022-25 CX-5 EPS: supported since 2026.08.25.
-  Alpha longitudinal follows the steering motor: a stock older EPS
-  stops steering at low speed, so stop-and-go would run unsteered. On
-  a swapped CX-9, the 2021-23 is validated. The 2016-2020 CX-9 and the
-  2016.5 CX-5 carry an older radar, and alpha longitudinal is expected
-  to work there but is not validated yet.
+  On a swapped CX-9, the 2021-23 is validated. The 2016-2020 CX-9 and
+  the 2016.5 CX-5 carry an older radar, and alpha longitudinal is
+  expected to work there but is not validated yet.
+- Mazdas with their stock older EPS: available since a recent change.
+  The 2022-25 CX-5 EPS is still recommended: a stock older EPS stops
+  steering at low speed, so stop-and-go would run unsteered.
 
 See [Supported cars](../getting-started/supported-cars.md).
 

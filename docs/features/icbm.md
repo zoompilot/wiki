@@ -20,8 +20,9 @@ Cruise and Speed-Limit Assist can change your set speed.
 - **Works on** Every supported Mazda.
 - **Turn it on** `Settings → Cruise → Intelligent Cruise Button Management (ICBM) (Alpha)`{ .zp-path }
   — see [Settings](../settings/index.md#cruise).
-- **Also unlocks** Custom step sizes for your cruise buttons, and the
-  Assist mode of [Speed-Limit Assist](speed-limit-assist.md).
+- **Needed for** [Smart Cruise](smart-cruise.md) and the Assist mode
+  of [Speed-Limit Assist](speed-limit-assist.md) on the stock radar
+  cruise, plus custom step sizes for your cruise buttons.
 - **What you will notice** The set speed on your dash changes on its
   own, as if you pressed the buttons. Press a button yourself and you
   are back in control at once.

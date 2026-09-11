@@ -25,8 +25,9 @@ Written for Nick, to read before deciding what to merge.
   73 → 23. Navigation problems flagged by the inventory (pages nested
   too deep, nav and folder disagreeing, orphans, dead links): 31 → 0.
   Every page passes a 390px no-overflow check in both schemes.
-- **Needs you.** Seven facts I could not confirm are listed under
-  *Open questions*; nothing was guessed to fill a gap.
+- **Needs you.** Six of seven open fact questions are answered and
+  applied; one (radar readouts) and two small follow-ups remain under
+  *Open questions*. Nothing was guessed to fill a gap.
 
 ## How the review was done
 
@@ -54,9 +55,9 @@ commits of history, and the live site on zoompilot-wiki.pages.dev.
    "zoompilot targets Mazdas with a 2022-25 CX-5 EPS"; Supported cars
    says every listed Mazda runs. The FAQ said the CX-5 motor "unlocks
    alpha longitudinal"; Supported cars ticks alpha longitudinal on the
-   stock 2017-21 CX-5 and calls the motor "recommended". Fixed on
-   Troubleshooting and the FAQ. Still open on the glossary and
-   technical/eps-swap — see *Open questions*.
+   stock 2017-21 CX-5 and calls the motor "recommended". Fixed
+   everywhere after Nick confirmed the motor is recommended, not
+   required (see *Open questions*).
 3. **A reader page linked a maintainer file.** Settings linked
    `assets/settings/README.md` (the screenshot capture checklist).
    Moved to CONTRIBUTING.
@@ -173,8 +174,8 @@ still read correctly. All of it is shown live on the style guide page.
 | What you need | rewritten: what a comma device is, the kit, what "harness" means, extras explained |
 | Safety | "In short" box on top, next step; comma's frozen text untouched |
 | Install | glance box (before you start, you need, time), numbered steps, branches explained, updates section |
-| First drive | lede, steps, "engage" and "nags" explained; your wording kept |
-| How zoompilot works | lede and next-step cards only; your "You" section untouched |
+| First drive | lede, steps, "engage" and "nags" explained, Zeph credited, take-over corrected for MADS |
+| How zoompilot works | lede and next-step cards; in your "You" section only the take-over sentence changed, for MADS |
 | Which fork, and why | short-answer box, plain row labels, glosses; facts unchanged |
 | Features (hub) | grouped cards with status badges, "Out of the box" table |
 | Each feature page | lede and *At a glance* (status, works on, switch, needs, what you will notice) |
@@ -188,29 +189,33 @@ still read correctly. All of it is shown live on the style guide page.
 | Community (hub) | take part / follow along / for wiki editors |
 | Technical pages | "About this page" + collapsed "Code and tests"; author's text unchanged; no front matter added |
 
-## Open questions — facts I could not confirm
+## Open questions — answered 2026-09-11
 
-1. **Brake pedal and MADS.** First drive and comma's safety text say
-   the brake pedal is a way to cancel. The settings data says Steering
-   Mode on Brake Pedal defaults to *Remain Active*. On a default
-   install, does the brake release steering? New text uses your
-   "Cancel cruise control, and the car is fully yours again"; the old
-   line in First drive is unchanged.
-2. **Smart Cruise on the stock radar.** I wrote that it changes the set
-   speed "through ICBM". ICBM is off by default — does a driver have to
-   turn ICBM on for Smart Cruise to work on stock cruise?
-3. **Alpha longitudinal availability.** Supported cars says the CX-5
-   motor is *recommended*; the glossary's steer-to-zero flag entry and
-   the EPS swap table still say it *unlocks* / is *not available*
-   without it. Which is current?
-4. **"The zoompilot author"** on First drive — who? (zeph, you, or
-   another?)
-5. **Nav SD card** — described as "Mazda's navigation map card, which
-   goes in your car's own SD card slot". Right?
-6. **Install needs the device online** (Wi-Fi or hotspot) — right for
-   every device?
-7. **Radar readouts setting** — Sensor readouts names only the
-   blind-spot screen setting; is there a switch for the radar readout?
+| # | Question | Nick's answer | Applied |
+| --- | --- | --- | --- |
+| 1 | Does the brake release steering on a default install? | No. sunnypilot's MADS is on by default; the driver turns the cruise state off (not just cancels cruise control) to release steering. | Home safety band, Safety ("In short" and a new zoompilot bullet), First drive, How it works, and the glossary MADS entry now say: turn the cruise off with its main button; the brake and cancel button leave steering on. comma's frozen text is untouched. |
+| 2 | Does Smart Cruise need ICBM on stock cruise? | Yes. ICBM is off by default; MRCC is used by default. | Smart Cruise glance ("ICBM must be on"), ICBM glance ("Needed for"), Features "Out of the box" table. |
+| 3 | Is the CX-5 motor required for alpha longitudinal? | No longer — a recent change. Recommended. | Glossary steer-to-zero flag, EPS swap intro and table, Alpha longitudinal availability, comparison "who should run what". |
+| 4 | Who is "the zoompilot author"? | Zeph, lead developer and maintainer. | First drive credits Zeph (@zephleggett). |
+| 5 | Nav SD card wording | Mostly accurate. | Kept. |
+| 6 | Install needs the device online | Correct. | Kept. |
+| 7 | Radar readouts setting | Unclear. | Still open — see below. |
+
+Still open:
+
+- **Radar readouts.** The Sensor readouts page says zoompilot shows
+  what the forward radar sees — distance, angle, and closing speed for
+  up to four cars ahead. Is that shown on the device screen without a
+  setting, or behind one (for example on the Visuals panel)? The
+  page's *At a glance* box names only the blind-spot setting until
+  this is known.
+- **Button naming.** New take-over text says "turn the cruise off with
+  its main button" (the MRCC main switch, per the 2026.09.05 release
+  notes). Swap in the exact name Mazda owners use if it differs.
+- **Technical mirror.** `technical/mazda-longitudinal.md` has an
+  "Alpha-long availability rule" section mirrored from the zoompilot
+  repo; if it still describes the EPS gate, it needs the upstream
+  update, not a wiki edit.
 
 ## Before merging
 

@@ -110,8 +110,11 @@ gives you, and adds work made for Mazdas.
 
 - **You are the driver.** zoompilot assists you. It does not replace
   an attentive driver.
-- **Take over at any time.** Cancel cruise control, and the car is fully
-  yours again.
+- **Take over at any time.** Turn the cruise off with its main button,
+  and steering and speed are both yours again. With
+  [MADS](help/glossary.md#mads), which is on by default, the brake
+  pedal and the cancel button stop cruise control but leave steering
+  on.
 - **A camera checks that you are watching the road.** If you look
   away, zoompilot warns you, then turns itself off.
 - **One mode turns off emergency braking.** Alpha longitudinal turns

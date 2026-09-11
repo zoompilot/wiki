@@ -107,9 +107,9 @@ feature needs.
 | --- | --- | --- |
 | [Steering](steering.md) | On, on Mazdas with a 2022-25 CX-5 EPS | — |
 | [Alert fixes](alerts.md) | Always active | — |
-| [Smart Cruise](smart-cruise.md) | Off | Map mode: the nav SD card |
+| [Smart Cruise](smart-cruise.md) | Off | ICBM on, with the stock radar cruise. Map mode: the nav SD card |
 | [Speed-Limit Assist](speed-limit-assist.md) | Information: shows the limit | Sign reading: the nav SD card. Assist mode: ICBM or alpha longitudinal |
-| [ICBM](icbm.md) | Off | — |
+| [ICBM](icbm.md) | Off | — (needed by Smart Cruise and Speed-Limit Assist's Assist mode on stock cruise) |
 | [Sensor readouts](sensor-readouts.md) | Blind-spot warnings on screen: off | Speed signs: the nav SD card |
 | [Alpha longitudinal](alpha-longitudinal.md) | Off | Recommended: a 2022-25 CX-5 EPS |
 
