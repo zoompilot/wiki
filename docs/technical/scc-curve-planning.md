@@ -1,9 +1,18 @@
 # Curve and limit speed planning (SCC vision, SCC map, SLA publication)
 
-Code: `openpilot/sunnypilot/selfdrive/controls/lib/smart_cruise_control/` (`limits.py`,
-`speed_profile.py`, `vision_controller.py`, `map_controller.py`) and the two SLA
-publishers in `controls/lib/speed_limit/` (`speed_limit_assist.py`, `assist_mirror.py`).
-Tests: `smart_cruise_control/tests/`, `speed_limit/tests/`.
+!!! abstract "About this page"
+
+    How Smart Cruise plans slowdowns for curves from the model and the
+    map, and how Speed-Limit Assist publishes its targets. It is the
+    engineering record, written for readers who know openpilot. The
+    plain-words page is [Smart Cruise](../features/smart-cruise.md).
+
+??? info "Code and tests"
+
+    Code: `openpilot/sunnypilot/selfdrive/controls/lib/smart_cruise_control/` (`limits.py`,
+    `speed_profile.py`, `vision_controller.py`, `map_controller.py`) and the two SLA
+    publishers in `controls/lib/speed_limit/` (`speed_limit_assist.py`, `assist_mirror.py`).
+    Tests: `smart_cruise_control/tests/`, `speed_limit/tests/`.
 
 ## The shape of the problem
 

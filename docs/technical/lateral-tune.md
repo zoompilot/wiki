@@ -1,16 +1,27 @@
 # Lateral tune: v2 torque controller, shared layer and speed-bin learner
 
+!!! abstract "About this page"
+
+    The v2 torque controller, the shared EPS layer, and the speed-bin
+    learner, with every constant, route and acceptance number. It is the
+    engineering record, written for readers who know openpilot. The
+    plain-words page is [Steering
+    improvements](../features/steering.md).
+
 This is where the measurements live. The source files carry one to three lines of what and
 why per mechanism; every number, route id, attribution study and rejected alternative that
 justified them is here. Routes are the CX-5 2022 test car's unless stated. The acceptance
 plan for the next on-car pass is at the end of this page.
+{ .zp-lede }
 
-Files: `openpilot/sunnypilot/selfdrive/controls/lib/latcontrol_torque_v2.py` (the tune),
-`latcontrol_torque_ext.py` and `latcontrol_torque_ext_override.py` (the shared extension:
-EPS rail, speed-dependent torque), `steer_limit.py` (the classifier),
-`controlsd_ext.py` (wiring), `openpilot/sunnypilot/selfdrive/locationd/torqued_ext.py` (the
-speed-bin learner and its cache), `openpilot/sunnypilot/selfdrive/car/interfaces.py` (the
-Mazda seed).
+??? info "Source files"
+
+    Files: `openpilot/sunnypilot/selfdrive/controls/lib/latcontrol_torque_v2.py` (the tune),
+    `latcontrol_torque_ext.py` and `latcontrol_torque_ext_override.py` (the shared extension:
+    EPS rail, speed-dependent torque), `steer_limit.py` (the classifier),
+    `controlsd_ext.py` (wiring), `openpilot/sunnypilot/selfdrive/locationd/torqued_ext.py` (the
+    speed-bin learner and its cache), `openpilot/sunnypilot/selfdrive/car/interfaces.py` (the
+    Mazda seed).
 
 ## Lineage
 

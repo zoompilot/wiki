@@ -59,7 +59,7 @@ the fallbacks that were tried and rejected — is in
 - **Check recognition.** On the first drive, confirm the device
   recognizes the car. If it does not, or support looks wrong, stop and
   post on the Discord with a route ID (see
-  [Share a route](../troubleshooting.md#share-a-route)).
+  [Share a route](../help/share-a-route.md)).
 - **Expect a learning period.** The self-tune seeds come from a CX-5.
   On any swapped car the learner starts from those and adapts to your
   motor over the first drives. CX-9 owners report the longest
@@ -67,4 +67,4 @@ the fallbacks that were tried and rejected — is in
   [Steering improvements](../features/steering.md) and
   [First drive](../getting-started/first-drive.md).
 - **Custom tune stays off.** The learned values beat hand values. See
-  [Custom tune](../how-to/custom-tune.md).
+  [Custom tune](../settings/custom-tune.md).

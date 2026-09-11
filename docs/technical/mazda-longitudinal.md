@@ -1,5 +1,13 @@
 # Mazda longitudinal (alpha long): evidence and design notes
 
+!!! abstract "About this page"
+
+    The measurement record behind alpha longitudinal: radar takeover and
+    hand-back, the CRZ_INFO checksum, stop-and-go, and MRCC state
+    semantics. It is the engineering record, written for readers who
+    know openpilot. The plain-words page is [Alpha
+    longitudinal](../features/alpha-longitudinal.md).
+
 This is the measurement record behind the Mazda longitudinal port in `opendbc/car/mazda/`
 (`carcontroller.py`, `carstate.py`, `longitudinal.py`, `mazdacan.py`, `radar_interface.py`,
 `values.py`) and the panda side in `opendbc/safety/modes/mazda.h`. The source comments say what

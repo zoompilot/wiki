@@ -1,5 +1,13 @@
 # Mazda lateral on the 2022 EPS: evidence and design notes
 
+!!! abstract "About this page"
+
+    The measurement record behind Mazda steering on the 2022-25 CX-5
+    EPS: detection, the torque envelope, speed-dependent limits, and the
+    LKAS_BLOCK latch. It is the engineering record, written for readers
+    who know openpilot. The plain-words page is [Steering
+    improvements](../features/steering.md).
+
 This is the measurement record behind the steering side of the Mazda port: the 2022 CX-5 EPS
 detection, the 1200/12/12 torque envelope, the speed-dependent STEER_MAX, the EPS ceiling clamp,
 the LKAS_BLOCK non-delivery latch and the history of the camera's ERR_BIT_1 fault. The code is in

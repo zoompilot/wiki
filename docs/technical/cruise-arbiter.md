@@ -1,11 +1,22 @@
 # Cruise arbiter
 
-Code: `openpilot/sunnypilot/selfdrive/car/cruise_arbiter.py` (session and press
-classification), `cruise_ext.py` (increment hooks and the dash reconciler),
-`card_ext.py` (call sites), `controls/lib/speed_limit/assist_mirror.py` (plannerd mirror),
-`controls/lib/speed_limit/speed_limit_assist.py` (the pcm-op-long machine, unchanged
-upstream design). Tests: `car/tests/test_cruise_arbiter*.py`, `car/tests/test_icbm_reconcile.py`,
-`car/tests/test_icbm_sla_*.py`, `speed_limit/tests/`.
+!!! abstract "About this page"
+
+    Who owns the cruise set speed when Speed-Limit Assist, curve control
+    and your own button presses all want it: setpoint ownership, SLA
+    sessions, dismiss semantics, and the reconciler. It is the
+    engineering record, written for readers who know openpilot. The
+    plain-words page is [Speed-Limit Assist](../features/speed-limit-
+    assist.md) and [Smart Cruise](../features/smart-cruise.md).
+
+??? info "Code and tests"
+
+    Code: `openpilot/sunnypilot/selfdrive/car/cruise_arbiter.py` (session and press
+    classification), `cruise_ext.py` (increment hooks and the dash reconciler),
+    `card_ext.py` (call sites), `controls/lib/speed_limit/assist_mirror.py` (plannerd mirror),
+    `controls/lib/speed_limit/speed_limit_assist.py` (the pcm-op-long machine, unchanged
+    upstream design). Tests: `car/tests/test_cruise_arbiter*.py`, `car/tests/test_icbm_reconcile.py`,
+    `car/tests/test_icbm_sla_*.py`, `speed_limit/tests/`.
 
 <div class="diagram">
 <svg viewBox="0 0 800 190" role="img" aria-label="The cruise arbiter picks the setpoint owner per car class: pcm-op-long cars run openpilot and SLA in plannerd, ICBM cars let the stock ECU step on button presses, and op-long cars without pcmCruise run openpilot's v_cruise">

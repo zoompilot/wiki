@@ -1,5 +1,12 @@
 # Mazda fingerprinting: VIN decode and the EPS-swap fallback
 
+!!! abstract "About this page"
+
+    How zoompilot identifies a Mazda from its VIN and ECU firmware, and
+    how it recognizes a swapped-in steering motor. It is the engineering
+    record, written for readers who know openpilot. The plain-words page
+    is [Will it work on my car?](../getting-started/supported-cars.md).
+
 This records how `opendbc/car/mazda/values.py` identifies a Mazda when firmware matching fails,
 and how the `STEER_TO_ZERO_EPS` flag is derived from the identified hardware. The relevant code
 is `match_fw_to_car_fuzzy`, the `WMI` enum, the per-platform `wmis` / `chassis_codes` / `years`
