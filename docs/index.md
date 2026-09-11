@@ -1,5 +1,6 @@
 ---
 title: Home
+description: The owner's manual for zoompilot, free driver-assistance software for Mazda cars. Start here, check your car, install, and drive.
 hide:
   - navigation
   - toc
@@ -12,18 +13,21 @@ hide:
 # zoompilot wiki
 
 <div class="zoom-tagline" markdown>
-a Mazda-optimized fork of sunnypilot.
+The owner's manual for zoompilot — driver-assistance software for your Mazda.
 </div>
 
 <div class="zoom-lede" markdown>
-zoompilot unlocks full steering performance and adds curve speed control,
-speed-limit assist, and experimental longitudinal modes for your comma
-device. This wiki is the manual: installs, features, safety, and the
-measurement record behind every change.
+zoompilot is free, open-source software that helps your Mazda steer and
+manage its cruise speed while you drive. It runs on a comma device: a
+small computer with its own cameras that mounts behind your windshield.
+You stay the driver the whole time. This wiki takes you from "what is
+this?" to your first drive.
 </div>
 
-[Install :material-rocket-launch:](getting-started/install.md){ .md-button .md-button--primary }
-[Read the safety page :material-shield-alert:](safety.md){ .md-button }
+<div class="zp-cta-row" markdown>
+[Start here →](getting-started/index.md){ .md-button .md-button--primary }
+[Will it work on my car?](getting-started/supported-cars.md){ .md-button }
+</div>
 
 <div class="zp-build" markdown>
 Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026-08-25</span>
@@ -46,99 +50,114 @@ Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026
 
 </div>
 
-<div class="zoom-eyebrow">01 · start driving</div>
+<div class="zp-home-section" markdown>
 
-<div class="grid cards zp-cards" markdown>
+## From zero to your first drive
 
-- :material-car-side: __Getting started__
+Six short pages, in order. Each one ends with a link to the next.
 
-    ---
+<div class="zp-journey" markdown>
 
-    Supported Mazdas, hardware you need, and how to install `zoompilot/main`
-    on a comma device.
-
-    [Start here](getting-started/index.md)
-
-- :material-shield-alert: __Safety__
-
-    ---
-
-    Read this before you drive with zoompilot. Alpha longitudinal turns off your
-    radar, disabling automatic emergency braking and forward collision warnings.
-
-    [Read first](safety.md)
-
-- :material-speedometer: __Features__
-
-    ---
-
-    What zoompilot adds on top of sunnypilot: steering, cruise enhancements,
-    sensor readouts, and alpha longitudinal.
-
-    [Browse features](features/index.md)
+1. [What is zoompilot?](getting-started/what-is-zoompilot.md)
+   What it is, what it adds to your Mazda, and who makes it.
+2. [Will it work on my car?](getting-started/supported-cars.md)
+   The Mazda models and years it runs on.
+3. [What you need](getting-started/hardware.md)
+   The comma device and the Mazda cable kit.
+4. [Safety rules](safety.md){ .zp-journey__safety }
+   What stays your job, and the one mode that turns off emergency braking.
+5. [Install](getting-started/install.md)
+   Type one address on the device. No computer needed.
+6. [First drive](getting-started/first-drive.md)
+   The recommended setup, and how to turn it on and off.
 
 </div>
 
-<div class="zoom-eyebrow">02 · go deeper</div>
+</div>
 
-<div class="grid cards zp-cards" markdown>
+<div class="zp-home-section" markdown>
 
-- :material-flask: __Technical notes__
+## What it does on the road
 
-    ---
+zoompilot builds on the driver assistance your comma device already
+gives you, and adds work made for Mazdas.
 
-    The measurement record behind the fork: constants tables, route evidence,
-    and the ideas that were tried and rejected.
+<div class="zp-tiles" markdown>
 
-    [Read the notes](technical/index.md)
-
-- :material-wrench: __Guides__
-
-    ---
-
-    ECU reset, custom tune, privacy, and the EPS swap.
-
-    [Open the guides](how-to/index.md)
-
-- :material-puzzle: __Settings__
-
-    ---
-
-    Every toggle in the zoompilot menus, what it does, and what it changes
-    about the drive.
-
-    [See the settings](settings/index.md)
+- :material-steering: [Steering](features/steering.md)
+  Uses the full strength of the 2022-25 CX-5 steering motor, tuned for
+  every speed.
+- :material-road-variant: [Smart Cruise](features/smart-cruise.md)
+  Lowers your cruise speed before a curve, then brings it back.
+- :material-speedometer: [Speed-Limit Assist](features/speed-limit-assist.md)
+  Reads speed limits and can set your cruise speed to match.
+- :material-button-pointer: [Cruise buttons (ICBM)](features/icbm.md)
+  Changes your cruise speed by pressing the car's own buttons for you.
+- :material-bell-alert: [Fewer false alerts](features/alerts.md)
+  Known false Mazda warnings are gone. Real faults stay.
+- :material-car-cruise-control: [Alpha longitudinal](features/alpha-longitudinal.md) <span class="zp-badge zp-badge--experimental">Experimental</span>
+  zoompilot drives the gas and brakes. Turns emergency braking off.
 
 </div>
 
-<div class="zoom-eyebrow">03 · community</div>
+[All features →](features/index.md)
 
-<div class="grid cards zp-cards" markdown>
+</div>
 
-- :material-account-group: __Get involved__
+<div class="zp-safety" markdown>
 
-    ---
+## Safety comes first
 
-    Get help, give feedback, and contribute on GitHub or Discord. Common
-    questions are answered in the [FAQ](community/faq.md).
+- **You are the driver.** zoompilot assists you. It does not replace
+  an attentive driver.
+- **Take over at any time.** Cancel cruise control, and the car is fully
+  yours again.
+- **A camera checks that you are watching the road.** If you look
+  away, zoompilot warns you, then turns itself off.
+- **One mode turns off emergency braking.** Alpha longitudinal turns
+  the car's radar off, so automatic emergency braking and forward
+  collision warning stop working while it is on.
 
-    [Join in](community/index.md)
+[Read the safety page :material-shield-alert:](safety.md){ .md-button }
 
-- :material-history: __Releases__
+</div>
 
-    ---
+<div class="zp-home-section" markdown>
 
-    What changed in every zoompilot build, with the reasoning behind it.
+## Need help?
 
-    [Read the changelog](releases/changelog.md)
+<div class="zp-tiles" markdown>
 
-- :material-help-circle: __Troubleshooting__
+- :material-help-circle: [Troubleshooting](help/troubleshooting.md)
+  Dashboard errors, weak steering, will not engage — pick what you see.
+- :material-frequently-asked-questions: [FAQ](help/faq.md)
+  Cost, updates, uploads, battery, and more quick answers.
+- :material-book-open-variant: [Words you'll see](help/glossary.md)
+  Plain meanings for EPS, fork, route, and the rest.
+- :material-message-text: [Ask on Discord](https://discord.gg/jFWkHC2uhh)
+  The zoompilot community. Bring your car, release, and a route.
 
-    ---
+</div>
 
-    No GPS, no steering, upload stuck? Start with the common fixes before
-    asking on Discord.
+[All help pages →](help/index.md) · [Get involved →](community/index.md)
 
-    [Fix a problem](troubleshooting.md)
+</div>
+
+<div class="zp-home-section" markdown>
+
+## Go deeper
+
+<div class="zp-tiles" markdown>
+
+- :material-chart-timeline-variant: [How zoompilot works](getting-started/how-it-works.md)
+  One drive, from camera to wheels.
+- :material-source-fork: [Which fork, and why](getting-started/comparison.md)
+  zoompilot, sunnypilot, and openpilot side by side.
+- :material-flask: [Technical notes](technical/index.md)
+  The measurement record behind every change.
+- :material-history: [Release notes](releases/changelog.md)
+  What changed in every zoompilot build.
+
+</div>
 
 </div>

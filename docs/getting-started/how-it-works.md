@@ -1,5 +1,7 @@
 ---
 title: How zoompilot works
+type: explanation
+description: Follow one drive from the camera to the wheels, and see what zoompilot changes on the way. No prior openpilot knowledge needed.
 reviewed: 2026-09-09
 ---
 
@@ -7,10 +9,11 @@ reviewed: 2026-09-09
 
 This page follows one drive from camera to wheels, and shows what
 zoompilot changes on the way. No prior openpilot knowledge needed.
+{ .zp-lede }
 
 ## The stack
 
-openpilot is software that runs on a comma device. The device sits on
+openpilot is software that runs on a [comma device](hardware.md). The device sits on
 the car's camera harness, which gives it access to the car's network.
 Its own road camera watches the road, and a neural network model reads
 it. The planners — one for steering (lateral), one for speed
@@ -93,7 +96,7 @@ work:
 
 zoompilot's answer is a speed-dependent torque tune. Driving is sorted
 into seven speed bands, from parking speeds to
-highway. For each band, [**self-tune**](../reference/glossary.md)
+highway. For each band, [**self-tune**](../help/glossary.md#self-tune)
 measures two numbers — the torque gain and the friction — and keeps a
 separate steering tune per band.
 Fresh installs start from a tune learned on a real CX-5, then refine it
@@ -110,7 +113,7 @@ that motor gets the same treatment.
 
 With stock software, Mazda's radar cruise computer — the MRCC radar —
 controls speed, and openpilot cannot command the gas and brakes. zoompilot's
-[ICBM](../features/icbm.md) servo presses the cruise buttons so the dash
+[ICBM](../features/icbm.md) [servo](../help/glossary.md#servo) presses the cruise buttons so the dash
 set speed follows the plan; the radar does the rest on its own. zoompilot
 adds its cruise features on top of this: [curve slowdowns](../features/smart-cruise.md),
 [speed-limit awareness](../features/speed-limit-assist.md), and a
@@ -144,12 +147,15 @@ The device's driver-monitoring camera watches your attention, and
 warns then disengages if it finds you aren't paying attention to the
 road. Read the [safety page](../safety.md) before your first drive.
 
-## Where to go next
+<div class="zp-next" markdown>
 
-- [Supported cars](supported-cars.md) — which Mazdas have the motor
-  this page is about
-- [Install](install.md) — put zoompilot on a comma device
-- [First drive](first-drive.md) — recommended settings
-- [Features](../features/index.md) — what each change does on the road
-- [Technical notes](../technical/index.md) — the measurement record
-  behind every claim on this page
+- [Will it work on my car?](supported-cars.md)
+  Which Mazdas have the motor this page is about
+- [Install](install.md)
+  Put zoompilot on a comma device
+- [Features](../features/index.md)
+  What each change does on the road
+- [Technical notes](../technical/index.md)
+  The measurement record behind every claim on this page
+
+</div>

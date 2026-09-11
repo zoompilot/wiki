@@ -1,10 +1,29 @@
 ---
+title: Safety
+type: reference
+description: The safety rules for driving with zoompilot, including the alpha longitudinal radar warning and openpilot's limitations.
 reviewed: 2026-09-09
 ---
 
 # Safety
 
-Read this page in full before using zoompilot.
+Read this page in full before using zoompilot. It is the one page in
+this wiki every driver must read.
+{ .zp-lede }
+
+!!! abstract "In short"
+
+    - **You are the driver.** zoompilot is a driver assist, not a
+      replacement for an attentive driver. Keep your eyes on the road
+      and be ready to steer and brake at all times.
+    - **You can always take over.** Cancel cruise control, and the car
+      is fully yours again.
+    - **A camera watches your attention.** If you look away, zoompilot
+      warns you, then turns itself off.
+    - **Alpha longitudinal turns the radar off.** Automatic emergency
+      braking and forward collision warning stop working while it is on.
+    - **zoompilot has limits.** Rain, glare, sharp curves, stopped cars
+      and more can defeat it. The lists are below.
 
 ## zoompilot safety
 
@@ -18,7 +37,7 @@ Read this page in full before using zoompilot.
 - zoompilot is experimental software. You drive the car, follow the law,
   and carry all the risk.
 - If your dashboard shows cruise, LKAS, or radar errors, turn the car
-  completely off to reset. See [ECU reset](how-to/ecu-reset.md).
+  completely off to reset. See [ECU reset](help/ecu-reset.md).
 - Driver monitoring stays active in zoompilot. Do not disable or weaken
   it.
 
@@ -170,3 +189,10 @@ Do not rely on driver monitoring to assess your level of attention.
 
 The list above does not cover every situation. **It is the driver's
 responsibility to be in control of the vehicle at all times.**
+
+<div class="zp-next" markdown>
+
+- [Install zoompilot](getting-started/install.md)
+  Put it on your comma device
+
+</div>
