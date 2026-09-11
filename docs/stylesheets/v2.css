@@ -1,0 +1,701 @@
+/*
+ * zoompilot wiki v2 — newcomer-first components and reading rhythm.
+ *
+ * Layered on top of custom.css (paint tokens, scheme mapping, chrome,
+ * widgets stay there). Everything here is a component a page opts into
+ * with a class, plus a few global reading-comfort refinements. The
+ * markup for each component is documented in the wiki-design-system
+ * skill (references/components.md) and shown live on the style guide
+ * page (community/style-guide.md).
+ *
+ *   1. Tokens         — ink for danger/ok, radii, the reading measure
+ *   2. Reading rhythm — body size, line height, heading spacing
+ *   3. Lede           — the page's answer-first opening paragraph
+ *   4. At a glance    — label/value facts box on feature pages
+ *   5. Badges         — status pills (default, alpha, experimental…)
+ *   6. Device paths   — Settings → Cruise → … breadcrumbs
+ *   7. Steps          — numbered task steps with a rail
+ *   8. Journey        — the numbered start path (home, Start here)
+ *   9. Next step      — end-of-page "where to go now" cards
+ *  10. Home           — hero line, feature tiles, safety band
+ *  11. Hubs + cards   — section landing pages
+ *  12. Summaries      — "In short" and technical "About this page"
+ *  13. Chrome fixes   — header on phones, nav labels
+ */
+
+/* ============================================================
+ * 1. Tokens
+ * ============================================================ */
+body {
+  --zp-radius: 0.8rem;
+  --zp-radius-sm: 0.5rem;
+  --zp-danger-ink: var(--zp-p46v-t);
+  --zp-danger-line: color-mix(in srgb, var(--zp-p46v-hi) 45%, transparent);
+  --zp-danger-wash: color-mix(in srgb, var(--zp-p46v) 16%, transparent);
+  --zp-ok-ink: #7cc79a;
+  --zp-plate: color-mix(in srgb, var(--zp-paint) 7%, var(--zp-card));
+  --zp-plate-line: var(--zp-hair);
+  --zp-step-dot: var(--zp-paint);
+  --zp-step-ink: var(--zp-paint-ink);
+}
+body[data-md-color-scheme="default"] {
+  --zp-danger-ink: var(--zp-p46v);
+  --zp-danger-wash: color-mix(in srgb, var(--zp-p46v) 8%, #fffefb);
+  --zp-ok-ink: #2f7a4f;
+  --zp-plate: #fffefb;
+  --zp-plate-line: rgba(20, 22, 26, 0.12);
+}
+/* the near-white and near-black paints make poor step dots on their own
+ * canvases; fall back to the paint's readable tint */
+body[data-md-paint="25d"],
+body[data-md-paint="41w"] {
+  --zp-step-dot: var(--zp-p45b);
+  --zp-step-ink: #ffffff;
+}
+
+/* ============================================================
+ * 2. Reading rhythm
+ * ============================================================ */
+.md-typeset {
+  font-size: 0.84rem;
+  line-height: 1.72;
+}
+.md-typeset p,
+.md-typeset ul,
+.md-typeset ol {
+  margin-block: 0.85em;
+}
+.md-typeset li {
+  margin-bottom: 0.35em;
+}
+.md-typeset h1 {
+  font-size: clamp(1.55rem, 3.2vw, 1.95rem);
+  line-height: 1.2;
+  margin: 0 0 0.9rem;
+}
+.md-typeset h2 {
+  font-size: 1.18rem;
+  line-height: 1.3;
+  margin: 2.4rem 0 0.7rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--zp-hair);
+}
+/* the first H2 right after the lede or glance needs no rule */
+.md-typeset .zp-lede + h2,
+.md-typeset .zp-glance + h2 {
+  border-top: 0;
+  padding-top: 0;
+}
+.md-typeset h3 {
+  font-size: 0.98rem;
+  margin: 1.8rem 0 0.5rem;
+}
+.md-typeset h2 + h3 {
+  margin-top: 1rem;
+}
+/* the page-level edit icon sits beside the H1; keep it quiet */
+.md-content__button {
+  opacity: 0.55;
+}
+.md-content__button:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+ * 3. Lede — the answer-first opening paragraph
+ *    Markdown:  Paragraph text.\n{ .zp-lede }
+ * ============================================================ */
+.md-typeset .zp-lede {
+  font-size: 1.06rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color);
+  margin: 0 0 1.4rem;
+  max-width: 38em;
+}
+
+/* ============================================================
+ * 4. At a glance — facts box. A plain markdown list, one fact per
+ *    item, the label in **bold** first:
+ *      <div class="zp-glance" markdown>
+ *      - **Status** <span class="zp-badge">Default</span>
+ *      - **Works on** every supported Mazda
+ *      </div>
+ * ============================================================ */
+.md-typeset .zp-glance {
+  margin: 0 0 1.8rem;
+  padding: 0.35rem 1.1rem;
+  background: var(--zp-plate);
+  border: 1px solid var(--zp-plate-line);
+  border-left: 3px solid var(--zp-paint);
+  border-radius: var(--zp-radius);
+}
+.md-typeset .zp-glance > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.md-typeset .zp-glance > ul > li {
+  position: relative;
+  margin: 0;
+  padding: 0.55rem 0 0.55rem 8.6rem;
+  border-bottom: 1px solid var(--zp-hair);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+.md-typeset .zp-glance > ul > li:last-child {
+  border-bottom: 0;
+}
+.md-typeset .zp-glance > ul > li > strong:first-child {
+  position: absolute;
+  left: 0;
+  top: 0.62rem;
+  width: 8rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+@media (max-width: 36em) {
+  .md-typeset .zp-glance > ul > li {
+    padding-left: 0;
+  }
+  .md-typeset .zp-glance > ul > li > strong:first-child {
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: 0.1rem;
+  }
+}
+
+/* ============================================================
+ * 5. Badges — <span class="zp-badge zp-badge--alpha">Alpha</span>
+ * ============================================================ */
+.md-typeset .zp-badge {
+  display: inline-block;
+  padding: 0.05rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--zp-hair-strong);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  vertical-align: 0.08em;
+  color: var(--zp-tint);
+  white-space: nowrap;
+}
+.md-typeset .zp-badge--ok {
+  color: var(--zp-ok-ink);
+  border-color: color-mix(in srgb, var(--zp-ok-ink) 45%, transparent);
+}
+.md-typeset .zp-badge--alpha {
+  color: var(--zp-warn-ink);
+  border-color: color-mix(in srgb, var(--zp-warn-ink) 45%, transparent);
+}
+.md-typeset .zp-badge--experimental {
+  color: var(--zp-danger-ink);
+  border-color: var(--zp-danger-line);
+}
+.md-typeset .zp-badge--auto {
+  color: var(--md-default-fg-color--light);
+  border-color: var(--zp-hair);
+}
+/* a badge in a heading or card title sits a little apart */
+.md-typeset h1 .zp-badge,
+.md-typeset h2 .zp-badge,
+.md-typeset strong + .zp-badge {
+  margin-left: 0.4rem;
+}
+
+/* ============================================================
+ * 6. Device paths — where a setting lives on the device
+ *    Markdown: `Settings → Cruise → Smart Cruise Control: Vision`{ .zp-path }
+ * ============================================================ */
+.md-typeset code.zp-path {
+  font-family: var(--md-text-font-family);
+  font-size: 0.86em;
+  font-weight: 500;
+  padding: 0.1em 0.5em;
+  border-radius: 0.35rem;
+  color: var(--md-default-fg-color);
+  background: color-mix(in srgb, var(--zp-paint) 14%, var(--md-code-bg-color));
+  border: 1px solid var(--zp-hair);
+  white-space: normal;
+  word-break: normal;
+}
+
+/* ============================================================
+ * 7. Steps — numbered task steps on a rail
+ *    <div class="zp-steps" markdown>
+ *    1. **Do the thing.** Detail.
+ *    </div>
+ * ============================================================ */
+.md-typeset .zp-steps > ol {
+  list-style: none;
+  counter-reset: zp-step;
+  margin: 1.2rem 0 1.6rem;
+  padding: 0;
+}
+.md-typeset .zp-steps > ol > li {
+  counter-increment: zp-step;
+  position: relative;
+  margin: 0;
+  padding: 0 0 1.2rem 2.6rem;
+}
+.md-typeset .zp-steps > ol > li::before {
+  content: counter(zp-step);
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--zp-step-ink);
+  background: var(--zp-step-dot);
+  box-shadow: 0 0 0 4px var(--md-default-bg-color);
+  z-index: 1;
+}
+/* the rail between the dots */
+.md-typeset .zp-steps > ol > li::after {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  top: 1.8rem;
+  bottom: 0.15rem;
+  width: 2px;
+  background: var(--zp-hair);
+}
+.md-typeset .zp-steps > ol > li:last-child {
+  padding-bottom: 0.2rem;
+}
+.md-typeset .zp-steps > ol > li:last-child::after {
+  display: none;
+}
+.md-typeset .zp-steps > ol > li > p:first-child {
+  margin-top: 0;
+}
+.md-typeset .zp-steps pre {
+  margin: 0.6rem 0;
+}
+
+/* ============================================================
+ * 8. Journey — the numbered start path
+ *    <div class="zp-journey" markdown>
+ *    1. [Title](page.md) One-line promise.
+ *    </div>
+ *    Tiles flow in a grid; the whole tile clicks through.
+ * ============================================================ */
+.md-typeset .zp-journey > ol {
+  list-style: none;
+  counter-reset: zp-j;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+  gap: 0.7rem;
+  margin: 1rem 0 1.4rem;
+  padding: 0;
+}
+.md-typeset .zp-journey > ol > li {
+  counter-increment: zp-j;
+  position: relative;
+  margin: 0;
+  padding: 2.5rem 1rem 1rem;
+  background: var(--zp-plate);
+  border: 1px solid var(--zp-plate-line);
+  border-radius: var(--zp-radius);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.md-typeset .zp-journey > ol > li::before {
+  content: counter(zp-j, decimal-leading-zero);
+  position: absolute;
+  top: 0.9rem;
+  left: 1rem;
+  font-family: var(--md-code-font-family);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--zp-tint);
+}
+.md-typeset .zp-journey > ol > li:hover {
+  border-color: var(--zp-hair-strong);
+  transform: translateY(-2px);
+}
+.md-typeset .zp-journey > ol > li > a:first-child,
+.md-typeset .zp-journey > ol > li > p:first-child > a:first-child {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+.md-typeset .zp-journey > ol > li > a:first-child::after,
+.md-typeset .zp-journey > ol > li > p:first-child > a:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--zp-radius);
+}
+.md-typeset .zp-journey > ol > li a:first-child:focus-visible::after {
+  outline: 2px solid var(--zp-tint);
+  outline-offset: 2px;
+}
+/* the safety step wears the danger ink so it cannot be skimmed past */
+/* markup: [Safety rules](../safety.md){ .zp-journey__safety } */
+.md-typeset .zp-journey > ol > li:has(> a.zp-journey__safety),
+.md-typeset .zp-journey > ol > li:has(> p > a.zp-journey__safety) {
+  border-color: var(--zp-danger-line);
+  background: var(--zp-danger-wash);
+}
+.md-typeset .zp-journey > ol > li:has(a.zp-journey__safety)::before {
+  color: var(--zp-danger-ink);
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .zp-journey > ol > li {
+    transition: none;
+  }
+  .md-typeset .zp-journey > ol > li:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================
+ * 9. Next step — end-of-page cards
+ *    <div class="zp-next" markdown>
+ *    - [Install zoompilot](install.md) — put it on your device
+ *    - [Safety](../safety.md) — the rules first     (optional extra)
+ *    </div>
+ *    The first card is labelled "Next step", the rest "Or".
+ * ============================================================ */
+.md-typeset .zp-next {
+  margin: 2.6rem 0 0.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--zp-hair);
+}
+.md-typeset .zp-next > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+}
+.md-typeset .zp-next > ul > li {
+  position: relative;
+  margin: 0;
+  padding: 1.7rem 2.6rem 0.9rem 1rem;
+  background: var(--zp-plate);
+  border: 1px solid var(--zp-plate-line);
+  border-radius: var(--zp-radius);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  transition: border-color 0.2s ease;
+}
+.md-typeset .zp-next > ul > li::before {
+  content: "Or";
+  position: absolute;
+  top: 0.7rem;
+  left: 1rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--lighter);
+}
+.md-typeset .zp-next > ul > li:first-child::before {
+  content: "Next step";
+  color: var(--zp-tint);
+}
+.md-typeset .zp-next > ul > li:first-child {
+  border-color: var(--zp-hair-strong);
+}
+.md-typeset .zp-next > ul > li::after {
+  content: "→";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--zp-tint);
+}
+.md-typeset .zp-next > ul > li:hover {
+  border-color: var(--zp-tint);
+}
+.md-typeset .zp-next > ul > li > a:first-child {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+.md-typeset .zp-next > ul > li > a:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--zp-radius);
+}
+
+/* ============================================================
+ * 10. Home
+ * ============================================================ */
+.md-typeset .zoom-hero {
+  padding: 2rem 0 0.4rem;
+}
+.md-typeset .zoom-copy .zoom-tagline {
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  max-width: 34em;
+  margin-inline: auto;
+  line-height: 1.45;
+}
+.md-typeset .zoom-copy .zoom-lede {
+  font-size: 0.86rem;
+  max-width: 38em;
+}
+.md-typeset .zp-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 0 0 0.4rem;
+}
+.md-typeset .zp-cta-row .md-button {
+  margin: 0;
+}
+.md-typeset .zp-home-section {
+  margin: 3rem 0 0;
+}
+.md-typeset .zp-home-section > h2 {
+  border-top: 0;
+  padding-top: 0;
+  margin: 0 0 0.3rem;
+  font-size: 1.3rem;
+}
+.md-typeset .zp-home-section > h2 + p {
+  margin-top: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+/* feature tiles: a compact 2–4 up grid with icon, title, one line */
+.md-typeset .zp-tiles > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.7rem;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.md-typeset .zp-tiles > ul > li {
+  position: relative;
+  margin: 0;
+  padding: 1rem 1rem 1rem 3.4rem;
+  background: var(--zp-plate);
+  border: 1px solid var(--zp-plate-line);
+  border-radius: var(--zp-radius);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  transition: border-color 0.2s ease;
+}
+.md-typeset .zp-tiles > ul > li:hover {
+  border-color: var(--zp-hair-strong);
+}
+.md-typeset .zp-tiles > ul > li > .twemoji:first-child,
+.md-typeset .zp-tiles > ul > li > p:first-child > .twemoji:first-child {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.45rem;
+  color: var(--zp-tint);
+  background: color-mix(in srgb, var(--zp-paint) 22%, transparent);
+}
+.md-typeset .zp-tiles > ul > li .twemoji svg {
+  width: 1rem;
+  height: 1rem;
+}
+.md-typeset .zp-tiles > ul > li a:first-of-type {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  margin-bottom: 0.15rem;
+}
+.md-typeset .zp-tiles > ul > li a:first-of-type::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--zp-radius);
+}
+
+/* safety band: the one red plate on the home page */
+.md-typeset .zp-safety {
+  margin: 2.6rem 0 0;
+  padding: 1.3rem 1.4rem 1.1rem;
+  border: 1px solid var(--zp-danger-line);
+  border-radius: var(--zp-radius);
+  background: var(--zp-danger-wash);
+}
+.md-typeset .zp-safety > h2 {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.1rem;
+  color: var(--zp-danger-ink);
+}
+.md-typeset .zp-safety ul {
+  margin: 0.4rem 0 0.8rem;
+}
+.md-typeset .zp-safety li {
+  margin-bottom: 0.3rem;
+}
+
+/* ============================================================
+ * 11. Hubs and cards
+ * ============================================================ */
+.md-typeset .grid.cards > ul > li {
+  border-radius: var(--zp-radius);
+}
+.md-typeset .grid.cards > ul > li > p:first-child .twemoji,
+.md-typeset .grid.cards > ul > li > .twemoji:first-child {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 0.35rem;
+  border-radius: 0.45rem;
+  color: var(--zp-tint);
+  background: color-mix(in srgb, var(--zp-paint) 22%, transparent);
+  vertical-align: -0.45rem;
+}
+.md-typeset .grid.cards > ul > li > hr {
+  margin: 0.6rem 0;
+}
+/* section label above a card group on hub pages */
+.md-typeset .zp-group {
+  margin: 2rem 0 0.2rem;
+  font-family: var(--md-code-font-family);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: var(--zp-tint);
+}
+
+/* ============================================================
+ * 12. Summaries — "In short" (abstract admonition) and the technical
+ *     "About this page" header
+ * ============================================================ */
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+  border-color: var(--zp-hair-strong);
+  background: var(--zp-plate);
+}
+.md-typeset .admonition.abstract > .admonition-title,
+.md-typeset details.abstract > summary {
+  color: var(--zp-tint);
+}
+.md-typeset .admonition.abstract > .admonition-title::before,
+.md-typeset details.abstract > summary::before {
+  background-color: var(--zp-tint);
+}
+.md-typeset details.info {
+  border-color: var(--zp-hair);
+}
+.md-typeset details.info > summary {
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset details.info > summary::before {
+  background-color: var(--md-default-fg-color--light);
+}
+
+/* ============================================================
+ * 13. Chrome fixes
+ * ============================================================ */
+/* On narrow headers the injected zoompilot.ai link collides with the
+ * page title; the footer carries the same link, so drop it here. */
+@media (max-width: 44.9375em) {
+  .md-header__home {
+    display: none;
+  }
+}
+/* tabs: a touch more air and a visible active marker */
+.md-tabs__item {
+  padding-inline: 0.2rem;
+}
+.md-tabs__link--active {
+  text-decoration: underline;
+  text-decoration-color: var(--zp-tint);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.55rem;
+}
+/* sidebar section labels read as headings, not links */
+.md-nav--primary .md-nav__item--section > .md-nav__link {
+  color: var(--md-default-fg-color--light);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+ * 14. Readability of the theme's small print
+ *     Material sets admonitions and tables at 0.64rem — too small
+ *     for a manual people read in a parked car. Lift them toward
+ *     body size, and keep inline code in tables on one line.
+ * ============================================================ */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.78rem;
+}
+.md-typeset table:not([class]) {
+  font-size: 0.76rem;
+}
+.md-typeset table:not([class]) td code,
+.md-typeset table:not([class]) th code {
+  white-space: nowrap;
+}
+.md-typeset h2 {
+  font-weight: 650;
+}
+.md-typeset h3 {
+  font-weight: 600;
+}
+
+/* ============================================================
+ * 15. Grid balance — quantity queries so card rows never end in an
+ *     orphan: 6 items lay out 3 + 3, 4 items 4 across (2 + 2 on
+ *     tablets), 3 items 3 across.
+ * ============================================================ */
+@media (min-width: 60em) {
+  .md-typeset .zp-journey > ol:has(> li:nth-child(6):last-child),
+  .md-typeset .zp-tiles > ul:has(> li:nth-child(6):last-child),
+  .md-typeset .zp-tiles > ul:has(> li:nth-child(3):last-child),
+  .md-typeset .zp-journey > ol:has(> li:nth-child(3):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .md-typeset .zp-tiles > ul:has(> li:nth-child(4):last-child) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 38em) and (max-width: 59.9375em) {
+  .md-typeset .zp-journey > ol,
+  .md-typeset .zp-tiles > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* phones: tighter table cells so four-column tables fit more */
+@media (max-width: 36em) {
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding: 0.55em 0.6em;
+  }
+}
