@@ -629,16 +629,6 @@ body[data-md-paint="41w"] {
     display: none;
   }
 }
-/* tabs: a touch more air and a visible active marker */
-.md-tabs__item {
-  padding-inline: 0.2rem;
-}
-.md-tabs__link--active {
-  text-decoration: underline;
-  text-decoration-color: var(--zp-tint);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.55rem;
-}
 /* sidebar section labels read as headings, not links */
 .md-nav--primary .md-nav__item--section > .md-nav__link {
   color: var(--md-default-fg-color--light);
