@@ -17,6 +17,10 @@ shorthand entry.
 
 | Route ref | Page | What it backs |
 | --- | --- | --- |
+| `0000021b` | force-offroad-alpha-transition.md | On route 0000021b (2026-09-11, the first drive on this build) the driver pulled away at 11.6 s, `parkToTakeOver` came at 16.0 s, and three minutes of MAIN/SE… |
+| `0000021d` | force-offroad-alpha-transition.md | openpilot adds nothing there (route 0000021d: SET at a standstill with main off, 7 s after `ready`). |
+| `208` | force-offroad-alpha-transition.md | Panda uptime is continuous from route 208 through 20d; |
+| `fe` | force-offroad-alpha-transition.md | On the car the radar answers within 10 ms (route fe). |
 | `126` | icbm.md | The quiet timer is keyed on the raw plan target, not the overshoot-adjusted command: the lever's slow release moved the command every few frames and pinned t… |
 | `126` | icbm.md | route 126 measured 294 of 294 steps at 1 mph, zero grid snaps, 4.1 mph/s under hold frames and 3.8 mph/s under taps. |
 | `149` | icbm.md | Across all recorded routes 149 of 149 stream-driven dash steps were 1 mph; |
@@ -53,13 +57,15 @@ shorthand entry.
 | `00000100` | mazda-longitudinal.md | Slewing up from -1.024 instead kept hold-grade braking on the wire beneath the release pulse (route 00000053 t+714.8), and pre-ramping toward the plan crosse… |
 | `00000103` | mazda-longitudinal.md | Suppressing it was also an SCBS workaround (route 00000103 t+163.8 latched on a gas release), and that half is obsolete now the checksum is fixed. |
 | `0000010b` | mazda-longitudinal.md | The TJA mode fields are the exception: under openpilot the camera's own TJA/CTS state machine churns against steering it did not command (TJA_TRANSITION togg… |
-| `00000116 and 00000117` | mazda-longitudinal.md | That is the ERR_BIT_1 starvation of routes 00000116 and 00000117 (2026-08-27), and route 00000148 reached the same starvation by another door (see mazda-late… |
+| `00000116 and 00000117` | mazda-longitudinal.md | The ERR_BIT_1 starvation of routes 00000116 and 00000117 (2026-08-27) came from the two machines gating main on different guards: the panda's edge fired at b… |
 | `0000011d` | mazda-longitudinal.md | Deferring it behind silence (route 0000011d, 0.3 s) and behind a +0.15 m/s2 nudge (route 0000012c, 2.0 s, three latched stops) both left GEAR.BRAKE_HOLD unto… |
 | `0000012c` | mazda-longitudinal.md | Deferring it behind silence (route 0000011d, 0.3 s) and behind a +0.15 m/s2 nudge (route 0000012c, 2.0 s, three latched stops) both left GEAR.BRAKE_HOLD unto… |
 | `0000012c` | mazda-longitudinal.md | Our own engaged breakaways (14 across routes 53, 100, 115, 118, 12c, 132, 139, fe, plan vs wire on the last still frame) break away at a wire command of +0.7… |
 | `00000132` | mazda-longitudinal.md | Our own engaged breakaways (14 across routes 53, 100, 115, 118, 12c, 132, 139, fe, plan vs wire on the last still frame) break away at a wire command of +0.7… |
-| `00000148` | mazda-longitudinal.md | That is the ERR_BIT_1 starvation of routes 00000116 and 00000117 (2026-08-27), and route 00000148 reached the same starvation by another door (see mazda-late… |
 | `0000019c` | mazda-longitudinal.md | RES is the resume button (route 0000019c--84a5408a38 seg 2/3: holding "+" emits SET_P = 1 and the body ECU increments CRZ_SPEED). |
+| `0000020a` | mazda-longitudinal.md | Lateral (MADS) needs only that, so a driver who presses MAIN while the radar is still stock has lateral at once, through the takeover (the body keeps its arm… |
+| `0000020c` | mazda-longitudinal.md | These stops are served moving or not, since they happen either way: route 0000020c handed the radar back at 117.7 km/h in 0.63 s (request 569.566, `06 50 01`… |
+| `0000021b` | mazda-longitudinal.md | On a parked-only configuration that was the whole drive until the first stop: route 0000021b, three minutes with neither axis and nothing on screen. |
 | `0b` | mazda-longitudinal.md | CRZ_BTNS runs at 10 Hz on the wire (99 to 101 ms for about 95% of 7.2k inter-frame gaps, route 0b), with extra event frames only on press edges, and the whee… |
 | `103, 115, 118, 11d, 12c` | mazda-longitudinal.md | The body has answered every latched pulse the port has sent: GEAR.BRAKE_HOLD dropped 30 to 51 ms into all 10 (routes 103, 115, 118, 11d, 12c x3, 132, 139, fe). |
 | `132` | mazda-longitudinal.md | The camera latched the SCBS trio about 3 frames into each pulse, 11 of 11 releases across every radar-content variant tried (route 132 closed the case, falsi… |

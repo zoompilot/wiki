@@ -180,6 +180,7 @@ nav:
           - technical/mazda-lateral.md
           - technical/eps-swap.md
           - technical/mazda-longitudinal.md
+          - technical/force-offroad-alpha-transition.md
           - technical/mazda-fingerprinting.md
           - technical/lateral-tune.md
           - technical/cruise-arbiter.md

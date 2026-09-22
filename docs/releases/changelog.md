@@ -8,6 +8,32 @@ site header always shows the current release commit.
      there, not this page: manual edits to the releases below are
      lost on the next sync. -->
 
+## 2026.09.12-14 (2026-09-12)
+
+- **Adjustments to address LKAS errors.**
+- **TJA switched off fully.** On cars with TJA/CTS, zoompilot now switches off TJA fully so it doesn't take over when you disengage zoompilot. This also addresses related “Front Camera System Malfunction” errors.
+- **More Mazdas.** Added 2023 CX-8 support and 2012-16 CX-5 alpha longitudinal support with a compatible steering rack swap. Older Mazdas now appear in the car picker.
+- **TJA button setting in sunnylink.** You can now change the “TJA button” setting through sunnylink.
+- **Alpha longitudinal only.**
+  - **Fixes for not being able to engage after a restart or force offroad.**
+  - The alpha longitudinal toggle is offroad only, to avoid cruise lockouts and dash errors.
+  - A new startup alert tells you when alpha longitudinal is ready.
+  - If you pull away before setup finishes, it will try to enable again at the next stop.
+  - Added support for older G46L radars with a compatible steering rack swap. Lead detection uses the camera.
+
+## 2026.09.07-13 (2026-09-07)
+
+- **Fixes bugs.**
+  - Fixes the install for comma 3X users. Upstream sunnypilot stopped prebuilding the camera warps for the 3X during the Chestnut changes.
+
+## 2026.09.07-12 (2026-09-07)
+
+- **Fixes bugs.**
+  - Enables the full zoompilot steering enhancements for users without a steer-to-zero EPS.
+  - Fixes the “Posenet Speed Invalid” error some users had on new installs. This is an upstream sunnypilot bug.
+  - Upstream sunnypilot Chestnut fixes.
+  - Fixes the “Controls Mismatch: Lateral” error when enabling alpha longitudinal with brake pedal presses.
+
 ## 2026.09.05-11 — New steering tune, Smart Cruise reimplemented, Alpha Longitudinal stop-and-go fixed (2026-09-05)
 
 I feel like this is the most smooth and clean release yet. I'm very proud of the improvements and recommend anyone be on the latest release.

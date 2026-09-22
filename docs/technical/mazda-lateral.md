@@ -339,6 +339,15 @@ SET/RES, bit 11 is ignored. A runtime latch on the first press was tried first (
 ignition to switch paths) and replaced by the toggle because it made the first press of every
 drive ambiguous and left the panda and software latches able to drift after a process restart.
 
+The camera press-off used to be gated on steering. A user report on the first build
+(2026-09-09) found the gap: TJA press, MRCC button, TJA press left MADS off with the camera
+armed, and stock TJA engaged a few seconds later, because the camera owns 0x243 when the
+software is not steering. The camera is never needed with a panda fitted, so the press is no
+longer gated on `latActive`: any time the camera's own TJA field on 0x440 reads nonzero, the
+software presses the camera off on bus 2 within 1 s, steering or not, so nobody steers until
+the driver presses again. The panda accepts the byte-exact bus-2 frame in every state; it only
+reaches the camera and can only toggle its lane centering. The `stockLkas` warning still fires
+only while the software steers.
 ## Constants
 
 | Constant | Value | Measurement | Routes |
