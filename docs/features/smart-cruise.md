@@ -1,9 +1,35 @@
 ---
 title: Smart Cruise
+type: feature
+description: Smart Cruise lowers your cruise speed before a curve and brings it back after.
 reviewed: 2026-09-05
 ---
 
 # Smart Cruise (curve speed control)
+
+Cruise control holds one speed, even into a sharp curve. Smart Cruise
+looks ahead, lowers your set speed before the curve, and brings your
+original speed back after it.
+{ .zp-lede }
+
+<div class="zp-glance" markdown>
+
+- **Status** Off out of the box.
+- **Works on** Every supported Mazda. With the stock radar cruise
+  (MRCC, the default), it changes your set speed through
+  [ICBM](icbm.md), so ICBM must be on. With alpha longitudinal,
+  zoompilot controls the speed directly.
+- **Turn it on** `Settings → Cruise → Smart Cruise Control: Vision`{ .zp-path }
+  (curves from the camera) and
+  `Settings → Cruise → Smart Cruise Control: Map`{ .zp-path } (curves
+  from map data) — see [Settings](../settings/index.md#cruise).
+- **Needs** [ICBM](icbm.md) turned on, unless you run alpha
+  longitudinal. Map mode also needs the nav SD card. See
+  [What you need](../getting-started/hardware.md).
+- **What you will notice** The set speed on your dash drops before a
+  curve and climbs back after it.
+
+</div>
 
 Smart Cruise reduces your set speed before a curve and resumes your
 original speed afterward. It is part of the rebuilt Mazda cruise stack,
@@ -32,9 +58,9 @@ it on, turn the toggle off and report the route in the
 
 ## One set speed, one owner
 
-zoompilot rewrote the sunnypilot cruise systems for Mazda so that one
+zoompilot rewrote the [sunnypilot](../help/glossary.md#sunnypilot) cruise systems for Mazda so that one
 unified system manages your set speed. Speed-limit assist and smart
-cruise work the same way whether the stock radar or openpilot has the gas
+cruise work the same way whether the stock radar or [openpilot](../help/glossary.md#openpilot) has the gas
 and brakes. When a curve or speed zone ends, you get back the exact speed
 you set.
 

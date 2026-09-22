@@ -9,7 +9,8 @@ zoompilot's steering work is keyed to one part: the electric power
 steering (EPS) motor from the 2022–2025 CX-5. Some owners fit that
 motor into an older Mazda — a swap. When it is done, zoompilot treats
 the car like a 2022-25 CX-5: steering works down to 0 mph, the full
-torque envelope opens up, and alpha longitudinal becomes available.
+torque envelope opens up, and alpha longitudinal gets steering all the
+way down to a stop.
 
 ## Why people swap
 
@@ -19,7 +20,7 @@ The older motor holds the car back in three ways:
 | --- | --- | --- |
 | Minimum steering speed | model-dependent, above 0 | 0 mph |
 | Torque envelope | 800/10/25 (the stock openpilot cap) | 1200/12/12, the full curve |
-| Alpha longitudinal | not available | available |
+| Alpha longitudinal | available; steering stops at low speed, so stop-and-go runs unsteered | available and recommended |
 
 For the CX-9 2021 the difference is documented exactly: its stock EPS
 firmware keeps the smaller envelope, and only a CX-9 with the swapped
@@ -59,7 +60,7 @@ the fallbacks that were tried and rejected — is in
 - **Check recognition.** On the first drive, confirm the device
   recognizes the car. If it does not, or support looks wrong, stop and
   post on the Discord with a route ID (see
-  [Share a route](../troubleshooting.md#share-a-route)).
+  [Share a route](../help/share-a-route.md)).
 - **Expect a learning period.** The self-tune seeds come from a CX-5.
   On any swapped car the learner starts from those and adapts to your
   motor over the first drives. CX-9 owners report the longest
@@ -67,4 +68,4 @@ the fallbacks that were tried and rejected — is in
   [Steering improvements](../features/steering.md) and
   [First drive](../getting-started/first-drive.md).
 - **Custom tune stays off.** The learned values beat hand values. See
-  [Custom tune](../how-to/custom-tune.md).
+  [Custom tune](../settings/custom-tune.md).

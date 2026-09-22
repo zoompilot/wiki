@@ -1,23 +1,26 @@
 ---
 title: Settings
+type: reference
+description: Every zoompilot setting on the device, what it does, and its default — searchable, by panel, with screenshots for comma four and comma 3/3X.
 reviewed: 2026-09-07
 ---
 
 # Settings
 
-You manage zoompilot from the **Settings** screen on the device. Every
-setting appears below as a card, grouped by panel, with each panel's
-settings screen for both devices — comma four strips scroll sideways;
-comma 3/3X panels are full-frame. Pick a device once and every panel
-follows. The capture tool that regenerates these images lives in
-[assets/settings](../assets/settings/README.md).
+You do not need to change any settings to start driving: a fresh
+install on a supported Mazda comes set up. Use this page to look up
+what a switch on the device does, and what it starts at.
+{ .zp-lede }
+
+You manage zoompilot from the **Settings** screen on the [comma device](../getting-started/hardware.md).
+Every setting appears below as a card, grouped by panel — the
+sections of the device's Settings screen. Each panel also has
+screenshots for both devices: comma four strips scroll sideways, comma
+3/3X panels are full-frame. Pick your device once and every panel
+follows.
 
 The page opens on the Steering panel. The chips show one panel at a
 time, and a search covers every panel. Panels with no matches collapse.
-The card data lives in
-`docs/assets/js/settings-data.js` in this wiki's source, kept next to
-the release files that define it — see
-[Where the defaults come from](#where-the-defaults-come-from).
 
 ## zoompilot defaults
 
@@ -78,7 +81,8 @@ and the
 
 Steering settings control lateral (steering) behavior: MADS, lane
 changes, and torque tuning. Some of these settings are covered in more
-depth on [Steering improvements](../features/steering.md).
+depth on [Steering improvements](../features/steering.md) and
+[Custom tune](custom-tune.md).
 
 <div class="zp-panel-cards" data-panel="Steering"></div>
 
@@ -232,11 +236,16 @@ unless support asks.
 
 ## Where the defaults come from
 
-Mazda seeding is one-time, per install, and gated on the steer-to-zero
-EPS flag. The card data on this page mirrors the release sources: the
-stored settings and their declared defaults live in
-[`common/params_keys.h`](https://github.com/zoompilot/zoompilot/blob/develop/openpilot/common/params_keys.h),
-and the settings screen definitions in
-[`settings_ui.json`](https://github.com/zoompilot/zoompilot/blob/develop/openpilot/sunnypilot/sunnylink/settings_ui.json).
-When a release changes either, edit `docs/assets/js/settings-data.js`
-to match.
+zoompilot sets the Mazda defaults once, on a fresh install, and only on
+cars whose steering motor can steer to a stop. The cards on this page
+mirror the release source: the
+[stored settings and their defaults](https://github.com/zoompilot/zoompilot/blob/develop/openpilot/common/params_keys.h)
+and the
+[settings screen definitions](https://github.com/zoompilot/zoompilot/blob/develop/openpilot/sunnypilot/sunnylink/settings_ui.json).
+
+??? info "For wiki editors"
+
+    The card data lives in the wiki source, next to the page, as a hand-kept
+    data file. When a release changes the settings, the update procedure
+    and the screenshot capture tool are described in the repository's
+    contributor notes (`CONTRIBUTING.md`).

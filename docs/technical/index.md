@@ -7,6 +7,15 @@ title: Technical notes
 These pages are the engineering record behind the fork. They document the
 reasoning behind zoompilot's constants and design choices, kept out of
 the code comments on purpose.
+{ .zp-lede }
+
+!!! note "Written for openpilot readers"
+
+    These pages use openpilot's own vocabulary — lateral, longitudinal,
+    CAN frames, panda safety. New to all of this? Start with
+    [How zoompilot works](../getting-started/how-it-works.md), then the
+    [feature pages](../features/index.md), which say the same things in
+    plain words.
 
 The design pages carry a **Constants** table (name, value, measurement,
 route) and a **Tried and rejected** section. Rlogs and the analysis

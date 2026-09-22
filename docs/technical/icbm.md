@@ -1,9 +1,19 @@
 # Intelligent Cruise Button Management (ICBM)
 
-Code: `openpilot/sunnypilot/selfdrive/car/intelligent_cruise_button_management/controller.py`
-(the servo), `opendbc/sunnypilot/car/icbm_actuation_profile.py` (per-brand ECU
-characteristics). Tests: `car/tests/test_icbm_servo.py`, `test_icbm_overshoot.py`,
-`test_icbm_sla_*.py` (closed loop against a simulated Mazda body ECU).
+!!! abstract "About this page"
+
+    The button servo behind Intelligent Cruise Button Management: how it
+    walks the dash set speed, the per-brand actuation profiles, fast
+    mode, and the restore quiet window. It is the engineering record,
+    written for readers who know openpilot. The plain-words page is
+    [ICBM](../features/icbm.md).
+
+??? info "Code and tests"
+
+    Code: `openpilot/sunnypilot/selfdrive/car/intelligent_cruise_button_management/controller.py`
+    (the servo), `opendbc/sunnypilot/car/icbm_actuation_profile.py` (per-brand ECU
+    characteristics). Tests: `car/tests/test_icbm_servo.py`, `test_icbm_overshoot.py`,
+    `test_icbm_sla_*.py` (closed loop against a simulated Mazda body ECU).
 
 On button-actuated (non-pcmCruiseSpeed) cars openpilot cannot command acceleration. The
 stock ACC integrates cruise button presses into a dash set speed and decelerates

@@ -1,14 +1,21 @@
 ---
 title: Privacy
+type: explanation
+description: What your comma device records on every drive, what uploads, what a shared route shows, and the switches that control it.
 reviewed: 2026-09-06
 ---
 
 # Privacy
 
-openpilot records every drive. This page says what is recorded, what
+Your [comma device](../getting-started/hardware.md) records every drive, like a dashcam with extra data.
+This page says what it keeps, what leaves the device, and how to
+control it.
+{ .zp-lede }
+
+[openpilot](glossary.md#openpilot) records every drive. This page says what is recorded, what
 leaves the device, and which switches control it. The full sharing
 procedure is in
-[Share a route](../troubleshooting.md#share-a-route).
+[Share a route](share-a-route.md).
 
 ## What is recorded
 
@@ -50,13 +57,13 @@ Practical rules from the sharing procedure:
 
 The other way to share is at the device level. A device shared by
 email exposes **every route on it**, not just one. See
-[Share the device instead](../troubleshooting.md#share-the-device-instead).
+[Share the device instead](share-a-route.md#share-the-device-instead).
 
 Routes you want gone can be deleted from comma connect.
 
 ## What zoompilot itself sends
 
-zoompilot adds no telemetry of its own. It is a fork of openpilot, and
+zoompilot adds no telemetry of its own. It is a [fork](glossary.md#fork) of openpilot, and
 it uses the same route logging and the same comma connect services as
-upstream. The source is public at
+[upstream](glossary.md#upstream). The source is public at
 [github.com/zoompilot/zoompilot](https://github.com/zoompilot/zoompilot).
