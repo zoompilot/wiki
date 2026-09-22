@@ -42,10 +42,10 @@ stock radar cruise.
 
 <div class="zp-glance" markdown>
 
-- **✓** Works as the car ships.
-- **with swap** Works once a 2022-25 CX-5 EPS motor is swapped in. See
+- **✓** — Works as the car ships.
+- **with swap** — Works once a 2022-25 CX-5 EPS motor is swapped in. See
   [EPS swap](../technical/eps-swap.md).
-- **?** Expected to work, not yet validated on that platform. The
+- **?** — Expected to work, not yet validated on that platform. The
   Mazda 3 and Mazda 6 are community-reported only, with fewer test
   miles than the CX-5 and CX-9.
 

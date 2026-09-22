@@ -1,5 +1,14 @@
 # Force Offroad and longitudinal mode transitions
 
+!!! abstract "About this page"
+
+    The implementation record for the developer workflow while moving:
+    Force Offroad, the Alpha Longitudinal flip, and the stock-ECU
+    hand-back that makes the transitions safe at speed. It is the
+    engineering record, written for readers who know openpilot. The
+    plain-words page is [Alpha
+    longitudinal](../features/alpha-longitudinal.md).
+
 Implementation record, 2026-09-10, for the developer workflow while moving: disengage assistance
 and stock cruise, enter Force Offroad, flip Alpha Longitudinal, exit Force Offroad, engage
 normally, with no stop and no ignition cycle. Companion to `mazda-longitudinal.md` (the radar
