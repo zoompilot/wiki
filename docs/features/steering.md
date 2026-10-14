@@ -24,17 +24,17 @@ brands, check that both are available and on.
 <div class="zp-setting-shots" markdown="0">
 <figure class="setting-shot settings-figure-mici">
   <div class="zp-shot-imgs">
-    <img src="../../assets/settings/features/mici/torque-control.png" alt="enable torque control, on" width="640" height="300" loading="lazy">
-    <img src="../../assets/settings/features/mici/self-tune.png" alt="enable self-tune, on" width="640" height="300" loading="lazy">
-    <img src="../../assets/settings/features/mici/tune-version.png" alt="tune version small models, v2.0" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/torque-control.png" alt="enable torque control, on" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/self-tune.png" alt="enable self-tune, on" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/tune-version.png" alt="tune version small models, v2.0" width="640" height="300" loading="lazy">
   </div>
   <figcaption><span class="zp-shot-device">comma 4: </span>Settings → Steering → torque control</figcaption>
 </figure>
 <figure class="setting-shot settings-figure-tici">
   <div class="zp-shot-imgs">
-    <img src="../../assets/settings/features/tici/torque-control.png" alt="Enforce Torque Lateral Control, on" width="1000" height="105" loading="lazy">
-    <img src="../../assets/settings/features/tici/self-tune.png" alt="Self-Tune, on" width="1000" height="105" loading="lazy">
-    <img src="../../assets/settings/features/tici/tune-version.png" alt="Torque Control Tune Version (Small Models), v2.0" width="1000" height="105" loading="lazy">
+    <img src="../assets/settings/features/tici/torque-control.png" alt="Enforce Torque Lateral Control, on" width="1000" height="105" loading="lazy">
+    <img src="../assets/settings/features/tici/self-tune.png" alt="Self-Tune, on" width="1000" height="105" loading="lazy">
+    <img src="../assets/settings/features/tici/tune-version.png" alt="Torque Control Tune Version (Small Models), v2.0" width="1000" height="105" loading="lazy">
   </div>
   <figcaption><span class="zp-shot-device">comma 3X: </span>Settings → Steering → Customize Torque Params</figcaption>
 </figure>

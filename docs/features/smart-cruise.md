@@ -28,15 +28,15 @@ Turn both off to disable curve slowdowns.
 <div class="zp-setting-shots" markdown="0">
 <figure class="setting-shot settings-figure-mici">
   <div class="zp-shot-imgs">
-    <img src="../../assets/settings/features/mici/slow-for-curves-vision.png" alt="slow for curves: vision, off" width="640" height="300" loading="lazy">
-    <img src="../../assets/settings/features/mici/slow-for-curves-map.png" alt="slow for curves: map, off" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/slow-for-curves-vision.png" alt="slow for curves: vision, off" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/slow-for-curves-map.png" alt="slow for curves: map, off" width="640" height="300" loading="lazy">
   </div>
   <figcaption><span class="zp-shot-device">comma 4: </span>Settings → Cruise</figcaption>
 </figure>
 <figure class="setting-shot settings-figure-tici">
   <div class="zp-shot-imgs">
-    <img src="../../assets/settings/features/tici/slow-for-curves-vision.png" alt="Slow for Curves: Vision, off" width="1000" height="105" loading="lazy">
-    <img src="../../assets/settings/features/tici/slow-for-curves-map.png" alt="Slow for Curves: Map, off" width="1000" height="105" loading="lazy">
+    <img src="../assets/settings/features/tici/slow-for-curves-vision.png" alt="Slow for Curves: Vision, off" width="1000" height="105" loading="lazy">
+    <img src="../assets/settings/features/tici/slow-for-curves-map.png" alt="Slow for Curves: Map, off" width="1000" height="105" loading="lazy">
   </div>
   <figcaption><span class="zp-shot-device">comma 3X: </span>Settings → Cruise</figcaption>
 </figure>

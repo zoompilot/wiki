@@ -27,13 +27,13 @@ appear on both.
 <div class="zp-setting-shots" markdown="0">
 <figure class="setting-shot settings-figure-mici">
   <div class="zp-shot-imgs">
-    <img src="../../assets/settings/features/mici/speed-limit.png" alt="speed limit mode, info" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/speed-limit.png" alt="speed limit mode, info" width="640" height="300" loading="lazy">
   </div>
   <figcaption><span class="zp-shot-device">comma 4: </span>Settings → Cruise → speed limit</figcaption>
 </figure>
 <figure class="setting-shot settings-figure-tici">
   <div class="zp-shot-imgs">
-    <img src="../../assets/settings/features/tici/speed-limit.png" alt="Speed Limit, Info" width="1000" height="390" loading="lazy">
+    <img src="../assets/settings/features/tici/speed-limit.png" alt="Speed Limit, Info" width="1000" height="390" loading="lazy">
   </div>
   <figcaption><span class="zp-shot-device">comma 3X: </span>Settings → Cruise → Speed Limit</figcaption>
 </figure>

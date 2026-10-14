@@ -94,7 +94,7 @@ problem.
 
 <figure class="zp-route-video">
 <video controls preload="none" playsinline poster="../../assets/demo/share-a-route-poster.jpg" aria-label="How to upload full logs and share a route in comma connect">
-<source src="../../assets/demo/share-a-route.mp4" type="video/mp4">
+<source src="../assets/demo/share-a-route.mp4" type="video/mp4">
 <a href="../assets/demo/share-a-route.mp4">Download the route-sharing video</a>.
 </video>
 <figcaption>Sharing a route in comma connect.</figcaption>

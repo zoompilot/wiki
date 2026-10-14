@@ -37,17 +37,17 @@ different vehicle selection to expose it.
 <div class="zp-setting-shots" markdown="0">
 <figure class="setting-shot settings-figure-mici">
   <div class="zp-shot-imgs">
-    <img src="../../assets/settings/features/mici/alpha-longitudinal.png" alt="alpha longitudinal, on" width="640" height="300" loading="lazy">
-    <img src="../../assets/settings/features/mici/speed-assist.png" alt="speed assist, off" width="640" height="300" loading="lazy">
-    <img src="../../assets/settings/features/mici/lead-follow-assist.png" alt="lead follow assist, off" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/alpha-longitudinal.png" alt="alpha longitudinal, on" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/speed-assist.png" alt="speed assist, off" width="640" height="300" loading="lazy">
+    <img src="../assets/settings/features/mici/lead-follow-assist.png" alt="lead follow assist, off" width="640" height="300" loading="lazy">
   </div>
   <figcaption><span class="zp-shot-device">comma 4: </span>Settings → Cruise → alpha longitudinal</figcaption>
 </figure>
 <figure class="setting-shot settings-figure-tici">
   <div class="zp-shot-imgs">
-    <img src="../../assets/settings/features/tici/alpha-longitudinal.png" alt="Alpha Longitudinal, on" width="1000" height="105" loading="lazy">
-    <img src="../../assets/settings/features/tici/speed-assist.png" alt="Experimental Mode Speed Assist, off" width="1000" height="105" loading="lazy">
-    <img src="../../assets/settings/features/tici/lead-follow-assist.png" alt="Experimental Mode Lead Follow Assist, off" width="1000" height="105" loading="lazy">
+    <img src="../assets/settings/features/tici/alpha-longitudinal.png" alt="Alpha Longitudinal, on" width="1000" height="105" loading="lazy">
+    <img src="../assets/settings/features/tici/speed-assist.png" alt="Experimental Mode Speed Assist, off" width="1000" height="105" loading="lazy">
+    <img src="../assets/settings/features/tici/lead-follow-assist.png" alt="Experimental Mode Lead Follow Assist, off" width="1000" height="105" loading="lazy">
   </div>
   <figcaption><span class="zp-shot-device">comma 3X: </span>Settings → Cruise</figcaption>
 </figure>
