@@ -1,5 +1,13 @@
 # Cruise arbiter
 
+
+!!! note "Design record: not setup instructions"
+
+    This page records engineering work at the revisions cited below.
+    Settings and availability may have changed. Use the
+    [current feature guides](../features/index.md) for setup and
+    [compatibility](../getting-started/supported-cars.md) for car requirements.
+
 !!! abstract "About this page"
 
     Who owns the cruise set speed when Speed-Limit Assist, curve control

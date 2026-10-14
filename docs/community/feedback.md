@@ -1,49 +1,34 @@
 ---
-title: How to give feedback
-type: task
-description: How to report how your Mazda drives on zoompilot — what to check first, what to include, and where to post it.
+title: Give feedback
+type: reference
 ---
 
-# How to give feedback
+# Give feedback
 
-Telling the developers how your car drives is one of the most useful
-things you can do as a driver. This page adapts the [openpilot](../help/glossary.md#openpilot) feedback
-process for zoompilot.
+Describe what happened, when it happened, and what you expected.
+A recorded drive helps reviewers understand the problem.
 { .zp-lede }
 
-## Driving feedback
+## before reporting
 
-Got feedback about how your car drives? Join the
-[zoompilot Discord](https://discord.gg/jFWkHC2uhh) and post it with the
-route ID.
+Check that the cameras are unobstructed, the comma is mounted correctly,
+and zoompilot is up to date. If assistance feels wrong, stop using it;
+do not keep driving with a fault just to record more examples.
 
-Before posting, please make sure:
+## include these details
 
-- **zoompilot is up to date.** Run the latest `zoompilot/main` release.
-- **Both road-facing cameras have a clear view.** The windscreen is
-  clean, the lenses are clean.
-- **The device is mounted properly.** Centered horizontally and
-  relatively high on the windshield.
+- Car model, year, and country; whether the steering motor is original or swapped.
+- Comma model and zoompilot version from Settings → Software.
+- Exact alert or behaviour, and the time it happened in the recording.
+- Relevant settings, including experimental speed control or Jetlink.
+- What you expected instead.
 
-## Steering and tune feedback
+For steering feedback, include the speed range and whether Self-Tune was
+on. You do not need to analyse the log yourself.
 
-Steering feel is zoompilot's core work. Useful feedback includes:
+## send the report
 
-- Car model and year, and whether the [EPS](../help/glossary.md#eps) motor is original or swapped.
-- The speed range where something feels off.
-- Whether self-tune was on, and roughly how many miles the install has.
-- Route IDs from the drives in question.
-
-## Other bugs
-
-Open an issue on the
-[zoompilot issue tracker](https://github.com/zoompilot/zoompilot/issues).
-Include the release version (for example `2026.08.25-8`), your car, and
-the steps to reproduce.
-
-<div class="zp-next" markdown>
-
-- [Share a route](../help/share-a-route.md)
-  Attach the drive to your report
-
-</div>
+Post in [zoompilot Discord](https://discord.gg/jFWkHC2uhh) or open a
+[GitHub issue](https://github.com/zoompilot/zoompilot/issues).
+[Upload and share a route](../help/share-a-route.md) if a reviewer needs one.
+Only share recordings you are comfortable making public.

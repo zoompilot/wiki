@@ -1,33 +1,28 @@
 ---
 title: Roadmap
-type: explanation
-description: What zoompilot is working on now, and where to follow upstream plans.
+type: reference
 ---
 
 # Roadmap
 
-What is being worked on now, and where to follow what comes next.
+Follow the repositories and community discussions for work in progress.
+A planned feature is not a promise that it will ship.
 { .zp-lede }
 
 ## zoompilot
 
-The active zoompilot work is the v2 steering tune. Its acceptance plan
-for the next on-car pass is on the
-[lateral tune](../technical/lateral-tune.md) page.
+See [GitHub](https://github.com/zoompilot/zoompilot) and
+[Discord](https://discord.gg/jFWkHC2uhh) for current work. The
+[feature guides](../features/index.md) explain the experience documented
+by this manual; [release history](../releases/changelog.md) records past changes.
 
-[Alpha longitudinal](../features/alpha-longitudinal.md) is a work in
-progress. Its known limits and support status are on the feature page.
+## Jetlink
 
-Support for the comma 3 is planned. For everything else, follow
-development on
-[GitHub](https://github.com/zoompilot/zoompilot) and in the
-[Discord](https://discord.gg/jFWkHC2uhh). Release-by-release changes are
-in the [changelog](../releases/changelog.md).
+[Jetlink operating limits](../jetlink/status.md) distinguishes tested
+platforms from experimental support. Follow the
+[Jetlink repository](https://github.com/zoompilot/jetlink) for updates.
 
-## Upstream
+## upstream projects
 
-zoompilot syncs from [sunnypilot](../help/glossary.md#sunnypilot) and [openpilot](../help/glossary.md#openpilot) regularly:
-
-- [openpilot roadmap](https://github.com/commaai/openpilot/blob/master/docs/contributing/roadmap.md)
-  and [milestones](https://github.com/commaai/openpilot/milestones)
-- [sunnypilot releases](https://github.com/sunnypilot/sunnypilot/blob/master/RELEASES.md)
+[sunnypilot releases](https://github.com/sunnypilot/sunnypilot/releases) ·
+[openpilot roadmap](https://github.com/commaai/openpilot/blob/master/docs/contributing/roadmap.md)

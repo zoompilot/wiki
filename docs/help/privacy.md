@@ -2,7 +2,6 @@
 title: Privacy
 type: explanation
 description: What your comma device records on every drive, what uploads, what a shared route shows, and the switches that control it.
-reviewed: 2026-09-06
 ---
 
 # Privacy
@@ -11,11 +10,6 @@ Your [comma device](../getting-started/hardware.md) records every drive, like a 
 This page says what it keeps, what leaves the device, and how to
 control it.
 { .zp-lede }
-
-[openpilot](glossary.md#openpilot) records every drive. This page says what is recorded, what
-leaves the device, and which switches control it. The full sharing
-procedure is in
-[Share a route](share-a-route.md).
 
 ## What is recorded
 

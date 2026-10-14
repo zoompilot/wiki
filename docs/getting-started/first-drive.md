@@ -1,83 +1,54 @@
 ---
 title: First drive
-type: path
-description: The recommended zoompilot setup, what to check before you engage, and what to expect on your first drive.
-reviewed: 2026-09-06
+type: task
+description: Keep the default model and steering settings for your first drive. Learn the controls before trying optional features. { .zp-lede }
 ---
 
 # First drive
 
-A fresh install is ready to drive. This page covers the few choices
-worth making first, what to check before you turn zoompilot on, and
-what to expect on the road.
+Keep the default model and steering settings for your first drive.
+Learn the controls before trying optional features.
 { .zp-lede }
 
-## Recommended setup
+## before you set off
 
-This is the recommended setup from Zeph
-([@zephleggett](https://github.com/zephleggett)), zoompilot's lead
-developer and maintainer.
+1. **Check the mounting and cameras.** Keep the road camera's view clean and unobstructed. Make sure the driver camera can see your face.
+2. **Wait for setup to finish.** Follow any calibration or model-loading instructions. Do not use assistance while an alert says it is unavailable.
+3. **Read [the controls](../using-zoompilot/controls.md).** Know how to turn steering and cruise off on your car.
+4. **Leave experimental speed control off.** The first-drive setup uses your Mazda's own cruise control for acceleration and braking.
 
-<div class="zp-steps" markdown>
+!!! warning "Steering can stay on when cruise stops"
 
-1. **Pick a driving model.** The driving model is the neural network
-   that watches the road camera and plans the drive. New installs
-   default to Firehose, also Zeph's pick. DTRv6 is a community
-   favorite, and CD210 works well with
-   [alpha longitudinal](../features/alpha-longitudinal.md).
-2. **Trust the learned tune.** Keep self-tune on. Keep custom tune and
-   manual real-time off. The learned values are better than hand
-   tuning. On Mazdas with a 2022-25 CX-5 [EPS](../help/glossary.md#eps), a fresh install already
-   has the steering toggles on — see [Install](install.md).
+    On a Mazda with the default settings, the brake pedal and CANCEL
+    stop cruise control but leave steering active. Turn the main cruise
+    switch off to turn both off. The optional TJA-button setting changes
+    which button controls steering; [check the controls](../using-zoompilot/controls.md).
 
-</div>
+## try assistance
 
-## Before you engage
+Use a familiar road in clear conditions. Keep your hands ready on the
+wheel and your attention on the road.
 
-To engage is to turn zoompilot's assistance on while you drive.
+1. **Turn the main cruise switch on.** Use the car's normal steering-wheel controls.
+2. **Set cruise speed** when traffic, road conditions, and your car's minimum speeds allow it.
+3. **Check the screen's active status.** Steering and speed control can be active separately; a set speed alone does not mean steering is active.
+4. **Practise turning assistance off.** Do this only where it is safe. Confirm that steering and cruise are both off before relying on manual control alone.
 
-- Clean the windscreen in front of the road camera.
-- Mount the device high and centered on the windshield.
-- Make sure driver monitoring can see your face.
-- Read the [safety page](../safety.md). Know how to take over: turn the
-  cruise off with its main button. With
-  [MADS](../help/glossary.md#mads), on by default, the brake
-  pedal and the cancel button stop cruise control but leave steering
-  on.
+Older Mazda steering firmware stops assisting below about 28 mph
+(45 km/h). Your car's cruise control keeps its own minimum-speed and
+stop-and-go limits. [Check compatibility](supported-cars.md).
 
-## Engaging
+## what to expect
 
-zoompilot engages like openpilot: set the cruise with the stock steering
-wheel controls while driving above the minimum speed. On Mazdas with a
-2022-25 CX-5 EPS the minimum speed is 0 mph, so the car can steer from
-a stop.
+Self-Tune learns steering behaviour as you drive. You do not need to
+adjust tuning values. Sharp curves can exceed the steering available;
+steer yourself whenever needed.
 
-What to expect on a first drive:
+If anything feels wrong, take control, turn assistance off, and investigate
+while parked. [Find help by symptom](../help/troubleshooting.md).
 
-- Steering should feel confident at low speed and calm on the highway.
-  The speed-dependent torque learns your specific motor over the first
-  drives.
-- Self-tune keeps improving the steering in the background. You do not
-  need to touch anything.
-- Nags — the prompts that ask you to pay attention or hold the wheel —
-  stay honest. zoompilot suppresses the known false alerts, like the
-  "place hands on wheel" warning on a 2022-25 CX-5 EPS. See
-  [Alert fixes](../features/alerts.md).
-- If anything feels wrong, turn the cruise off and read the
-  [troubleshooting page](../help/troubleshooting.md).
+## after the drive
 
-## After the drive
-
-Check [How to give feedback](../community/feedback.md) to report how the
-car drives. Driving feedback with routes attached is the most useful
-contribution there is. A route is one recorded drive — see
-[Share a route](../help/share-a-route.md).
-
-<div class="zp-next" markdown>
-
-- [Features](../features/index.md)
-  What each part of zoompilot does on the road
-- [Settings](../settings/index.md)
-  Every switch, and what it changes
-
-</div>
+[Recommended optional settings](../settings/recommended.md) ·
+[Everyday use](../using-zoompilot/index.md) ·
+[Share feedback](../community/feedback.md)

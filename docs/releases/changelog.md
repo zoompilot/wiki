@@ -197,8 +197,8 @@ Curve slowdowns get usable, and older Mazdas join in with a swapped-in CX-5 moto
 zoompilot syncs from sunnypilot and openpilot. Their release notes live
 in the repository:
 
-- [`RELEASES.md`](https://github.com/zoompilot/zoompilot/blob/develop/RELEASES.md) —
+- [`RELEASES.md`](https://github.com/zoompilot/zoompilot/blob/main/RELEASES.md) —
   upstream openpilot release notes
-- [`CHANGELOG.md`](https://github.com/zoompilot/zoompilot/blob/develop/CHANGELOG.md) —
+- [`CHANGELOG.md`](https://github.com/zoompilot/zoompilot/blob/main/CHANGELOG.md) —
   upstream sunnypilot changelog
 

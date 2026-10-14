@@ -1,122 +1,74 @@
 ---
-title: Alpha longitudinal
+title: Experimental speed control
 type: feature
-description: The experimental mode where zoompilot controls your Mazda's gas and brakes itself. It turns off the radar, automatic emergency braking, and forward collision warning.
-reviewed: 2026-09-09
 ---
 
-# Alpha longitudinal (work in progress)
+# Experimental speed control
 
-Alpha longitudinal lets [openpilot](../help/glossary.md#openpilot) take full control of the gas and
-brakes, instead of Mazda's stock radar cruise. "Longitudinal" means
-speed — forward and back — as opposed to steering. "Alpha" means it is
-early, experimental work.
+Alpha Longitudinal lets zoompilot control acceleration and braking
+instead of Mazda's own radar cruise. It is experimental and off by default.
 { .zp-lede }
 
-<div class="zp-glance" markdown>
+!!! danger "Emergency braking and collision warning are disabled"
 
-- **Status** <span class="zp-badge zp-badge--experimental">Experimental</span>
-  Off out of the box.
-- **The trade** The car's radar turns off. Automatic emergency braking
-  and forward collision warning stop working while it is on.
-- **Works on** See [Availability](#availability) below. Recommended
-  with a 2022-25 CX-5 [EPS](../help/glossary.md#eps) motor, which steers down to a stop.
-- **Turn it on** `Settings → Developer → Alpha Longitudinal`{ .zp-path }
-  (on comma 3/3X it reads "sunnypilot Longitudinal Control (Alpha)").
-  A confirm page warns you first. The change applies once you are
-  stopped, and zoompilot restarts.
+    Alpha Longitudinal turns off the Mazda radar. Automatic Emergency
+    Braking (AEB) and Forward Collision Warning (FCW) stop working while
+    it is enabled. You must be ready to steer and brake at all times.
 
-</div>
+## do you need it?
 
-<div class="diagram">
-<svg viewBox="0 0 800 190" role="img" aria-label="Stock radar cruise versus alpha longitudinal: stock runs radar to PCM with AEB active; alpha runs the vision model and long planner to the PCM with the radar off">
-  <defs>
-    <marker id="zp-arrow" class="m-dim" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker>
-    <marker id="zp-arrow-a" class="m-acc" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z"/></marker>
-  </defs>
-  <line class="d-lane" x1="95" y1="12" x2="95" y2="178"/>
-  <text x="20" y="51">stock</text>
-  <text x="20" y="136">alpha</text>
-  <rect class="d-box-stock" x="130" y="29" width="130" height="44"/>
-  <text class="d-hi" x="195" y="47" text-anchor="middle">radar</text>
-  <text x="195" y="62" text-anchor="middle">AEB · FCW live</text>
-  <line class="d-flow" x1="260" y1="51" x2="376" y2="51"/>
-  <rect class="d-box-stock" x="380" y="29" width="160" height="44"/>
-  <text class="d-hi" x="460" y="47" text-anchor="middle">PCM</text>
-  <text x="460" y="62" text-anchor="middle">gas · brakes</text>
-  <text x="580" y="55">AEB stays armed</text>
-  <rect class="d-box" x="130" y="114" width="130" height="44"/>
-  <text class="d-hi" x="195" y="132" text-anchor="middle">vision model</text>
-  <text x="195" y="147" text-anchor="middle">drives end to end</text>
-  <line class="d-flow-accent" x1="260" y1="136" x2="296" y2="136"/>
-  <rect class="d-box-accent" x="300" y="114" width="170" height="44"/>
-  <text class="d-hi" x="385" y="132" text-anchor="middle">long planner</text>
-  <text x="385" y="147" text-anchor="middle">zoompilot alpha</text>
-  <line class="d-flow-accent" x1="470" y1="136" x2="536" y2="136"/>
-  <rect class="d-box" x="540" y="114" width="130" height="44"/>
-  <text class="d-hi" x="605" y="132" text-anchor="middle">PCM</text>
-  <text x="605" y="147" text-anchor="middle">gas · brakes</text>
-  <rect class="d-box-stock" x="700" y="114" width="84" height="44"/>
-  <text class="d-red" x="742" y="132" text-anchor="middle">radar</text>
-  <text class="d-red" x="742" y="147" text-anchor="middle">off</text>
-  <line class="d-redline" x1="706" y1="156" x2="778" y2="116"/>
-</svg>
-</div>
+No. The normal setup uses the car's own cruise control. Slow for Curves
+and Speed-Limit Assist can work with that setup.
 
-!!! danger "Safety features disabled"
+Only try this mode if you understand its limitations and accept losing
+the safety features above.
 
-    If alpha longitudinal is enabled, **the car's radar is turned off**.
-    Automatic Emergency Braking (AEB) and Forward Collision Warnings
-    (FCW) are **DISABLED** while alpha longitudinal is on.
+## compatible cars
 
-    If this trade-off is not acceptable to you, do not enable alpha
-    longitudinal.
+The current software requires compatible steering firmware that can assist
+down to a stop, and a supported radar version. A steering-motor swap may
+provide this on an older Mazda. Model year alone is not enough; zoompilot
+checks the fitted hardware before offering the setting.
 
-Credit: Alex Frutkin
-([@yummydirt](https://github.com/yummydirt)) did the reverse engineering
-and implementation for this feature.
+[Check your car](../getting-started/supported-cars.md). Do not force a
+different vehicle selection to expose the setting.
 
-## What changes with alpha longitudinal
+## enable while parked
 
-- openpilot controls acceleration and braking end to end.
-- Cruise features such as [Smart Cruise](smart-cruise.md) and
-  [Speed-Limit Assist](speed-limit-assist.md) work the same way as with
-  the stock radar.
-- With an experimental driving model, zoompilot can also brake for stop
-  signs and lights. The model is your pick on the device — see
-  [First drive](../getting-started/first-drive.md).
+1. Open **Settings → Cruise**.
+2. On **comma 4**, open **alpha longitudinal**. On **comma 3X**, the controls are at the top of Cruise.
+3. Enable **Alpha Longitudinal** and read the confirmation in full.
+4. Let the device restart and finish setup. Follow any **Remain parked** message and wait until it is ready.
 
-## Known limitations
+## choose the driving behaviour
 
-- **Experimental models do not often accelerate to the set speed.**
-- **Stop and go is improved but not totally fixed.** Cruise may
-  disengage after stopping for a lead car.
-- **Expect dash errors and safety issues.** This is a work in progress.
+The related controls are in the same Cruise section:
 
-## Dash errors while on alpha longitudinal
+| Setting | What it does |
+| --- | --- |
+| Experimental Mode | Lets the driving model plan acceleration and braking, including responses to lights and signs. Mistakes should be expected; the set speed is an upper bound. |
+| Dynamic Experimental Control | Switches between normal and Experimental Mode behaviour automatically. |
+| Speed Assist | Can gently raise speed toward the set speed when the road ahead is clear. Off by default. |
+| Lead Follow Assist | Can reduce an unnecessarily large gap behind a steady car toward the selected following distance. Off by default. |
 
-If your dashboard throws cruise, LKAS, or radar errors, run the
-[ECU reset](../help/ecu-reset.md), but go straight to the long wait:
-park, turn the car completely off for **15 minutes**, then drive again.
-A short power-down does not clear this fault.
+Speed Assist and Lead Follow Assist have no effect while Dynamic
+Experimental Control is on. Leave the optional assists off while first
+learning the mode.
 
-See also [Troubleshooting](../help/troubleshooting.md).
+## limitations
 
-## Availability
+The model may drive below the set speed, miss a stop, or handle a
+lead car incorrectly. Do not rely on it to stop for a light or sign.
+Be ready to brake yourself, including after stopping.
 
-- CX-5 2022-25: supported since the first zoompilot release.
-- Mazdas with a swapped 2022-25 CX-5 EPS: supported since 2026.08.25.
-  On a swapped CX-9, the 2021-23 is validated. The 2016-2020 CX-9 and
-  the 2016.5 CX-5 carry an older radar, and alpha longitudinal is
-  expected to work there but is not validated yet.
-- Mazdas with their stock older EPS: available since a recent change.
-  The 2022-25 CX-5 EPS is still recommended: a stock older EPS stops
-  steering at low speed, so stop-and-go would run unsteered.
+## turn it off
 
-See [Supported cars](../getting-started/supported-cars.md).
+Park, open the same Cruise section, and disable Alpha Longitudinal.
+Let the restart finish. If the car's cruise or radar remains unavailable,
+follow [dashboard-error troubleshooting](../help/troubleshooting.md#dashboard-errors-cruise-lkas-or-radar).
+Do not assume the radar has recovered while a fault remains.
 
-## Design details
+Credit: Alex Frutkin ([@yummydirt](https://github.com/yummydirt)) completed
+most of the reverse engineering and initial implementation.
 
-The measurement record behind the longitudinal port — radar takeover and
-hand-back, the CRZ_INFO checksum, stop-and-go, MRCC state semantics — is
-in [Mazda longitudinal](../technical/mazda-longitudinal.md).
+[Safety](../safety.md) · [Technical design](../technical/mazda-longitudinal.md)

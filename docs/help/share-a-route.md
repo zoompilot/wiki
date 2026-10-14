@@ -1,96 +1,58 @@
 ---
 title: Share a route
 type: task
-description: How to share a recorded drive (a route) from comma connect, so someone can look at a problem with you.
 ---
 
 # Share a route
 
-A route is the recording of one drive: video, position, speed, and what
-zoompilot was doing. When you report a problem, a shared route lets the
-people helping you see exactly what happened.
+A route is the recording of one drive. Share its full logs and the time
+of a problem so Zeph or another reviewer can investigate.
 { .zp-lede }
 
-<div class="zp-glance" markdown>
+!!! warning "Only share routes you are comfortable making public"
 
-- **You need** An account on [comma connect](https://connect.comma.ai),
-  comma's web app for your recorded drives, with your device paired.
-- **Where you get help** The [zoompilot Discord](https://discord.gg/jFWkHC2uhh):
-  post the route ID with a short description of the problem.
-- **Privacy** A shared route shows where and when you drove. Read
-  [Privacy](privacy.md) if you are unsure.
+    A public route can show your location, speed, timestamps, and video.
+    Start and stop in public locations; avoid homes and workplaces.
+    Anyone with the route ID can access it.
 
-</div>
+## watch the steps
 
-## Prepare the route
+<figure class="zp-route-video">
+<video controls preload="none" playsinline poster="../../assets/demo/share-a-route-poster.jpg" aria-label="How to upload full logs and share a route in comma connect">
+<source src="../../assets/demo/share-a-route.mp4" type="video/mp4">
+<a href="../../assets/demo/share-a-route.mp4">Download the route-sharing video</a>.
+</video>
+<figcaption>Easy way to share a log with Zeph. The written steps are below.</figcaption>
+</figure>
 
-zoompilot records every drive as a route. These steps share nothing on
-their own; they make sure the logs — the drive's data files — reach
-comma's servers and stay there:
+## upload and preserve
 
-<div class="zp-steps" markdown>
+Keep the comma powered and online while uploads finish.
 
-1. **Let the device upload.** Park where you have Wi-Fi, or a strong
-   hotspot signal. Keep **Onroad Uploads** on (see
-   [Settings](../settings/index.md#device)).
-2. **Upload the full logs.** Open [comma connect](https://connect.comma.ai),
-   select the route, and open **Files**. Under **All logs**, upload the
-   remaining raw logs and wait for the uploads to finish. Reviewers need
-   the complete raw logs.
-3. **Keep it.** Open **More info** and turn on **Preserved**, so the
-   route is not cleaned up.
+1. Open [comma connect](https://connect.comma.ai) and choose the drive.
+2. Open **Files**. Under **All logs**, request any remaining logs.
+3. Open **View upload queue** and wait for every raw log to finish uploading. A playable video alone is not enough for review.
+4. Open **More info** and turn **Preserved** on.
 
-</div>
+These steps prepare the recording; they do not share access yet.
 
-Then choose how to share access.
+## share the public route
 
-## Share a public route
+1. In **More info**, turn **Public access** on.
+2. Copy the **route ID**.
+3. Send it in your [zoompilot Discord](https://discord.gg/jFWkHC2uhh) help thread with the problem description and time.
 
-This is the normal way. It exposes one route and grants no access to
-the device.
+Include your car, comma model, software version, and whether you use
+experimental speed control or Jetlink.
 
-<div class="zp-steps" markdown>
+## share the device instead
 
-1. **Make it public.** Open **More info**, turn on **Public access**,
-   and copy the **route ID**.
-2. **Post it.** Share the route ID on the
-   [Discord](https://discord.gg/jFWkHC2uhh) with a short description of
-   the problem.
+If you prefer not to make the route public, ask the reviewer for their
+email address and share the device through comma connect's device settings.
+**This grants access to all routes on the device**, not just one. Only
+share with someone you trust, and still send the route ID.
 
-</div>
-
-!!! note "Public routes"
-
-    A public route is visible to anyone who has its ID. It contains GPS
-    position, speed, and timestamps. Start and end your drives at public
-    places, and share only routes you are comfortable making public.
-
-## Share the device instead
-
-Use this if you would rather not make the route public. A shared
-device exposes **all routes on it**, not just one.
-
-1. On [comma connect](https://connect.comma.ai), click the **gear icon**
-   on your device.
-2. Rename the device to your car and your Discord username, for example
-   `2024 CX-5 - mazdanick`. The reviewer then knows which device is
-   yours.
-3. Share the device with the reviewer's email address, and confirm the
-   share. Ask the reviewer for the address in your Discord thread.
-4. Copy the **route ID** from the route's **More info** page, and post
-   it on the Discord. The reviewer needs the ID to find the drive.
-
-For what the logs contain, see
-[comma's logging docs](https://docs.comma.ai/concepts/logs/). This
-process is adapted from the
-[sunnypilot docs](https://github.com/sunnypilot/user-docs) (MIT).
-
-<div class="zp-next" markdown>
-
-- [Troubleshooting](troubleshooting.md)
-  Fixes for the most common problems
-- [How to give feedback](../community/feedback.md)
-  What makes a report useful
-
-</div>
-
+For detailed instructions and SSH options, see the
+[sunnypilot route-sharing guide](https://community.sunnypilot.ai/t/share-a-route/1916).
+Use your zoompilot reviewer rather than the sunnypilot team's support
+address. [Read about privacy](privacy.md).

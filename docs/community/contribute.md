@@ -22,7 +22,7 @@ The source lives at
 
 - Open an issue for bugs, with a route ID if you have one.
 - Pull requests are welcome. Read
-  [CONTRIBUTING](https://github.com/zoompilot/zoompilot/blob/develop/docs/CONTRIBUTING.md)
+  [CONTRIBUTING](https://github.com/zoompilot/zoompilot/blob/main/docs/CONTRIBUTING.md)
   in the repository first.
 - To set up a development environment, start with the [openpilot](../help/glossary.md#openpilot) guide
   [Turn the speed blue](https://docs.comma.ai/how-to/turn-the-speed-blue/),

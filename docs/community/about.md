@@ -9,10 +9,10 @@ description: What this wiki is, who builds zoompilot, the projects it stands on,
 ## What this wiki is
 
 This wiki is the central documentation source for
-[zoompilot](https://zoompilot.ai), a Mazda-optimized [fork](../help/glossary.md#fork) of [sunnypilot](../help/glossary.md#sunnypilot).
-It is maintained as markdown in the open: the GitHub icon in the header
-opens the wiki repository, and every push to its main branch deploys
-the site.
+[zoompilot](https://zoompilot.ai), a [fork](../help/glossary.md#fork) of [sunnypilot](../help/glossary.md#sunnypilot)
+that runs on every car sunnypilot supports, with extra work for Mazda.
+It is maintained as markdown in the open: the edit link on a page opens its wiki source. The wiki
+is published separately from the driving software.
 
 ## Standing on the shoulders of
 

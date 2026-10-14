@@ -17,14 +17,14 @@ the code comments on purpose.
     [feature pages](../features/index.md), which say the same things in
     plain words.
 
-The design pages carry a **Constants** table (name, value, measurement,
-route) and a **Tried and rejected** section. Rlogs and the analysis
-scripts live in the private `zoompilot-research` repository. Route IDs
-are the dongle-side segment names in `tools/mazda_long/test_data/` of the
-[zoompilot repository](https://github.com/zoompilot/zoompilot). The
-[route library](route-library.md) indexes the citations, and
-[Tried and rejected](rejected.md) collects every rejected design in one
-place.
+These are design records and measurements from specific revisions.
+They may describe earlier settings or availability rules. For current
+setup, use the [feature guides](../features/index.md),
+[compatibility](../getting-started/supported-cars.md), and
+[controls](../using-zoompilot/controls.md).
+
+The private research repository holds analysis scripts and recorded logs.
+The [route library](route-library.md) indexes citations in these notes.
 
 ## Lateral (steering)
 

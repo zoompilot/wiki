@@ -1,71 +1,51 @@
 ---
-title: EPS swap
-reviewed: 2026-09-06
+title: Mazda steering motor swaps
+type: reference
 ---
 
-# The EPS swap: a 2022-25 CX-5 steering motor in an older Mazda
+# Mazda steering motor swaps
 
-zoompilot's steering work is keyed to one part: the electric power
-steering (EPS) motor from the 2022–2025 CX-5. Some owners fit that
-motor into an older Mazda — a swap. When it is done, zoompilot treats
-the car like a 2022-25 CX-5: steering works down to 0 mph, the full
-torque envelope opens up, and alpha longitudinal gets steering all the
-way down to a stop.
+Some owners fit a newer Mazda steering motor to add steering assistance
+at low speed. A swap is optional and is not part of normal zoompilot setup.
+{ .zp-lede }
 
-## Why people swap
+## what changes
 
-The older motor holds the car back in three ways:
-
-| | Stock older EPS | Swapped 2022-25 CX-5 EPS |
+| Capability | Older stock firmware | Compatible newer firmware |
 | --- | --- | --- |
-| Minimum steering speed | model-dependent, above 0 | 0 mph |
-| Torque envelope | 800/10/25 (the stock openpilot cap) | 1200/12/12, the full curve |
-| Alpha longitudinal | available; steering stops at low speed, so stop-and-go runs unsteered | available and recommended |
+| Steering learning and Mazda tuning | Available on supported hardware. | Available on supported hardware. |
+| Minimum steering speed | About 28 mph (45 km/h). | Can assist down to a stop. |
+| Experimental speed control | Not offered with the older steering firmware. | Eligible only with a supported radar version too. |
 
-For the CX-9 2021 the difference is documented exactly: its stock EPS
-firmware keeps the smaller envelope, and only a CX-9 with the swapped
-2022-25 CX-5 motor gets the full one. The evidence is in
-[Mazda fingerprinting](mazda-fingerprinting.md).
+The current software distinguishes steering hardware from firmware.
+Older firmware can use the enhanced steering tune at higher speeds;
+a swap is primarily about gaining low-speed capability.
 
-## What this page does not cover
+## check before buying parts
 
-The mechanical work: which columns fit, wiring, alignment, or torque
-specs. That work lives with the swap community — ask in the
-[zoompilot Discord](https://discord.gg/jFWkHC2uhh) before you buy
-parts. An incorrectly done swap is a steering safety problem before it
-is a software question.
+A 2022–25 CX-5 donor motor may carry the compatible firmware, but model
+year alone is not enough to confirm a part. Ask the swap community in
+[Discord](https://discord.gg/jFWkHC2uhh) about your exact car and donor part.
+This page does not provide mechanical, wiring, alignment, or torque instructions.
 
-## How zoompilot recognizes a swapped car
+An incorrect steering modification can make the car unsafe. Use qualified
+help for the physical work.
 
-Identification runs in a fixed order at every startup:
+## after a swap
 
-1. **Exact firmware match.** A donor EPS breaks this step on purpose:
-   its firmware belongs to the CX-5, not to the car it now sits in.
-2. **VIN decode.** The VIN names the chassis through any motor swap.
-   For most VINs, this alone identifies the car.
-3. **Swap fallback.** Export VINs carry no model year, so the decode
-   cannot place them. The fallback then needs two ECUs that agree
-   before it trusts the car: a steer-to-zero EPS, and an engine ECU
-   that names exactly one Mazda platform.
+zoompilot reads the car's identity and steering firmware. Do not force
+a CX-5 vehicle selection on a different Mazda: that can apply the wrong
+vehicle specifications.
 
-A car that passes gets the steer-to-zero flag, and everything in the
-table above follows from that one flag. When the fallback fires, the
-log says so: *"by engine firmware behind a steer-to-zero EPS swap"*.
-The full matching design — every firmware string, the VIN table, and
-the fallbacks that were tried and rejected — is in
-[Mazda fingerprinting](mazda-fingerprinting.md).
+Check the recognised car and any minimum-speed warnings before using
+assistance. If recognition is wrong, turn assistance off and
+[share a route](../help/share-a-route.md) for review.
 
-## After the swap
+!!! danger "Experimental speed control remains optional"
 
-- **Check recognition.** On the first drive, confirm the device
-  recognizes the car. If it does not, or support looks wrong, stop and
-  post on the Discord with a route ID (see
-  [Share a route](../help/share-a-route.md)).
-- **Expect a learning period.** The self-tune seeds come from a CX-5.
-  On any swapped car the learner starts from those and adapts to your
-  motor over the first drives. CX-9 owners report the longest
-  adaptation; give it miles before judging the feel. See
-  [Steering improvements](../features/steering.md) and
-  [First drive](../getting-started/first-drive.md).
-- **Custom tune stays off.** The learned values beat hand values. See
-  [Custom tune](../settings/custom-tune.md).
+    A compatible swap does not turn Alpha Longitudinal on. Enabling
+    that mode disables Mazda automatic emergency braking and forward
+    collision warning. Read [the guide](../features/alpha-longitudinal.md).
+
+[Compatibility](../getting-started/supported-cars.md) ·
+[Identification design record](mazda-fingerprinting.md)

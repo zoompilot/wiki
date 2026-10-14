@@ -1,117 +1,66 @@
 ---
 title: Install zoompilot
 type: task
-description: Install zoompilot on a comma device by typing one install URL. No computer needed.
-reviewed: 2026-09-06
+description: Connect your comma to the internet, choose custom software, and enter `zoompilot/main`. No computer is needed. { .zp-lede }
 ---
 
 # Install zoompilot
 
-Installing zoompilot means typing one short address, the install URL,
-into your [comma device](hardware.md). The device downloads zoompilot and starts it.
-There is nothing to configure on a computer.
+Connect your comma to the internet, choose custom software, and enter
+`zoompilot/main`. No computer is needed.
 { .zp-lede }
 
-<div class="zp-build" markdown>
-Install URL: `zoompilot/main` <span class="zp-stamp">· build 393a506e61 · 2026-08-25</span>
-</div>
+## before you start
 
-<div class="zp-glance" markdown>
+- Your [car is supported](supported-cars.md) and the comma is mounted and connected.
+- You have read the [safety and limitations](../safety.md).
+- The car is parked and the device has power and internet access.
 
-- **Before you start** The comma device is mounted in your car and
-  powered — see [What you need](hardware.md). You have read the
-  [safety page](../safety.md).
-- **You need** The device online for the download — Wi-Fi or a phone
-  hotspot.
-- **Time** The first boot can take a few minutes.
+## switching from other software
 
-</div>
+A factory reset is recommended to clear settings from the previous
+software. **Save your settings and upload any recordings you want to keep
+before resetting.** You will need to set up the device again.
 
-!!! warning "Before you install"
+On a device already running software, open **Settings → Software** and use
+the uninstall/reset option to return to setup. Follow the device's
+confirmation screens; wording differs between comma models.
 
-    zoompilot is experimental software. You drive the car, follow the law,
-    and carry all the risk. Read the [safety page](../safety.md) first.
+Already running zoompilot? Use [normal updates](../using-zoompilot/updates.md)
+instead of resetting.
 
-## Recommended: factory reset first
+## install
 
-Factory-reset the device before installing. This clears stale settings
-from previous forks — other [openpilot](../help/glossary.md#openpilot)-based software you may have run
-before — and prevents odd behavior after switching.
+1. **Power on the comma.** Finish the device setup and connect to Wi-Fi or a hotspot.
+2. **Choose custom software** when asked what to install.
+3. **Enter the install address:**
 
-## Install steps
-
-<div class="zp-steps" markdown>
-
-1. **Power on the comma device.** Finish the standard setup until it
-   asks for software.
-2. **Choose the custom software option.**
-3. **Enter this URL:**
-
-    ```
+    ```text
     zoompilot/main
     ```
 
-4. **Let the device download and boot the release.** The first boot
-   can take a few minutes.
+4. **Wait for installation and restart.** Keep power and internet connected until setup finishes.
+5. **Check Settings → Software.** Confirm you are running zoompilot on `main`.
 
-</div>
+## check before driving
 
-That is the whole install.
+Leave the default driving model selected. Let any model download finish.
+If the screen asks for calibration, follow its instructions; assistance
+will not be available until the device is ready.
 
-## Watch the install
+[Next: first drive →](first-drive.md)
 
-<details class="zp-demo">
-<summary>Two short clips — the setup, the URL, the download</summary>
+<details>
+<summary>Watch the installation on your device</summary>
 <figure class="zp-clip">
-  <video controls preload="metadata" playsinline src="../assets/demo/install-comma-3-3x.mp4" aria-label="Demo: installing zoompilot on a comma 3/3X"></video>
-  <figcaption>comma 3/3X — choose custom software, type the URL, download</figcaption>
+<video controls preload="none" playsinline src="../../assets/demo/install-comma-3-3x.mp4" aria-label="Install zoompilot on comma 3X"></video>
+<figcaption>comma 3X: choose custom software and enter the address.</figcaption>
 </figure>
 <figure class="zp-clip">
-  <video controls preload="metadata" playsinline src="../assets/demo/install-comma-four.mp4" aria-label="Demo: installing zoompilot on comma four"></video>
-  <figcaption>comma four — slide to install custom software, type the URL, download</figcaption>
+<video controls preload="none" playsinline src="../../assets/demo/install-comma-four.mp4" aria-label="Install zoompilot on comma 4"></video>
+<figcaption>comma 4: follow the custom software setup.</figcaption>
 </figure>
-<p>The clips run the real setup wizard. The typed URL and the download are real.</p>
 </details>
 
-## What a fresh install turns on
-
-On Mazdas with a 2022-25 CX-5 [EPS](../help/glossary.md#eps), a fresh install arrives with these
-already on:
-
-- Speed-dependent self-tune — zoompilot learns your steering motor as
-  you drive
-- Steers to a standstill — steering assist all the way down to a stop
-- Full range of EPS steering torque — the most steering force the
-  motor can give
-
-You can change everything on the device. See
-[First drive](first-drive.md) for the recommended settings.
-
-## Branches
-
-A branch is a named version of zoompilot. Almost everyone wants `main`.
-
-| Branch | URL | What it is |
-| --- | --- | --- |
-| `main` | `zoompilot/main` | Prebuilt releases. Built ahead of time on a real comma device, so installing does not need an hour of compiling on the device. |
-| `develop` | `zoompilot/develop` | Daily work. Less tested; use only if you follow development. |
-
-## Updates
-
-zoompilot checks for updates when the device has Wi-Fi. Every release
-is prebuilt, so updates install in minutes, not hours of compiling.
-
-## Switching from another fork
-
-You can enter `zoompilot/main` over an existing fork install. A factory
-reset is still the cleaner path. If you already run zoompilot, updates
-arrive on their own: the device repoints itself on its next start.
-
-<div class="zp-next" markdown>
-
-- [First drive](first-drive.md)
-  Recommended settings and your first engagement
-- [Troubleshooting](../help/troubleshooting.md)
-  If something looks wrong
-
-</div>
+If installation fails, note the exact message and see
+[Troubleshooting](../help/troubleshooting.md).

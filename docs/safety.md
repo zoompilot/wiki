@@ -2,7 +2,6 @@
 title: Safety
 type: reference
 description: The safety rules for driving with zoompilot, including the alpha longitudinal radar warning and openpilot's limitations.
-reviewed: 2026-09-09
 ---
 
 # Safety
@@ -11,42 +10,21 @@ Read this page in full before using zoompilot. It is the one page in
 this wiki every driver must read.
 { .zp-lede }
 
-!!! abstract "In short"
+## before you drive
 
-    - **You are the driver.** zoompilot is a driver assist, not a
-      replacement for an attentive driver. Keep your eyes on the road
-      and be ready to steer and brake at all times.
-    - **You can always take over.** Turn the cruise off with its main
-      button, and steering and speed are both yours again. With MADS,
-      which is on by default, the brake pedal and the cancel button stop
-      cruise control but leave steering on.
-    - **A camera watches your attention.** If you look away, zoompilot
-      warns you, then turns itself off.
-    - **Alpha longitudinal turns the radar off.** Automatic emergency
-      braking and forward collision warning stop working while it is on.
-    - **zoompilot has limits.** Rain, glare, sharp curves, stopped cars
-      and more can defeat it. The lists are below.
+- **Watch the road and be ready to steer and brake.** zoompilot is assistance, not a replacement for the driver.
+- **Learn your controls.** On a default Mazda setup, brake and CANCEL stop cruise but leave steering active. Main cruise off turns both off. With the optional TJA-button setting, TJA controls steering separately. [Read the controls](using-zoompilot/controls.md).
+- **Keep driver monitoring active.** Make sure the camera can see your face. Respond to attention warnings immediately.
+- **Know the limits.** Sharp curves, poor visibility, stopped traffic, and other conditions can defeat assistance. Read the limitations below.
 
-## zoompilot safety
+!!! danger "Alpha Longitudinal disables Mazda emergency braking"
 
-!!! danger "Alpha longitudinal turns off your radar"
+    Experimental speed control turns off the car's radar. Automatic
+    Emergency Braking (AEB) and Forward Collision Warning (FCW) stop
+    working while it is enabled. This mode is optional and off by default.
 
-    If [alpha longitudinal](features/alpha-longitudinal.md) is enabled,
-    the car's radar is turned off. **Automatic Emergency Braking (AEB)
-    and Forward Collision Warnings (FCW) are DISABLED.** Understand this
-    before you enable the toggle.
-
-- zoompilot is experimental software. You drive the car, follow the law,
-  and carry all the risk.
-- If your dashboard shows cruise, LKAS, or radar errors, turn the car
-  completely off to reset. See [ECU reset](help/ecu-reset.md).
-- Driver monitoring stays active in zoompilot. Do not disable or weaken
-  it.
-- [MADS](help/glossary.md#mads) is on by default: steering can stay
-  active without cruise control. Pressing the brake pedal or the cancel button stops
-  cruise control, but steering stays on. To hand steering back, turn the
-  cruise off with its main button. See
-  [Settings](settings/index.md#steering).
+If a dashboard fault appears, stop using assistance and
+[check the fault](help/troubleshooting.md). Do not assume it is a false alert.
 
 ## openpilot safety
 
@@ -85,6 +63,13 @@ shape the system:
 2. The vehicle must not alter its trajectory too quickly for the driver
    to safely react. While the system is engaged, the actuators are
    constrained to operate within reasonable limits[^1].
+
+!!! warning "zoompilot steering differs from the upstream description"
+
+    The upstream requirements above describe openpilot's control model.
+    With zoompilot's default MADS settings, brake and CANCEL leave
+    steering active. Use the [controls guide](using-zoompilot/controls.md)
+    for your setup. Do not assume cancelling cruise cancels steering.
 
 For safety implementation details, refer to the
 [panda safety model](https://github.com/commaai/panda#safety-model) and

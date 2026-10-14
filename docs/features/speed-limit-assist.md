@@ -1,57 +1,59 @@
 ---
 title: Speed-Limit Assist
 type: feature
-description: Speed-Limit Assist reads speed limits from signs and maps, shows them, and can set your cruise speed to match.
-reviewed: 2026-09-06
 ---
 
-# Speed-Limit Assist (SLA)
+# Speed-Limit Assist
 
-Speed-Limit Assist knows the speed limit where you are driving — from
-signs and from map data. It can show the limit, warn you, or set your
-cruise speed to match it.
+Speed-Limit Assist uses limits from your car or downloaded maps.
+You choose whether it only provides information or changes cruise speed.
 { .zp-lede }
 
-<div class="zp-glance" markdown>
+## choose a mode
 
-- **Status** Out of the box it shows the limit (Information mode).
-- **Works on** Every supported Mazda.
-- **Settings** `Settings → Cruise → Speed Limit Assist Mode`{ .zp-path }
-  — Off, Information, Warning, or Assist. Assist changes your set speed
-  and needs [ICBM](icbm.md) or [alpha longitudinal](alpha-longitudinal.md). The source and
-  offset settings sit next to it — see
-  [Settings](../settings/index.md#cruise).
-- **Needs** Reading speed signs needs the nav SD card. See
-  [What you need](../getting-started/hardware.md).
+While parked, open **Settings → Cruise → Speed Limit**.
 
-</div>
+| Mode | Behaviour |
+| --- | --- |
+| Off | Does not use speed-limit assistance. |
+| Information / info | Uses speed-limit information without changing your cruise speed. |
+| Warning / warn | Warns about exceeding the detected limit on displays that support it. |
+| Assist | Can adjust cruise speed to the detected limit. Read the confirmation prompt. |
 
-Speed-Limit Assist adjusts your cruise speed automatically when you pass
-a speed sign. You confirm the change, or let it stick — the behavior is
-configurable.
+Information is the default. **The comma 4 does not show the same
+Information/Warning sign display as the comma 3X.** Assist prompts are
+shown when a cruise-speed change is requested.
 
-## Where speed limits come from
+## choose a source
 
-SLA has two data sources:
+- **Car:** on a supported Mazda, the car's speed-limit information needs a navigation SD card.
+- **Map:** download maps for your region through sunnylink.
+- **Car-first or map-first:** use the other source when the preferred one has no limit.
+- **Combined:** use the lower limit when both sources provide one.
 
-- **Speed sign reading** — the LKAS camera reads speed signs. This
-  requires a **nav SD card**. See [Hardware](../getting-started/hardware.md).
-- **OpenStreetMap data** — speed limits from the map, used with or
-  instead of sign reading.
+The source and offset controls are next to the mode setting. Start with
+no offset while you learn how the feature behaves.
 
-You can add a positive or negative offset, so the car targets a speed
-above or below the limit.
+## when a limit changes
 
-## How confirmation works
+Read the prompt, including the requested speed and button. Confirm only
+when the speed is appropriate. While confirmation is pending, the prompt
+does not itself change your cruise speed.
 
-Confirming a speed limit is one tap, and the answer sticks. While you are
-still deciding, a speed limit prompt does not nudge your set speed. This
-is part of the unified cruise rewrite: see
-[Smart Cruise](smart-cruise.md).
+Automatic cruise-button control starts when Assist needs it on a
+compatible car. There is no separate ICBM switch.
 
-## Design details
+!!! warning "Check the posted limit"
 
-- The SLA state machine and its interaction with ICBM:
-  [Cruise arbiter](../technical/cruise-arbiter.md)
-- How SLA publishes targets to the planner:
-  [Curve and limit speed planning](../technical/scc-curve-planning.md)
+    Signs and map data can be missing, outdated, or wrong. You remain
+    responsible for following the actual speed limit and choosing a
+    speed safe for the conditions.
+
+## stop using it
+
+Choose **Information** to stop speed adjustments, or **Off** to stop
+speed-limit assistance entirely. Make changes while parked.
+
+[Settings reference](../settings/index.md#cruise) ·
+[Cruise controls](../using-zoompilot/controls.md) ·
+[Technical design](../technical/cruise-arbiter.md)

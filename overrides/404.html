@@ -4,7 +4,7 @@
 -#}
 {% extends "main.html" %}
 {% block content %}
-<div class="zoom-404">
+<div class="zoom-404" id="__skip">
   <div class="zoom-404-code">404</div>
   <h1>wrong exit</h1>
   <p class="zoom-404-lede">
@@ -12,10 +12,10 @@
     else.
   </p>
   <p class="zoom-404-row">
-    <a href="{{ 'index.md' | url }}" class="md-button md-button--primary">
+    <a href="{{ '/' | url }}" class="md-button md-button--primary">
       back to the wiki
     </a>
-    <a href="{{ 'getting-started/install.md' | url }}" class="md-button">
+    <a href="{{ 'getting-started/install/' | url }}" class="md-button">
       install page
     </a>
   </p>

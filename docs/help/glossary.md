@@ -59,7 +59,8 @@ The base everything here builds on.
 parent.
 { #sunnypilot }
 
-**zoompilot** — a Mazda-optimized fork of sunnypilot. See
+**zoompilot** — a fork of sunnypilot that runs on every car sunnypilot
+supports, with extra steering and cruise work for Mazda. See
 [What is zoompilot?](../getting-started/what-is-zoompilot.md).
 { #zoompilot }
 
@@ -148,14 +149,13 @@ firmware. Decides what zoompilot is allowed to do.
 { #fingerprint }
 
 **steer-to-zero flag** — `STEER_TO_ZERO_EPS`: the flag that marks the
-2022-25 CX-5 motor, wherever it is fitted. Unlocks 0 mph steering and
-the full torque envelope. It is the recommended motor for alpha
+compatible steering firmware, wherever it is fitted. Enables steering
+assistance down to a stop. Compatible steering-to-zero firmware is required for Mazda alpha
 longitudinal.
 { #steer-to-zero-flag }
 
-**torque envelope** — what the EPS may be asked for: 1200/12/12 on the
-steer-to-zero motor (scale, units per frame, frame rate), 800/10/25 on
-the stock older motor. See
+**torque envelope** — the steering force and rate of change allowed
+for the motor. Hardware limits still apply. See
 [Mazda lateral](../technical/mazda-lateral.md).
 { #torque-envelope }
 
@@ -181,11 +181,13 @@ lateral acceleration is worth; the main learned number.
 **MADS** — Modular Assistive Driving System: steering can stay engaged
 without cruise. On by default. The brake pedal and the cancel button
 stop cruise control but leave steering on; turning the cruise off with
-its main button releases steering too.
+its main button releases steering too with the default Mazda settings.
+The optional TJA-button setting makes TJA the separate steering switch.
+See [Controls](../using-zoompilot/controls.md).
 { #mads }
 
-**UEM** — unified engagement mode: one pedal action engages steering
-and cruise together.
+**UEM** — unified engagement mode: engaging cruise also enables steering.
+Steering can remain active when cruise is cancelled.
 { #uem }
 
 **ICBM** — Intelligent Cruise Button Management: zoompilot presses
@@ -196,8 +198,8 @@ your cruise buttons for you. See [ICBM](../features/icbm.md).
 [Speed-Limit Assist](../features/speed-limit-assist.md).
 { #sla }
 
-**SCC** — Smart Cruise Control: the curve- and limit-aware cruise speed
-planner. See [Smart Cruise](../features/smart-cruise.md).
+**SCC** — Smart Cruise Control, the older name for Slow for Curves.
+See [Slow for Curves](../features/smart-cruise.md).
 { #scc }
 
 **op-long** — shorthand for openpilot longitudinal: zoompilot commands

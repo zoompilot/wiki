@@ -1,123 +1,80 @@
 ---
 title: Troubleshooting
 type: task
-description: Fixes for the most common zoompilot problems — dashboard errors, weak steering, will not engage, and more. Pick what you see.
-reviewed: 2026-09-09
 ---
 
 # Troubleshooting
 
-Something is not right? Pick what you see below for the first moves,
-then read the full section. For anything else, ask on the
-[Discord](https://discord.gg/jFWkHC2uhh) with your release version and a
-[route ID](share-a-route.md).
+If assistance behaves unexpectedly, take control and investigate while
+parked. Start with the symptom below.
 { .zp-lede }
 
-<div id="zp-triage" markdown="0"></div>
+| Problem | First step |
+| --- | --- |
+| Dashboard cruise, camera, or radar fault | [Turn assistance off and check the fault](#dashboard-errors-cruise-lkas-or-radar). |
+| Assistance will not turn on | [Read the alert and check readiness](#zoompilot-will-not-engage). |
+| Steering feels weak or wobbly | [Check the steering settings](#steering-feels-weak-or-wobbly). |
+| Odd behaviour after switching software | [Start from a clean setup](#weird-behavior-after-switching-forks). |
+| Wrong speed limit | [Check the selected source](#wrong-speed-limits-on-a-kmh-car). |
+| Jetlink icon orange or model unavailable | [Jetlink troubleshooting](../jetlink/troubleshooting.md). |
 
-## Before you troubleshoot
+## dashboard errors (cruise, LKAS, or radar)
 
-Work through these three steps first. They fix most problems.
+1. Turn assistance off and park safely.
+2. Note the exact fault. Follow any vehicle-manual instructions for it.
+3. For a cruise/camera/radar fault after using zoompilot, try the [full power-down procedure](ecu-reset.md).
+4. If it persists or returns, stop using assistance and [ask for help](#where-to-get-more-help).
 
-1. **Update zoompilot.** Run the latest `zoompilot/main` release. Fixes
-   go into new releases only.
-2. **Check your settings.** Compare against the
-   [Settings](../settings/index.md) page. In particular, check that
-   torque control, self-tune, and speed-dependent self-tune are on, and
-   custom tuning is off.
-3. **Remove customizations.** If you patched the code or changed [fork](glossary.md#fork)
-   branches, retest on a clean `zoompilot/main` install before you
-   report. See [Install](../getting-started/install.md).
+Do not assume a warning is harmless or that a restart repaired the cause.
 
-## Dashboard errors (cruise, LKAS, or radar)
+## cruise blocked after flipping alpha longitudinal
 
-If your dashboard shows cruise, LKAS, or radar errors, especially with
-[alpha longitudinal](../features/alpha-longitudinal.md) on, run the
-[ECU reset](ecu-reset.md): park, turn the car completely off for
-a minute, then drive again. If the error survives, repeat with
-**15 minutes** off. If it survives that too,
-[share a route](share-a-route.md) from the drive before you keep driving.
+Changes apply while parked and restart zoompilot. Wait for setup to finish.
+If cruise remains unavailable after turning experimental speed control off,
+turn the car fully off, restart, and check for faults before using assistance.
+Use the dashboard-fault procedure above if necessary.
 
-## Cruise blocked after flipping alpha longitudinal
+## weird behavior after switching forks
 
-Alpha longitudinal applies its change at a standstill: zoompilot waits
-until you are parked, gives the radar back to the car, and then restarts.
-After you turn alpha longitudinal **off**, the radar may need a full
-ignition cycle to come back cleanly. If cruise stays unavailable:
+A fork is another version of openpilot-based software. Old settings can
+carry over. Save anything you need, factory-reset the device, and install
+`zoompilot/main` again. [Installation](../getting-started/install.md).
 
-1. Park and turn the car fully off.
-2. Start it again and drive once with zoompilot not engaged.
-3. If the error stays, follow the dashboard-error reset above.
+## steering feels weak or wobbly
 
-See [Alpha longitudinal](../features/alpha-longitudinal.md).
+- Check **Settings → Steering**: torque control and Self-Tune on, custom tuning and manual real-time tuning off.
+- There is no separate Speed-Dependent Self-Tune switch. Learning follows Self-Tune.
+- Allow the learned tune time to adapt over several drives.
+- Check your car's [low-speed steering limit](../getting-started/supported-cars.md).
 
-## Weird behavior after switching forks
-
-Factory-reset the device, then install `zoompilot/main` fresh. Stale
-settings from a previous fork cause hard-to-explain faults. See
-[Install](../getting-started/install.md).
-
-## Steering feels weak or wobbly
-
-- Check that torque control, self-tune, and speed-dependent self-tune are
-  on, and custom tune is off. See
-  [Settings](../settings/index.md#steering) and
-  [First drive](../getting-started/first-drive.md).
-- Give self-tune a few drives. Fresh installs start from values learned
-  on a CX-5, but your motor still needs some miles.
-- CX-9 owners: speed-dependent torque takes longer to learn, because the
-  starting values come from a CX-5.
+If it still feels wrong, turn assistance off and share a route rather
+than changing tuning values at random.
 
 ## zoompilot will not engage
 
-Check, in order:
+1. Read the alert. Finish calibration and model downloads first.
+2. Check the master **Enable zoompilot** switch under Settings → Toggles (some screens use the sunnypilot name).
+3. Check the seatbelt, doors, lane-keeping switch, and normal cruise conditions.
+4. Confirm your [car and minimum steering speed](../getting-started/supported-cars.md).
+5. If using Alpha Longitudinal, follow any **Remain parked** message until setup is ready.
 
-1. **Enable zoompilot** is on. It is the master switch under Settings →
-   Toggles. It is on by default. When it is off, zoompilot stays
-   passive.
-2. The car is in a state that allows engagement: driver door closed,
-   seatbelt on, and stock cruise able to set. See
-   [First drive](../getting-started/first-drive.md).
-3. Your car is supported: find it in the table on
-   [Will it work on my car?](../getting-started/supported-cars.md). The
-   device identifies your car from its VIN and [EPS](glossary.md#eps) firmware; EPS swaps
-   are identified by motor firmware.
-4. The engagement conditions for your model are met. The CX-5 steers
-   from 0 mph; stock-radar cars keep their stock stop-and-go limits. See
-   [Supported cars](../getting-started/supported-cars.md).
+Record the exact message if assistance remains unavailable.
 
-## Wrong speed limits on a km/h car
+## wrong speed limits on a km/h car
 
-Reading speed limits on cars set to km/h is fixed since 2026.08.25-8.
-Update, and check that the nav SD card is inserted for sign reading. See
-[Speed-Limit Assist](../features/speed-limit-assist.md).
+Check the units and source in **Settings → Cruise → Speed Limit**.
+Car-supplied Mazda limits need the navigation SD card. Map limits need
+maps for your region. If the displayed or requested limit is wrong, do
+not accept it; use the posted limit and [report the location](share-a-route.md).
 
-## Fixed in recent releases
+## share a route
 
-Both alerts below were bugs in older releases. An update to the latest
-`zoompilot/main` fixes them.
+[Upload the full logs and share the drive](share-a-route.md). Include the
+time of the problem, your software version, and any settings changed
+before it happened.
 
-### "Cruise Fault: Restart the Car" on a cold start
+## where to get more help
 
-A bug fired this alert falsely on cold starts. It is fixed since
-2026.08.25-8: the alert now fires only when the radar genuinely drops out
-mid-drive. Update to the latest release. See the
-[changelog](../releases/changelog.md).
-
-### False "NO PANDA" flash on screen wake
-
-Fixed in the 2026.08 releases. Update zoompilot.
-
-## Share a route
-
-Most bug reports need a route — the recording of one drive. The steps
-to prepare and share one have their own page:
-[Share a route](share-a-route.md).
-
-## Where to get more help
-
-- [FAQ](faq.md) — quick answers to common questions
-- [zoompilot Discord](https://discord.gg/jFWkHC2uhh) — post your release
-  version, car, and route ID.
-- [zoompilot issues](https://github.com/zoompilot/zoompilot/issues)
-- [How to give feedback](../community/feedback.md)
+[Discord](https://discord.gg/jFWkHC2uhh) · [FAQ](faq.md) ·
+[Report a problem](../community/feedback.md) ·
+[Update zoompilot](../using-zoompilot/updates.md)

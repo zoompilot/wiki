@@ -1,5 +1,13 @@
 # Lateral tune: v2 torque controller, shared layer and speed-bin learner
 
+
+!!! note "Design record: not setup instructions"
+
+    This page records engineering work at the revisions cited below.
+    Settings and availability may have changed. Use the
+    [current feature guides](../features/index.md) for setup and
+    [compatibility](../getting-started/supported-cars.md) for car requirements.
+
 !!! abstract "About this page"
 
     The v2 torque controller, the shared EPS layer, and the speed-bin

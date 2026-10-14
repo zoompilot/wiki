@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 
-{% block announce %}
-  Experimental software — you drive the car, follow the law, and carry all
-  the risk. Read the
-  <a href="{{ 'safety/' | url }}">safety page</a> first.
-{% endblock %}
+{# No announce bar: zoompilot.ai has none. Its experimental-software
+   line sits in the footer of every page instead (block footer below),
+   still linking the safety page. #}
 
 {% block content %}
   {{ super() }}
@@ -13,17 +11,30 @@
      were verified against zoompilot/main carry `reviewed:` front matter
      and it shows here. #}
   {% if page.meta and page.meta.reviewed %}
-  <p class="zp-reviewed">reviewed {{ page.meta.reviewed }} against <code>zoompilot/main</code></p>
+  <p class="zp-reviewed">last content review {{ page.meta.reviewed }}</p>
   {% endif %}
+{% endblock %}
+
+{% block footer %}
+  <p class="zp-warn md-grid">
+    <strong>This is experimental software.</strong> You drive the car,
+    follow the law, and carry all the risk. Read the
+    <a href="{{ 'safety/' | url }}">safety page</a> first.
+  </p>
+  <nav class="zp-footer-links md-grid" aria-label="More documentation">
+    <a href="{{ 'technical/' | url }}">Technical notes</a>
+    <a href="{{ 'community/' | url }}">Community</a>
+    <a href="{{ 'community/about/' | url }}">About &amp; credits</a>
+    <a href="{{ 'help/privacy/' | url }}">Privacy</a>
+  </nav>
+  {{ super() }}
 {% endblock %}
 
 {% block styles %}
 {{ super() }}
-{# Audiowide: the zoompilot.ai display face, for the wordmark and hero.
-   Inter and JetBrains Mono come from theme.font in mkdocs.yml. #}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+{% for font in ['Audiowide-Regular', 'Inter-Regular', 'Inter-SemiBold', 'Inter-Bold'] %}
+<link rel="preload" href="{{ ('assets/fonts/' ~ font ~ '.woff2') | url }}" as="font" type="font/woff2" crossorigin>
+{% endfor %}
 {% endblock %}
 
 {% block scripts %}
@@ -41,56 +52,29 @@
   <div class="md-paints" role="group" aria-label="Paint the wiki like your car">
     <button class="chip" type="button" data-zp-paint="46v" aria-label="46V soul red crystal"><span class="code">46V</span></button>
     <button class="chip" type="button" data-zp-paint="45p" aria-label="45P sonic silver"><span class="code">45P</span></button>
-    <button class="chip" type="button" data-zp-paint="47c" aria-label="47C titanium flash"><span class="code">47C</span></button>
+    <button class="chip" type="button" data-zp-paint="47c" aria-label="47C polymetal gray"><span class="code">47C</span></button>
     <button class="chip" type="button" data-zp-paint="45b" aria-label="45B eternal blue"><span class="code">45B</span></button>
     <button class="chip" type="button" data-zp-paint="46g" aria-label="46G machine gray"><span class="code">46G</span></button>
     <button class="chip" type="button" data-zp-paint="25d" aria-label="25D snowflake white pearl"><span class="code">25D</span></button>
     <button class="chip" type="button" data-zp-paint="42m" aria-label="42M deep crystal blue"><span class="code">42M</span></button>
-    <button class="chip" type="button" data-zp-paint="41w" aria-label="41W jet black"><span class="code">41W</span></button>
-    <p class="wearing" data-zp-wearing>45B eternal blue</p>
+    <button class="chip" type="button" data-zp-paint="41w" aria-label="41W jet black mica"><span class="code">41W</span></button>
+    <p class="wearing" data-zp-wearing>46G machine gray</p>
   </div>
 </template>
 <script>
   (function () {
     var KEY = "zp-wiki-paint";
-    var DEFAULT = "45b";
+    var DEFAULT = "46g";
     /* the 2022-2025 CX-5 line, in chip order. Codes only: the names
      * live on the chips (aria-label), the colors in custom.css. The
      * list validates a saved code before the chips are injected. */
     var CODES = ["46v", "45p", "47c", "45b", "46g", "25d", "42m", "41w"];
 
-    /* link back to the main site */
-    var HOME = "https://zoompilot.ai";
-
-    /* home link: one quiet text link at the left of the header icons */
-    var innerEl = document.querySelector(".md-header__inner");
-    if (innerEl) {
-      var home = document.createElement("a");
-      home.className = "md-header__home md-header__button";
-      home.href = HOME;
-      home.textContent = "zoompilot.ai";
-      var anchorEl =
-        innerEl.querySelector("[data-md-component='palette']") ||
-        innerEl.querySelector(".md-header__source");
-      if (anchorEl) {
-        anchorEl.before(home);
-      } else {
-        innerEl.append(home);
-      }
-      /* GitHub icon: right after the zoompilot.ai link, ahead of the
-       * dark-mode toggle — the theme parks the repo widget at the far
-       * end of the row. */
-      var repo = innerEl.querySelector(".md-header__source");
-      if (repo) {
-        home.after(repo);
-      }
-    }
-
     /* header entry point: palette button + chip panel */
     var btn = null;
     var panel = null;
     var tpl = document.getElementById("zp-paints");
-    var inner = document.querySelector(".md-header__inner");
+    var inner = document.querySelector(".md-header__tools");
     if (tpl && inner) {
       var wrap = document.createElement("div");
       wrap.className = "md-header__paints";

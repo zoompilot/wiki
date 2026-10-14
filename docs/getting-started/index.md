@@ -1,81 +1,39 @@
 ---
 title: Start here
 type: hub
-description: New to zoompilot? Six short pages take you from "what is this?" to your first drive.
-hide:
-  - toc
+description: Choose the path that fits you. Both lead to the same installation and first-drive guide. { .zp-lede }
 ---
 
 # Start here
 
-New to zoompilot? You do not need to know anything about [openpilot](../help/glossary.md#openpilot),
-comma devices, or car software. Read these six pages in order. Each one
-ends with a link to the next.
+Choose the path that fits you. Both lead to the same installation and
+first-drive guide.
 { .zp-lede }
 
-<div class="zp-journey" markdown>
+## new to comma?
 
-1. [What is zoompilot?](what-is-zoompilot.md)
-   What it is, what it adds to your Mazda, and who makes it.
-2. [Will it work on my car?](supported-cars.md)
-   The Mazda models and years it runs on, and what your steering motor
-   changes.
-3. [What you need](hardware.md)
-   The comma device, the Mazda cable kit, and optional extras.
-4. [Safety rules](../safety.md){ .zp-journey__safety }
-   What stays your job, and the one mode that turns off emergency
-   braking.
-5. [Install](install.md)
-   Type one address on the device. No computer needed.
-6. [First drive](first-drive.md)
-   The recommended setup, and how to turn zoompilot on and off.
+A comma device is a camera-equipped computer mounted inside your windshield.
+zoompilot is the software that runs on it.
 
-</div>
+1. **[Check your car](supported-cars.md).** Confirm the model, year, and required equipment.
+2. **[Get the hardware](hardware.md).** You need a supported comma device and the cable kit for your car.
+3. **Mount and connect it.** Follow the physical setup guide linked from the hardware page.
+4. **[Install zoompilot](install.md).** Connect to the internet and enter `zoompilot/main`.
+5. **[Prepare for your first drive](first-drive.md).** Keep the defaults and learn how to turn assistance on and off.
 
-## Want to understand it first?
+## already using openpilot or sunnypilot?
 
-Two optional pages for the curious. Neither is needed to install or
-drive.
+You can keep your supported comma device and car cable kit.
 
-<div class="grid cards" markdown>
+1. **[See what changes](comparison.md).** Pay particular attention to steering staying active when cruise is cancelled.
+2. **[Check compatibility](supported-cars.md).** Mazda steering and cruise capabilities depend on the fitted hardware.
+3. **[Switch to zoompilot](install.md#switching-from-other-software).** Save anything you need before a factory reset.
+4. **[Check the controls](../using-zoompilot/controls.md)** and follow the [first-drive checklist](first-drive.md).
 
-- :material-chart-timeline-variant: __How zoompilot works__
+## after your first drive
 
-    ---
+Try the [recommended optional settings](../settings/recommended.md) one at
+a time. You do not need to choose a different driving model or tune by hand.
 
-    Follow one drive from the camera to the wheels, and see what
-    zoompilot changes on the way.
-
-    [Read how it works](how-it-works.md)
-
-- :material-source-fork: __Which fork, and why__
-
-    ---
-
-    zoompilot, [sunnypilot](../help/glossary.md#sunnypilot), and openpilot side by side, and who should
-    run which.
-
-    [Compare them](comparison.md)
-
-</div>
-
-## Words you will meet
-
-A few words come up on almost every page. The
-[glossary](../help/glossary.md) has the rest.
-
-<div class="zp-glance" markdown>
-
-- **openpilot** Free, open-source driver-assistance software made by the
-  company comma.ai. It steers and manages speed on many car brands.
-- **Fork** A copy of a software project that keeps everything and adds
-  its own changes. zoompilot is a fork of sunnypilot, which is a fork of
-  openpilot.
-- **comma device** The small computer with its own cameras that you
-  mount behind the windshield. zoompilot runs on it.
-- **EPS** Electric power steering: the motor that turns your front
-  wheels. zoompilot asks it for steering force.
-- **Engage** Turn zoompilot's assistance on while you drive.
-  **Disengage** turns it off.
-
-</div>
+[What is zoompilot?](what-is-zoompilot.md) ·
+[Safety and limitations](../safety.md) · [Need help?](../help/index.md)

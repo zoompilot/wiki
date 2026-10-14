@@ -1,11 +1,15 @@
 # Settings screenshots — capture checklist
 
-The Settings reference (`docs/settings/index.md`) embeds two images per
-panel from this directory: comma four (mici) panoramas at the root, and
+Legacy captures in `docs/assets/settings/` contain two images per
+panel: comma four (mici) panoramas at the root, and
 comma 3/3X (tici/tizi) full-frame panels in `tici/`. Both are rendered
 from the release code with the simulator tool in
-[contrib/capture-settings.py](../../../contrib/capture-settings.py) —
+[capture-settings.py](capture-settings.py) —
 no device needed.
+
+These images are not shown by the current manual because the controls
+have changed. Recheck all paths and the capture tool against the release
+before regenerating or adding screenshots to a driver guide.
 
 ## Regenerate after a release
 

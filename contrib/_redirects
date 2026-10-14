@@ -36,8 +36,8 @@
 /how-to/privacy /help/privacy/ 301
 /how-to/custom-tune/ /settings/custom-tune/ 301
 /how-to/custom-tune /settings/custom-tune/ 301
-/how-to/jetlink/ /community/jetlink/ 301
-/how-to/jetlink /community/jetlink/ 301
+/how-to/jetlink/ /jetlink/ 301
+/how-to/jetlink /jetlink/ 301
 /community/faq/ /help/faq/ 301
 /community/faq /help/faq/ 301
 /reference/ /help/ 301
@@ -48,3 +48,7 @@
 /reference/site-sync /community/site-sync/ 301
 /about/ /community/about/ 301
 /about /community/about/ 301
+
+# The old tester guide now lives in the dedicated Jetlink section.
+/community/jetlink/ /jetlink/ 301
+/community/jetlink /jetlink/ 301

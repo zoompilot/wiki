@@ -1,148 +1,109 @@
 ---
-title: FAQ
+title: Frequently asked questions
 type: reference
-description: Quick answers to the questions new zoompilot owners ask most — cars, cost, install, driving, and data.
-hide:
-  - toc
 ---
 
 # Frequently asked questions
 
-Answers to the questions that come up most often. This page will grow —
-ask on the [Discord](https://discord.gg/jFWkHC2uhh) if your question is
-missing.
+Quick answers about hardware, setup, and daily use.
 { .zp-lede }
 
-## Before you start
+## before you start
 
 ### Is my Mazda supported?
 
-zoompilot runs on every Mazda platform in its support list: the CX-5
-2016.5–2025, the CX-8 2023, the CX-9 2016–2023, and — on community
-reports so far — the Mazda 3 2017–2018 and the Mazda 6 2017–2021. The
-steering motor sets how the steering behaves. The 2022-25 CX-5 EPS —
-the electric power steering motor — steers to zero (all the way down to
-a stop) and is the recommended motor for
-[alpha longitudinal](../features/alpha-longitudinal.md). It is
-factory-fitted in the CX-5 2022–2025 and the CX-8 2023, and an older
-Mazda gets it by swapping the motor in — the CX-9 included. Every other
-car runs on its stock motor's limits. See
-[Will it work on my car?](../getting-started/supported-cars.md).
+Check the [compatibility guide](../getting-started/supported-cars.md).
+Year, region, steering firmware, and radar can affect the features you get.
 
-### How is zoompilot different from sunnypilot on an EPS swap?
+### What about other car brands?
 
-[sunnypilot](glossary.md#sunnypilot) can make a swapped car steer to zero, but only if you
-select the CX-5 2022-25 platform by hand. That selection applies CX-5
-values — steering ratio, wheelbase, and mass — to a car that is not a
-CX-5. zoompilot identifies the swapped motor from its firmware and
-enables steer-to-zero on its own, with every other value still matched
-to your car. See [Which fork, and why](../getting-started/comparison.md).
-
-### What hardware do I need?
-
-A [comma 3X](../getting-started/hardware.md) or comma four — or an identical clone of either — plus the
-Mazda harness kit from the [comma shop](https://comma.ai/shop). Clone
-caveats are on [Hardware](../getting-started/hardware.md).
+zoompilot runs on sunnypilot-supported cars. Mazda-specific changes do
+not apply to every brand. Check the full car list before installing.
 
 ### How much does zoompilot cost?
 
-zoompilot is free and open source. You pay for the hardware: the comma
-device and the harness kit.
+The software is free and open source. You need a supported comma device
+and your car's cable kit. [Hardware](../getting-started/hardware.md).
+
+### Do I need Jetlink?
+
+No. The comma runs its own driving model. [Jetlink](../jetlink/index.md)
+is an optional way to run larger models on another computer or phone.
 
 ### Why do I need a nav SD card?
 
-The LKAS camera reads speed-limit signs through the nav SD card, and map
-data powers map-based curve slowdowns. Without it, you lose sign reading
-and part of [Speed-Limit Assist](../features/speed-limit-assist.md).
+For car-supplied speed-limit information on supported Mazdas. Downloaded
+maps for curve slowdowns and map speed limits are separate; they do not
+require Mazda's SD card.
 
 ### Is zoompilot affiliated with Mazda, comma.ai, or sunnypilot?
 
-No. zoompilot is a community fork. Mazda, comma.ai, and the sunnypilot
-project neither endorse it nor have anything to do with it. See
-[About & credits](../community/about.md).
+No. It is a community project. Those organisations do not endorse or
+support zoompilot. [About & credits](../community/about.md).
 
-## Installing and updating
+## installing and updating
 
 ### How do I install or update zoompilot?
 
-Install from `zoompilot/main` on the device. Every release is prebuilt,
-so updates install in minutes, not hours of compiling. zoompilot checks
-for updates when it has Wi-Fi. See
-[Install](../getting-started/install.md).
+Install using `zoompilot/main`. For normal updates, use Settings → Software.
+[Install](../getting-started/install.md) · [Update](../using-zoompilot/updates.md).
 
 ### I switched forks. Should I factory reset?
 
-Yes, it is recommended. A reset clears stale settings from the previous
-fork. See [Install](../getting-started/install.md).
+A reset is recommended to clear old settings. Save settings and upload
+recordings you need before resetting.
 
 ### Do fresh installs need tuning?
 
-No. Fresh installs on Mazdas with a 2022-25 CX-5 EPS arrive with torque
-control,
-self-tune, and speed-dependent self-tune already on. The steering
-improves as self-tune learns your motor. See
-[First drive](../getting-started/first-drive.md).
+No manual tuning is needed. Keep the default model and learned steering.
+[Recommended setup](../settings/recommended.md).
 
-## On the road
+### Where did the ICBM and speed-dependent switches go?
 
-### Why does the steering feel different at different speeds?
+Cruise-button control starts automatically when a feature needs it.
+Speed-dependent learning follows Self-Tune. Neither needs a separate switch.
 
-The EPS behaves differently at low and high speed, so zoompilot learns
-separate torque values across seven speed ranges and applies the right
-one for your current speed. See
-[Steering improvements](../features/steering.md).
+## on the road
 
-### Can I change the set speed with my cruise buttons?
+### Does pressing the brake turn steering off?
 
-Yes. zoompilot rebuilds the cruise button behavior: the speed you set is
-the speed you get back after curves and speed zones. With
-[ICBM](../features/icbm.md) you get custom step sizes, and speed-limit
-prompts let you confirm with one tap. See
-[Settings](../settings/index.md#cruise).
+On a Mazda with default settings, no. Brake and CANCEL stop cruise but
+leave steering active. Main cruise off turns both off. The optional
+TJA-button setting changes this. [Read the controls](../using-zoompilot/controls.md).
+
+### Why does cruise speed change by itself?
+
+Slow for Curves and Speed-Limit Assist can change it when enabled.
+[Understand the screen](../using-zoompilot/screen.md).
 
 ### What is experimental mode?
 
-Experimental mode lets the driving model drive end to end, so the car can
-brake for stop signs and lights. It needs zoompilot to control the gas
-and brakes, so on Mazda it appears once alpha longitudinal is on.
-zoompilot recommends it with alpha longitudinal. See
-[Alpha longitudinal](../features/alpha-longitudinal.md).
-
-### What happens to AEB with alpha longitudinal?
-
-It is disabled. Alpha longitudinal turns off the car's radar, which takes
-automatic emergency braking and forward collision warning with it. See
-[Alpha longitudinal](../features/alpha-longitudinal.md).
+It lets the driving model plan acceleration and braking, including
+responses to lights and signs. It can make mistakes. On Mazda it needs
+[experimental speed control](../features/alpha-longitudinal.md), which
+disables automatic emergency braking and forward collision warning.
 
 ### Will it drain my car's battery?
 
-The device shuts itself down after 30 hours offroad by default. You can
-change the limit under Settings → Device → Max Time Offroad. See
-[Settings](../settings/index.md#device).
+The comma has an offroad shutdown timer, configurable under
+Settings → Device → Max Time Offroad. The default is 30 hours; external
+Jetlink computers have their own power behaviour. Check your installation
+if you park for long periods.
 
-## Your data
+## your data
 
 ### Does zoompilot upload my drives?
 
-Route logs upload while the device has internet, so maintainers can help
-you after an incident. You can turn this off under Settings → Device →
-Onroad Uploads. Driver camera and microphone recording are off by
-default. See [Settings](../settings/index.md#toggles).
+Route uploads are enabled by default. Driver-camera recording and
+microphone recording are off by default. See [Privacy](privacy.md)
+before changing recording or sharing settings.
 
 ### How do I share a route?
 
-zoompilot records every drive as a route, and you can share one from
-[comma connect](https://connect.comma.ai). Turn on **Public access** and
-post the route ID. A public route shows GPS position, so pick drives
-that start and end at public places. To keep a route private, share the
-device with a reviewer instead. See
-[Share a route](share-a-route.md).
-
-## Getting involved
+[Watch the video and follow the steps](share-a-route.md). Upload all full
+logs, preserve the route, then choose who can access it.
 
 ### How can I help?
 
-Share drives and route IDs on the
-[Discord](https://discord.gg/jFWkHC2uhh), report issues, or work on code
-and docs. See [How to give feedback](../community/feedback.md) and
-[Contribute](../community/contribute.md).
+[Share useful feedback](../community/feedback.md), report issues, or
+[contribute](../community/contribute.md).

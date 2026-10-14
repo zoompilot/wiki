@@ -1,5 +1,13 @@
 # Mazda lateral on the 2022 EPS: evidence and design notes
 
+
+!!! note "Design record: not setup instructions"
+
+    This page records engineering work at the revisions cited below.
+    Settings and availability may have changed. Use the
+    [current feature guides](../features/index.md) for setup and
+    [compatibility](../getting-started/supported-cars.md) for car requirements.
+
 !!! abstract "About this page"
 
     The measurement record behind Mazda steering on the 2022-25 CX-5

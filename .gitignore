@@ -11,3 +11,8 @@ node_modules/
 contrib/demo/*.mp4
 .agents/
 SKILLS-PLAN.md
+
+# Isolated local validation build (the live preview uses site/).
+.review-site/
+.review-cache/
+review-build.yml

@@ -1,8 +1,7 @@
 site_name: zoompilot wiki
 site_description: >-
-  Documentation for zoompilot, a Mazda-optimized fork of sunnypilot
-  (openpilot). Install guides, feature reference, settings, safety, and
-  technical design notes.
+  The zoompilot owner’s manual. Check your car, install, learn the controls,
+  and set up optional features and Jetlink.
 site_url: https://zoompilot-wiki.pages.dev
 # The wiki's own repository. This is the only place its URL is written:
 # the header icon and the "Edit this page" links are built from it, and
@@ -12,9 +11,9 @@ site_url: https://zoompilot-wiki.pages.dev
 repo_url: https://github.com/zoompilot/wiki
 repo_name: zoompilot/wiki
 edit_uri: edit/main/docs/
-copyright: >
-  zoom-zoom-zoom · zoompilot is experimental software. You drive the car,
-  follow the law, and carry all the risk.
+# the site's sign-off; the experimental-software line sits above the
+# footer on every page (overrides/main.html, block footer)
+copyright: zoom-zoom-zoom
 
 theme:
   name: material
@@ -27,9 +26,7 @@ theme:
   # Same faces as zoompilot.ai: Inter for body, JetBrains Mono for code.
   # Audiowide (the site display face) is added in overrides/main.html and
   # used for the wordmark and the home-page hero.
-  font:
-    text: Inter
-    code: JetBrains Mono
+  font: false
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -50,7 +47,6 @@ theme:
         icon: material/weather-sunny
         name: Switch to dark mode
   features:
-    - announce.dismiss
     - content.action.edit
     - content.code.copy
     - content.code.select
@@ -106,10 +102,16 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css:
+  - stylesheets/fonts.css
   - stylesheets/custom.css
   # v2 components (lede, glance, steps, journey, next-step cards) and
   # reading rhythm; documented on community/style-guide.md
   - stylesheets/v2.css
+  # zoompilot.ai look: the site's tokens, top bar, rows instead of cards.
+  # Loaded after the two above so it wins; print.css stays last.
+  - stylesheets/site.css
+  - stylesheets/manual.css
+  - stylesheets/shared-header.css
   - stylesheets/print.css
 
 extra_javascript:
@@ -119,8 +121,6 @@ extra_javascript:
   - assets/js/torque-live.js
   - assets/js/settings-data.js
   - assets/js/settings-explorer.js
-  - assets/js/device-switch.js
-  - assets/js/troubleshoot-wizard.js
   - assets/js/vin-decoder.js
 
 extra:
@@ -137,64 +137,88 @@ extra:
       name: zoompilot.ai
 
 nav:
-  # v2 structure: seven tabs, each one page type for one reader.
-  # Start here is a linear path (What is it -> car -> hardware -> safety
-  # -> install -> first drive), then two "understand it" pages. safety.md
-  # stays at the root on purpose: /safety/ is linked from the announce
-  # bar on every page and from zoompilot.ai. Every moved page has a 301
-  # in contrib/_redirects.
   - Home: index.md
   - Start here:
       - getting-started/index.md
-      - getting-started/what-is-zoompilot.md
-      - getting-started/supported-cars.md
-      - getting-started/hardware.md
-      - safety.md
-      - getting-started/install.md
-      - getting-started/first-drive.md
-      - getting-started/how-it-works.md
-      - getting-started/comparison.md
+      - What is zoompilot?: getting-started/what-is-zoompilot.md
+      - Coming from openpilot or sunnypilot?: getting-started/comparison.md
+      - Check your car: getting-started/supported-cars.md
+      - What you need: getting-started/hardware.md
+      - Install: getting-started/install.md
+      - First drive: getting-started/first-drive.md
+      - Safety: safety.md
+  - Using zoompilot:
+      - using-zoompilot/index.md
+      - using-zoompilot/controls.md
+      - using-zoompilot/screen.md
+      - using-zoompilot/updates.md
   - Features:
       - features/index.md
       - features/steering.md
-      - features/smart-cruise.md
+      - features/lane-changes.md
+      - Slow for Curves: features/smart-cruise.md
       - features/speed-limit-assist.md
-      - features/icbm.md
+      - Cruise-button control: features/icbm.md
       - features/sensor-readouts.md
       - features/alerts.md
-      - features/alpha-longitudinal.md
+      - Experimental speed control: features/alpha-longitudinal.md
   - Settings:
       - settings/index.md
+      - settings/recommended.md
       - settings/custom-tune.md
+  - Jetlink:
+      - jetlink/index.md
+      - Set up:
+          - Jetson: jetlink/jetson.md
+          - Mac: jetlink/macos-app.md
+          - Linux PC: jetlink/linux-pc.md
+          - iPhone and iPad: jetlink/iphone-app.md
+          - Android: jetlink/android-app.md
+      - Daily use: jetlink/using-jetlink.md
+      - Models: jetlink/models.md
+      - Troubleshooting: jetlink/troubleshooting.md
+      - Operating limits: jetlink/status.md
+      - Updates and rollback: jetlink/releasing.md
+      - Advanced reference:
+          - Cables and power: jetlink/transport.md
+          - Manual installation: jetlink/installation-reference.md
+          - Model commands: jetlink/model-cli.md
+          - Platforms: jetlink/platforms.md
+          - Backends: jetlink/backends.md
+          - Jetson performance: jetlink/jetson-performance.md
+          - Mac performance: jetlink/mac-performance.md
+          - Development: jetlink/development.md
+          - Link protocol: jetlink/link-protocol.md
+          - Control protocol: jetlink/control-protocol.md
+          - Conformance: jetlink/conformance.md
+          - USB measurements: jetlink/usb-bench.md
+          - Publishing: jetlink/publishing.md
   - Help:
       - help/index.md
       - help/troubleshooting.md
-      - help/ecu-reset.md
       - help/share-a-route.md
+      - help/ecu-reset.md
       - help/faq.md
-      - help/glossary.md
       - help/privacy.md
+      - help/glossary.md
   - Technical:
-      # Technical pages mirror the zoompilot repo's docs/zoompilot and
-      # carry no front matter (the site sync parses them); short nav
-      # labels live here instead.
       - technical/index.md
-      - Mazda lateral: technical/mazda-lateral.md
-      - Lateral tune: technical/lateral-tune.md
+      - How zoompilot works: getting-started/how-it-works.md
+      - Mazda steering: technical/mazda-lateral.md
+      - Steering tune: technical/lateral-tune.md
       - technical/eps-swap.md
-      - Mazda longitudinal: technical/mazda-longitudinal.md
+      - Mazda speed control: technical/mazda-longitudinal.md
       - Force offroad transitions: technical/force-offroad-alpha-transition.md
       - Cruise arbiter: technical/cruise-arbiter.md
       - ICBM design: technical/icbm.md
-      - Curve & limit speed planning: technical/scc-curve-planning.md
-      - Mazda fingerprinting: technical/mazda-fingerprinting.md
+      - Curve and limit planning: technical/scc-curve-planning.md
+      - Mazda identification: technical/mazda-fingerprinting.md
       - technical/rejected.md
       - Route library: technical/route-library.md
   - Community:
       - community/index.md
       - community/feedback.md
       - community/contribute.md
-      - community/jetlink.md
       - community/roadmap.md
       - Releases: releases/changelog.md
       - community/about.md

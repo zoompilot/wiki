@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/zoompilot/site",
+  "commit": "de7cb17f25d2881534fd602c14f6eb933044e8ed",
+  "source_css_sha256": "a5be6f102555fc4a131d7e9afb1ce1ade205f92382211ca50523190bd56d2c16",
+  "fonts": {
+    "Audiowide-Regular.woff2": "09b4e41d495efd88639b5994bbe5c730c9eadc178b3b6abb8618cc2ceff5145d",
+    "Inter-Regular.woff2": "e06ae526306b1f69f5af616c61f7f6196f5483f403222fb7ab89aa40b1682900",
+    "Inter-SemiBold.woff2": "20a38762676eb3385a17c62d8fecee40e8b9d63936b435c94aa87f3102272614",
+    "Inter-Bold.woff2": "3f4325292285c652f0d25db4e19789ff60e92dc5c7ea1c449de9e35ee055a258",
+    "JetBrainsMono-Medium.woff2": "0bd4a6f942fad7644462d4e76996880d7344052fca3218bb69babb16615189d3"
+  }
+}

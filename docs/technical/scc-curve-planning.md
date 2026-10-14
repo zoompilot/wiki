@@ -1,5 +1,13 @@
 # Curve and limit speed planning (SCC vision, SCC map, SLA publication)
 
+
+!!! note "Design record: not setup instructions"
+
+    This page records engineering work at the revisions cited below.
+    Settings and availability may have changed. Use the
+    [current feature guides](../features/index.md) for setup and
+    [compatibility](../getting-started/supported-cars.md) for car requirements.
+
 !!! abstract "About this page"
 
     How Smart Cruise plans slowdowns for curves from the model and the

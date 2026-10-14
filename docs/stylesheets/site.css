@@ -1,0 +1,513 @@
+/*
+ * zoompilot.ai port. Loaded last, so it wins over custom.css and v2.css.
+ *
+ * The site (zoompilot/site, one site.css for zoompilot and jetlink) is a
+ * plain flow: dim body text, white headings, hairline rows instead of
+ * cards, lowercase section headings, and one paint the whole page wears.
+ * This layer brings the wiki onto that look without touching the markup
+ * of the content pages. Sequences and facts become the site's hairline
+ * rows (the start path, safety rules, at-a-glance boxes); things you
+ * browse stay cards, in the site's flat jet-black (feature tiles, hub
+ * grids, next-step links). The home hero stays the wiki's paint-chip hero.
+ *
+ * Sizes: Material sets html to 125% (1rem = 20px); the site runs at
+ * 1rem = 16px. Every size below is the site's value x 0.8.
+ */
+
+/* ============================================================
+ * 1. Tokens: the site's defaults
+ * ============================================================ */
+body {
+  /* default paint 46G machine gray, as on zoompilot.ai. The switcher
+   * script in overrides/main.html carries the same default. */
+  --zp-paint: var(--zp-p46g);
+  --zp-paint-hi: var(--zp-p46g-hi);
+  --zp-paint-lo: var(--zp-p46g-lo);
+  --zp-tint: var(--zp-p46g-t);
+  --zp-paint-t: var(--zp-p46g-t);
+  --zp-deep: var(--zp-p46g-lo);
+
+
+  /* site --faint: 4.98:1 or better on every paint's canvas */
+  --zp-faint: #98a0ac;
+
+  /* the site's type scale */
+  --zp-fs-label: 0.624rem;
+  --zp-fs-small: 0.704rem;
+  --zp-fs-text: 0.768rem;
+  --zp-fs-title: 0.912rem;
+  --zp-fs-h3: 1.04rem;
+}
+
+/* Dark: running text is the site's dim gray, headings and bold are white,
+ * links are white with a paint hairline under them. */
+body[data-md-color-scheme="slate"] {
+  --md-typeset-color: var(--zp-dim);
+  --md-typeset-a-color: var(--zp-ink);
+  --zp-hair: color-mix(in srgb, var(--zp-tint) 26%, transparent);
+  --zp-hair-strong: color-mix(in srgb, var(--zp-tint) 44%, transparent);
+}
+body[data-md-color-scheme="slate"] .md-typeset h1,
+body[data-md-color-scheme="slate"] .md-typeset h2,
+body[data-md-color-scheme="slate"] .md-typeset h3,
+body[data-md-color-scheme="slate"] .md-typeset h4,
+body[data-md-color-scheme="slate"] .md-typeset strong {
+  color: var(--zp-ink);
+}
+/* Light keeps its paper; links go ink-dark like the dark scheme's white */
+body[data-md-color-scheme="default"] {
+  --md-typeset-a-color: #14161a;
+}
+
+/* ============================================================
+ * 2. Chrome: the site's top bar
+ * ============================================================ */
+
+/* the canvas glow sits where the site's does, off the top right */
+.md-container {
+  background:
+    radial-gradient(
+        80rem 42rem at 74% -12rem,
+        color-mix(in srgb, var(--zp-paint-hi) 30%, transparent),
+        transparent 70%
+      )
+      no-repeat,
+    var(--md-default-bg-color);
+}
+
+/* ---- the top bar: one row, as on zoompilot.ai ----
+ * wordmark left (zoompilot | jetlink | wiki), the section links right,
+ * github and discord brighter, then the scheme toggle and the paint
+ * picker. No logo, no second tab row, no announce plate. The bar keeps
+ * the theme's sticky position but wears the canvas, so it reads as
+ * part of the page; one hairline under it. */
+.md-header {
+  background: var(--md-default-bg-color);
+  border-bottom: 1px solid var(--zp-hair);
+  box-shadow: none;
+}
+.md-header__inner {
+  padding: 0.5rem 0;
+  align-items: center;
+}
+.md-header .md-logo,
+.md-header__source,
+.md-tabs {
+  display: none;
+}
+/* the title never swaps to the page name on scroll: the site's bar is
+ * always the wordmark */
+.md-header__topic + .md-header__topic {
+  display: none;
+}
+.md-header__title--active .md-header__topic:first-child {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  z-index: 0;
+}
+.md-header__title {
+  margin-left: 0;
+  font-size: 0.736rem;
+  letter-spacing: 0.02em;
+}
+.md-header__sites a {
+  color: var(--zp-faint);
+  text-decoration: none;
+}
+.md-header__sites a:hover,
+.md-header__sites a[aria-current="page"] {
+  color: var(--md-default-fg-color);
+  opacity: 1;
+}
+.md-header__sites .sep {
+  margin: 0 0.6em;
+  color: var(--zp-faint);
+  opacity: 0.6;
+}
+
+/* the section links: small, lowercase, letterspaced, faint until lit */
+.md-header__nav {
+  display: none;
+}
+@media screen and (min-width: 60em) {
+  .md-header__nav {
+    display: block;
+    margin-left: auto;
+    padding-right: 0.4rem;
+  }
+}
+.md-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.08rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.md-header__nav .md-tabs__item {
+  height: auto;
+  padding: 0;
+  display: block;
+}
+.md-header__nav .md-tabs__link {
+  display: block;
+  margin: 0;
+  font-size: var(--zp-fs-label);
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: var(--zp-faint);
+  opacity: 1;
+  transition: color 0.15s ease;
+}
+.md-header__nav .md-tabs__link:hover,
+.md-header__nav .md-tabs__item--active .md-tabs__link {
+  color: var(--md-default-fg-color);
+}
+/* the two places to find us: brighter, set off from the section links */
+.md-header__nav .md-header__ext .md-tabs__link {
+  color: var(--md-default-fg-color);
+}
+.md-header__nav .md-tabs__item:not(.md-header__ext) + .md-header__ext {
+  margin-left: 0.48rem;
+}
+/* the scheme toggle and paint picker: small and quiet at the far end */
+.md-header__inner > .md-header__option,
+.md-header__inner > .md-header__paints {
+  align-self: center;
+}
+.md-header__inner > .md-header__option .md-icon svg,
+.md-header__paints svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: var(--zp-faint);
+}
+.md-header__inner > .md-header__option:hover .md-icon svg,
+.md-header__paints button:hover svg {
+  color: var(--md-default-fg-color);
+}
+
+/* ---- the experimental line: the site's .warn, above every footer ---- */
+.md-typeset + .zp-warn,
+.zp-warn {
+  margin: 3.2rem auto 1.6rem;
+  padding: 0 0.8rem;
+  font-size: var(--zp-fs-text);
+  color: var(--md-typeset-color, var(--zp-dim));
+}
+.zp-warn strong {
+  color: var(--zp-warn);
+  font-weight: 600;
+}
+body[data-md-color-scheme="default"] .zp-warn strong {
+  color: var(--zp-warn-ink);
+}
+.zp-warn a {
+  color: var(--md-default-fg-color);
+  text-decoration: underline;
+  text-decoration-color: var(--zp-hair-strong);
+  text-underline-offset: 3px;
+}
+
+/* sidebar: quiet faint links, the current page white */
+.md-nav__link {
+  color: var(--zp-faint);
+}
+.md-nav__link:hover,
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: var(--md-default-fg-color);
+}
+
+/* ============================================================
+ * 3. Type: the site's headings
+ * ============================================================ */
+.md-typeset h1 {
+  font-size: clamp(1.24rem, 3.2vw, 1.64rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.md-typeset h2 {
+  font-size: 1.12rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  border-top-color: var(--zp-hair);
+}
+.md-typeset h3 {
+  font-size: var(--zp-fs-h3);
+  letter-spacing: -0.01em;
+}
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  text-wrap: balance;
+}
+.md-typeset p,
+.md-typeset li,
+.md-typeset dd {
+  text-wrap: pretty;
+}
+
+/* ============================================================
+ * 4. Home: the wiki's own paint-chip hero (custom.css .zoom-hero),
+ *    with the site's supported-vehicles tags under the lede
+ * ============================================================ */
+.md-typeset ul.zp-cars {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.32rem;
+  max-width: 30rem;
+  margin: 0 auto 1.6rem;
+  padding: 0;
+  font-size: var(--zp-fs-small);
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+}
+.md-typeset ul.zp-cars::before {
+  content: "supported vehicles";
+  flex-basis: 100%;
+  margin-bottom: 0.08rem;
+  font-size: var(--zp-fs-label);
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--zp-faint);
+}
+.md-typeset ul.zp-cars > li {
+  margin: 0;
+  padding: 0.18rem 0.48rem;
+  border-radius: 0.32rem;
+  background: color-mix(in srgb, var(--md-default-fg-color) 8%, transparent);
+}
+.md-typeset ul.zp-cars > li:has(> a) {
+  padding: 0;
+}
+.md-typeset ul.zp-cars a {
+  display: block;
+  padding: 0.18rem 0.48rem;
+  border-radius: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+.md-typeset ul.zp-cars a::after {
+  content: " →";
+  color: var(--zp-faint);
+}
+.md-typeset ul.zp-cars a:hover {
+  background: color-mix(in srgb, var(--md-default-fg-color) 7%, transparent);
+}
+.md-typeset ul.zp-cars a:hover::after {
+  color: var(--zp-tint);
+}
+/* the hero's own lede reads in the site's dim ink */
+.md-typeset .zoom-copy .zoom-lede {
+  color: var(--md-typeset-color);
+}
+
+/* home sections: the site's plain flow, lowercase h2, dim intro */
+.md-typeset .zp-home-section {
+  margin: 2.7rem 0 0;
+}
+.md-typeset .zp-home-section > h2,
+.md-typeset .zp-safety > h2 {
+  margin: 0;
+  font-size: clamp(1.24rem, 3.2vw, 1.64rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--md-default-fg-color);
+}
+.md-typeset .zp-home-section > h2 + p {
+  margin-top: 0.56rem;
+  max-width: 42em;
+  font-size: var(--zp-fs-text);
+  color: var(--md-typeset-color);
+}
+
+/* ============================================================
+ * 5. Rows for sequences and facts, cards for browsing
+ * ============================================================ */
+
+/* journey: the site's install steps, a numbered hairline list */
+.md-typeset .zp-journey > ol {
+  display: block;
+  max-width: 44em;
+  margin: 1.2rem 0 0;
+  border-top: 1px solid var(--zp-hair);
+}
+.md-typeset .zp-journey > ol > li {
+  display: grid;
+  grid-template-columns: 1.92rem 1fr;
+  column-gap: 0.8rem;
+  padding: 0.76rem 0 0.84rem;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--zp-hair);
+  border-radius: 0;
+  font-size: var(--zp-fs-text);
+  color: var(--md-typeset-color);
+}
+.md-typeset .zp-journey > ol > li::before {
+  position: static;
+  grid-row: 1 / span 2;
+  padding-top: 0.2rem;
+  font-family: var(--md-text-font-family);
+  font-size: var(--zp-fs-label);
+  letter-spacing: 0;
+  color: var(--zp-tint);
+}
+.md-typeset .zp-journey > ol > li > p {
+  grid-column: 2;
+  margin: 0;
+}
+.md-typeset .zp-journey > ol > li:hover {
+  transform: none;
+  border-color: var(--zp-hair);
+}
+.md-typeset .zp-journey > ol > li > a:first-child,
+.md-typeset .zp-journey > ol > li > p:first-child > a:first-child {
+  font-size: var(--zp-fs-title);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.md-typeset .zp-journey > ol > li:has(a.zp-journey__safety) {
+  background: none;
+  border-color: var(--zp-hair);
+}
+.md-typeset .zp-journey > ol > li:has(a.zp-journey__safety)::before {
+  color: var(--zp-warn);
+}
+
+/* tiles: cards for scanning. The device screen's jet black (site
+ * --card) with one hairline, the icon in the paint tint. No lift, no
+ * shadow: the edge brightens on hover, as the site's rows do. */
+.md-typeset .zp-tiles > ul {
+  gap: 0.64rem;
+  margin-top: 1.2rem;
+}
+.md-typeset .zp-tiles > ul > li,
+.md-typeset .grid.cards > ul > li,
+body[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li {
+  background: color-mix(in srgb, var(--zp-card) 72%, transparent);
+  border: 1px solid var(--zp-hair);
+  border-radius: 0.72rem;
+  box-shadow: none;
+  font-size: var(--zp-fs-text);
+  line-height: 1.55;
+  color: var(--md-typeset-color);
+  transition: border-color 0.15s ease;
+}
+.md-typeset .zp-tiles > ul > li:hover,
+.md-typeset .grid.cards > ul > li:hover,
+body[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--zp-hair-strong);
+}
+body[data-md-color-scheme="default"] .md-typeset .zp-tiles > ul > li,
+body[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li {
+  background: #fffefb;
+  border-color: rgba(20, 22, 26, 0.1);
+}
+.md-typeset .zp-tiles > ul > li a:first-of-type {
+  font-size: var(--zp-fs-title);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .zp-tiles > ul > li,
+  .md-typeset .grid.cards > ul > li {
+    transition: none;
+  }
+}
+
+/* safety: no red plate. A section like the others, amber leads */
+.md-typeset .zp-safety {
+  margin: 2.7rem 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+.md-typeset .zp-safety > ul {
+  list-style: none;
+  max-width: 46em;
+  margin: 1.2rem 0 1rem;
+  padding: 0;
+  border-top: 1px solid var(--zp-hair);
+}
+.md-typeset .zp-safety > ul > li {
+  margin: 0;
+  padding: 0.7rem 0 0.76rem;
+  border-bottom: 1px solid var(--zp-hair);
+  font-size: var(--zp-fs-text);
+}
+.md-typeset .zp-safety > ul > li > strong:first-child {
+  color: var(--zp-warn);
+}
+body[data-md-color-scheme="default"] .md-typeset .zp-safety > ul > li > strong:first-child {
+  color: var(--zp-warn-ink);
+}
+
+/* next step: cards, in the tiles' flat look */
+.md-typeset .zp-next > ul > li {
+  background: color-mix(in srgb, var(--zp-card) 72%, transparent);
+  border: 1px solid var(--zp-hair);
+  border-radius: 0.72rem;
+}
+.md-typeset .zp-next > ul > li:first-child {
+  border-color: var(--zp-hair-strong);
+}
+.md-typeset .zp-next > ul > li:hover {
+  border-color: var(--zp-tint);
+}
+.md-typeset .zp-next > ul > li::before {
+  font-weight: 400;
+  letter-spacing: 0.09em;
+}
+body[data-md-color-scheme="default"] .md-typeset .zp-next > ul > li {
+  background: #fffefb;
+}
+
+/* at a glance: the site's ledger, label column over a hairline */
+.md-typeset .zp-glance {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  border-top: 1px solid var(--zp-hair);
+}
+.md-typeset .zp-glance > ul > li {
+  border-bottom: 1px solid var(--zp-hair);
+}
+.md-typeset .zp-glance > ul > li > strong:first-child {
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  color: var(--zp-faint);
+}
+
+/* ============================================================
+ * 6. Footer: the paint line in equal bands, the site's sign-off
+ * ============================================================ */
+.md-footer::before {
+  background: linear-gradient(
+    90deg,
+    var(--zp-p46v) 0 12.5%,
+    var(--zp-p45p) 0 25%,
+    var(--zp-p47c) 0 37.5%,
+    var(--zp-p45b) 0 50%,
+    var(--zp-p46g) 0 62.5%,
+    var(--zp-p25d) 0 75%,
+    var(--zp-p42m) 0 87.5%,
+    var(--zp-p41w) 0 100%
+  );
+}
+.md-footer-meta {
+  background: transparent;
+}
+.md-copyright {
+  color: var(--zp-tint);
+}

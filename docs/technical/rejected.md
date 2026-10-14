@@ -4,6 +4,14 @@ title: Tried and rejected
 
 # Tried and rejected
 
+
+!!! note "Design record: not setup instructions"
+
+    This page records engineering work at the revisions cited below.
+    Settings and availability may have changed. Use the
+    [current feature guides](../features/index.md) for setup and
+    [compatibility](../getting-started/supported-cars.md) for car requirements.
+
 Every technical page here carries a **Tried and rejected** section: the
 designs that were built, measured, and replaced. They are written down
 on purpose. A rejected idea that is not recorded gets rebuilt.

@@ -1,50 +1,39 @@
 ---
-title: Sensor readouts
+title: Mazda sensors
 type: feature
-description: The Mazda radar, blind-spot monitors, and speed-sign camera that zoompilot wires into openpilot.
-reviewed: 2026-09-09
 ---
 
-# Sensor readouts
+# Mazda sensors
 
-Your Mazda already has a forward radar, blind-spot monitors, and a
-camera that reads speed-limit signs. zoompilot lets [openpilot](../help/glossary.md#openpilot) use them.
+zoompilot reads supported Mazda sensor information, including blind-spot
+status and speed limits. Availability depends on the equipment fitted.
 { .zp-lede }
 
-<div class="zp-glance" markdown>
+## blind spots
 
-- **Works on** Supported Mazdas with these sensors fitted.
-- **Settings** Blind-spot warnings on the device screen:
-  `Settings → Visuals → Show Blind Spot Warnings`{ .zp-path }, off out
-  of the box. Waiting for a clear blind spot before an automatic lane
-  change: `Settings → Steering → Auto Lane Change: Delay with Blind Spot`{ .zp-path }.
-- **Needs** Speed-sign reading needs the nav SD card.
+Blind-spot information can be used by the lane-change system. Optional
+screen warnings live under **Settings → Visuals → Show Blind Spot Warnings**.
+Related lane-change settings are under **Settings → Steering**.
 
-</div>
+Always check the lane yourself; a clear indicator cannot prove it is safe.
 
-Supported Mazdas carry sensors that the stock openpilot port ignores.
-zoompilot wires them in.
+## speed-limit signs
 
-## Forward radar
+A supported Mazda can supply speed limits from its own camera/navigation
+system when a navigation SD card is fitted. Choose **Car** or a source
+priority using car data in [Speed-Limit Assist](speed-limit-assist.md).
 
-zoompilot reads the stock forward radar and shows what it sees: distance,
-angle, and closing speed for **up to four cars ahead**. This gives you
-visibility into what the radar cruise is tracking.
+Downloaded maps are a separate source and do not require Mazda's SD card.
 
-## Blind-spot monitors
+## forward radar
 
-The factory blind-spot monitor data is fed into openpilot. It is used for
-optional safety checks on automatic lane changes, so a lane change is not
-attempted into an occupied blind spot.
+zoompilot reads radar tracks on supported radar versions. This is an input
+to the system, not a promise that a radar-target display is available on
+every device. Some older radars do not supply usable tracks.
 
-## Speed-limit signs
+!!! danger "Experimental speed control"
 
-The LKAS camera reads speed-limit signs and feeds them to
-[Speed-Limit Assist](speed-limit-assist.md). This requires a nav SD card.
-See [Hardware](../getting-started/hardware.md).
+    Alpha Longitudinal turns the Mazda radar off. Automatic emergency
+    braking and forward collision warning stop working while it is on.
 
-!!! note "Radar and alpha longitudinal"
-
-    If you enable [alpha longitudinal](alpha-longitudinal.md), the car's
-    radar is turned off. The radar readouts above do not apply in that
-    mode, and [AEB](../help/glossary.md#aeb) and forward collision warning are disabled.
+[Feature overview](index.md) · [Technical notes](../technical/mazda-longitudinal.md)
