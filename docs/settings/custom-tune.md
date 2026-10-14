@@ -23,7 +23,7 @@ steering-response and friction values. Manual Real-Time Tuning can
 force those fixed values over learned tuning. Small and large models
 keep separate tunes.
 
-Changes can make steering worse. The [technical tuning notes](../technical/lateral-tune.md)
+Changes can make steering worse. The [technical tuning notes](../technical/steering.md#the-steering-tune)
 explain the controller and measurements for experienced testers.
 
 ## return to the recommended setup

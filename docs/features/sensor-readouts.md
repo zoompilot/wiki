@@ -36,4 +36,4 @@ every device. Some older radars do not supply usable tracks.
     Alpha Longitudinal turns the Mazda radar off. Automatic emergency
     braking and forward collision warning stop working while it is on.
 
-[Feature overview](index.md) · [Technical notes](../technical/mazda-longitudinal.md)
+[Feature overview](index.md) · [Technical notes](../technical/speed-control.md#radar-readouts)

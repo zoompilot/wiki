@@ -91,7 +91,7 @@ the highway.
 
 **EPS** — electric power steering. The motor that turns the front
 wheels. zoompilot's work is keyed to the 2022–25 CX-5 EPS motor; see
-[EPS swap](../technical/eps-swap.md).
+[EPS swap](../technical/car-identification.md#eps-swap).
 { #eps }
 
 **ECU** — electronic control unit: one of the many small computers in
@@ -135,7 +135,7 @@ alpha longitudinal.
 
 **VIN** — vehicle identification number. zoompilot decodes it to
 identify the platform. See
-[Mazda fingerprinting](../technical/mazda-fingerprinting.md).
+[Mazda fingerprinting](../technical/car-identification.md).
 { #vin }
 
 **WMI** — world manufacturer identifier, the first three VIN
@@ -149,14 +149,13 @@ firmware. Decides what zoompilot is allowed to do.
 { #fingerprint }
 
 **steer-to-zero flag** — `STEER_TO_ZERO_EPS`: the flag that marks the
-compatible steering firmware, wherever it is fitted. Enables steering
-assistance down to a stop. Compatible steering-to-zero firmware is required for Mazda alpha
-longitudinal.
+compatible Mazda EPS (2022+), wherever it is fitted. Enables steering
+assistance down to a stop. Mazda alpha longitudinal requires it.
 { #steer-to-zero-flag }
 
 **torque envelope** — the steering force and rate of change allowed
 for the motor. Hardware limits still apply. See
-[Mazda lateral](../technical/mazda-lateral.md).
+[Mazda lateral](../technical/steering.md).
 { #torque-envelope }
 
 **speed bands** — the seven speed ranges the learner tunes separately,
@@ -249,7 +248,7 @@ recorded drives, at [connect.comma.ai](https://connect.comma.ai).
 
 **CRZ_INFO** — the Mazda CAN message (0x21b) that carries the
 accelerator command. Central to the
-[longitudinal record](../technical/mazda-longitudinal.md).
+[longitudinal record](../technical/speed-control.md).
 { #crz-info }
 
 **driving model** — the neural network that watches the road camera

@@ -44,4 +44,4 @@ If the slowdown feels wrong, turn the feature off and
 [share a route](../help/share-a-route.md) with the location and time.
 
 [Recommended settings](../settings/recommended.md) ·
-[Technical design](../technical/scc-curve-planning.md)
+[Technical design](../technical/slow-for-curves.md)

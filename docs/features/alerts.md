@@ -28,4 +28,4 @@ while parked.
 
 [Screen and alerts](../using-zoompilot/screen.md) ·
 [Troubleshooting](../help/troubleshooting.md) ·
-[Technical evidence](../technical/mazda-lateral.md)
+[Technical evidence](../technical/steering.md#when-the-car-blocks-steering)

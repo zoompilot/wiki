@@ -1,65 +1,65 @@
 ---
 title: zoompilot manual
 type: hub
-description: Set up zoompilot, learn steering and cruise controls, and explore optional features and Jetlink.
+description: How to install, drive and tune zoompilot, with every feature, setting and fix in one place.
 hide:
+  - navigation
   - toc
+  - footer
 ---
+
+<div class="zoom-hero zp-home-hero" markdown>
+
+<div class="zoom-copy" markdown>
 
 # zoompilot manual
 
-<div class="zp-manual-hero" markdown>
+<div class="zoom-tagline" markdown>
+How to install, drive and tune zoompilot.
+</div>
 
-zoompilot helps your car steer and manage cruise speed. It builds on
-sunnypilot, with steering improvements across supported cars and extra
-tuning for Mazda.
-{ .zp-lede }
-
-You stay the driver. Watch the road and be ready to steer and brake.
-
-[Set up zoompilot →](getting-started/index.md){ .md-button .md-button--primary }
-[Check your car](getting-started/supported-cars.md){ .md-button }
+<button class="zp-home-search" type="button" data-zp-open-search>Search the manual</button>
 
 </div>
 
-## start where you are
+<div class="zoom-deco" aria-hidden="true">
+  <svg viewBox="0 0 1188 380">
+    <rect class="tile" style="fill:var(--zp-p46v)" transform="translate(110 170) rotate(-7)" x="-52" y="-52" width="104" height="104" rx="19"/>
+    <rect class="tile" style="fill:var(--zp-p25d)" transform="translate(300 70) rotate(8)" x="-34" y="-34" width="68" height="68" rx="13"/>
+    <rect class="tile" style="fill:var(--zp-p45p)" transform="translate(475 140)" x="-44" y="-44" width="88" height="88" rx="16"/>
+    <rect class="tile" style="fill:var(--zp-p42m)" transform="translate(660 60) rotate(10)" x="-60" y="-60" width="120" height="120" rx="22"/>
+    <rect class="tile" style="fill:var(--zp-p46g)" transform="translate(850 150) rotate(-4)" x="-38" y="-38" width="76" height="76" rx="14"/>
+    <rect class="tile" style="fill:var(--zp-p47c)" transform="translate(1010 60) rotate(7)" x="-46" y="-46" width="92" height="92" rx="17"/>
+    <rect class="tile" style="fill:var(--zp-p45b)" transform="translate(1120 200) rotate(-8)" x="-35" y="-35" width="70" height="70" rx="13"/>
+    <rect class="tile" style="fill:var(--zp-p41w-hi)" transform="translate(240 300) rotate(4)" x="-28" y="-28" width="56" height="56" rx="10"/>
+  </svg>
+</div>
 
-- **[New to comma?](getting-started/index.md#new-to-comma)**
-  Check your car, get the hardware, and install zoompilot.
-- **[Coming from openpilot or sunnypilot?](getting-started/index.md#already-using-openpilot-or-sunnypilot)**
-  See what changes, switch software, and learn the controls.
-- **[Already set up?](using-zoompilot/index.md)**
-  Find everyday controls, optional features, and help.
+</div>
 
-## what zoompilot adds
+<div class="zp-home-cards zp-home-cards--paths" markdown>
 
-- **[Steering that learns your car](features/steering.md)**
-  Speed-dependent learning on supported torque-steering cars, plus enhanced Mazda tuning.
-- **[Slow down for curves](features/smart-cruise.md)**
-  Optional curve slowdowns, followed by a return to your set speed.
-- **[Use speed limits](features/speed-limit-assist.md)**
-  Read limits from your car or maps, and choose whether to adjust cruise speed.
-- **[Smoother lane changes](features/lane-changes.md)**
-  Choose a slower lane-change pace and optional road-edge checks.
+- :material-car-side: [**I drive a Mazda**](getting-started/supported-cars.md)
+  Check your model, then set up.
+- :material-car-multiple: [**I drive another car**](features/steering.md)
+  What zoompilot adds to sunnypilot.
+- :material-cable-data: [**I want Jetlink**](jetlink/index.md)
+  Run big models on a computer or phone.
 
-zoompilot runs on the cars sunnypilot supports. Features depend on your
-car and hardware; [check compatibility](getting-started/supported-cars.md).
-Experimental speed control is optional and
-[disables Mazda emergency braking](features/alpha-longitudinal.md).
+</div>
 
-## run ‘big models’ with Jetlink
+<div class="zp-home-faq" markdown>
 
-Connect a supported computer or phone to your comma. Jetlink is optional;
-you do not need it to use zoompilot.
+<p class="zp-group">common questions</p>
 
-[Choose your Jetlink setup →](jetlink/index.md)
+- [How do I install zoompilot?](getting-started/install.md)
+- [Which settings should I turn on?](settings/recommended.md)
+- [What do the steering wheel buttons do?](using-zoompilot/controls.md)
+- [Why did steering or cruise turn off?](help/troubleshooting.md)
+- [What changed in the latest release?](releases/changelog.md)
+- [How does zoompilot work?](getting-started/how-it-works.md)
 
-## find an answer
+</div>
 
-[Steering and cruise controls](using-zoompilot/controls.md) ·
-[Recommended settings](settings/recommended.md) ·
-[Troubleshooting](help/troubleshooting.md) ·
-[Share a drive for review](help/share-a-route.md)
-
-[Technical notes](technical/index.md) · [About & credits](community/about.md) ·
-[Community](community/index.md)
+Before your first drive, read the [safety page](safety.md).
+{ .zp-home-safety }

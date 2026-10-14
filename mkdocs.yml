@@ -30,22 +30,13 @@ theme:
   icon:
     repo: fontawesome/brands/github
   palette:
-    # Dark is the default. The first entry wins when no toggle was used
-    # yet. Scheme names must stay "slate"/"default": Material's built-in
-    # dark and light variables key off these names. Brand colors are
-    # layered on in stylesheets/custom.css (docs/stylesheets/).
-    - scheme: slate
-      primary: red
-      accent: red
-      toggle:
-        icon: material/weather-night
-        name: Switch to light mode
-    - scheme: default
-      primary: red
-      accent: red
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
+    # Dark only, like zoompilot.ai and jetlink. A single mapping (not a
+    # list) means the theme renders no scheme toggle and ignores a
+    # visitor's saved light choice. "slate" is Material's dark scheme;
+    # brand colors are layered on in stylesheets/custom.css.
+    scheme: slate
+    primary: red
+    accent: red
   features:
     - content.action.edit
     - content.code.copy
@@ -204,17 +195,12 @@ nav:
   - Technical:
       - technical/index.md
       - How zoompilot works: getting-started/how-it-works.md
-      - Mazda steering: technical/mazda-lateral.md
-      - Steering tune: technical/lateral-tune.md
-      - technical/eps-swap.md
-      - Mazda speed control: technical/mazda-longitudinal.md
-      - Force offroad transitions: technical/force-offroad-alpha-transition.md
-      - Cruise arbiter: technical/cruise-arbiter.md
-      - ICBM design: technical/icbm.md
-      - Curve and limit planning: technical/scc-curve-planning.md
-      - Mazda identification: technical/mazda-fingerprinting.md
-      - technical/rejected.md
-      - Route library: technical/route-library.md
+      - Steering: technical/steering.md
+      - Car identification: technical/car-identification.md
+      - Experimental speed control: technical/speed-control.md
+      - Set speed: technical/set-speed.md
+      - Slow for Curves: technical/slow-for-curves.md
+      - Experimental Mode assists: technical/experimental-mode-assists.md
   - Community:
       - community/index.md
       - community/feedback.md

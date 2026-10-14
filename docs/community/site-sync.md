@@ -26,7 +26,7 @@ The wiki keeps its own reading layout and navigation.
 
 ## existing generated references
 
-Release history, steering charts, chart data, and the route library carry
+Release history, steering charts, and chart data carry
 their own generation comments. Preserve those files unless updating the
 relevant generator. The hand-written tail of release history can be edited
 where its marker permits it.

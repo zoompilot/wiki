@@ -13,7 +13,7 @@ Quick answers about hardware, setup, and daily use.
 ### Is my Mazda supported?
 
 Check the [compatibility guide](../getting-started/supported-cars.md).
-Year, region, steering firmware, and radar can affect the features you get.
+Year, region, EPS, and radar can affect the features you get.
 
 ### What about other car brands?
 

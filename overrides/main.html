@@ -16,18 +16,30 @@
 {% endblock %}
 
 {% block footer %}
-  <p class="zp-warn md-grid">
-    <strong>This is experimental software.</strong> You drive the car,
-    follow the law, and carry all the risk. Read the
-    <a href="{{ 'safety/' | url }}">safety page</a> first.
-  </p>
-  <nav class="zp-footer-links md-grid" aria-label="More documentation">
-    <a href="{{ 'technical/' | url }}">Technical notes</a>
-    <a href="{{ 'community/' | url }}">Community</a>
-    <a href="{{ 'community/about/' | url }}">About &amp; credits</a>
-    <a href="{{ 'help/privacy/' | url }}">Privacy</a>
-  </nav>
+  {# The theme's footer keeps prev/next (page navigation, above the line);
+     shared-header.css hides its meta row. Below it, the zoompilot.ai
+     footer: the paint line, then the experimental-software line, the
+     links and the sign-off in the bar's column. #}
   {{ super() }}
+  <div class="zp-paintline" aria-hidden="true"></div>
+  <div class="zp-foot">
+    <p class="zp-warn">
+      <strong>This is experimental software.</strong> You drive the car,
+      follow the law, and carry all the risk. Read the
+      <a href="{{ 'safety/' | url }}">safety page</a> first.
+    </p>
+    <nav class="zp-foot-links" aria-label="Project links">
+      <a href="https://zoompilot.ai/">zoompilot</a>
+      <a href="https://zoompilot.ai/jetlink/">jetlink</a>
+      <a href="{{ 'technical/' | url }}">how it works</a>
+      <a href="{{ 'community/' | url }}">community</a>
+      <a href="{{ 'community/about/' | url }}">about &amp; credits</a>
+      <a href="{{ 'help/privacy/' | url }}">privacy</a>
+      <a href="https://github.com/zoompilot/zoompilot">github</a>
+      <a href="https://discord.gg/jFWkHC2uhh">discord</a>
+    </nav>
+    <p class="signoff">{{ config.copyright }}</p>
+  </div>
 {% endblock %}
 
 {% block styles %}
@@ -118,6 +130,12 @@
       }
     }
 
+    /* the Jetlink guides wear the jetlink site's green instead of a
+     * paint (shared-header.css); the attribute lands before first paint */
+    {% if page and page.url and page.url[:8] == "jetlink/" %}
+    document.body.setAttribute("data-zp-site", "jetlink");
+    {% endif %}
+
     var saved = null;
     try { saved = localStorage.getItem(KEY); } catch (e) { /* private mode */ }
     apply(saved || DEFAULT, false);
@@ -194,6 +212,24 @@
     if (document.readyState === "complete") attempt(6);
     else window.addEventListener("load", function () { attempt(6); });
   })();
+
+  /* Copy buttons (the home page's install line), as on zoompilot.ai. */
+  document.addEventListener("click", function (ev) {
+    var btn = ev.target.closest("[data-zp-copy]");
+    if (!btn || !navigator.clipboard) return;
+    navigator.clipboard.writeText(btn.getAttribute("data-zp-copy")).then(function () {
+      var label = btn.textContent;
+      btn.textContent = "copied";
+      setTimeout(function () { btn.textContent = label; }, 1500);
+    });
+  });
+
+  /* The home page's search box opens the same search as the bar. */
+  document.addEventListener("click", function (ev) {
+    if (!ev.target.closest("[data-zp-open-search]")) return;
+    var bar = document.querySelector(".zp-header .md-search__button");
+    if (bar) bar.click();
+  });
 
   /* Code-line permalink anchors render as empty self-referencing links
    * — a nameless tab stop at the top of every code block. Keep them as

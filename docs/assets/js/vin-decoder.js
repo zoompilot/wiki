@@ -1,5 +1,5 @@
 /*
- * Mazda VIN decoder for docs/technical/mazda-fingerprinting.md.
+ * Mazda VIN decoder for docs/technical/car-identification.md.
  *
  * Decodes a VIN or VIN prefix exactly the way the brand matcher's
  * first stage does (match_fw_to_car_fuzzy): WMI from positions 1-3,
@@ -23,6 +23,7 @@
 
   /* year codes shared by the platform table (position 10) */
   var YEARS = {
+    C: 2012, D: 2013, E: 2014, F: 2015, G: 2016,
     H: 2017, J: 2018, K: 2019, L: 2020,
     M: 2021, N: 2022, P: 2023, R: 2024, S: 2025
   };
@@ -32,23 +33,26 @@
   var WMIS = {
     JM1: "Japan-built passenger car",
     JM3: "Japan-built crossover",
+    JM7: "Japan-built crossover (export)",
     "3MZ": "Mexico-built passenger car"
   };
 
   /* the platform table. Order matters only for readability; the
    * (WMI, chassis, year code) keys are disjoint. */
   var PLATFORMS = [
-    { wmis: ["JM3"], chassis: "KF", codes: "HJKLM",
+    { wmis: ["JM3", "JM7"], chassis: "KE", codes: "CDEFG",
+      name: "CX-5 2012–2016", kind: "cx5ke" },
+    { wmis: ["JM3", "JM7"], chassis: "KF", codes: "HJKLM",
       name: "CX-5 2017–2021", kind: "cx5old" },
-    { wmis: ["JM3"], chassis: "TC", codes: "GHJKL",
+    { wmis: ["JM3", "JM7"], chassis: "TC", codes: "GHJKL",
       name: "CX-9 2016–2020", kind: "cx9old" },
     { wmis: ["JM1", "3MZ"], chassis: "BN", codes: "HJ",
       name: "Mazda 3 2017–2018", kind: "mazda3" },
     { wmis: ["JM1"], chassis: "GL", codes: "HJKLM",
       name: "Mazda 6 2017–2021", kind: "mazda6" },
-    { wmis: ["JM3"], chassis: "TC", codes: "MNP",
-      name: "CX-9 2021–2023", kind: "cx9" },
-    { wmis: ["JM3"], chassis: "KF", codes: "NPRS",
+    { wmis: ["JM3", "JM7"], chassis: "TC", codes: "MNPS",
+      name: "CX-9 2021–2023 (export to 2025)", kind: "cx9" },
+    { wmis: ["JM3", "JM7"], chassis: "KF", codes: "NPRS",
       name: "CX-5 2022–2025", kind: "cx5" }
   ];
 
@@ -85,7 +89,8 @@
     if (wmi === "JM0") {
       return { cls: "info", pill: "Export VIN — decodes by firmware",
         body: "Export VINs (JM0, Oceania) carry no model year, so the " +
-              "VIN cannot name a platform. Identification falls to the " +
+              "VIN cannot name a platform. If firmware matching does " +
+              "not place the car, identification falls to the " +
               "EPS-swap fallback: a recognized steer-to-zero EPS at " +
               "0x730, plus an engine ECU at 0x7e0 whose firmware names " +
               "exactly one platform. If that is your car, ask in the " +
@@ -96,7 +101,7 @@
     if (!WMIS[wmi]) {
       return { cls: "bad", pill: "Unknown WMI",
         body: "This first triple does not match the Mazda table " +
-              "(JM1, JM3, 3MZ, JM0). Either it is not a Mazda, or it " +
+              "(JM1, JM3, JM7, 3MZ, JM0). Either it is not a Mazda, or it " +
               "is not a VIN." };
     }
 
@@ -128,47 +133,54 @@
     if (p.kind === "cx5") {
       return { cls: "good", pill: "Full support — primary target",
         body: "<strong>" + p.name + ".</strong> Every zoompilot " +
-              "feature. Steering works down to 0 mph, and " +
-              "alpha longitudinal is available — while it is on, the " +
-              "radar and AEB are off. See " +
-              '<a href="../getting-started/supported-cars/">supported ' +
+              "feature. This model ships with the compatible Mazda " +
+              "EPS (2022+), and zoompilot confirms it from the EPS " +
+              "firmware: steering works down to a stop, and alpha " +
+              "longitudinal is available (radar and AEB off while it " +
+              "is on). A car that reports older EPS firmware keeps the " +
+              "28 mph (45 km/h) steering floor. See " +
+              '<a href="../../getting-started/supported-cars/">supported ' +
               "cars</a> and " +
-              '<a href="../features/steering/">steering</a>.' };
+              '<a href="../../features/steering/">steering</a>.' };
     }
     if (p.kind === "cx9") {
       return { cls: "good", pill: "Full support",
-        body: "<strong>" + p.name + ".</strong> Factory-matched specs " +
-              "included; speed-dependent torque needs more learning " +
-              "time because the seeds come from a CX-5. The stock " +
-              "CX-9 EPS gets the upstream envelope (800/10/25) and no " +
-              "alpha longitudinal — only a swapped 2022 CX-5 EPS motor " +
-              "opens those. See " +
-              '<a href="../getting-started/supported-cars/">supported ' +
-              "cars</a>." };
-    }
-    /* stock-envelope platforms: they run, on the stock motor */
-    if (p.kind === "cx5old" || p.kind === "cx9old") {
-      return { cls: "mid", pill: "Supported — stock steering envelope",
-        body: "<strong>" + p.name + ".</strong> zoompilot runs on the " +
-              "stock motor with the stock torque envelope — no " +
-              "steer-to-zero. With a 2022-25 CX-5 EPS motor swapped " +
-              "in, steering works down to 0 mph and alpha " +
-              "longitudinal opens (radar and AEB off while it is " +
-              "on). See " +
-              '<a href="../getting-started/supported-cars/">supported ' +
+        body: "<strong>" + p.name + ".</strong> The stock CX-9 EPS " +
+              "gets the same steering tune and torque limit as the " +
+              "2022 motor, but stops assisting below 28 mph (45 km/h) " +
+              "and gets no alpha longitudinal. A compatible Mazda EPS " +
+              "(2022+) swapped in steers down to a stop and makes " +
+              "alpha longitudinal available (radar and AEB off while " +
+              "it is on). See " +
+              '<a href="../../getting-started/supported-cars/">supported ' +
               "cars</a> and " +
-              '<a href="eps-swap/">the EPS swap</a>.' };
+              '<a href="#eps-swap">the EPS swap</a>.' };
+    }
+    /* older platforms: they run on the stock motor above its floor */
+    if (p.kind === "cx5old" || p.kind === "cx9old" || p.kind === "cx5ke") {
+      return { cls: "mid", pill: "Supported — steering above 28 mph",
+        body: "<strong>" + p.name + ".</strong> zoompilot runs on the " +
+              "stock motor with the same steering tune and torque " +
+              "limit as the 2022 motor, above 28 mph (45 km/h). With " +
+              "a compatible Mazda EPS (2022+) swapped in, steering " +
+              "works down to a stop and alpha longitudinal becomes " +
+              "available" + (p.kind === "cx5old" ? "" :
+              " if zoompilot also detects the G46L radar") +
+              " (radar and AEB off while it is on). See " +
+              '<a href="../../getting-started/supported-cars/">supported ' +
+              "cars</a> and " +
+              '<a href="#eps-swap">the EPS swap</a>.' };
     }
     /* community-reported platforms: fewer test miles */
     if (p.kind === "mazda3" || p.kind === "mazda6") {
       return { cls: "mid", pill: "Reported working — community drives",
         body: "<strong>" + p.name + ".</strong> Community drives " +
-              "report zoompilot runs on the stock motor and " +
-              "envelope; fewer test miles than the CX-5 and CX-9. " +
-              "A 2022-25 CX-5 EPS swap opens steer-to-zero and " +
-              "alpha longitudinal (radar and AEB off while it is " +
-              "on). See " +
-              '<a href="../getting-started/supported-cars/">supported ' +
+              "report zoompilot runs on the stock motor above 28 mph " +
+              "(45 km/h); fewer test miles than the CX-5 and CX-9. " +
+              "A compatible Mazda EPS (2022+) swap adds steering down " +
+              "to a stop and alpha longitudinal (radar and AEB off " +
+              "while it is on). See " +
+              '<a href="../../getting-started/supported-cars/">supported ' +
               "cars</a>." };
     }
   }

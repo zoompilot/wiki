@@ -41,9 +41,9 @@ through sharp curves yourself whenever needed.
 
 ## steering at low speed
 
-Compatible Mazda steering firmware can assist down to a stop. Older
-firmware stops assisting below about 28 mph (45 km/h), even though it
-gets the steering tune at higher speeds.
+A compatible Mazda EPS (2022+) can assist down to a stop. An older EPS
+stops assisting below about 28 mph (45 km/h), even though it gets the
+steering tune at higher speeds.
 
 A model year alone does not identify every steering motor. zoompilot
 checks the car's hardware and firmware. [Check your car](../getting-started/supported-cars.md).
@@ -60,8 +60,8 @@ If steering feels wrong, take control and check
 <details markdown="1">
 <summary>Measurements and controller design</summary>
 
-[Steering evidence](../technical/mazda-lateral.md) ·
-[Torque tuning](../technical/lateral-tune.md) ·
+[Steering evidence](../technical/steering.md) ·
+[Torque tuning](../technical/steering.md#the-steering-tune) ·
 [Custom tuning](../settings/custom-tune.md)
 
 </details>

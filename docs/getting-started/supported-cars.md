@@ -21,23 +21,23 @@ tuning. The Mazda capabilities below do not apply to every car.
 
 The table describes steering down to a stop and eligibility for experimental
 speed control. **It is not a list of cars that need a hardware swap to run
-zoompilot.** Older stock steering firmware can assist at higher speeds.
+zoompilot.** An older stock EPS can assist at higher speeds.
 
 | Model | Year | Steer-to-zero | Alpha longitudinal |
 | :---: | :---: | :---: | :---: |
-| CX-5 | 2022–2025 | compatible firmware | compatible firmware + radar |
-| CX-5 | 2017–2021 | with compatible swap | with compatible swap + radar |
-| CX-5 | 2012–2016 | with compatible swap | with compatible swap + G46L radar |
-| CX-8 | 2023 | compatible firmware | compatible firmware + radar |
-| CX-9 | 2021–2023 | with compatible swap | with compatible swap + radar |
-| CX-9 | 2016–2020 | with compatible swap | hardware check required |
-| Mazda 3 | 2017–2018 | with compatible swap | hardware check required |
-| Mazda 6 | 2017–2020 | with compatible swap | hardware check required |
+| CX-5 | 2022–2025 | compatible EPS | compatible EPS + radar |
+| CX-5 | 2017–2021 | with EPS swap | with EPS swap + radar |
+| CX-5 | 2012–2016 | with EPS swap | with EPS swap + G46L radar |
+| CX-8 | 2023 | compatible EPS | compatible EPS + radar |
+| CX-9 | 2021–2023 | with EPS swap | with EPS swap + radar |
+| CX-9 | 2016–2020 | with EPS swap | hardware check required |
+| Mazda 3 | 2017–2018 | with EPS swap | hardware check required |
+| Mazda 6 | 2017–2020 | with EPS swap | hardware check required |
 
 **Steer-to-zero** means steering assistance can remain available down to a
-stop. Compatible firmware is normally found in the 2022–25 CX-5 and
-2023 CX-8 steering system. Regional variants can differ; the software
-checks the actual steering firmware, not just the model year.
+stop. It needs a compatible Mazda EPS (2022+), fitted at the factory to
+the 2022–25 CX-5 and the 2023 CX-8. Regional variants can differ, so the
+software checks the actual steering firmware, not just the model year.
 
 The software recognises additional older Mazda platforms beyond the full
 published car list. These have less validation than the main CX-5/CX-9
@@ -48,16 +48,16 @@ confirm a 2021 car with support rather than assuming coverage.
 ## older Mazda with its original steering motor
 
 You do not need a swap for the higher-speed steering improvements.
-Older firmware stops assisting below about **28 mph (45 km/h)**.
+An older EPS stops assisting below about **28 mph (45 km/h)**.
 The car's own cruise control retains its normal speed and stop-and-go limits.
 
-A compatible swap may add low-speed steering. It is an advanced hardware
-modification, not part of normal setup. [Read about EPS swaps](../technical/eps-swap.md).
+An EPS swap may add low-speed steering. It is an advanced hardware
+modification, not part of normal setup. [Read about EPS swaps](../technical/car-identification.md#eps-swap).
 
 ## experimental speed control
 
-Alpha Longitudinal requires steering firmware that supports assistance
-down to a stop and a radar version the software supports. The device
+Alpha Longitudinal requires a compatible Mazda EPS (2022+), which can
+assist down to a stop, and a radar version the software supports. The device
 checks compatibility before offering it. A table entry describes software
 eligibility, not equal testing on every car.
 

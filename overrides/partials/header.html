@@ -1,30 +1,44 @@
-{# Shared website bar. Use independent classes so theme title/tab rules cannot alter it. #}
+{#-
+  The zoompilot.ai top bar, shared by zoompilot, jetlink and the wiki.
+  Markup mirrors the site's <header class="topbar">: the sites row, then
+  one nav. Classes are the wiki's own (zp-*) so theme rules for the
+  title and tabs cannot reach it; contrib/sync-brand.py generates its CSS
+  (stylesheets/shared-header.css) from the site's site.css.
+
+  The wiki's extra controls sit inside the nav so they can never move the
+  wordmark: "menu" first (the page list, below sidebar width), then the
+  sections, github and discord, then search and paint. The wiki is dark
+  only, like the site, so the theme's scheme toggle (and its script that
+  restores a saved light choice) is left out on purpose.
+
+  data-rank orders which sections drop first when the row runs short
+  (late, mid, core, then first); every section stays in the menu. Labels
+  are the section titles, lowercased, except where the bar needs a
+  shorter word to stay one row at the site's width.
+-#}
+{%- set ranks = {"Start here": "first", "Features": "core", "Help": "core",
+                 "Using zoompilot": "mid", "Settings": "mid", "Jetlink": "late"} -%}
+{%- set labels = {"Using zoompilot": "using"} -%}
 <header class="md-header zp-header" data-md-component="header">
   <div class="zp-sitebar">
-    <label class="zp-menu md-icon" for="__drawer" aria-label="Open manual navigation">
-      {% include ".icons/material/menu.svg" %}
-    </label>
     <p class="zp-site-id">
       <a href="https://zoompilot.ai/">zoompilot</a><span class="sep" aria-hidden="true">|</span><a href="https://zoompilot.ai/jetlink/">jetlink</a><span class="sep" aria-hidden="true">|</span><a href="{{ nav.homepage.url | url }}" aria-current="page">wiki</a>
     </p>
     <nav class="zp-site-nav" aria-label="Manual sections">
+      <label class="zp-menu" for="__drawer">menu</label>
       {% for nav_item in nav.items %}
         {% if not loop.first and nav_item.title not in ["Technical", "Community"] %}
           {% set destination = nav_item.children[0].url if nav_item.children else nav_item.url %}
-          <a href="{{ destination | url }}"{% if nav_item.active %} aria-current="page"{% endif %}>{{ nav_item.title | lower }}</a>
+          <a href="{{ destination | url }}"{% if nav_item.title in ranks %} data-rank="{{ ranks[nav_item.title] }}"{% endif %}{% if nav_item.active %} aria-current="page"{% endif %}>{{ labels[nav_item.title] if nav_item.title in labels else nav_item.title | lower }}</a>
         {% endif %}
       {% endfor %}
       <a class="ext" href="https://github.com/zoompilot/zoompilot">github</a>
       <a class="ext" href="https://discord.gg/jFWkHC2uhh">discord</a>
+      <span class="md-header__tools">
+        {% if "search" in config.plugins %}
+          {% include "partials/search.html" %}
+        {% endif %}
+      </span>
     </nav>
-  </div>
-  <div class="md-header__tools" aria-label="Wiki tools">
-    {% if config.theme.palette and not config.theme.palette is mapping %}
-      {% include "partials/palette.html" %}
-      {% include "partials/javascripts/palette.html" %}
-    {% endif %}
-    {% if "search" in config.plugins %}
-      {% include "partials/search.html" %}
-    {% endif %}
   </div>
 </header>

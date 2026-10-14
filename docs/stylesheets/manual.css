@@ -34,20 +34,7 @@
   box-shadow: none;
 }
 .md-typeset details { margin-block: 1.3rem; }
-.md-typeset .admonition.danger,
-.md-typeset details.danger {
-  border-color: var(--zp-warn);
-  background: color-mix(in srgb, var(--zp-warn) 7%, var(--md-default-bg-color));
-}
-.md-typeset .danger > .admonition-title,
-.md-typeset .danger > summary {
-  color: var(--zp-warn);
-  background: color-mix(in srgb, var(--zp-warn) 9%, transparent);
-}
-.md-typeset .danger > .admonition-title::before,
-.md-typeset .danger > summary::before { background-color: var(--zp-warn); }
-body[data-md-color-scheme="default"] .md-typeset .danger > .admonition-title,
-body[data-md-color-scheme="default"] .md-typeset .danger > summary { color: var(--zp-warn-ink); }
+/* danger callouts: styled once, in custom.css (amber, no title bar) */
 .md-typeset summary { cursor: pointer; }
 .md-typeset table:not([class]) { font-size: 0.78rem; line-height: 1.6; }
 .md-typeset table:not([class]) th { white-space: normal; }
@@ -127,45 +114,6 @@ body[data-md-color-scheme="default"] .md-typeset .zp-next > ul > li {
 .md-typeset video { width: 100%; max-width: 100%; border-radius: 0.4rem; }
 .md-typeset figcaption { font-size: 0.72rem; text-align: left; }
 .md-typeset img { height: auto; }
-.zp-footer-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; padding: 0 0.8rem 1.2rem; font-size: 0.72rem; }
-.zp-footer-links a { color: var(--zp-faint); }
-.md-header__nav-list { gap: 0.8rem; }
-.md-header__nav .md-tabs__link { font-size: 0.65rem; letter-spacing: 0; }
-.md-header__inner {
-  width: calc(100% - 1.6rem);
-  max-width: 60rem;
-  min-height: 2.6rem;
-  padding: 0.3rem 0;
-  gap: 0.2rem;
-}
-.md-header__title { flex-grow: 0; flex-shrink: 0; margin-right: auto; font-size: 0.72rem; }
-.md-header__sites { white-space: nowrap; }
-.md-header .md-search { width: auto; margin: 0; }
-.md-header .md-search__button {
-  min-width: 1.8rem;
-  width: 1.8rem;
-  height: 1.8rem;
-  padding: 0;
-  font-size: 0;
-  border: 0;
-  border-radius: 0.3rem;
-  background: transparent;
-  color: var(--zp-faint);
-}
-.md-header .md-search__button::before { margin: 0; width: 1rem; height: 1rem; }
-.md-header .md-search__button::after { display: none; }
-.md-header__tools { display: flex; align-items: center; gap: 4px; }
-.md-header__tools > .md-header__option,
-.md-header__tools .md-header__button { margin: 0; }
-.md-header__tools .md-header__option .md-icon svg,
-.md-header__tools .md-header__paints svg { width: 18px; height: 18px; color: var(--zp-faint); }
-.md-header__nav .md-tabs__link { text-decoration: none !important; }
-@media screen and (max-width: 76.234375em) {
-  .md-header__nav .md-header__ext { display: none; }
-}
-@media screen and (max-width: 59.984375em) {
-  .md-header__nav { display: none; }
-}
 @media screen and (max-width: 44.984375em) {
   .md-content__inner { margin-inline: 0.8rem; }
   .md-typeset .zp-lede { font-size: 0.94rem; }
@@ -178,7 +126,315 @@ body[data-md-color-scheme="default"] .md-typeset .zp-next > ul > li {
   *, *::before, *::after { scroll-behavior: auto !important; }
 }
 
-@media screen and (max-width: 23.75em) {
-  .md-header__tools .md-header__paints { display: none; }
-  .md-header__sites .sep { margin-inline: 0.4em; }
+/* Home: one screen of choices. Six cards for the jobs people come to do
+ * (the rest of the wiki keeps hub links as rows), and a search box that
+ * opens the same search as the bar (overrides/main.html). */
+.md-typeset .zp-home-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: min(100%, 24rem);
+  margin: 1.1rem 0 0.2rem;
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  font-size: 0.72rem;
+  color: var(--zp-faint);
+  text-align: left;
+  background: var(--zp-card);
+  border: 1px solid var(--zp-hair);
+  border-radius: 999px;
+  cursor: text;
+}
+.md-typeset .zp-home-search::before {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  background: currentColor;
+  -webkit-mask: var(--md-search-icon, url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>')) center / contain no-repeat;
+          mask: var(--md-search-icon, url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>')) center / contain no-repeat;
+}
+.md-typeset .zp-home-search:hover {
+  border-color: var(--zp-hair-strong);
+  color: var(--md-default-fg-color);
+}
+.md-typeset .zp-home-cards > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 1.6rem 0 0;
+  padding: 0;
+}
+.md-typeset .zp-home-cards > ul > li {
+  position: relative;
+  margin: 0;
+  padding: 0.9rem 1rem 1rem;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--md-typeset-color);
+  background: color-mix(in srgb, var(--zp-card) 72%, transparent);
+  border: 1px solid var(--zp-hair);
+  border-radius: 0.72rem;
+  transition: border-color 0.15s ease;
+}
+.md-typeset .zp-home-cards > ul > li:hover {
+  border-color: var(--zp-hair-strong);
+}
+.md-typeset .zp-home-cards > ul > li > a:first-child {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.86rem;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+/* the whole card is the link */
+.md-typeset .zp-home-cards > ul > li > a:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.md-typeset .zp-home-cards > ul > li > a:first-child:focus-visible {
+  outline: none;
+}
+.md-typeset .zp-home-cards > ul > li:has(> a:focus-visible) {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+@media screen and (max-width: 59.984375em) {
+  .md-typeset .zp-home-cards > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (max-width: 29.984375em) {
+  .md-typeset .zp-home-cards > ul { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .zp-home-cards > ul > li { transition: none; }
+}
+
+/* Home: what zoompilot adds. The site's own "what zoompilot adds": plain
+ * text in columns under one rule per group, no plates. */
+.md-typeset .zp-home-features .zp-group {
+  margin: 1.4rem 0 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--zp-faint);
+}
+.md-typeset .zp-home-features > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 2rem;
+  margin: 0.5rem 0 0;
+  padding: 0.9rem 0 0;
+  border-top: 1px solid var(--zp-hair);
+}
+.md-typeset .zp-home-features > ul > li {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--md-typeset-color);
+}
+.md-typeset .zp-home-features > ul > li > a:first-child {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.82rem;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+.md-typeset .zp-home-features > ul > li > a:first-child:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--zp-tint);
+}
+@media screen and (max-width: 59.984375em) {
+  .md-typeset .zp-home-features > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (max-width: 29.984375em) {
+  .md-typeset .zp-home-features > ul { grid-template-columns: 1fr; }
+}
+
+/* Home: the install line, as on zoompilot.ai (site .urlbar). */
+.md-typeset .zp-urlbar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  max-width: 22.4rem;
+  margin: 1.2rem 0 0.5rem;
+  padding: 0.48rem 0.48rem 0.48rem 1.04rem;
+  background: var(--zp-card);
+  border: 1px solid var(--zp-hair);
+  border-radius: 999px;
+}
+.md-typeset .zp-urlbar > code {
+  flex: 1 1 auto;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  font-size: 0.77rem;
+  color: var(--md-default-fg-color);
+  background: none;
+}
+.md-typeset .zp-urlbar code::before {
+  content: "> ";
+  color: var(--zp-faint);
+}
+.md-typeset .zp-urlbar button {
+  padding: 0.44rem 1.04rem;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--zp-paint-ink);
+  background: var(--zp-btn-grad);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+.md-typeset .zp-urlbar button:hover {
+  filter: brightness(1.1);
+}
+.md-typeset .zp-manual-hero .zp-urlbar + p {
+  font-size: 0.72rem;
+  color: var(--zp-faint);
+}
+
+/* Home: three paths, one per kind of visitor */
+.md-typeset .zp-home-cards--paths > ul > li > a:first-child {
+  font-size: 0.9rem;
+}
+
+/* Home: built to be safe. Facts as hairline rows in two columns, the
+ * lead in white, the proof link last. */
+.md-typeset .zp-home-trust > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+  margin: 0.8rem 0 1.4rem;
+  padding: 0;
+  border-top: 1px solid var(--zp-hair);
+}
+.md-typeset .zp-home-trust > ul > li {
+  margin: 0;
+  padding: 0.7rem 0 0.75rem;
+  border-bottom: 1px solid var(--zp-hair);
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--md-typeset-color);
+}
+.md-typeset .zp-home-trust > ul > li > strong:first-child {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color);
+}
+@media screen and (max-width: 44.984375em) {
+  .md-typeset .zp-home-trust > ul { grid-template-columns: 1fr; }
+}
+
+/* Home: common questions. Six plain links in two balanced columns, an
+ * arrow that lights on hover. No descriptions: the
+ * question says it. */
+.md-typeset .zp-home-faq > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.15rem 2rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+}
+.md-typeset .zp-home-faq > ul > li {
+  margin: 0;
+}
+.md-typeset .zp-home-faq a {
+  display: block;
+  padding: 0.4rem 0;
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+.md-typeset .zp-home-faq a::after {
+  content: " →";
+  color: var(--zp-faint);
+  transition: color 0.15s ease;
+}
+.md-typeset .zp-home-faq a:hover::after {
+  color: var(--zp-tint);
+}
+@media screen and (max-width: 44.984375em) {
+  .md-typeset .zp-home-faq > ul { grid-template-columns: 1fr; }
+}
+.md-typeset .zp-home-safety {
+  margin-top: 1.6rem;
+  font-size: 0.74rem;
+  color: var(--zp-faint);
+}
+@media screen and (max-width: 44.984375em) {
+  }
+
+/* Home, designed: the wiki's paint-chip hero (custom.css .zoom-hero)
+ * centred, the search under the tagline, icons on the path cards, the
+ * questions in one soft panel. The edit icon is a docs-page control, so
+ * the home page leaves it out. */
+.md-content:has(.zp-home-hero) .md-content__button {
+  display: none;
+}
+.md-typeset .zp-home-hero {
+  padding: 2.6rem 0 1.6rem;
+}
+.md-typeset .zp-home-hero .zoom-tagline {
+  font-weight: 400;
+  color: var(--md-typeset-color);
+}
+.md-typeset .zp-home-hero .zp-home-search {
+  margin: 1.4rem auto 0;
+}
+.md-typeset .zp-home-cards--paths > ul > li {
+  padding: 1rem 1rem 1.05rem 3.6rem;
+}
+.md-typeset .zp-home-cards--paths > ul > li > .twemoji:first-child {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.5rem;
+  color: var(--zp-tint);
+  background: color-mix(in srgb, var(--zp-paint) 24%, transparent);
+}
+.md-typeset .zp-home-cards--paths > ul > li > .twemoji:first-child svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.md-typeset .zp-home-cards > ul > li > a {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.86rem;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+.md-typeset .zp-home-cards > ul > li > a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.md-typeset .zp-home-faq {
+  margin: 1.6rem 0 0;
+  padding: 0.9rem 1.2rem 0.8rem;
+  background: color-mix(in srgb, var(--zp-card) 55%, transparent);
+  border: 1px solid var(--zp-hair);
+  border-radius: 0.72rem;
+}
+.md-typeset .zp-home-faq .zp-group {
+  margin: 0 0 0.2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--zp-faint);
+}
+.md-typeset .zp-home-safety {
+  text-align: center;
 }

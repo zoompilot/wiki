@@ -6,7 +6,7 @@ type: task
 # Share a route
 
 A route is the recording of one drive. Share its full logs and the time
-of a problem so Zeph or another reviewer can investigate.
+of a problem so I can look into it.
 { .zp-lede }
 
 !!! warning "Only share routes you are comfortable making public"
@@ -22,7 +22,7 @@ of a problem so Zeph or another reviewer can investigate.
 <source src="../../assets/demo/share-a-route.mp4" type="video/mp4">
 <a href="../../assets/demo/share-a-route.mp4">Download the route-sharing video</a>.
 </video>
-<figcaption>Easy way to share a log with Zeph. The written steps are below.</figcaption>
+<figcaption>How to share a drive with me. The written steps are below.</figcaption>
 </figure>
 
 ## upload and preserve

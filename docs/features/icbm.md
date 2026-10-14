@@ -37,4 +37,4 @@ short press or held press changes the set speed.
 
 [Slow for Curves](smart-cruise.md) ·
 [Speed-Limit Assist](speed-limit-assist.md) ·
-[ICBM technical notes](../technical/icbm.md)
+[ICBM technical notes](../technical/set-speed.md)

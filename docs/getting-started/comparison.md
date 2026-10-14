@@ -16,7 +16,7 @@ additional Mazda tuning and cruise work.
 | Area | What to expect in zoompilot |
 | --- | --- |
 | Steering | Speed-dependent learning on supported torque-steering cars; Mazda also gets tuning matched to its steering hardware. |
-| Low-speed steering on Mazda | Compatible steering firmware can assist down to a stop. Older firmware still has a minimum speed. |
+| Low-speed steering on Mazda | A compatible Mazda EPS (2022+) can assist down to a stop. An older EPS still has a minimum speed. |
 | Cruise | Optional Slow for Curves and Speed-Limit Assist. Cruise-button control starts automatically when a feature needs it. |
 | Lane changes | Optional smoothing and road-edge checks. |
 | Controls | With the default steering settings, cancelling cruise or pressing the brake leaves steering active. |

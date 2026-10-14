@@ -23,8 +23,8 @@ steering force. The motor still has limits. Self-Tune learns how the
 car responds at different speeds, helping supported cars steer more
 consistently. Mazda also gets tuning matched to its steering hardware.
 
-On older Mazda firmware, steering assistance stops below about 28 mph
-(45 km/h). Compatible newer firmware can assist down to a stop.
+On an older Mazda EPS, steering assistance stops below about 28 mph
+(45 km/h). A compatible Mazda EPS (2022+) can assist down to a stop.
 [Steering guide](../features/steering.md).
 
 ## cruise speed

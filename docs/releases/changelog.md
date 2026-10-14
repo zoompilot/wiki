@@ -1,12 +1,75 @@
 # Changelog
 
-zoompilot release notes. The release channel is `zoompilot/main`; the
-site header always shows the current release commit.
+zoompilot release notes, newest first. The release channel is
+`zoompilot/main`.
 
-<!-- Generated from the site repo's src/data/changelog.js by
-     scripts/sync-wiki.mjs (`npm run sync:wiki`). Edit the data file
-     there, not this page: manual edits to the releases below are
-     lost on the next sync. -->
+<!-- The release history lives here; zoompilot.ai shows only the current
+     release and links to this page. Add each release at the top. -->
+
+## Next release (in develop)
+
+Coming in the next release to `zoompilot/main`.
+
+- **[jetlink](../jetlink/index.md) support!**
+  - Run big models on a Mac, Jetson, NVIDIA Linux PC, iPhone/iPad or Android phone &lt;3
+  - Turn on: Settings > Models > Jetlink.
+- **Cruise.**
+  - **No ICBM toggle:** The ICBM toggle is no longer needed. ICBM turns on when a feature needs it.
+  - **Slow for Curves:** Smart Cruise is renamed to Slow for Curves: Vision and Map, and further tuned for Mazda.
+  - **One Cruise menu:** Alpha longitudinal, Experimental Mode and Dynamic Experimental Control are now together under Cruise (comma 4: Cruise > Alpha Long; comma 3/3X: top of Cruise). The home screen experimental mode button opens them.
+  - **Speed Limit Assist:** The confirmation names the new speed (“Press - for 45 mph”, “Adjusting to 45 mph”), and only shows when your cruise speed will actually change.
+- **Steering.**
+  - **Speed Dependent:** Toggle removed. It is always enabled when self-tune is on.
+  - **Tune versions:** Small and big models each have their own tune.
+  - **Lane Change Smoothing:** Fixed.
+  - **Torque bar (Mazda):** Fixed it not turning amber before the steering limit is reached.
+- **Startup.**
+  - “Driving Model Loading” shows while the model starts, instead of communication alerts.
+  - Fewer Controls Mismatch alerts.
+  - comma 3X: a slow boot no longer blocks engaging for the whole drive.
+  - New zoompilot boot logo.
+- **comma 4.**
+  - Long-press a setting for help.
+  - A toggle another setting overrides shows a grey pill instead of green.
+  - Software says “update ready, scroll to install” once an update is downloaded.
+  - Manage eSIM profiles under Network.
+- **Mazda.**
+  - **Highway curves:** Decel Overshoot is gone. Slow for Curves uses a new Mazda tune instead, fitted to how the stock cruise actually slows, so curves at highway speeds no longer brake too hard or too early.
+  - **Curve slowdowns:** Curves are planned on the whole model path, so the slowdown is smoother and your speed comes back sooner. A speed limit prompt no longer stalls a slowdown.
+  - **Nav speed limits:** The speed limit is read from the nav unit when the camera sees none.
+  - **2022 CX-5:** Improved steering tune, and steering starts from learned values.
+  - **Older Mazdas:** Including the 2012-16 CX-5, they can now steer on the stock EPS above 45 kph. Untested on these cars, feedback welcome.
+- **Alpha longitudinal only.**
+  - **Lead braking:** Brakes sooner for a slowing car (openpilot #37824).
+  - **Experimental Mode Speed Assist:** New, off by default (“speed assist” on the comma 4). Experimental mode tends to cruise about 5 mph under your set speed; this raises it toward the set speed when the road ahead is clear, and eases off for curves. [How it works.](../technical/experimental-mode-assists.md)
+  - **Experimental Mode Lead Follow Assist:** New, off by default (“lead follow assist” on the comma 4). Closes the gap to your following distance behind a steady car. Never closer than chill mode. [How it works.](../technical/experimental-mode-assists.md)
+  - **Red lights:** Reduced creeping after stopping.
+  - **CX-9 and other Mazdas without Auto Hold:** Fixed alpha longitudinal. Stops release and resume again.
+  - **Distance Controls:** Both follow distance buttons now work for driving personality (closer = aggressive, farther = relaxed).
+  - **Auto High Beams:** Fixed when using alpha longitudinal.
+  - **Remain parked:** Shows right away at startup.
+  - **Cruise settings remembered:** DEC, custom ACC increments and the Slow for Curves toggles are kept when you turn alpha longitudinal or ICBM off and on.
+  - **ICBM & Speed Limit Assist:** When ICBM is on, the limit is applied by changing the cruise set speed. When ICBM is off, you’re prompted to set 80 mph and the limit is handled internally.
+- **TJA button Mazdas.**
+  - Fixed steering deactivating after a TJA press.
+  - Pressing TJA no longer leaves MRCC armed.
+  - Added a white steering wheel cluster icon when zoompilot steers with cruise off.
+  - Restored chimes for cruise engage and disengage, and when turning on TJA steering during cruise.
+- **Other cars.**
+  - Toyota, Hyundai, Honda, Rivian and VW learn steering at every speed.
+  - Rivian, Tesla: main cruise engages steering again.
+  - No “Steering Blocked by Panda Safety” when you re-engage.
+  - Chrysler CUSW: no ICBM, since the car only accepts cancel and resume.
+- **General updates and fixes.**
+  - **Lane Keep Off:** Dash and infotainment buttons now disable steering but keep cruise control, with a “Lateral Disabled, LKAS is off” alert.
+  - **False Alerts:** Fixed “Steering Assist Temporarily Unavailable” showing when lane-keep is off, and Posenet or locationd alerts while the model is not running.
+  - **Main Off:** Turning cruise main off at a stop, on the brake, reliably turns steering off.
+  - **Wheel Cancel:** Pressing cancel on the wheel no longer switches cruise off. RES resumes as normal.
+  - **Export Mazdas:** Added fingerprinting for CX-5 and CX-9 (JM7 VINs).
+  - **NZ & AUS:** zoompilot set speeds now match the dash and speed limit displays.
+  - **Sunnylink:** Fixed backup and restore reading garbage setting names. Alpha longitudinal is read-only on sunnylink web.
+  - **Upstream sunnypilot:** Added refresh and clear-cache buttons, fixed the Models UI freezing, and fixed the camera offset.
+  - **Upstream openpilot:** New alert icons.
 
 ## 2026.09.12-14 (2026-09-12)
 

@@ -34,7 +34,7 @@ wheel and your attention on the road.
 3. **Check the screen's active status.** Steering and speed control can be active separately; a set speed alone does not mean steering is active.
 4. **Practise turning assistance off.** Do this only where it is safe. Confirm that steering and cruise are both off before relying on manual control alone.
 
-Older Mazda steering firmware stops assisting below about 28 mph
+An older Mazda EPS stops assisting below about 28 mph
 (45 km/h). Your car's cruise control keeps its own minimum-speed and
 stop-and-go limits. [Check compatibility](supported-cars.md).
 

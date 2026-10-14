@@ -56,4 +56,4 @@ speed-limit assistance entirely. Make changes while parked.
 
 [Settings reference](../settings/index.md#cruise) ·
 [Cruise controls](../using-zoompilot/controls.md) ·
-[Technical design](../technical/cruise-arbiter.md)
+[Technical design](../technical/set-speed.md#speed-limit-sessions)

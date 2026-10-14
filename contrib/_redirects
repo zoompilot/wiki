@@ -16,14 +16,14 @@
 /how-to/uninstall /getting-started/install/ 301
 /getting-started/about/ /getting-started/what-is-zoompilot/ 301
 /getting-started/about /getting-started/what-is-zoompilot/ 301
-/how-to/eps-swap/ /technical/eps-swap/ 301
-/how-to/eps-swap /technical/eps-swap/ 301
-/getting-started/eps-swap/ /technical/eps-swap/ 301
-/getting-started/eps-swap /technical/eps-swap/ 301
+/how-to/eps-swap/ /technical/car-identification/#eps-swap 301
+/how-to/eps-swap /technical/car-identification/#eps-swap 301
+/getting-started/eps-swap/ /technical/car-identification/#eps-swap 301
+/getting-started/eps-swap /technical/car-identification/#eps-swap 301
 /settings/explorer/ /settings/ 301
 /settings/explorer /settings/ 301
-/technical/lateral-tune-roadmap/ /technical/lateral-tune/ 301
-/technical/lateral-tune-roadmap /technical/lateral-tune/ 301
+/technical/lateral-tune-roadmap/ /technical/steering/ 301
+/technical/lateral-tune-roadmap /technical/steering/ 301
 # v2 information architecture (2026-09): Guides and Reference folded
 # into Help, contributor pages moved under Community.
 /troubleshooting/ /help/troubleshooting/ 301
@@ -52,3 +52,35 @@
 # The old tester guide now lives in the dedicated Jetlink section.
 /community/jetlink/ /jetlink/ 301
 /community/jetlink /jetlink/ 301
+
+# Technical pages rewritten for readers (final state, one page per topic).
+/technical/mazda-lateral/ /technical/steering/ 301
+/technical/mazda-lateral /technical/steering/ 301
+/technical/lateral-tune/ /technical/steering/ 301
+/technical/lateral-tune /technical/steering/ 301
+/technical/mads/ /technical/steering/ 301
+/technical/mads /technical/steering/ 301
+/technical/mazda-fingerprinting/ /technical/car-identification/ 301
+/technical/mazda-fingerprinting /technical/car-identification/ 301
+/technical/eps-swap/ /technical/car-identification/ 301
+/technical/eps-swap /technical/car-identification/ 301
+/technical/mazda-longitudinal/ /technical/speed-control/ 301
+/technical/mazda-longitudinal /technical/speed-control/ 301
+/technical/force-offroad-alpha-transition/ /technical/speed-control/ 301
+/technical/force-offroad-alpha-transition /technical/speed-control/ 301
+/technical/lead-forecast/ /technical/speed-control/ 301
+/technical/lead-forecast /technical/speed-control/ 301
+/technical/cruise-arbiter/ /technical/set-speed/ 301
+/technical/cruise-arbiter /technical/set-speed/ 301
+/technical/icbm/ /technical/set-speed/ 301
+/technical/icbm /technical/set-speed/ 301
+/technical/scc-curve-planning/ /technical/slow-for-curves/ 301
+/technical/scc-curve-planning /technical/slow-for-curves/ 301
+/technical/e2e-set-speed/ /technical/experimental-mode-assists/ 301
+/technical/e2e-set-speed /technical/experimental-mode-assists/ 301
+/technical/e2e-lead-gap/ /technical/experimental-mode-assists/ 301
+/technical/e2e-lead-gap /technical/experimental-mode-assists/ 301
+/technical/rejected/ /technical/ 301
+/technical/rejected /technical/ 301
+/technical/route-library/ /technical/ 301
+/technical/route-library /technical/ 301

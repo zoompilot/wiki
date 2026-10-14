@@ -32,7 +32,7 @@ the car fully off lets it reset. This is the first thing to try.
    shut down fully. The radar fault that [alpha
    longitudinal](../features/alpha-longitudinal.md) can latch is one of
    them; the mechanism is on the
-   [technical notes](../technical/mazda-longitudinal.md#fsc-settle-gate).
+   [technical notes](../technical/speed-control.md#fsc-settle-gate).
 
 </div>
 

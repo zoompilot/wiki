@@ -29,7 +29,7 @@ The source lives at
   then [Connect to comma](https://docs.comma.ai/how-to/connect-to-comma/).
 - To add support for a new car, start with comma's
   [car porting guide](https://docs.comma.ai/how-to/car-port/), then
-  study the [Mazda port](../technical/mazda-fingerprinting.md) in this
+  study the [Mazda port](../technical/car-identification.md) in this
   wiki.
 
 ## Improve this wiki

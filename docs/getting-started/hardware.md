@@ -35,7 +35,7 @@ car. Buy the kit for your car rather than choosing cables individually.
 | Mazda navigation SD card | Lets supported Mazdas supply speed-limit information from the car's sign-recognition system. |
 | Downloaded maps | Map-based curve slowdowns and speed limits. Download your region through sunnylink; this is separate from Mazda's SD card. |
 | Jetlink computer or phone | Runs a larger driving model alongside the comma. See [Jetlink requirements](../jetlink/index.md). |
-| Compatible Mazda steering motor swap | May add steering down to a stop on an older Mazda. This is an advanced hardware modification, not part of normal setup. See [EPS swaps](../technical/eps-swap.md). |
+| Compatible Mazda steering motor swap | May add steering down to a stop on an older Mazda. This is an advanced hardware modification, not part of normal setup. See [EPS swaps](../technical/car-identification.md#eps-swap). |
 
 ## ready to install?
 

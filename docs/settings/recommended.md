@@ -22,10 +22,9 @@ Afterward, add optional features one at a time while parked.
 Speed-dependent steering learning follows Self-Tune automatically. You do
 not need to find a separate switch or enter tuning values.
 
-## optional settings to try next
+## settings I recommend
 
-These are the extra settings Zeph recommends on the website. They are
-off by default; you can leave them off if you prefer the normal behaviour.
+These are the settings I recommend. They are off by default.
 
 | You want | Where to look | Before enabling |
 | --- | --- | --- |

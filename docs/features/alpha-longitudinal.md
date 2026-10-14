@@ -25,8 +25,8 @@ the safety features above.
 
 ## compatible cars
 
-The current software requires compatible steering firmware that can assist
-down to a stop, and a supported radar version. A steering-motor swap may
+The current software requires a compatible Mazda EPS (2022+), which can
+assist down to a stop, and a supported radar version. An EPS swap may
 provide this on an older Mazda. Model year alone is not enough; zoompilot
 checks the fitted hardware before offering the setting.
 
@@ -69,6 +69,6 @@ follow [dashboard-error troubleshooting](../help/troubleshooting.md#dashboard-er
 Do not assume the radar has recovered while a fault remains.
 
 Credit: Alex Frutkin ([@yummydirt](https://github.com/yummydirt)) completed
-most of the reverse engineering and initial implementation.
+most of the initial reverse engineering for this feature.
 
-[Safety](../safety.md) · [Technical design](../technical/mazda-longitudinal.md)
+[Safety](../safety.md) · [Technical design](../technical/speed-control.md)

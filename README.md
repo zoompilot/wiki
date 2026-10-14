@@ -41,11 +41,26 @@ python3 contrib/sync-jetlink.py --source ../jetlink --ref <commit>
 python3 contrib/sync-jetlink.py --source ../jetlink --check
 ```
 
-The website's exact fonts and title-bar styles are imported separately:
+The website's exact fonts, top bar, footer and jetlink green are imported
+separately:
 
 ```sh
 python3 contrib/sync-brand.py --source /path/to/zoompilot-site
 ```
+
+### Shared header
+
+zoompilot.ai, zoompilot.ai/jetlink and this wiki share one top bar
+("zoompilot | jetlink | wiki") and one footer. The wiki's copy keeps the
+site's geometry at every width: the wordmark sits at the same spot and the
+bar is one 64.5px row wherever the site's is. The wiki's extra controls
+(menu, search, paint) sit inside the nav row, and section links
+drop in rank order (`data-rank` in overrides/partials/header.html) before
+the row runs out. The drop widths are the `NAV_DROP_*` values in
+contrib/sync-brand.py. They were measured against the site's bar with a
+browser width sweep. Re-measure if the bar's labels or the site's nav
+change. The Jetlink guides (docs/jetlink/) wear the jetlink site's green.
+The site links back to this wiki from its wordmark row and footer.
 
 Generated copies and their manifests are committed together. The Jetlink
 import protects local changes. Update the source or importer rather than

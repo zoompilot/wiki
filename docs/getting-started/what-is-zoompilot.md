@@ -34,8 +34,7 @@ Read [Safety](../safety.md) before using zoompilot.
 
 ## who makes it
 
-zoompilot is a community project maintained by Zeph
-([@zephleggett](https://github.com/zephleggett)), with contributions from
-other developers and drivers. [About & credits](../community/about.md).
+I maintain zoompilot ([@zephleggett](https://github.com/zephleggett)),
+with help from other developers and drivers. [About & credits](../community/about.md).
 
 [Next: check your car →](supported-cars.md)
