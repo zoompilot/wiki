@@ -52,9 +52,9 @@ How to install, drive and tune zoompilot.
 
 <p class="zp-group">common questions</p>
 
-- [How do I install zoompilot?](getting-started/install.md)
-- [Which settings should I turn on?](settings/recommended.md)
-- [What do the steering wheel buttons do?](using-zoompilot/controls.md)
+- [How do I install zoompilot?](getting-started/index.md#install)
+- [Which settings should I turn on?](getting-started/index.md#recommended-settings)
+- [What do the steering wheel buttons do?](getting-started/driving.md)
 - [Why did steering or cruise turn off?](help/troubleshooting.md)
 - [What changed in the latest release?](releases/changelog.md)
 - [How does zoompilot work?](getting-started/how-it-works.md)

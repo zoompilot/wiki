@@ -5,21 +5,20 @@ type: task
 
 # Will it work on my car?
 
-zoompilot runs on the cars sunnypilot supports. Mazda gets extra steering
-and cruise work, but capabilities depend on the equipment fitted.
+zoompilot runs on every car sunnypilot supports. Mazdas get extra steering
+and cruise work, depending on their steering hardware.
 { .zp-lede }
 
 ## every sunnypilot car
 
-Use the [full car list](https://github.com/zoompilot/zoompilot/blob/main/docs/CARS.md)
-to check the exact model, year, required factory equipment, and cable kit.
-Supported torque-steering cars across brands can benefit from speed-dependent learning.
-The capabilities below are specific to Mazda.
+Check your model, year, required factory equipment and harness in the
+[full car list](https://github.com/zoompilot/zoompilot/blob/main/docs/CARS.md).
+Torque-steering cars of any brand can use speed-dependent learning. The
+rest of this page is Mazda only.
 
 ## Mazda compatibility
 
-The table shows requirements for low-speed steering and experimental speed
-control. **An older stock EPS can still assist at higher speeds.**
+**An older stock EPS still assists at higher speeds.**
 
 | Model | Year | Steer-to-zero | Alpha longitudinal |
 | :---: | :---: | :---: | :---: |
@@ -32,43 +31,38 @@ control. **An older stock EPS can still assist at higher speeds.**
 | Mazda 3 | 2017–2018 | with EPS swap | hardware check required |
 | Mazda 6 | 2017–2020 | with EPS swap | hardware check required |
 
-**Steer-to-zero** means steering assistance can remain available down to a
-stop. It needs a compatible Mazda EPS (2022+), fitted at the factory to
-the 2022–25 CX-5 and the 2023 CX-8. Regional variants can differ, so the
-software checks the actual steering firmware, not just the model year.
+**Steer-to-zero** means steering assists down to a stop. It needs a
+compatible Mazda EPS (2022+), factory-fitted to the 2022–25 CX-5 and
+2023 CX-8. Regional variants differ, so zoompilot checks the steering
+firmware, not the model year.
 
-The software recognises additional older Mazda platforms beyond the full
-published car list. These have less validation than the main CX-5/CX-9
-platforms. Ask before buying hardware for one. Mazda 6 VIN recognition
-also includes 2021, but its platform documentation lists 2017–20;
-confirm a 2021 car with support rather than assuming coverage.
+**Older EPS.** You get the higher-speed steering improvements without a
+swap, but the EPS stops assisting below about **28 mph (45 km/h)**. The
+car's cruise control keeps its own speed and stop-and-go limits. Swapping
+in a compatible Mazda EPS (2022+) may add low-speed steering, but it is an
+advanced hardware modification, not part of normal setup.
+[Car identification](../technical/car-identification.md) covers the
+firmware check and EPS swaps.
 
-## older Mazda with its original steering motor
-
-You do not need a swap for the higher-speed steering improvements.
-An older EPS stops assisting below about **28 mph (45 km/h)**.
-The car's own cruise control retains its normal speed and stop-and-go limits.
-
-An EPS swap may add low-speed steering. It is an advanced hardware
-modification, not part of normal setup. [Read about EPS swaps](../technical/car-identification.md#eps-swap).
+**Other Mazdas.** zoompilot recognises some older Mazda platforms beyond
+the published list, validated less than the CX-5 and CX-9. Ask
+before buying hardware for one. Mazda 6 VIN recognition includes 2021, but
+its platform documentation lists 2017–20, so confirm a 2021 car first.
 
 ## experimental speed control
 
-Alpha Longitudinal requires a compatible Mazda EPS (2022+), which can
-assist down to a stop, and a radar version the software supports. The device
-checks compatibility before offering it. A table entry describes software
-eligibility, not equal testing on every car.
+Alpha Longitudinal needs a compatible Mazda EPS (2022+) and a supported
+radar version. The device checks both before offering it. A table
+entry means the software allows it, not that every car is equally
+tested.
 
 !!! danger "Emergency braking disabled"
 
     Alpha Longitudinal turns off Mazda's radar, automatic emergency
-    braking, and forward collision warning. It is optional and off by
-    default. Read [the feature guide](../features/alpha-longitudinal.md).
+    braking and forward collision warning. It is off by default. Read [the feature guide](../features/alpha-longitudinal.md).
 
 ## not sure about your car?
 
 Ask in [Discord](https://discord.gg/jFWkHC2uhh) with the model, year,
-country, comma model, and whether the steering motor is original.
-Do not select a different vehicle to bypass compatibility checks.
-
-[Next: what you need →](hardware.md)
+country, comma model, and whether the EPS is original. Don't select
+another vehicle to bypass compatibility checks.

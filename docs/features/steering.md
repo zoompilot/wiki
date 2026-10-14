@@ -5,22 +5,21 @@ type: feature
 
 # Steering improvements
 
-zoompilot learns how supported cars respond at different speeds to help
-them steer more consistently. Mazda also gets enhanced tuning matched
-to its steering hardware.
+zoompilot learns how your car steers at each speed, so it steers more
+consistently. Mazdas also get torque limits and a tune matched to their
+steering motor.
 { .zp-lede }
 
-## which cars benefit
+## speed-dependent steering
 
-Speed-dependent learning works on supported cars using torque-based
-steering control. Cars that steer by angle use a different system.
+Self-Tune learns your car's steering response and friction for each speed
+range and blends them as you drive. Steering adapts over the first few
+drives. It works only on cars with torque-based steering. Small and large driving models keep separate tunes.
 
-## what you need to do
-
-On supported Mazdas, torque control and self-tune are on by default. Leave
-them on: **Settings → Steering → torque control** (comma 3X: **Customize
-Torque Params**). Speed-dependent learning runs with self-tune; there is no
-separate switch for it.
+On a supported Mazda, torque control and Self-Tune are on by default. Leave them on: **Settings → Steering →
+torque control** (comma 3X: **Customize Torque Params**). Speed-dependent
+learning runs with Self-Tune and has no switch of its own. On other
+brands, check that both are available and on.
 
 <div class="zp-setting-shots" markdown="0">
 <figure class="setting-shot settings-figure-mici">
@@ -41,33 +40,35 @@ separate switch for it.
 </figure>
 </div>
 
-On other brands, check that torque control and Self-Tune are available
-and enabled before expecting these improvements. Keep custom tuning
-and manual real-time tuning off for normal use.
-[Recommended settings](../settings/recommended.md).
+## on Mazda
 
-## what you may notice
-
-- More steering assistance at low speeds where the motor allows it.
-- Fewer small corrections on the highway.
-- Steering that adapts over the first few drives.
-
-The car still limits how much steering assistance is available. Steer
-through sharp curves yourself whenever needed.
-
-## steering at low speed
+zoompilot matches its torque limits to the Mazda steering motor's
+capacity and uses its own tune (v2.0 for small models). Expect more
+assistance at low speed and fewer small corrections on the highway. The
+motor still has a limit; steer through sharp curves yourself.
 
 A compatible Mazda EPS (2022+) can assist down to a stop. An older EPS
-stops assisting below about 28 mph (45 km/h), even though it gets the
-steering tune at higher speeds.
+gets the same tune but stops assisting below about 28 mph (45 km/h).
+Model year alone does not identify the motor; zoompilot checks the car's
+hardware and firmware. [Check your car](../getting-started/supported-cars.md).
 
-A model year alone does not identify every steering motor. zoompilot
-checks the car's hardware and firmware. [Check your car](../getting-started/supported-cars.md).
+If steering feels wrong, see
+[troubleshooting](../help/troubleshooting.md#steering-feels-weak-or-wobbly).
 
-Small and large driving models keep separate learned tunes; no manual
-transfer is needed.
+## custom tune
 
-If steering feels wrong, take control and check
-[Troubleshooting](../help/troubleshooting.md#steering-feels-weak-or-wobbly).
+Almost nobody needs this. Leave **Enable Custom Tuning** and **Manual
+Real-Time Tuning** off and let Self-Tune learn.
+
+- **Enable Custom Tuning** starts from your own **Lateral Acceleration
+  Factor** and **Friction** instead of the car's defaults. Self-Tune still
+  learns from there. Higher lateral acceleration steers with less torque;
+  higher friction adds torque for small corrections.
+- **Manual Real-Time Tuning** steers with your values at every speed,
+  ignoring Self-Tune. Changes apply within seconds, even while driving.
+
+Both are under **Settings → Steering** (comma 4: **torque control →
+custom tune**). They can make steering worse; to undo, park and turn both
+off.
 
 [How steering learns](../technical/steering.md#the-steering-tune)

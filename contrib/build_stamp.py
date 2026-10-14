@@ -21,7 +21,7 @@ import urllib.request
 FEED = "https://github.com/zoompilot/zoompilot/commits/main.atom"
 PAGES = [
     pathlib.Path("docs/index.md"),
-    pathlib.Path("docs/getting-started/install.md"),
+    pathlib.Path("docs/getting-started/index.md"),
 ]
 STAMP_RE = re.compile(r'<span class="zp-stamp">[^<]*</span>')
 

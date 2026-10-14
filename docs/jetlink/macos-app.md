@@ -31,7 +31,7 @@ Set up offroad. Keep the comma and Mac online, and the Mac powered and awake.
 
 ## 2. Connect the comma
 
-1. [Install zoompilot](../getting-started/install.md), or [update it](../using-zoompilot/updates.md) if already installed. Wait for the restart to finish.
+1. [Install zoompilot](../getting-started/index.md#install), or [update it](../getting-started/driving.md#updates) if already installed. Wait for the restart to finish.
 2. Set **Settings > Models > Jetlink** to **USB**.
    Leave **Big Model** at its default.
 3. Connect the Mac to the comma with the USB cable.

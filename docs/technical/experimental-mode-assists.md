@@ -8,27 +8,26 @@ source: zoompilot develop a7a6df8
 
 In Experimental Mode, set speed is a maximum. **Speed Assist** can raise
 the model's speed on a clear road; **Lead Follow Assist** can close an
-excess gap behind a steady car. Both are optional and off by default.
+excess gap behind a steady car. Both are off by default.
 { .zp-lede }
 
-## how it works
-
-openpilot's planner weighs the model's acceleration against the
-following-distance controller's and the cruise controller's, and uses the lowest.
-Both assists adjust only the model's value, so the set speed stays a hard ceiling.
+openpilot's planner takes the lowest of the model's acceleration, the
+following-distance controller's and the cruise controller's. Both assists
+adjust only the model's value, so the set speed stays a hard ceiling.
 
 1. **Speed Assist** runs when no car is ahead. It lifts the model toward your target
    speed: the set speed, or a lower limit from [Slow for Curves](../features/smart-cruise.md)
-   or [Speed-Limit Assist](../features/speed-limit-assist.md).
+   or [Speed-Limit Assist](../features/speed-limit-assist.md). It closes the gap in
+   about 6 s, at most 0.8 m/s².
 2. **Speed Assist gives the speed back.** The model keeps speed it did not choose,
    so added speed would carry into the next bend. Speed Assist reads the model's
    plan and works out how fast the car may go and still ease gently into each bend,
-   stop or slowdown ahead. Over that limit it hands back
-   what it added, never more.
+   stop or slowdown ahead. Over that limit it hands back what it added, never more,
+   at up to 0.6 m/s².
 3. **Lead Follow Assist** runs behind a steady car. It lifts the model toward the
    following-distance controller, which holds your **Driving Personality** gap. It
-   can at most match that controller, so it never follows closer or speeds up harder
-   than chill mode would.
+   fades in as the extra gap grows from 3 m to 10 m, and can at most match that
+   controller, so it never follows closer or speeds up harder than chill mode would.
 4. **The model keeps the last word.** Both assists fade out as the model starts to
    brake, so the car settles where the model pushes back.
 
@@ -36,9 +35,8 @@ Both assists adjust only the model's value, so the set speed stays a hard ceilin
 
 - **Clear road.** The extra speed builds within a second or two and holds.
 - **Bends and stops.** The added speed comes off a few seconds before the model's own
-  slowdown, which then runs as normal. Speed Assist never makes the car slower than
-  the model alone, and never adds speed that would take a bend past 1.0 m/s² of
-  sideways acceleration.
+  slowdown. Speed Assist never makes the car slower than the model alone, and never
+  adds speed that would take a bend past 1.0 m/s² of sideways acceleration.
 - **Behind a car.** The model matches the lead's speed but mostly ignores the gap.
   Lead Follow Assist closes extra gap beyond your following distance, up to a cap
   per personality:
@@ -60,50 +58,28 @@ Both cut out fast and stay off for 3 s after the cause clears for: a collision
 warning, a predicted hard brake, a forced slowdown (for example when you are not
 responding), your foot on either pedal, or a lane change.
 
-- **Speed Assist** also stands down whenever a car is ahead, where the
-  following-distance controller owns the speed.
+- **Speed Assist** also stands down whenever a car is ahead.
 - **Lead Follow Assist** also stands down when the lead changes (a cut-in or a new
   car), is below 80% confidence, is slower than about 11 mph (18 km/h), brakes, or is
   forecast to slow by 1 m/s within 3 s. It also waits out a stop or slowdown in the
   model's plan, the model braking, or a bend over 1.0 m/s², then builds back up over 2 s.
 
-## requirements
+## requirements and settings
 
-- **Experimental speed control on.** Set **Alpha Longitudinal** on. See
-  [Experimental speed control](../features/alpha-longitudinal.md).
-- **Experimental Mode on.**
-- **Dynamic Experimental Control off.** While it is on, both assists do nothing and
-  their switches are greyed out.
+You need [experimental speed control](../features/alpha-longitudinal.md)
+(**Alpha Longitudinal**) and Experimental Mode on, and **Dynamic Experimental
+Control** off: while it is on, both assists do nothing and their switches are
+greyed out.
 
-Both assists have been tested in simulation against recorded drives.
-On-road feedback is welcome.
+Open **Settings → Cruise**. On comma 4 the switches are under **alpha longitudinal**;
+on comma 3X they are at the top of Cruise.
 
-<details markdown="1">
-<summary id="key-numbers">Quick reference: values and thresholds</summary>
-
-| Value | What it means |
-| --- | --- |
-| 6 s, 0.8 m/s² | Speed Assist closes the gap to your target in about 6 s, at most 0.8 m/s². |
-| 0.6 m/s² | The fastest Speed Assist hands added speed back. |
-| 1.0 m/s² | Sideways acceleration in a bend above which neither assist adds speed. |
-| 3 s | How long both stay off after a hazard clears. |
-| 3 m to 10 m | Extra gap over your following distance where Lead Follow Assist fades in. |
-| 11 to 18 mph (18 to 29 km/h) | Speed range where both assists fade in. |
-
-</details>
-
-## settings
-
-Open **Settings → Cruise**. On comma 4 the switches are under **alpha longitudinal**.
-On comma 3X they are at the top of Cruise. Both are off by default.
-
-- **Experimental Mode Speed Assist** (**speed assist** on comma 4): turns on Speed
-  Assist.
-- **Experimental Mode Lead Follow Assist** (**lead follow assist** on comma 4): turns
-  on Lead Follow Assist.
+- **Experimental Mode Speed Assist** (**speed assist** on comma 4).
+- **Experimental Mode Lead Follow Assist** (**lead follow assist** on comma 4).
 - **Driving Personality**: sets the following distance and Lead Follow Assist's cap.
 
-For how the planner picks a speed, see [Speed control](../technical/speed-control.md).
+I tested both assists in simulation against recorded drives.
+On-road feedback is welcome.
 
 ??? info "For developers"
 

@@ -5,8 +5,9 @@ type: feature
 
 # Speed-Limit Assist
 
-Speed-Limit Assist uses limits from your car or downloaded maps.
-You choose whether it only provides information or changes cruise speed.
+Speed-Limit Assist reads the speed limit from downloaded maps or, on a
+Mazda, the car's own sign data. It can show the limit, warn you, or move
+your cruise speed to match it.
 { .zp-lede }
 
 ## choose a mode
@@ -15,13 +16,13 @@ While parked, open **Settings → Cruise → Speed Limit**.
 
 | Mode | Behaviour |
 | --- | --- |
-| Off | Disables speed-limit assistance. |
-| Information / info | Uses speed-limit information without changing your cruise speed. |
-| Warning / warn | Warns about exceeding the detected limit on displays that support it. |
-| Assist | Can adjust cruise speed to the detected limit. Read the confirmation prompt. |
+| Off | No speed-limit assistance. |
+| Info (default) | Shows the limit without changing your cruise speed. |
+| Warn | Warns when you exceed the detected limit. |
+| Assist | Asks to move your cruise speed to a new limit. |
 
-Information is the default. Choose it to stop speed adjustments, or
-**Off** to disable assistance. Make changes while parked.
+Only the comma 3X shows the Info and Warn sign display. Assist prompts
+appear on both.
 
 <div class="zp-setting-shots" markdown="0">
 <figure class="setting-shot settings-figure-mici">
@@ -38,29 +39,45 @@ Information is the default. Choose it to stop speed adjustments, or
 </figure>
 </div>
 
-**The comma 4 does not show the same Information/Warning sign display
-as the comma 3X.** Assist prompts appear for requested speed changes.
-
 ## choose a source
 
-- **Car:** on a supported Mazda, the car's speed-limit information needs a navigation SD card.
-- **Map:** download maps for your region through sunnylink.
-- **Car-first or map-first:** use the other source when the preferred one has no limit.
-- **Combined:** use the lower limit when both sources provide one.
+The source and offset are next to the mode (comma 3X: source under
+**Customize Source**).
 
-The source and offset controls are next to the mode setting. Start with
-no offset while you learn how the feature behaves.
+- **Car:** on a supported Mazda, the car's speed-limit signs. Needs a navigation SD card.
+- **Map:** maps for your region, downloaded through sunnylink.
+- **Car-first or map-first:** uses the other source when the preferred one has no limit. Map-first is the default.
+- **Combined:** uses the lower limit when both have one.
+
+An offset adds a fixed amount or a percentage to the limit. Start with
+none.
 
 ## when a limit changes
 
-Read the prompt, including the requested speed and button. Confirm only
-when the speed is appropriate. While confirmation is pending, the prompt
-does not itself change your cruise speed.
+In Assist, the sign shows an arrow and a chime plays. Press the button
+the arrow shows to accept, or the other button to dismiss. Your cruise
+speed does not change until you answer. At 50 mph (80 km/h)
+and above, a new limit of 50 mph or more applies without a prompt.
 
-!!! warning "Check the posted limit"
+Signs and map data can be missing, outdated or wrong. Follow the posted
+limit.
 
-    Signs and map data can be missing, outdated, or wrong. You remain
-    responsible for following the actual speed limit and choosing a
-    speed safe for the conditions.
+## cruise-button control
 
-[Speed-limit prompts and automatic adjustments](../technical/set-speed.md#speed-limit-sessions)
+On the car's own cruise, zoompilot moves the dashboard set speed by
+sending the + and − presses your thumb would (ICBM).
+
+- **No switch.** It starts when a feature needs it: Slow for
+  Curves (on the car's own cruise), Speed-Limit Assist on Assist, or
+  custom increments. It starts or stops only while you are disengaged.
+  To stop it, turn off those features.
+- **Your set speed is kept.** zoompilot returns the dashboard to the speed
+  you chose after a curve or limit adjustment.
+- **Your presses win.** Press + or − yourself and that becomes your new
+  set speed.
+
+**Custom increments** set how far a press moves the set speed: **Settings →
+Cruise → custom increments** (comma 3X: **Custom ACC Speed Increments**).
+Choose the step for a short press and for a held press.
+
+[Who controls the set speed](../technical/set-speed.md)

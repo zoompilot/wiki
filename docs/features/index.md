@@ -5,32 +5,27 @@ type: hub
 
 # Features
 
-Start with the defaults. Add optional features one at a time so you know
-what changed and how to turn it off.
+zoompilot keeps everything sunnypilot does and adds these. Start with the
+defaults, then turn on one feature at a time so you know what changed.
 { .zp-lede }
 
-## steering
+## on every car
 
-- **[Steering improvements](steering.md)**: speed-dependent learning across supported torque-steering cars, plus enhanced Mazda tuning.
-- **[Lane changes](lane-changes.md)**: optional smoothing and road-edge checks.
-- **[Alert fixes](alerts.md)**: fewer known false Mazda warnings.
+- **[Speed-dependent steering](steering.md)**: learns how your car steers at each speed.
+- **[Lane change smoothing](lane-changes.md)**: slower, smoother lane changes at the pace you choose.
+- **[Slow for Curves](smart-cruise.md)**: slows before a curve, then returns to your set speed. Retuned for Mazda.
+- **[Speed-Limit Assist](speed-limit-assist.md)**: can set cruise to the speed limit from maps or, on Mazda, the camera's signs.
+- **[Speed Assist](alpha-longitudinal.md#speed-assist)**: brings Experimental Mode up to your set speed on a clear road.
+- **[Lead Follow Assist](alpha-longitudinal.md#lead-follow-assist)**: follows a steady car at your chosen distance in Experimental Mode.
+- **[Jetlink](../jetlink/index.md)**: runs larger driving models on a connected computer or phone.
 
-## cruise speed
+## on Mazda
 
-- **[Slow for Curves](smart-cruise.md)**: slows for curves, then restores your set speed. Off by default.
-- **[Speed-Limit Assist](speed-limit-assist.md)**: uses limits from your car or maps. You choose whether it changes cruise speed.
-- **[Automatic cruise-button control](icbm.md)**: runs when a feature needs it. No separate ICBM switch.
+- **[Torque limit integration and updated tune](steering.md#on-mazda)**: more torque at low speed, fewer small corrections on the highway.
+- **[Sensors and alerts](sensors-and-alerts.md)**: radar, blind-spot and speed-sign data; known false warnings filtered.
+- **[Alpha Longitudinal](alpha-longitudinal.md)**: zoompilot drives the gas and brakes. Turns off automatic emergency braking and forward collision warning. Off by default.
 
-## other options
-
-- **[Mazda sensors](sensor-readouts.md)**: blind-spot information and speed-limit signs.
-- **[Jetlink](../jetlink/index.md)**: run larger driving models on a connected computer or phone.
-
-!!! danger "Experimental speed control"
-
-    [Alpha Longitudinal](alpha-longitudinal.md) lets zoompilot control
-    acceleration and braking on compatible Mazdas. It disables the car's
-    automatic emergency braking and forward collision warning.
-    It is off by default and is not needed for normal setup.
-
-[Recommended setup →](../settings/recommended.md)
+On the car's own cruise, zoompilot changes the set speed by pressing the
+cruise buttons for you. This cruise-button control (ICBM) has no switch:
+it starts when Slow for Curves, Speed-Limit Assist or custom
+speed increments need it.

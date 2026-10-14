@@ -6,12 +6,12 @@ source: zoompilot develop a7a6df8
 
 # How it works
 
-Controller design, operating limits, and measurements. For setup, use
-the [feature guides](../features/index.md).
+Controller design, operating limits and measurements, checked against the
+code. For setup, use the [feature guides](../features/index.md).
 { .zp-lede }
 
 - [**How zoompilot works**](../getting-started/how-it-works.md)
-  One drive, from camera to wheels. Start here.
+  One drive, from camera to wheels.
 - [**Steering**](steering.md)
   Torque limits, steering to a stop, the speed-based tune, and MADS.
 - [**Car identification**](car-identification.md)
@@ -19,7 +19,7 @@ the [feature guides](../features/index.md).
 - [**Experimental speed control**](speed-control.md)
   Taking over and handing back the radar, stop-and-go, lead cars.
 - [**Set speed**](set-speed.md)
-  Who moves your set speed, and how the cruise buttons are pressed.
+  Who moves your set speed, and how zoompilot presses the cruise buttons.
 - [**Slow for Curves**](slow-for-curves.md)
   How it picks a curve speed and when it gives it back.
 - [**Experimental Mode assists**](experimental-mode-assists.md)

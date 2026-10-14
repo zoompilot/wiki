@@ -10,8 +10,6 @@ source: zoompilot develop a7a6df8
 and restores speed as it opens, up to the next curve or your set speed.
 { .zp-lede }
 
-## how it works
-
 1. **It reads the road ahead.** The camera planner uses the path the
    [driving model](../help/glossary.md#driving-model) predicts. The map
    planner uses curve speeds from your downloaded maps.
@@ -45,11 +43,11 @@ sunnypilot's own Slow for Curves, unchanged.
 
 ### the grip limit
 
-Sideways pull stays at or under about 2.2 m/s² (about 0.22 g). The limit
-follows the curve's own speed: 2.2 m/s² at 35 mph (56 km/h), 2.1 at 55 mph
-(89 km/h), 2.2 at 70 mph (113 km/h). It rises again at highway speed
-because highway curves are banked, which hides some pull. The planner
-targets 95% of the limit to allow for lag.
+Sideways pull stays at or under about 2.2 m/s² (about 0.22 g), depending
+on the curve's speed: 2.2 m/s² at 35 mph (56 km/h), 2.1 at 55 mph (89 km/h),
+2.2 at 70 mph (113 km/h). It rises again at highway speed because banked
+highway curves hide some pull. The planner targets 95% of the limit to
+allow for lag.
 
 ### how far it looks
 
@@ -73,17 +71,18 @@ next slow point ahead.
 ### the commit hold below 50 mph
 
 Below 50 mph the model can lose a bend it saw, then find it again closer.
-So with your car's own cruise, a bend that has called for slowing for 2 s
-is remembered until the near window reaches it. A slower bend replaces it.
+So with your car's own cruise, zoompilot remembers a bend that has called
+for slowing for 2 s until the near window reaches it. A slower bend replaces it.
 The hold also ends if the planner lets go or you pass 50 mph. It never
 runs with experimental speed control.
 
 ### the map planner
 
-A map target uses the same budget and 70% trigger. Below 45 mph (72 km/h)
-it acts at once. Faster, it must stay the slowest target ahead for up to
-2.5 s first, which filters out the map briefly placing you on a side
-street. If the map data drops out, the target lets go at once. At speed, a
+A map target uses the same budget and 70% trigger, and never asks past the
+budget. Below 45 mph (72 km/h) it acts at once. Faster, it must first stay
+the slowest target ahead for up to 2.5 s (the full 2.5 s from 50 mph,
+80 km/h), which filters out the map briefly placing you on a side street.
+If the map data drops out, the target lets go at once. At speed, a
 returning target waits the full time again.
 
 ## how hard it may slow
@@ -93,41 +92,23 @@ returning target waits the full time again.
 | Your car's own cruise ([MRCC](../help/glossary.md#mrcc)) | 0.75 m/s² | Through the cruise buttons. See [set speed](../technical/set-speed.md). |
 | [Experimental speed control](../features/alpha-longitudinal.md) | 1.2 m/s² | It sets the speed directly. See [speed control](../technical/speed-control.md). |
 
-With your car's own cruise, [cruise-button control](../features/icbm.md)
-lowers the [set speed](../help/glossary.md#set-speed) toward the slowest
-point ahead, a few mph below your speed at a time. Button presses and the
-cruise's reaction take time, so braking starts earlier. The map planner
-never asks past the budget.
+With your car's own cruise, the cruise buttons lower the
+[set speed](../help/glossary.md#set-speed) toward the slowest point ahead,
+a few mph below your speed at a time. Presses and the cruise's reaction
+take time, so it starts braking earlier.
 
 ## what you'll notice
 
-- **Before a curve** the speed drops early and gently.
-- **Through the curve** the speed holds, then rises as the bend opens.
 - **Back-to-back curves** keep the speed down to the slowest one ahead.
 - **Lowest target:** it never asks for less than 12 mph (20 km/h).
 - **Pressing the gas** overrides it.
-
-<details markdown="1">
-<summary id="key-numbers">Quick reference: values and thresholds</summary>
-
-| Value | What it means |
-| --- | --- |
-| 2.2 / 2.1 / 2.2 m/s² | Grip limit at 35 / 55 / 70 mph curve speed, planned to 95%. |
-| 70% / 30% | Share of the budget that starts a slowdown / keeps it going. |
-| 3 s / 4 s | Near window on the small / big driving model. |
-| 1 m/s (about 2 mph) | In-curve margin over your current speed. |
-| 2 s | Commit hold: how long a bend must call for slowing, below 50 mph. |
-| 0 to 2.5 s | Map confirmation: none below 45 mph, 2.5 s from 50 mph. |
-
-</details>
 
 ## settings
 
 **Settings → Cruise → Slow for Curves: Vision** and **Settings → Cruise →
 Slow for Curves: Map**. Both are off by default and work together. They
 turn on only when zoompilot can change your speed (experimental speed
-control or cruise-button control). See the
-[settings reference](../settings/index.md#cruise).
+control or cruise-button control).
 
 ??? info "For developers"
 

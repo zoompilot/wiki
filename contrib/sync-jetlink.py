@@ -75,7 +75,7 @@ def main():
         # precautions; each platform guide only needs the prerequisite here.
         body, count = re.subn(
           r"1\. \*\*Install zoompilot\.\*\*.*?Wait for installation, rebooting, and building to finish\.",
-          "1. [Install zoompilot](../getting-started/install.md), or [update it](../using-zoompilot/updates.md) "
+          "1. [Install zoompilot](../getting-started/index.md#install), or [update it](../getting-started/driving.md#updates) "
           "if already installed. Wait for the restart to finish.", body, flags=re.S)
         if count != 1:
           raise SystemExit(f"Expected one comma installation step in {relative}; review the source before importing.")

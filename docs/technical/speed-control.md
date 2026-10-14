@@ -20,23 +20,21 @@ You set speed and engage with the steering-wheel buttons.
 
 ## which cars
 
-- **Steering:** a compatible Mazda [EPS](../help/glossary.md#eps) (2022+),
-  factory-fitted or [swapped](car-identification.md#eps-swap). An older EPS
-  stops steering below 28 mph (45 km/h).
-- **Radar:** the 2022 family's radar, or the older G46L. The CX-5 2012–16
-  and CX-9 2016–20 qualify only with a G46L.
-
-The setting appears only when both match. All values here were tuned on a
-2022 CX-5. It heads the Cruise panel: **Settings → Cruise → Alpha
-Longitudinal** (comma 4: **Settings → Cruise → alpha longitudinal**). It
-changes only while offroad (car off, or Force Offroad) and applies at the
-next start.
+It needs a compatible Mazda [EPS](../help/glossary.md#eps) (2022+),
+factory-fitted or [swapped](car-identification.md#eps-swap), and the 2022
+family's radar or the older G46L (the CX-5 2012–16 and CX-9 2016–20 qualify
+only with a G46L). The setting appears only when both match. It heads the
+Cruise panel, with Experimental Mode and its
+[assists](experimental-mode-assists.md) below it: **Settings → Cruise →
+Alpha Longitudinal** (comma 4: **Settings → Cruise → alpha longitudinal**).
+It changes only while offroad (car off, or Force Offroad) and applies at
+the next start. I tuned every value here on a 2022 CX-5.
 
 ## taking over the radar
 
 <div class="zp-steps" markdown>
 
-1. **Start the car.** The radar runs as normal. With
+1. **Start the car.** The radar runs normally. With
    [MADS](../help/glossary.md#mads), MAIN gives you steering at once.
 2. **Wait for the camera** (see below).
 3. **Stop.** The takeover runs only while stopped, with the car's own cruise
@@ -51,28 +49,29 @@ next start.
 - **Drove off first:** it takes over at the next stop. SET shows **Park to
   Engage Longitudinal**.
 - **The car's own cruise is on:** SET shows **Turn Off Stock Cruise**.
-- **The radar refuses, or does not answer in 10 s:** the radar keeps
-  control for the drive. SET shows **Longitudinal Initializing Failed:
+- **The radar refuses, or does not answer in 10 s:** it keeps control
+  for the drive. SET shows **Longitudinal Initializing Failed:
   Restart the car to retry**.
 - **The radar speaks again later:** zoompilot steps back at once with a
-  cruise fault, and retries at the next stop.
+  cruise fault and retries at the next stop.
 
 ## the camera start-up wait { #fsc-settle-gate }
 
 After it boots, the front camera checks that the radar is there. If the radar
 goes quiet during that check, the camera latches an i-ACTIVSENSE fault that
-only a long [power-down](../help/ecu-reset.md) clears. So zoompilot waits
-for the camera's "boot finished" signal, then 7 s more. A camera error, or a
-gap over 1.5 s in its messages, restarts the count.
+only a long [power-down](../help/troubleshooting.md#ecu-reset) clears. So
+zoompilot waits for the camera's "boot finished" signal, then 7 s more. A
+camera error, or a gap over 1.5 s in its messages, restarts the count.
 
 ## handing the radar back
 
-Every software stop hands the radar back first, moving or stopped. A radar left to recover alone comes back
-degraded and blocks cruise until the next ignition.
+Every software stop hands the radar back first, moving or stopped. A radar
+left to recover alone comes back degraded and blocks cruise until the next
+ignition.
 
 - **Force Offroad** (**Settings → Device → Enable Always Offroad**): disengage
-  first. If the hand-back fails, it stays pending and zoompilot keeps the
-  camera fed. Exiting cancels it.
+  first. A failed hand-back stays pending, with the camera kept fed, until
+  you exit.
 - **Reboot or power off:** goes ahead on any answer, or after 15 s.
 - **Ignition off:** the radar recovers on its own.
 - **Turning it off while driving:** Force Offroad, switch off, exit. The
@@ -80,13 +79,12 @@ degraded and blocks cruise until the next ignition.
 
 ## stop-and-go
 
-- **Stop:** openpilot holds with 1.024 m/s², the car's own value. After a
-  few seconds the car's brake hold takes over and zoompilot relaxes. If it
-  never does, zoompilot keeps braking.
+- **Stop:** openpilot holds with 1.024 m/s², the car's own value, until the
+  car's brake hold takes over a few seconds later. If it never does,
+  zoompilot keeps braking.
 - **Pull away:** once the plan asks for over 0.25 m/s² for 0.2 s, zoompilot
-  sends the car's release signal and ramps up at 1.25 m/s³. Still stopped,
-  it climbs for up to 3 s, never past 1.45 m/s².
-- **Gas:** releases the hold at once. You never need RES.
+  sends the car's release signal and ramps up at 1.25 m/s³. If still
+  stopped, it climbs for up to 3 s, never past 1.45 m/s².
 
 ## acceleration like the car's own cruise
 
@@ -94,37 +92,8 @@ degraded and blocks cruise until the next ignition.
 - **Lift-off:** throttle eases off at most 2.0 m/s³ near your speed. Braking
   skips this.
 - **Ceiling:** 1.75 m/s² at 9 mph (14 km/h), 1.05 at 31 mph (50 km/h), 0.65
-  from 56 mph (90 km/h).
-
-## lead cars
-
-Only the camera sees the car ahead. Instead of assuming a braking car soon
-stops braking, zoompilot uses the [driving
-model's](../help/glossary.md#driving-model) forecast of its speed. Braking
-starts earlier behind a slowing car, not harder. It is always on, with no
-setting. If the model's car is over 4 m from the tracked car, openpilot's
-own estimate is used. A car under 7 mph (11 km/h) is never assumed to pull
-away.
-
-zoompilot also does the radar's other jobs. It reports the lead to the
-camera, lights the dash distance bars, and passes on auto high beams.
-
-## buttons, brake and gas
-
-- **MAIN:** turns cruise on and off as usual.
-- **CANCEL or brake:** the car cancels and openpilot follows. If openpilot
-  drops out first, it waits 0.2 s before pressing CANCEL, because a second
-  cancel turns cruise main off.
-- **Gas:** overrides without disengaging.
-
-## Speed-Limit Assist and Slow for Curves
-
-- **[Slow for Curves](../features/smart-cruise.md):** the planner slows the
-  car itself. The dash set speed does not step down
-  ([details](../technical/slow-for-curves.md)).
-- **[Speed-Limit Assist](../features/speed-limit-assist.md):** in Assist
-  mode, [ICBM](../help/glossary.md#icbm) still moves the dash set speed to
-  the limit ([details](../technical/set-speed.md)).
+  from 56 mph (90 km/h). The [panda](../help/glossary.md#panda) enforces
+  +2.0 / −3.5 m/s².
 
 ## radar readouts
 
@@ -133,25 +102,32 @@ camera. With experimental speed control every lead is camera-only. Cars
 whose radar sends no tracks (G46L, CX-5 2012–16, CX-9 2016–20) are
 camera-only either way.
 
-<details markdown="1">
-<summary id="key-numbers">Quick reference: values and thresholds</summary>
+## lead cars
 
-| Value | What it means |
-| --- | --- |
-| 7 s | Camera start-up wait. |
-| 1.27 s | Radar silence before control is ready. |
-| 10 s | Time the radar gets to answer. |
-| 15 s | Longest a reboot waits for the hand-back. |
-| 1.024 m/s² | Braking that holds a stop. |
-| 1.45 m/s² | Most acceleration to break away. |
-| +2.0 / −3.5 m/s² | Limits the [panda](../help/glossary.md#panda) enforces. |
+Instead of assuming a braking car soon stops braking, zoompilot uses the [driving
+model's](../help/glossary.md#driving-model) forecast of its speed, so braking
+starts earlier behind a slowing car, not harder. It is always on. If the
+model's car is over 4 m from the tracked car, openpilot's own estimate
+takes over. A car under 7 mph (11 km/h) is never assumed to pull away.
 
-</details>
+zoompilot also does the radar's other jobs: it reports the lead to the
+camera, lights the dash distance bars, and passes on auto high beams.
 
-## settings
+## buttons, brake and gas
 
-**Settings → Cruise → Alpha Longitudinal**, offroad only. Experimental Mode
-and its [assists](../technical/experimental-mode-assists.md) sit below it.
+- **MAIN:** turns cruise on and off as usual.
+- **CANCEL or brake:** the car cancels and openpilot follows. If openpilot
+  drops out first, it waits 0.2 s before pressing CANCEL, because a second
+  cancel turns cruise main off.
+- **Gas:** overrides without disengaging, and releases a stop hold at once.
+  You never need RES.
+
+## Speed-Limit Assist and Slow for Curves
+
+- **Slow for Curves:** the planner slows the car itself. The dash set speed
+  does not step down ([details](slow-for-curves.md)).
+- **Speed-Limit Assist:** in Assist mode, [ICBM](../help/glossary.md#icbm)
+  still moves the dash set speed to the limit ([details](set-speed.md)).
 
 ??? info "For developers"
 

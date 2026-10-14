@@ -80,7 +80,7 @@ window.ZP_SETTINGS = [
       {
         "name": "enable torque control / Enforce Torque Lateral Control",
         "values": "On / Off",
-        "def": "On with a compatible Mazda EPS (2022+); otherwise Off",
+        "def": "On for supported Mazdas; otherwise Off",
         "note": "In torque control. Steers with zoompilot's torque tunes. Tune version, self tune and custom tune need it. Offroad only. Greyed while NNLC is on. Not on angle-steering cars."
       },
       {
@@ -92,7 +92,7 @@ window.ZP_SETTINGS = [
       {
         "name": "tune version (small models) / Torque Control Tune Version (Small Models)",
         "values": "v0.0 / v1.0 / v2.0",
-        "def": "v2.0 with a compatible Mazda EPS (2022+); otherwise v0.0",
+        "def": "v2.0 for supported Mazdas; otherwise v0.0",
         "note": "In torque control. The steering tune while a small model drives. Keep the default. Offroad only. Greyed with torque control off."
       },
       {
@@ -104,7 +104,7 @@ window.ZP_SETTINGS = [
       {
         "name": "enable self-tune / Self-Tune",
         "values": "On / Off",
-        "def": "On with a compatible Mazda EPS (2022+); otherwise Off",
+        "def": "On for supported Mazdas; otherwise Off",
         "note": "In torque control \u2192 self tune. Learns how your car steers, per speed range. Needs torque control. Offroad only. Greyed while manual realtime is on."
       },
       {

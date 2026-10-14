@@ -34,7 +34,7 @@ Port **5600** is the default; **0** disables it.
 
 ## 2. Connect the comma
 
-1. [Install zoompilot](../getting-started/install.md), or [update it](../using-zoompilot/updates.md) if already installed. Wait for the restart to finish.
+1. [Install zoompilot](../getting-started/index.md#install), or [update it](../getting-started/driving.md#updates) if already installed. Wait for the restart to finish.
 2. Set **Settings > Models > Jetlink** to **USB**.
    Leave **Big Model** at its default.
 3. Connect the PC's **USB-A** port to the comma's **USB-C** port.

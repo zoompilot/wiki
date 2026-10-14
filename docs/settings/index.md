@@ -5,48 +5,27 @@ type: reference
 
 # Settings reference
 
-Look up common settings by panel or search their names. For a normal
-setup, start with [Recommended settings](recommended.md).
+Every setting by panel. For the settings I recommend, see
+[Start here](../getting-started/index.md#recommended-settings).
 { .zp-lede }
 
-## common tasks
+With a compatible Mazda EPS (2022+), torque control and Self-Tune are on
+by default, and Self-Tune learns per speed range. Names give the comma 4
+label, then the comma 3X one where it differs. "comma 3X only"
+settings have no comma 4 control. Long-press a comma 4 setting for help.
+Many settings change only while parked (offroad).
 
-[Steering and cruise controls](../using-zoompilot/controls.md) ·
-[Slow for Curves](../features/smart-cruise.md) ·
-[Speed limits](../features/speed-limit-assist.md) ·
-[Set up Jetlink](../jetlink/index.md)
+!!! danger "Alpha longitudinal"
 
-## before changing settings
-
-Park first. Some changes require the ignition off or a restart. A setting
-can be unavailable because your car does not support it or another mode
-overrides it. Follow the on-device explanation.
-
-On comma 4, Steering uses **mads**, **lane change**, **blinker pause**, and
-**torque control** submenus. Names below show the comma 4 label first, then
-the comma 3X wording where it differs. Settings marked comma 3X only have no
-comma 4 control.
-Long-press a comma 4 setting for help.
-
-!!! danger "Experimental speed control"
-
-    Alpha Longitudinal disables Mazda automatic emergency braking and
+    Alpha longitudinal disables Mazda automatic emergency braking and
     forward collision warning. Read [its guide](../features/alpha-longitudinal.md)
-    before changing it.
-
-## zoompilot defaults
-
-On supported Mazda steering hardware, identification enables torque control
-and Self-Tune. Speed-dependent learning runs with Self-Tune.
-Tune versions and defaults are listed below.
+    before turning it on.
 
 <div id="zp-settings-controls" class="zp-explorer-controls" markdown="0"></div>
 <p id="zp-settings-count" class="zp-explorer-count" markdown="0"></p>
 <div data-device-switch markdown="0"></div>
 
 ## Steering
-
-On comma 4, open the relevant mads, lane change, blinker pause, or torque control submenu.
 
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Steering panel on comma 4, scrolls sideways">
   <img src="../assets/settings/steering.png" alt="The Steering settings panel on comma 4" width="4268" height="488" loading="lazy">
@@ -75,11 +54,11 @@ On comma 4, open the relevant mads, lane change, blinker pause, or torque contro
 | enable blinker pause / Pause Lateral Control with Blinker | Off | In blinker pause. Pauses steering while you signal at low speed, so you can turn by hand. |
 | blinker speed / Minimum Speed to Pause Lateral Control | 20 | In blinker pause. km/h or mph. Below this speed the blinker pauses steering. Greyed until blinker pause is on. |
 | blinker delay / Post-Blinker Delay | 0 s | In blinker pause. Wait before steering resumes after the blinker ends. Greyed until blinker pause is on. |
-| enable torque control / Enforce Torque Lateral Control | On with a compatible Mazda EPS (2022+); otherwise Off | In torque control. Steers with zoompilot's torque tunes. Tune version, self tune and custom tune need it. Offroad only. Greyed while NNLC is on. Not on angle-steering cars. |
+| enable torque control / Enforce Torque Lateral Control | On for supported Mazdas; otherwise Off | In torque control. Steers with zoompilot's torque tunes. Tune version, self tune and custom tune need it. Offroad only. Greyed while NNLC is on. Not on angle-steering cars. |
 | jerk aware / Lateral Jerk Torque Controller | Off | In torque control. Looks ahead to smooth corrections. No gain on Mazdas in testing; leave it off. Offroad only. Greyed while NNLC is on or when every model size runs the v2 tune. |
-| tune version (small models) / Torque Control Tune Version (Small Models) | v2.0 with a compatible Mazda EPS (2022+); otherwise v0.0 | In torque control. The steering tune while a small model drives. Keep the default. Offroad only. Greyed with torque control off. |
+| tune version (small models) / Torque Control Tune Version (Small Models) | v2.0 for supported Mazdas; otherwise v0.0 | In torque control. The steering tune while a small model drives. Keep the default. Offroad only. Greyed with torque control off. |
 | tune version (big models) / Torque Control Tune Version (Big Models) | v1.0 | In torque control. The steering tune while a big model drives. Keep the default. Offroad only. Greyed with torque control off. |
-| enable self-tune / Self-Tune | On with a compatible Mazda EPS (2022+); otherwise Off | In torque control → self tune. Learns how your car steers, per speed range. Needs torque control. Offroad only. Greyed while manual realtime is on. |
+| enable self-tune / Self-Tune | On for supported Mazdas; otherwise Off | In torque control → self tune. Learns how your car steers, per speed range. Needs torque control. Offroad only. Greyed while manual realtime is on. |
 | less restrict / Less Restrict Settings for Self-Tune (Beta) | Off | In torque control → self tune. Learns from fewer samples and accepts values further from the car's defaults. Needs self-tune. Offroad only. |
 | enable custom tuning / Enable Custom Tuning | Off | In torque control → custom tune. Starts from your own lateral acceleration and friction. Self-tune still learns from there. Recommended off. Offroad only. |
 | manual realtime / Manual Real-Time Tuning | Off | In torque control → custom tune. Steers with your values at every speed, ignoring self-tune. Applies within seconds, even while driving. Needs custom tuning. |
@@ -90,8 +69,6 @@ On comma 4, open the relevant mads, lane change, blinker pause, or torque contro
 </noscript>
 
 ## Cruise
-
-On comma 4, experimental controls are inside alpha longitudinal, speed limits inside speed limit, and step sizes inside custom increments.
 
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Cruise panel on comma 4, scrolls sideways">
   <img src="../assets/settings/cruise.png" alt="The Cruise settings panel on comma 4" width="4268" height="488" loading="lazy">
@@ -127,8 +104,6 @@ On comma 4, experimental controls are inside alpha longitudinal, speed limits in
 
 ## Models
 
-Choose the on-device model or set up an optional Jetlink connection.
-
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Models panel on comma 4, scrolls sideways">
   <img src="../assets/settings/models.png" alt="The Models settings panel on comma 4" width="4184" height="488" loading="lazy">
   <figcaption>comma 4</figcaption>
@@ -156,8 +131,6 @@ Choose the on-device model or set up an optional Jetlink connection.
 </noscript>
 
 ## Display
-
-Screen brightness and timeouts.
 
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Display panel on comma 4, scrolls sideways">
   <img src="../assets/settings/display.png" alt="The Display settings panel on comma 4" width="4268" height="488" loading="lazy">
@@ -245,8 +218,6 @@ Screen brightness and timeouts.
 
 ## Network
 
-Wi-Fi, hotspot, and cellular. Join a Wi-Fi network from the same panel.
-
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Network panel on comma 4, scrolls sideways">
   <img src="../assets/settings/network.png" alt="The Network settings panel on comma 4" width="6800" height="488" loading="lazy">
   <figcaption>comma 4</figcaption>
@@ -321,8 +292,6 @@ Wi-Fi, hotspot, and cellular. Join a Wi-Fi network from the same panel.
 
 ## sunnylink
 
-Backups, map downloads, and remote settings. Backup and restore are in the same panel.
-
 <figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="sunnylink panel on comma 4, scrolls sideways">
   <img src="../assets/settings/sunnylink.png" alt="The sunnylink settings panel on comma 4" width="5872" height="488" loading="lazy">
   <figcaption>comma 4</figcaption>
@@ -376,9 +345,6 @@ Backups, map downloads, and remote settings. Backup and restore are in the same 
 
 ## other panels
 
-- **Trips:** drive counts, distance, and hours. No settings.
-- **Firehose:** training data upload status. No settings.
+- **Trips** and **Firehose** have no settings.
 - **OSM (comma 3X):** downloaded maps.
 - **Vehicle (comma 3X):** automatic car identification. Do not force a different car to unlock features.
-
-[Recommended settings](recommended.md) · [Need help?](../help/index.md)

@@ -6,54 +6,47 @@ source: zoompilot develop a7a6df8
 
 # How zoompilot identifies your car
 
-zoompilot identifies the car at startup to select its measurements and
-features. On Mazda, it also checks for a compatible Mazda EPS (2022+),
+zoompilot identifies the car at startup to pick its measurements and
+features. On a Mazda it also checks for a compatible Mazda EPS (2022+),
 including a swapped one.
 { .zp-lede }
 
-## how it works
-
-1. **Part firmware.** zoompilot reads the [firmware](../help/glossary.md#firmware) versions of the car's [ECUs](../help/glossary.md#ecu). If they match one known model, that is the answer.
-2. **VIN.** If not, it reads the [VIN](../help/glossary.md#vin). The [WMI](../help/glossary.md#wmi) (characters 1 to 3), model line (4 and 5) and model year (10) must all name the same single model. An ambiguous VIN gives no match.
-3. **Export cars.** JM0 VINs (Australia, New Zealand) have no model year, so they cannot be decoded. For these only, two parts must agree: a compatible Mazda [EPS](../help/glossary.md#eps) (2022+), and an engine computer whose firmware names exactly one model.
+1. **Part firmware.** zoompilot reads the [firmware](../help/glossary.md#firmware) versions of the car's [ECUs](../help/glossary.md#ecu). A match to one known model settles it.
+2. **VIN.** If not, it reads the [VIN](../help/glossary.md#vin). The [WMI](../help/glossary.md#wmi) (characters 1 to 3), model line (4 and 5) and model year (10) must all name one model. An ambiguous VIN gives no match.
+3. **Export cars.** JM0 VINs (Australia, New Zealand) have no model year. For these only, two parts must agree: a compatible Mazda [EPS](../help/glossary.md#eps) (2022+), and an engine computer whose firmware names exactly one model.
 
 The VIN step matters most after a motor swap, because a donor EPS reports another model's firmware.
 
 ## compatible eps
 
-zoompilot reads the EPS firmware on every Mazda. If it is one of three known versions, the car has a compatible Mazda EPS (2022+), whatever the model or year. If the EPS does not answer, zoompilot assumes the factory motor: compatible on the CX-5 2022–25 and CX-8 2023.
+If the EPS firmware is one of three known versions, the car has a compatible Mazda EPS (2022+), whatever the model or year. If the EPS does not answer, zoompilot assumes the factory motor: compatible on the CX-5 2022–25 and CX-8 2023.
 
-The torque limit, steering tune and steering delay are the same on every Mazda EPS. A compatible one changes only these:
+Torque limit, steering tune and steering delay are the same on every Mazda EPS. A compatible one changes only:
 
 - **Minimum steering speed.** It steers down to a stop. An older one stops below 28 mph (45 km/h) and returns above 32 mph (52 km/h).
 - **Experimental speed control.** [Alpha Longitudinal](../features/alpha-longitudinal.md) is offered only with a compatible motor and a supported radar.
-- **Steering dropouts.** If the motor stops applying torque, zoompilot stops asking after 0.2 s. Above 12 mph (19 km/h) you see "Steering Assist Temporarily Unavailable", but steering stays on.
-- **Speed-band starting values.** See below.
+- **Steering dropouts.** A [block](steering.md#when-the-car-blocks-steering) leaves steering on instead of turning it off.
+- **Speed-band starting values** (below).
 
 ## eps swap
 
-Some owners fit a compatible Mazda EPS (2022+) to an older Mazda.
-
 - **What it unlocks.** Steering down to a stop, and eligibility for Alpha Longitudinal. The CX-5 2012–16 and CX-9 2016–20 also need zoompilot to detect the G46L radar.
-- **What it does not do.** It does not turn Alpha Longitudinal on. That stays off until you enable it, and it disables Mazda's [AEB](../help/glossary.md#aeb) and [FCW](../help/glossary.md#fcw) while on. It does not raise the torque limit.
-- **Check the part, not the year.** zoompilot checks the EPS firmware, so model year alone does not confirm a donor part. Some 2022–25 CX-5s report an older firmware that does not count.
+- **What it does not do.** It does not raise the torque limit or turn Alpha Longitudinal on. That stays off until you enable it, and it disables Mazda's [AEB](../help/glossary.md#aeb) and [FCW](../help/glossary.md#fcw) while on.
+- **Check the part, not the year.** Model year alone does not confirm a donor part: some 2022–25 CX-5s report older firmware that does not count.
 - **Starting values.** Base steering values still come from your car's model. The [speed bands](../help/glossary.md#speed-bands) start from the CX-5 2022–25's learned values on a swapped CX-5 2012–21, CX-9 2016–20, Mazda 3 or Mazda 6. A CX-9 2021+ starts from values learned on a swapped CX-9. [Self-tune](../help/glossary.md#self-tune) then learns your car.
 
 This wiki gives no mechanical, wiring or alignment instructions. Ask in [Discord](https://discord.gg/jFWkHC2uhh) about your car and donor part, with its firmware version.
 
-## dashcam-only
-
-No Mazda is dashcam-only. The Mazda code never sets [dashcamOnly](../help/glossary.md#dashcamonly): every recognised Mazda uses the same EPS hardware, and zoompilot's limits are measured on it. An older motor keeps its 28 mph (45 km/h) floor instead.
-
 ## what you'll notice
 
-- **Below the floor.** With an older motor, you see a low-speed steering warning under 28 mph (45 km/h).
-- **CX-8.** The CX-8 2023 has no VIN code zoompilot reads, so it is recognised by firmware alone.
+- **No Mazda is [dashcam-only](../help/glossary.md#dashcamonly).** Every recognised Mazda uses the same EPS hardware, and zoompilot's limits are measured on it. An older motor keeps its 28 mph (45 km/h) floor.
+- **CX-8.** The CX-8 2023 has no VIN code zoompilot reads, so zoompilot recognises it by firmware alone.
 - **JM0 cars.** Their clusters show the set speed slightly high. zoompilot uses the number your cluster shows.
-- **Wrong car.** Turn steering off and [share a route](../help/share-a-route.md).
+- **Wrong car.** Turn steering off and [share a drive](../help/troubleshooting.md#share-a-drive).
+- **Settings → Vehicle.** Leave it on automatic. A forced selection applies that model's measurements to your car and unlocks nothing: the EPS check still reads your motor.
 
 <details markdown="1">
-<summary id="key-numbers">VIN codes and steering threshold</summary>
+<summary id="key-numbers">VIN codes</summary>
 
 | Value | What it means |
 | --- | --- |
@@ -62,7 +55,6 @@ No Mazda is dashcam-only. The Mazda code never sets [dashcamOnly](../help/glossa
 | JM7 | Japan-built crossovers for export markets. Same model and year codes as JM3. |
 | 3MZ | Mexico-built Mazda 3. |
 | JM0 | Australia and New Zealand exports. No model year, so only the swap check applies. |
-| 28 mph (45 km/h) | Steering floor of an older EPS. |
 
 | Model | Model line | Years (code) | WMIs |
 | --- | --- | --- | --- |
@@ -79,7 +71,7 @@ No Mazda is dashcam-only. The Mazda code never sets [dashcamOnly](../help/glossa
 ## vin decoder
 
 Enter a VIN or its first 10 characters. Decoding runs in your browser;
-the VIN stays on this page.
+the VIN never leaves this page.
 
 <style>
   .zp-vin { margin: 1.4em 0 1.8em; }
@@ -132,10 +124,6 @@ the VIN stays on this page.
          placeholder="VIN or first 10 characters">
   <div class="zp-vin-out" hidden aria-live="polite"></div>
 </div>
-
-## settings
-
-- **Settings → Vehicle.** Leave it on automatic. A forced selection applies that model's measurements to your car, and it does not unlock features: the EPS check still reads your motor.
 
 ??? info "For developers"
 

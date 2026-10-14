@@ -96,7 +96,7 @@ extra_css:
   - stylesheets/fonts.css
   - stylesheets/custom.css
   # v2 components (lede, glance, steps, journey, next-step cards) and
-  # reading rhythm; documented on community/style-guide.md
+  # reading rhythm; documented in CONTRIBUTING.md
   - stylesheets/v2.css
   # zoompilot.ai look: the site's tokens, top bar, rows instead of cards.
   # Loaded after the two above so it wins; print.css stays last.
@@ -133,32 +133,18 @@ nav:
   - Home: index.md
   - Start here:
       - getting-started/index.md
-      - What is zoompilot?: getting-started/what-is-zoompilot.md
-      - Coming from openpilot or sunnypilot?: getting-started/comparison.md
-      - Check your car: getting-started/supported-cars.md
-      - What you need: getting-started/hardware.md
-      - Install: getting-started/install.md
-      - First drive: getting-started/first-drive.md
+      - Supported cars: getting-started/supported-cars.md
+      - Driving: getting-started/driving.md
       - Safety: safety.md
-  - Using zoompilot:
-      - using-zoompilot/index.md
-      - using-zoompilot/controls.md
-      - using-zoompilot/screen.md
-      - using-zoompilot/updates.md
   - Features:
       - features/index.md
       - features/steering.md
       - features/lane-changes.md
       - Slow for Curves: features/smart-cruise.md
       - features/speed-limit-assist.md
-      - Cruise-button control: features/icbm.md
-      - features/sensor-readouts.md
-      - features/alerts.md
       - Experimental speed control: features/alpha-longitudinal.md
-  - Settings:
-      - settings/index.md
-      - settings/recommended.md
-      - settings/custom-tune.md
+      - features/sensors-and-alerts.md
+  - Settings: settings/index.md
   - Jetlink:
       - jetlink/index.md
       - Set up:
@@ -187,16 +173,12 @@ nav:
           - USB measurements: jetlink/usb-bench.md
           - Publishing: jetlink/publishing.md
   - Help:
-      - help/index.md
       - help/troubleshooting.md
-      - help/share-a-route.md
-      - help/ecu-reset.md
       - help/faq.md
-      - help/privacy.md
       - help/glossary.md
-  - Technical:
+  - How it works:
       - technical/index.md
-      - How zoompilot works: getting-started/how-it-works.md
+      - Overview: getting-started/how-it-works.md
       - Steering: technical/steering.md
       - Car identification: technical/car-identification.md
       - Experimental speed control: technical/speed-control.md
@@ -205,15 +187,4 @@ nav:
       - Experimental Mode assists: technical/experimental-mode-assists.md
   - Community:
       - community/index.md
-      - community/feedback.md
-      - community/contribute.md
-      - community/roadmap.md
       - Releases: releases/changelog.md
-      - community/about.md
-      - community/style-guide.md
-      - community/site-sync.md
-
-validation:
-  omitted_files: warn
-  not_found: warn
-  absolute_links: warn

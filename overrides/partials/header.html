@@ -17,8 +17,8 @@
   shorter word to stay one row at the site's width.
 -#}
 {%- set ranks = {"Start here": "first", "Features": "core", "Help": "core",
-                 "Using zoompilot": "mid", "Settings": "mid", "Jetlink": "late"} -%}
-{%- set labels = {"Using zoompilot": "using"} -%}
+                 "Settings": "mid", "Jetlink": "late"} -%}
+{%- set labels = {} -%}
 <header class="md-header zp-header" data-md-component="header">
   <div class="zp-sitebar">
     <p class="zp-site-id">
@@ -27,7 +27,7 @@
     <nav class="zp-site-nav" aria-label="Manual sections">
       <label class="zp-menu" for="__drawer">menu</label>
       {% for nav_item in nav.items %}
-        {% if not loop.first and nav_item.title not in ["Technical", "Community"] %}
+        {% if not loop.first and nav_item.title not in ["How it works", "Community"] %}
           {% set destination = nav_item.children[0].url if nav_item.children else nav_item.url %}
           <a href="{{ destination | url }}"{% if nav_item.title in ranks %} data-rank="{{ ranks[nav_item.title] }}"{% endif %}{% if nav_item.active %} aria-current="page"{% endif %}>{{ labels[nav_item.title] if nav_item.title in labels else nav_item.title | lower }}</a>
         {% endif %}

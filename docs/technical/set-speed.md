@@ -6,17 +6,16 @@ source: zoompilot develop a7a6df8
 
 # Who controls the set speed
 
-With the car's own radar cruise, zoompilot changes the set speed through
-[automatic cruise-button commands (ICBM)](../features/icbm.md). It remembers
-your set speed while curve and speed-limit adjustments run.
+With the car's own radar cruise ([MRCC](../help/glossary.md#mrcc) on a
+Mazda), the car keeps the [set speed](../help/glossary.md#set-speed) and
+brakes on its own. zoompilot changes that set speed with automatic
+cruise-button commands ([ICBM](../help/glossary.md#icbm)): the same +/−
+presses your thumb makes. It remembers your set speed while curve and
+speed-limit adjustments run.
 { .zp-lede }
 
-## how it works
-
-With stock radar cruise ([MRCC](../help/glossary.md#mrcc) on a Mazda), the car keeps the [set speed](../help/glossary.md#set-speed) and brakes on its own. ICBM sends the same +/− presses your thumb makes, stepping the dash toward the speed zoompilot wants.
-
-- **Your set speed is remembered exactly.** zoompilot keeps its own copy, and the dash walks back to that exact number afterwards.
-- **Your presses win.** zoompilot reads only presses from the wheel, never its own. While you hold + or −, it sends nothing. Within about 1 second, the number on the dash becomes your new set speed.
+- **Your set speed is remembered exactly.** zoompilot keeps its own copy, and the dash walks back to it afterwards: on a Mazda about 4 mph/s (5 taps a second), once the target has held steady for 1 s (without camera lookahead).
+- **Your presses win.** zoompilot reads only presses from the wheel, never its own. While you hold + or −, it sends nothing. Within about 1 second, the dash number becomes your new set speed.
 - **It does not fight you.** For 3 seconds after a + it will not pull the dash down unless a new, lower curve appears. For 3 seconds after a − it will not raise it.
 
 ## when it runs
@@ -44,54 +43,35 @@ Speed-Limit Assist stays on and now adjusts the dashboard set speed.
 
 With [Speed-Limit Assist](../features/speed-limit-assist.md) on Assist, the limit plus your offset becomes a target the dash can follow.
 
-1. **Prompt.** Half a second after you engage, or when the limit changes, the limit sign shows a blinking arrow and a chime plays. If the dash already shows the limit, the session starts without asking.
+1. **Prompt.** Half a second after you engage, or when the limit changes, the limit sign shows a blinking arrow and a chime plays. If the dash already shows the limit, the session starts without asking. At 50 mph (80 km/h) and above, a new limit of 50 mph or more applies without a prompt.
 2. **Accept.** Press the button the arrow shows. A + raises your set speed to the limit. A − keeps your set speed and caps the car at the limit.
-3. **Dismiss.** Press the other button (a normal step), or wait 5 seconds. You are asked again only when the limit changes.
+3. **Dismiss.** Press the other button (a normal step), or wait 5 seconds. zoompilot asks again only when the limit changes.
 4. **End.** Any press during a session ends it. Your set speed becomes the number the dash settles on.
 
 While a prompt is open, zoompilot will not raise the dash, but curve slowdowns still go through, because a curve cannot wait for your answer.
 
-At 50 mph (80 km/h) and above, a new limit of 50 mph or more applies without a prompt.
-
-**Announcements.** "Adjusting to 45 mph" and a chime appear when you accept or when the speed the car will settle at changes. A limit above your set speed stays quiet.
+**Announcements.** "Adjusting to 45 mph" and a chime appear when you accept or when the car's settling speed changes. A limit above your set speed stays quiet.
 
 ## slowing before a curve
 
-A Mazda's radar cruise brakes by how far the set speed sits below your current speed. A dash at the curve speed barely brakes; a dash far below brakes hard. So when [Slow for Curves](../features/smart-cruise.md) or Speed-Limit Assist asks for braking, zoompilot holds the set speed a measured gap below your speed and follows you down:
+A Mazda's radar cruise brakes by how far the set speed sits below your current speed: a dash at the curve speed barely brakes, a dash far below brakes hard. When [Slow for Curves](../features/smart-cruise.md) or Speed-Limit Assist asks for braking, zoompilot holds the set speed a measured gap below your speed and follows you down:
 
 - **Gentle braking** (0.5 m/s²) at 45 mph needs about 3.75 mph of gap.
 - **A planned curve's maximum** (0.75 m/s², about 0.08 g) needs 10 mph at 45 mph, 7.75 mph at 65 mph.
 - **Below 0.15 m/s²** there is no gap; the car coasts.
 - **Near the target** the set speed sits no further below it than you are above it, so the car lands on the target, not under it.
 
-A brand needs a measured braking table for this, and only Mazda has one. Other ICBM cars (some Hyundai, Honda and Chrysler models) walk the dash straight to the target.
-
-## minimum set speed
+Only Mazda has the measured braking table this needs. Other ICBM cars (some Hyundai, Honda and Chrysler models) walk the dash straight to the target.
 
 ICBM never steps below the car's lowest set speed: the car's own value, otherwise 20 mph or 30 km/h. A Mazda holds 30 km/h, which an mph dash shows as 19 mph.
 
 ## with experimental speed control
 
-With [experimental speed control](../features/alpha-longitudinal.md), zoompilot brakes for curves itself, so the dash keeps your set speed (or the limit cap) through a curve, with no gap. ICBM runs only for Speed-Limit Assist and custom increments. See [speed control](speed-control.md).
-
-<details markdown="1">
-<summary id="key-numbers">Quick reference: values and thresholds</summary>
-
-| Value | What it means |
-| --- | --- |
-| 5 s | A speed-limit prompt stays open. |
-| 50 mph (80 km/h) | At or above this speed, a new limit at or above this threshold needs no prompt. |
-| 3 s | ICBM will not move the dash against your press. |
-| 1 s | Mazda: steady target needed before the dash walks back up (without camera lookahead). |
-| about 4 mph/s | Mazda dash walk rate (taps at 5 per second). |
-| 10 / 7.75 mph | Mazda curve braking gap at 45 / 65 mph. |
-| 19 mph (30 km/h) | Mazda minimum set speed. |
-
-</details>
+zoompilot brakes for curves itself, so the dash keeps your set speed (or the limit cap) through a curve, with no gap. ICBM runs only for Speed-Limit Assist and custom increments. See [speed control](speed-control.md).
 
 ## settings
 
-Under [**Settings → Cruise**](../settings/index.md#cruise):
+Under **Settings → Cruise**:
 
 - **Speed Limit → Speed Limit.** Assist starts ICBM.
 - **Speed Limit → Speed Limit Offset.** None, Fixed or %, from −30 to +30.
