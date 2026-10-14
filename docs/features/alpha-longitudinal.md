@@ -111,3 +111,7 @@ see [dashboard errors](../help/troubleshooting.md#dashboard-errors-cruise-lkas-o
 Do not assume the radar has recovered while a fault remains.
 
 [How experimental speed control works](../technical/speed-control.md)
+
+Credit: [Alex Frutkin](https://www.linkedin.com/in/alex-frutkin-6380459)
+([@yummydirtx](https://github.com/yummydirtx)) did most of the initial
+reverse engineering for this feature.

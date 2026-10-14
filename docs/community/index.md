@@ -77,8 +77,9 @@ software.
 - [@zephleggett](https://github.com/zephleggett) (ariste): lead
   developer and maintainer. Contributions include
   speed-dependent torque tuning and ICBM fixes.
-- [@yummydirt](https://github.com/yummydirt): most of the initial reverse
-  engineering for Mazda [alpha longitudinal](../features/alpha-longitudinal.md).
+- Alex Frutkin ([@yummydirtx](https://github.com/yummydirtx),
+  [LinkedIn](https://www.linkedin.com/in/alex-frutkin-6380459)): most of the
+  initial reverse engineering for Mazda [alpha longitudinal](../features/alpha-longitudinal.md).
 - [@mzdnick](https://github.com/mzdnick) (Nick): VIN and EPS
   fingerprinting, zoompilot UI branding, cruise fixes.
 - The zoompilot Discord community: logs, routes, testing, and patience.
