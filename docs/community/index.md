@@ -74,8 +74,8 @@ software.
 
 ### zoompilot contributors
 
-- [@zephleggett](https://github.com/zephleggett) (ariste): lead
-  developer and maintainer. Contributions include
+- Zeph Leggett (ariste; [@zephleggett](https://github.com/zephleggett),
+  [LinkedIn](https://www.linkedin.com/in/zeph-leggett)): lead developer and maintainer. Contributions include
   speed-dependent torque tuning and ICBM fixes.
 - Alex Frutkin ([@yummydirtx](https://github.com/yummydirtx),
   [LinkedIn](https://www.linkedin.com/in/alex-frutkin-6380459)): most of the
