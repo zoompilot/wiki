@@ -6,20 +6,13 @@ description: Plain meanings for every word the zoompilot wiki uses — openpilot
 
 # Glossary
 
-Plain meanings for the words this wiki uses. New to all of this? Read
-the first section — it covers the words you will meet on almost every
-page.
+Definitions of terms used in this manual.
 { .zp-lede }
-
-Every term here has its own link: add `#` and the term to the page
-address (for example `glossary/#eps`). Abbreviations shown in
-small-caps tooltips across the wiki come from the same list.
 
 ## The words you will meet first
 
-**fork** — a copy of a software project that keeps everything its
-parent has and adds its own changes. zoompilot is a fork of sunnypilot,
-which is a fork of openpilot.
+**fork** — a version of a software project with its own changes.
+zoompilot is a fork of sunnypilot, which is a fork of openpilot.
 { #fork }
 
 **engage / disengage** — turn zoompilot's assistance on while you
@@ -106,8 +99,8 @@ such as the steering motor.
 car. See [What you need](../getting-started/hardware.md).
 { #harness }
 
-**nav SD card** — Mazda's navigation map card. zoompilot uses it for
-speed-sign reading and map data. See
+**nav SD card** — Mazda's navigation card, required for car-supplied
+speed limits on supported Mazdas. Downloaded maps are separate. See
 [What you need](../getting-started/hardware.md).
 { #nav-sd-card }
 
@@ -260,16 +253,14 @@ and plans the drive. You can pick which one runs; see
 `zoompilot/main`. See [Install](../getting-started/install.md).
 { #branch }
 
-**DTR** — a community driving model; DTRv6 is a popular pick in the
-Models panel. See [First drive](../getting-started/first-drive.md).
+**DTR** — a community driving model. Keep the default model for your
+[first drive](../getting-started/first-drive.md).
 { #dtr }
 
-**Accelerator Link** — the Models-panel toggle that lets the comma run
-a big driving model from a Jetson over USB. See
-[Testing jetlink](../community/jetlink.md).
+**Accelerator Link** — the former name of the Jetlink setting under
+Models. See [Jetlink setup](../jetlink/index.md).
 { #accelerator-link }
 
-**jetlink** — the zoompilot project behind Accelerator Link: it
-serves a big driving model to the comma from a Jetson. See
-[Testing jetlink](../community/jetlink.md).
+**jetlink** — runs larger driving models on a supported computer or
+phone connected to the comma. See [Jetlink setup](../jetlink/index.md).
 { #jetlink }

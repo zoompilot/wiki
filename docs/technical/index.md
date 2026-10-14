@@ -6,12 +6,9 @@ source: zoompilot develop a7a6df8
 
 # How it works
 
-How zoompilot does what it does, in plain words. Each page says what you
-will notice, how it works, and the few numbers that matter. Every number
-is checked against the code.
+Controller design, operating limits, and measurements. For setup, use
+the [feature guides](../features/index.md).
 { .zp-lede }
-
-<div class="zp-home-cards" markdown>
 
 - [**How zoompilot works**](../getting-started/how-it-works.md)
   One drive, from camera to wheels. Start here.
@@ -28,8 +25,5 @@ is checked against the code.
 - [**Experimental Mode assists**](experimental-mode-assists.md)
   Speed Assist and Lead Follow Assist.
 
-</div>
-
-These pages describe the current release. The full engineering record,
-with its measurements and history, is in the
+The full engineering record is in the
 [zoompilot repository](https://github.com/zoompilot/zoompilot/tree/develop/docs/zoompilot).

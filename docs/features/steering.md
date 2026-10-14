@@ -13,11 +13,7 @@ to its steering hardware.
 ## which cars benefit
 
 Speed-dependent learning works on supported cars using torque-based
-steering control. It learns the response at different speeds instead
-of using one average for the whole drive. It is not limited to Mazda.
-
-Cars that control steering by angle use a different system. This
-particular torque-learning feature does not apply to them.
+steering control. Cars that steer by angle use a different system.
 
 ## what you need to do
 
@@ -48,20 +44,10 @@ steering tune at higher speeds.
 A model year alone does not identify every steering motor. zoompilot
 checks the car's hardware and firmware. [Check your car](../getting-started/supported-cars.md).
 
-## how it learns
-
-Self-Tune learns the steering response across seven speed ranges. Small
-and large driving models keep separate tunes. You do not need to copy
-values between models or adjust them by hand.
+Small and large driving models keep separate learned tunes; no manual
+transfer is needed.
 
 If steering feels wrong, take control and check
 [Troubleshooting](../help/troubleshooting.md#steering-feels-weak-or-wobbly).
 
-<details markdown="1">
-<summary>Measurements and controller design</summary>
-
-[Steering evidence](../technical/steering.md) ·
-[Torque tuning](../technical/steering.md#the-steering-tune) ·
-[Custom tuning](../settings/custom-tune.md)
-
-</details>
+[How steering learns](../technical/steering.md#the-steering-tune)

@@ -81,8 +81,7 @@ when prompted. Port **5600** is the default; **0** disables it.
 
 ## 3. Connect the comma
 
-1. **Install zoompilot.** After resetting the comma, enter
-   **`zoompilot/main`** as the install URL. Already on zoompilot? Update the `main` release in **Settings > Software**. Wait for installation and restarting to finish.
+1. [Install zoompilot](../getting-started/install.md), or [update it](../using-zoompilot/updates.md) if already installed. Wait for the restart to finish.
 2. **Enable Jetlink.** Set **Settings > Models > Jetlink** to **USB**.
    Leave **Big Model** at its default.
 3. **Connect the cable.** Jetson **USB-A** → comma **USB-C**.

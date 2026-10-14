@@ -6,13 +6,15 @@ source: zoompilot develop a7a6df8
 
 # How zoompilot identifies your car
 
-When you start the car, zoompilot works out which model it is in. That sets the car's measurements and the features it offers. On a Mazda it also checks the steering motor, so a swapped motor is recognised in any body.
+zoompilot identifies the car at startup to select its measurements and
+features. On Mazda, it also checks for a compatible Mazda EPS (2022+),
+including a swapped one.
 { .zp-lede }
 
 ## how it works
 
 1. **Part firmware.** zoompilot reads the [firmware](../help/glossary.md#firmware) versions of the car's [ECUs](../help/glossary.md#ecu). If they match one known model, that is the answer.
-2. **VIN.** If not, it reads the [VIN](../help/glossary.md#vin). The [WMI](../help/glossary.md#wmi) (characters 1 to 3), model line (4 and 5) and model year (10) must all name the same single model. Otherwise the VIN gives no answer. It never guesses.
+2. **VIN.** If not, it reads the [VIN](../help/glossary.md#vin). The [WMI](../help/glossary.md#wmi) (characters 1 to 3), model line (4 and 5) and model year (10) must all name the same single model. An ambiguous VIN gives no match.
 3. **Export cars.** JM0 VINs (Australia, New Zealand) have no model year, so they cannot be decoded. For these only, two parts must agree: a compatible Mazda [EPS](../help/glossary.md#eps) (2022+), and an engine computer whose firmware names exactly one model.
 
 The VIN step matters most after a motor swap, because a donor EPS reports another model's firmware.
@@ -50,7 +52,8 @@ No Mazda is dashcam-only. The Mazda code never sets [dashcamOnly](../help/glossa
 - **JM0 cars.** Their clusters show the set speed slightly high. zoompilot uses the number your cluster shows.
 - **Wrong car.** Turn steering off and [share a route](../help/share-a-route.md).
 
-## key numbers
+<details markdown="1">
+<summary id="key-numbers">VIN codes and steering threshold</summary>
 
 | Value | What it means |
 | --- | --- |
@@ -71,9 +74,12 @@ No Mazda is dashcam-only. The Mazda code never sets [dashcamOnly](../help/glossa
 | Mazda 3 | BN | 2017–18 (H, J) | JM1, 3MZ |
 | Mazda 6 | GL | 2017–21 (H to M) | JM1 |
 
+</details>
+
 ## vin decoder
 
-Type a VIN or its first 10 characters to see what the VIN step concludes. The decode runs in your browser and the VIN never leaves the page.
+Enter a VIN or its first 10 characters. Decoding runs in your browser;
+the VIN stays on this page.
 
 <style>
   .zp-vin { margin: 1.4em 0 1.8em; }

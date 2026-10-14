@@ -29,11 +29,8 @@ used for Smart Cruise. Speed-dependent learning follows Self-Tune.
 Coming from openpilot? Read the [steering and cruise controls](../using-zoompilot/controls.md)
 before driving. Steering can remain active independently of cruise.
 
-## what stays your responsibility
-
-zoompilot does not drive for you. Check traffic and blind spots, choose a
-safe speed, and take over whenever needed. Assistance varies by car.
-[Check your car](supported-cars.md) before switching.
+[Check your car](supported-cars.md) before switching. You remain responsible
+for traffic, blind spots, speed, and taking over when needed.
 
 !!! danger "Experimental speed control on Mazda"
 
@@ -48,5 +45,4 @@ your settings and any recordings you need first.
 
 [Install zoompilot →](install.md#switching-from-other-software)
 
-For engineering comparisons and measurements, see
-[Technical notes](../technical/index.md).
+[Technical comparisons and measurements](../technical/index.md).

@@ -13,15 +13,13 @@ and cruise work, but capabilities depend on the equipment fitted.
 
 Use the [full car list](https://github.com/zoompilot/zoompilot/blob/main/docs/CARS.md)
 to check the exact model, year, required factory equipment, and cable kit.
-Supported torque-steering cars across brands can benefit from
-speed-dependent steering learning. Mazda gets additional hardware-specific
-tuning. The Mazda capabilities below do not apply to every car.
+Supported torque-steering cars across brands can benefit from speed-dependent learning.
+The capabilities below are specific to Mazda.
 
 ## Mazda compatibility
 
-The table describes steering down to a stop and eligibility for experimental
-speed control. **It is not a list of cars that need a hardware swap to run
-zoompilot.** An older stock EPS can assist at higher speeds.
+The table shows requirements for low-speed steering and experimental speed
+control. **An older stock EPS can still assist at higher speeds.**
 
 | Model | Year | Steer-to-zero | Alpha longitudinal |
 | :---: | :---: | :---: | :---: |

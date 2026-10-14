@@ -5,51 +5,82 @@ type: reference
 
 # Writing and layout guide
 
-Use the Jetlink setup guides as the model: requirements, short steps,
-a visible result, and help by symptom.
+Help readers finish a task and know when they can stop reading.
 { .zp-lede }
 
 ## answer first
 
-A feature introduction says what changes for the driver. An installation
-page says what to install and where. Keep ancestry and engineering detail
-below the practical answer.
+Open with the result or action in one or two sentences. A feature page
+says what changes for the driver; an installation page says what to install.
+Put background and engineering detail after the practical answer.
 
-## structure for a task
+## make each sentence useful
 
-1. What you need.
-2. Steps using exact screen labels.
-3. What you should see when it worked.
-4. First actions if it did not.
-5. The next useful guide.
+Keep a sentence if it helps someone choose, act, recognise a result, or
+avoid a mistake. Reference pages also need definitions and evidence.
 
-For a feature, add whether it is optional, its default state, how to turn
-it off, and its limitations. Never guess a default or compatibility rule.
+- Delete introductions that repeat a heading: under “Recommended settings,”
+  start with the settings.
+- Explain a fact once per page. Repeat essential limits across pages when
+  readers need them to use a feature safely.
+- Keep exact screen labels, defaults, requirements, override behaviour,
+  and instructions for turning a feature off.
+- Move former names and upgrade history to the comparison page, glossary,
+  or a clearly labelled optional section.
+- Link to an explanation instead of repeating it. Readers should still be
+  able to complete the task without opening background links.
 
-## plain language
+Never shorten a claim by dropping its conditions. “On a compatible Mazda”
+and “with default settings” can be essential information.
 
-Use steering, speed and braking, turn on, and your car's cruise control.
-Retain technical names when a person needs to find a setting, with a short
-explanation. A glossary link should not be necessary to follow a step.
+## organise around the task
 
-## visual hierarchy
+Give requirements, steps, an observable result, and a first action if it
+fails. End with the next useful guide. These are ingredients, not mandatory
+headings: a short page may need only two sections.
 
-Use one page title, clear section headings, short paragraphs, and quiet
-separators. Use tables for comparisons or symptoms. Avoid cards around
-ordinary prose. Put optional detail in expandable sections.
+For features, state the default and explain enabling, overriding, and
+turning off where applicable. Never guess a default or compatibility rule.
 
-Essential requirements, operating limits, and disabled safety features
-must remain visible. Experimental speed-control notices use amber.
+## use plain language
 
-## screenshots and video
+Prefer steering, speed and braking, turn on, and your car's cruise control.
+Use technical names when readers need to find a setting or understand a
+reference. Explain unfamiliar terms in place; a glossary is backup.
 
-Show a screen when it helps a reader find a control or recognise success.
-Identify the device. Recheck images whenever the UI changes. Do not
-present a simulator capture as a real drive or an obsolete screen as current.
-Videos have controls and no autoplay; provide written instructions too.
+Write “Turn both switches off to disable curve slowdowns” instead of
+“To stop using this feature, you will need to return to the settings and
+disable both of the available options.”
 
-## maintenance
+## give the page room
+
+Use short paragraphs and headings that help readers find something.
+Combine one-sentence sections when they belong to the same action.
+Reserve bold for controls, decisions, and consequential limits.
+
+Use lists for steps or parallel choices, tables for comparisons, and
+plain links for navigation. Avoid boxes around ordinary prose. Use an
+expandable section only for substantial optional detail, not a single link.
+
+Keep requirements, operating limits, and disabled safety features visible
+beside the action they affect. Experimental speed-control notices use amber.
+Technical reference tables may be folded when their limits are already
+explained in the visible text.
+
+## use images with a purpose
+
+Show a screen to help readers find a control or recognise success. Identify
+the device and recheck images when the UI changes. Label simulator captures
+and avoid obsolete screens. Videos need controls and written steps;
+never autoplay.
+
+## review before publishing
+
+Read the page's opening and main instructions alone. Can someone complete
+the task, recognise success, and safely stop reading? Then check that
+optional detail is easy to find and that every remaining sentence adds
+something.
 
 Jetlink pages and shared brand styles are imported. Edit their sources or
-the import adapters, not the generated copies. Contributor commands and
-validation steps are in CONTRIBUTING.md in the wiki repository.
+import adapters, not generated copies. See CONTRIBUTING.md in the wiki
+repository for build and validation commands.

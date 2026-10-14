@@ -27,9 +27,8 @@ Downloaded maps are a separate source and do not require Mazda's SD card.
 
 ## forward radar
 
-zoompilot reads radar tracks on supported radar versions. This is an input
-to the system, not a promise that a radar-target display is available on
-every device. Some older radars do not supply usable tracks.
+zoompilot reads radar tracks where supported; some older radars supply
+none. Radar-target displays are not available on every device.
 
 !!! danger "Experimental speed control"
 

@@ -9,10 +9,8 @@ zoompilot filters known false Mazda steering alerts and short torque
 spikes that can interrupt assistance. Read and act on any alert that appears.
 { .zp-lede }
 
-## no setup needed
-
-The fixes run automatically on the applicable Mazda hardware. They are
-not an option to disable driver attention checks or ignore faults.
+The fixes run automatically on applicable Mazda hardware. Driver attention
+checks remain active.
 
 ## what changes
 
@@ -26,6 +24,5 @@ Follow the alert's instructions. **TAKE CONTROL** means take over
 immediately. If a fault returns, stop using assistance and investigate
 while parked.
 
-[Screen and alerts](../using-zoompilot/screen.md) ·
 [Troubleshooting](../help/troubleshooting.md) ·
-[Technical evidence](../technical/steering.md#when-the-car-blocks-steering)
+[How steering blocks are handled](../technical/steering.md#when-the-car-blocks-steering)

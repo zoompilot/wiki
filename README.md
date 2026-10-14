@@ -3,7 +3,7 @@
 Documentation for [zoompilot](https://zoompilot.ai), a sunnypilot
 (openpilot) fork that runs on every car sunnypilot supports, with extra
 steering and cruise work for Mazda. Published at
-[zoompilot-wiki.pages.dev](https://zoompilot-wiki.pages.dev).
+[zoompilot.ai/wiki](https://zoompilot.ai/wiki/).
 
 Built with [Zensical](https://zensical.org), the generator by the creators
 of Material for MkDocs. Zensical reads the same `mkdocs.yml` and uses its
@@ -105,12 +105,17 @@ npm run deploy
 Roll back with `npx wrangler pages deployment list` /
 `... deployment rollback` if a deploy goes wrong.
 
-### Custom domain
+### zoompilot.ai/wiki (live)
 
-None. The wiki serves from https://zoompilot-wiki.pages.dev
-permanently. Attaching a custom domain was declined in 2026-09 (the
-`zoompilot.ai` zone lives in a different Cloudflare account), so do
-not plan DNS or custom-domain work for this wiki.
+The live wiki is part of zoompilot.ai: the site repo's `deploy.sh` builds
+this repo (strict) and publishes it under `/wiki/` in the same Cloudflare
+Pages project, with these redirects prefixed by `/wiki` and these headers.
+So a wiki change goes live with the next site deploy. `deploy.sh` refuses
+to publish while this checkout has uncommitted changes. One origin means
+one paint choice (`zp-paint`) across the site and the wiki.
+
+The GitHub Actions deploy below still publishes to
+https://zoompilot-wiki.pages.dev, which now serves as a preview.
 
 ### Git integration (alternative)
 

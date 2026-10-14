@@ -36,14 +36,13 @@ Use the dashboard-fault procedure above if necessary.
 
 ## weird behavior after switching forks
 
-A fork is another version of openpilot-based software. Old settings can
-carry over. Save anything you need, factory-reset the device, and install
+Old settings can carry over from other software. Save anything you need,
+factory-reset the device, and install
 `zoompilot/main` again. [Installation](../getting-started/install.md).
 
 ## steering feels weak or wobbly
 
 - Check **Settings → Steering**: torque control and Self-Tune on, custom tuning and manual real-time tuning off.
-- There is no separate Speed-Dependent Self-Tune switch. Learning follows Self-Tune.
 - Allow the learned tune time to adapt over several drives.
 - Check your car's [low-speed steering limit](../getting-started/supported-cars.md).
 

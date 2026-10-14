@@ -15,13 +15,9 @@ instead of Mazda's own radar cruise. It is experimental and off by default.
     Braking (AEB) and Forward Collision Warning (FCW) stop working while
     it is enabled. You must be ready to steer and brake at all times.
 
-## do you need it?
-
-No. The normal setup uses the car's own cruise control. Slow for Curves
-and Speed-Limit Assist can work with that setup.
-
-Only try this mode if you understand its limitations and accept losing
-the safety features above.
+The normal setup uses the car's own cruise control and supports Slow for
+Curves and Speed-Limit Assist. Only try Alpha Longitudinal if you accept
+losing the safety features above.
 
 ## compatible cars
 
@@ -68,7 +64,4 @@ Let the restart finish. If the car's cruise or radar remains unavailable,
 follow [dashboard-error troubleshooting](../help/troubleshooting.md#dashboard-errors-cruise-lkas-or-radar).
 Do not assume the radar has recovered while a fault remains.
 
-Credit: Alex Frutkin ([@yummydirt](https://github.com/yummydirt)) completed
-most of the initial reverse engineering for this feature.
-
-[Safety](../safety.md) · [Technical design](../technical/speed-control.md)
+[Technical design](../technical/speed-control.md) · [Credits](../community/about.md#zoompilot-contributors)

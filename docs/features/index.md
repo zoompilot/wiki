@@ -33,8 +33,4 @@ what changed and how to turn it off.
     automatic emergency braking and forward collision warning.
     It is off by default and is not needed for normal setup.
 
-Steering learning is not limited to Mazda. Mazda-specific tuning and
-sensor features are marked in their guides; availability depends on
-your car's steering system and equipment.
-
 [Recommended setup →](../settings/recommended.md)

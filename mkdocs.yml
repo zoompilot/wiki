@@ -2,7 +2,7 @@ site_name: zoompilot wiki
 site_description: >-
   The zoompilot owner’s manual. Check your car, install, learn the controls,
   and set up optional features and Jetlink.
-site_url: https://zoompilot-wiki.pages.dev
+site_url: https://zoompilot.ai/wiki/
 # The wiki's own repository. This is the only place its URL is written:
 # the header icon and the "Edit this page" links are built from it, and
 # the pages under docs/ send readers to those two links instead of

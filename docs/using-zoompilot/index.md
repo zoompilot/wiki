@@ -1,13 +1,12 @@
 ---
 title: Using zoompilot
 type: hub
-description: Use these guides after installation. Start with the controls, then add optional features when you are comfortable with the default setup. { .zp-lede }
+description: Use these guides after installation. Start with the controls, then add optional features when you are comfortable with the default setup.
 ---
 
 # Using zoompilot
 
-Use these guides after installation. Start with the controls, then add
-optional features when you are comfortable with the default setup.
+Learn the controls before adding optional features.
 { .zp-lede }
 
 - **[Steering and cruise controls](controls.md)**: turn assistance on and off, brake, cancel, and resume.

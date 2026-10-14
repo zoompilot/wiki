@@ -5,8 +5,8 @@ type: task
 
 # Share a route
 
-A route is the recording of one drive. Share its full logs and the time
-of a problem so I can look into it.
+Share a recorded drive, its full logs, and the time of the problem
+so I can investigate.
 { .zp-lede }
 
 !!! warning "Only share routes you are comfortable making public"
@@ -15,14 +15,12 @@ of a problem so I can look into it.
     Start and stop in public locations; avoid homes and workplaces.
     Anyone with the route ID can access it.
 
-## watch the steps
-
 <figure class="zp-route-video">
 <video controls preload="none" playsinline poster="../../assets/demo/share-a-route-poster.jpg" aria-label="How to upload full logs and share a route in comma connect">
 <source src="../../assets/demo/share-a-route.mp4" type="video/mp4">
-<a href="../../assets/demo/share-a-route.mp4">Download the route-sharing video</a>.
+<a href="../assets/demo/share-a-route.mp4">Download the route-sharing video</a>.
 </video>
-<figcaption>How to share a drive with me. The written steps are below.</figcaption>
+<figcaption>Sharing a route in comma connect.</figcaption>
 </figure>
 
 ## upload and preserve
@@ -33,8 +31,6 @@ Keep the comma powered and online while uploads finish.
 2. Open **Files**. Under **All logs**, request any remaining logs.
 3. Open **View upload queue** and wait for every raw log to finish uploading. A playable video alone is not enough for review.
 4. Open **More info** and turn **Preserved** on.
-
-These steps prepare the recording; they do not share access yet.
 
 ## share the public route
 

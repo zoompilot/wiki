@@ -6,11 +6,9 @@ source: zoompilot develop a7a6df8
 
 # Experimental Mode assists
 
-In Experimental Mode the [driving model](../help/glossary.md#driving-model) picks
-your speed end to end, and your [set speed](../help/glossary.md#set-speed) is only
-a maximum. The model often cruises slower than your set speed on a clear road, and
-it often hangs back further than needed behind a steady car. Two optional assists
-fix this: **Speed Assist** and **Lead Follow Assist**.
+In Experimental Mode, set speed is a maximum. **Speed Assist** can raise
+the model's speed on a clear road; **Lead Follow Assist** can close an
+excess gap behind a steady car. Both are optional and off by default.
 { .zp-lede }
 
 ## how it works
@@ -77,10 +75,11 @@ responding), your foot on either pedal, or a lane change.
 - **Dynamic Experimental Control off.** While it is on, both assists do nothing and
   their switches are greyed out.
 
-Both assists are tested in simulation against recorded drives. On-road feedback is
-wanted.
+Both assists have been tested in simulation against recorded drives.
+On-road feedback is welcome.
 
-## key numbers
+<details markdown="1">
+<summary id="key-numbers">Quick reference: values and thresholds</summary>
 
 | Value | What it means |
 | --- | --- |
@@ -90,6 +89,8 @@ wanted.
 | 3 s | How long both stay off after a hazard clears. |
 | 3 m to 10 m | Extra gap over your following distance where Lead Follow Assist fades in. |
 | 11 to 18 mph (18 to 29 km/h) | Speed range where both assists fade in. |
+
+</details>
 
 ## settings
 

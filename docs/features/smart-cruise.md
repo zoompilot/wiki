@@ -5,8 +5,8 @@ type: feature
 
 # Slow for Curves
 
-Slow for Curves lowers cruise speed for a curve, then brings your set
-speed back afterward. It is optional and off by default.
+Slow for Curves lowers cruise speed for bends and restores your set
+speed afterward. Off by default.
 { .zp-lede }
 
 ## turn it on
@@ -18,18 +18,14 @@ While parked, open **Settings → Cruise**:
 | Slow for Curves: Vision | The driving model's view of the road ahead. | No extra hardware. |
 | Slow for Curves: Map | Downloaded road maps. | Download your region through sunnylink first. |
 
-Use Vision, Map, or both. Mazda's navigation SD card is separate from
-the downloaded maps and is not required for map-based curve slowdowns.
-
-On Mazda's own cruise control, zoompilot changes the speed through
-automatic cruise-button commands. This starts when needed; you do not
-need to enable an ICBM switch.
+Use Vision, Map, or both. Map does not require Mazda's navigation SD card.
+Turn both switches off to disable curve slowdowns.
 
 ## what to expect
 
-The set speed on the dashboard may drop before a curve and rise again
-as it ends. Press a cruise-speed button yourself to take control of the
-adjustment. The older name for this feature was Smart Cruise.
+With Mazda's own cruise control, the dashboard set speed may drop before
+a curve and rise afterward. Press a cruise-speed button to take over
+the adjustment.
 
 !!! warning "Choose a safe speed yourself"
 
@@ -37,11 +33,7 @@ adjustment. The older name for this feature was Smart Cruise.
     and brake before a curve whenever needed. This feature does not
     guarantee a safe cornering speed.
 
-## turn it off
-
-Turn the Vision and Map switches off under **Settings → Cruise**.
 If the slowdown feels wrong, turn the feature off and
 [share a route](../help/share-a-route.md) with the location and time.
 
-[Recommended settings](../settings/recommended.md) ·
-[Technical design](../technical/slow-for-curves.md)
+[How curve speeds are planned](../technical/slow-for-curves.md)

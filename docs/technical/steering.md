@@ -6,7 +6,8 @@ source: zoompilot develop a7a6df8
 
 # How steering works
 
-zoompilot steers your Mazda by asking its power steering motor for torque 100 times a second. It learns how your car responds at each speed and checks what the motor actually applies, so a blocked command does not become a fault.
+zoompilot sends Mazda steering commands 100 times a second, learns the
+response at different speeds, and checks how much torque the motor applies.
 { .zp-lede }
 
 ## how it works
@@ -100,7 +101,8 @@ The usual cause is the panda refusing commands: after one refusal it accepts onl
 
 **Two checks in step.** The device and the panda each decide whether steering is allowed, from the same signals. If they disagree, you see "Steering Blocked by Panda Safety", then "Controls Mismatch: Lateral" turns steering off.
 
-## key numbers
+<details markdown="1">
+<summary id="key-numbers">Quick reference: values and thresholds</summary>
 
 | Value | What it means |
 | --- | --- |
@@ -111,6 +113,8 @@ The usual cause is the panda refusing commands: after one refusal it accepts onl
 | 7 or 9 | Speed ranges learned (9 on the CX-5 2022–25). |
 | 0.2 s | No delivery before zoompilot stops asking. |
 | 1 s at 12 mph (19 km/h) | Block needed before an alert. |
+
+</details>
 
 ## settings
 

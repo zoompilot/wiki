@@ -6,9 +6,8 @@ source: zoompilot develop a7a6df8
 
 # How Slow for Curves plans
 
-[Slow for Curves](../features/smart-cruise.md) slows you before a curve so
-you reach a comfortable speed at the tightest point. As the bend opens it
-gives the speed back, up to the next curve or your set speed.
+[Slow for Curves](../features/smart-cruise.md) plans braking before a bend
+and restores speed as it opens, up to the next curve or your set speed.
 { .zp-lede }
 
 ## how it works
@@ -49,8 +48,8 @@ sunnypilot's own Slow for Curves, unchanged.
 Sideways pull stays at or under about 2.2 m/s² (about 0.22 g). The limit
 follows the curve's own speed: 2.2 m/s² at 35 mph (56 km/h), 2.1 at 55 mph
 (89 km/h), 2.2 at 70 mph (113 km/h). It rises again at highway speed
-because highway curves are banked, which hides some pull. The planner aims
-at 95% of the limit, so lag lands you on it, not over.
+because highway curves are banked, which hides some pull. The planner
+targets 95% of the limit to allow for lag.
 
 ### how far it looks
 
@@ -108,7 +107,8 @@ never asks past the budget.
 - **Lowest target:** it never asks for less than 12 mph (20 km/h).
 - **Pressing the gas** overrides it.
 
-## key numbers
+<details markdown="1">
+<summary id="key-numbers">Quick reference: values and thresholds</summary>
 
 | Value | What it means |
 | --- | --- |
@@ -118,6 +118,8 @@ never asks past the budget.
 | 1 m/s (about 2 mph) | In-curve margin over your current speed. |
 | 2 s | Commit hold: how long a bend must call for slowing, below 50 mph. |
 | 0 to 2.5 s | Map confirmation: none below 45 mph, 2.5 s from 50 mph. |
+
+</details>
 
 ## settings
 

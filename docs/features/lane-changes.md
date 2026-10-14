@@ -6,7 +6,6 @@ type: feature
 # Lane changes
 
 You can choose a slower lane-change pace and optional road-edge checks.
-Always check traffic and blind spots yourself before changing lanes.
 { .zp-lede }
 
 ## smoother lane changes
@@ -15,8 +14,7 @@ Open **Settings → Steering → Lane Change Smoothing** while parked.
 Choose a pace, or leave it **Off** for the normal behaviour. Every enabled
 pace is slower than Off.
 
-Try one change at a time on a familiar road. You still decide whether
-and when a lane change is safe.
+Try one change at a time on a familiar road.
 
 ## road-edge checks
 
@@ -36,5 +34,4 @@ system. [Mazda sensors](sensor-readouts.md) explains the related settings.
     A signal or an empty blind-spot indicator does not prove a lane is
     clear. Check mirrors, blind spots, and surrounding traffic yourself.
 
-[Recommended settings](../settings/recommended.md) ·
-[Settings reference](../settings/index.md#steering)
+[Lane-change settings](../settings/index.md#steering)

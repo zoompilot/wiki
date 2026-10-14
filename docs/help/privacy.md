@@ -6,9 +6,8 @@ description: What your comma device records on every drive, what uploads, what a
 
 # Privacy
 
-Your [comma device](../getting-started/hardware.md) records every drive, like a dashcam with extra data.
-This page says what it keeps, what leaves the device, and how to
-control it.
+Your comma records video and driving data. Uploads are enabled by default;
+driver-camera and microphone recordings are off by default.
 { .zp-lede }
 
 ## What is recorded
@@ -39,10 +38,7 @@ directly on your network with the **copyparty Service** toggle
 
 When you make a route public in comma connect, anyone who has its ID
 can view it. A route contains **GPS position, speed, and timestamps**,
-plus the camera video. It does not contain your name, but a home
-address can be obvious from where a drive starts or ends.
-
-Practical rules from the sharing procedure:
+plus the camera video. A drive's start or end can reveal a home address.
 
 - Start and end your drives at public places.
 - Share only routes you are comfortable making public.
@@ -57,7 +53,6 @@ Routes you want gone can be deleted from comma connect.
 
 ## What zoompilot itself sends
 
-zoompilot adds no telemetry of its own. It is a [fork](glossary.md#fork) of openpilot, and
-it uses the same route logging and the same comma connect services as
-[upstream](glossary.md#upstream). The source is public at
+zoompilot adds no telemetry of its own. It uses openpilot's route logging
+and comma connect services. The source is at
 [github.com/zoompilot/zoompilot](https://github.com/zoompilot/zoompilot).

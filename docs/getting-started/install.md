@@ -1,7 +1,7 @@
 ---
 title: Install zoompilot
 type: task
-description: Connect your comma to the internet, choose custom software, and enter `zoompilot/main`. No computer is needed. { .zp-lede }
+description: Connect your comma to the internet, choose custom software, and enter `zoompilot/main`. No computer is needed.
 ---
 
 # Install zoompilot

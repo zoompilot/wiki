@@ -6,7 +6,9 @@ source: zoompilot develop a7a6df8
 
 # Who controls the set speed
 
-On a car using its own radar cruise, zoompilot cannot command a speed. It can only press the cruise buttons, and [automatic cruise-button control (ICBM)](../features/icbm.md) presses them for you. Curves and speed limits borrow your set speed and give it back.
+With the car's own radar cruise, zoompilot changes the set speed through
+[automatic cruise-button commands (ICBM)](../features/icbm.md). It remembers
+your set speed while curve and speed-limit adjustments run.
 { .zp-lede }
 
 ## how it works
@@ -27,7 +29,16 @@ There is no ICBM switch. It runs on a supported car while a feature that needs i
 
 ICBM starts or stops only while you are disengaged with no cruise button held. While engaged with ICBM off, the device will not let you turn on a feature that needs it.
 
-**Updating from the old ICBM toggle.** If it was off, zoompilot turns off the features it was blocking, once, so nothing starts pressing buttons by surprise. On stock radar cruise that is both Slow for Curves settings and custom increments, and Speed-Limit Assist drops to Warning. With experimental speed control, only custom increments go off; Speed-Limit Assist stays on and now moves the dash itself.
+<details markdown="1">
+<summary>Updating from the old ICBM toggle</summary>
+
+If ICBM was off, the update disables its dependent features once to prevent
+unexpected button commands. With stock cruise, both Slow for Curves settings
+and custom increments turn off; Speed-Limit Assist changes to Warning.
+With experimental speed control, only custom increments turn off;
+Speed-Limit Assist stays on and now adjusts the dashboard set speed.
+
+</details>
 
 ## speed-limit sessions
 
@@ -63,17 +74,20 @@ ICBM never steps below the car's lowest set speed: the car's own value, otherwis
 
 With [experimental speed control](../features/alpha-longitudinal.md), zoompilot brakes for curves itself, so the dash keeps your set speed (or the limit cap) through a curve, with no gap. ICBM runs only for Speed-Limit Assist and custom increments. See [speed control](speed-control.md).
 
-## key numbers
+<details markdown="1">
+<summary id="key-numbers">Quick reference: values and thresholds</summary>
 
 | Value | What it means |
 | --- | --- |
 | 5 s | A speed-limit prompt stays open. |
-| 50 mph (80 km/h) | From here up, a new limit needs no prompt. |
+| 50 mph (80 km/h) | At or above this speed, a new limit at or above this threshold needs no prompt. |
 | 3 s | ICBM will not move the dash against your press. |
 | 1 s | Mazda: steady target needed before the dash walks back up (without camera lookahead). |
 | about 4 mph/s | Mazda dash walk rate (taps at 5 per second). |
 | 10 / 7.75 mph | Mazda curve braking gap at 45 / 65 mph. |
 | 19 mph (30 km/h) | Mazda minimum set speed. |
+
+</details>
 
 ## settings
 

@@ -19,12 +19,11 @@ Afterward, add optional features one at a time while parked.
 | Driver monitoring | Keep active and make sure the camera can see your face. |
 | Alpha Longitudinal | Leave off for the initial setup. |
 
-Speed-dependent steering learning follows Self-Tune automatically. You do
-not need to find a separate switch or enter tuning values.
+Speed-dependent learning runs with Self-Tune; no extra setup is needed.
 
 ## settings I recommend
 
-These are the settings I recommend. They are off by default.
+Off by default.
 
 | You want | Where to look | Before enabling |
 | --- | --- | --- |
@@ -32,9 +31,6 @@ These are the settings I recommend. They are off by default.
 | Curve slowdowns using maps | Cruise → Slow for Curves: Map | Download your region through sunnylink. |
 | Slower lane changes | Steering → Lane Change Smoothing | Choose a pace and [check lane-change limits](../features/lane-changes.md). |
 | A check against lane changes toward the road edge | Steering → Block Lane Change: Road Edge Detection | It depends on the model detecting the edge correctly. |
-
-Automatic cruise-button control starts when a feature needs it. There is
-no ICBM switch to enable.
 
 ## other options
 

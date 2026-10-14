@@ -7,6 +7,9 @@ controller terminology to follow instructions.
 ## Writing
 
 - Open with the answer in one or two sentences.
+- Keep sentences that help readers choose, act, recognise a result, or avoid a mistake.
+- Cut repeated introductions and summaries; move history and optional detail below the task.
+- Use headings only when they help navigation. Keep essential limits visible.
 - Use exact device labels in steps and plain language around them.
 - Show requirements before steps and the expected result afterward.
 - Keep one recommended route prominent. Put optional choices afterward.

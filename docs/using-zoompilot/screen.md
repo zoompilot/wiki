@@ -1,7 +1,7 @@
 ---
 title: Screen and alerts
 type: reference
-description: Read the device's status and alert text before relying on assistance. Steering and speed control are separate states. { .zp-lede }
+description: Read the device's status and alert text before relying on assistance. Steering and speed control are separate states.
 ---
 
 # Screen and alerts

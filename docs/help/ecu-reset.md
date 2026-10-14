@@ -7,9 +7,8 @@ reviewed: 2026-09-06
 
 # ECU reset
 
-Your Mazda is run by many small computers, called electronic control
-units (ECUs). When one of them shows an error on the dashboard, turning
-the car fully off lets it reset. This is the first thing to try.
+For cruise, LKAS, or radar faults, try a full power-down: one minute
+first, then 15 minutes if the fault remains.
 { .zp-lede }
 
 ## When to use it
@@ -24,22 +23,17 @@ the car fully off lets it reset. This is the first thing to try.
 <div class="zp-steps" markdown>
 
 1. **Park, then turn the car completely off.**
-2. **Wait one minute**, then start the car and drive again. A short
-   power-down clears most one-off faults.
+2. **Wait one minute**, then restart and check whether the fault has cleared.
 3. **Still there? Wait 15 minutes.** Park and turn the car off again,
-   this time for **15 minutes**. Some faults survive a short power-down
-   and clear only once the car has sat long enough for its modules to
-   shut down fully. The radar fault that [alpha
-   longitudinal](../features/alpha-longitudinal.md) can latch is one of
-   them; the mechanism is on the
-   [technical notes](../technical/speed-control.md#fsc-settle-gate).
+   this time for **15 minutes**, so its modules can shut down fully.
+   Some radar faults after Alpha Longitudinal need this longer wait.
+   [Why the camera can latch a fault](../technical/speed-control.md#fsc-settle-gate).
 
 </div>
 
 ## If the error comes back
 
-A fault that survives an ECU reset, or returns every drive, is not a
-one-off. Do not keep resetting and driving. Capture evidence instead:
+If a fault persists or returns, stop using assistance and report it:
 
 1. Update to the latest `zoompilot/main` release first.
 2. Share a route from that drive, following

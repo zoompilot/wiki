@@ -36,10 +36,9 @@ Long-press a comma 4 setting for help.
 
 ## zoompilot defaults
 
-Mazda torque control and Self-Tune are enabled when the car is identified
-on supported steering hardware. The small-model tune starts at v2.0;
-large models keep a separate tune. Speed-dependent learning follows Self-Tune.
-Your saved choices persist across restarts.
+On supported Mazda steering hardware, identification enables torque control
+and Self-Tune. Speed-dependent learning runs with Self-Tune.
+Tune versions and defaults are listed below.
 
 <div id="zp-settings-controls" class="zp-explorer-controls" markdown="0"></div>
 <p id="zp-settings-count" class="zp-explorer-count" markdown="0"></p>
@@ -148,8 +147,6 @@ Screen brightness and timeouts.
 
 ## Visuals
 
-Availability depends on the device and car.
-
 <div class="zp-panel-cards" data-panel="Visuals"></div>
 
 <noscript markdown="1">
@@ -173,8 +170,6 @@ Availability depends on the device and car.
 </noscript>
 
 ## Toggles
-
-Availability depends on the device and car.
 
 <div class="zp-panel-cards" data-panel="Toggles"></div>
 
@@ -214,8 +209,6 @@ Wi-Fi, hotspot, and cellular. Join a Wi-Fi network from the same panel.
 
 ## Device
 
-Availability depends on the device and car.
-
 <div class="zp-panel-cards" data-panel="Device"></div>
 
 <noscript markdown="1">
@@ -232,8 +225,6 @@ Availability depends on the device and car.
 </noscript>
 
 ## Software
-
-Availability depends on the device and car.
 
 <div class="zp-panel-cards" data-panel="Software"></div>
 
@@ -262,8 +253,6 @@ Backups, map downloads, and remote settings. Backup and restore are in the same 
 </noscript>
 
 ## Developer
-
-Availability depends on the device and car.
 
 <div class="zp-panel-cards" data-panel="Developer"></div>
 

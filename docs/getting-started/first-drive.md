@@ -1,7 +1,7 @@
 ---
 title: First drive
 type: task
-description: Keep the default model and steering settings for your first drive. Learn the controls before trying optional features. { .zp-lede }
+description: Keep the default model and steering settings for your first drive. Learn the controls before trying optional features.
 ---
 
 # First drive

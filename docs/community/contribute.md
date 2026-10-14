@@ -6,7 +6,7 @@ description: Ways to help zoompilot — Discord answers, issues with routes, cod
 
 # Contribute
 
-zoompilot is a small, fast-moving project. Help is welcome in every form.
+Help other drivers, report a problem, or contribute code and documentation.
 { .zp-lede }
 
 ## Ask and answer on Discord
@@ -34,16 +34,10 @@ The source lives at
 
 ## Improve this wiki
 
-Every page has an edit icon beside its title. It opens that page in the
-wiki repository on GitHub, and the GitHub icon in the header opens the
-repository itself. Fix a typo, update a setting description, or add a
-missing section. The wiki source lives in its own repository, so doc
-changes never block code changes. `CONTRIBUTING.md` at the root of the
-repository has the workflow and the writing rules, and the
-[wiki style guide](style-guide.md) shows the page types and building
-blocks in use.
+Use the edit icon beside a page title to open its source on GitHub.
+Read `CONTRIBUTING.md` in the wiki repository for the workflow and
+[the writing guide](style-guide.md) for style.
 
 ## Share driving feedback
 
-Driving feedback with route IDs is the highest-value contribution from a
-driver. See [How to give feedback](feedback.md).
+Include a route ID and the time of the problem. [How to give feedback](feedback.md).

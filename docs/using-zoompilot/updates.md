@@ -1,7 +1,7 @@
 ---
 title: Updates and uninstalling
 type: task
-description: Keep zoompilot up to date through the device's Software settings. You do not need a factory reset for a normal zoompilot update. { .zp-lede }
+description: Keep zoompilot up to date through the device's Software settings. You do not need a factory reset for a normal zoompilot update.
 ---
 
 # Updates and uninstalling

@@ -6,11 +6,9 @@ source: zoompilot develop a7a6df8
 
 # How experimental speed control works
 
-With [experimental speed control](../features/alpha-longitudinal.md),
-openpilot drives the gas and brakes instead of the car's radar cruise
-([MRCC](../help/glossary.md#mrcc)). zoompilot silences the radar and sends
-its messages itself. You set the speed and engage with the wheel buttons as
-usual.
+[Experimental speed control](../features/alpha-longitudinal.md) silences
+Mazda's radar and sends its messages to control acceleration and braking.
+You set speed and engage with the steering-wheel buttons.
 { .zp-lede }
 
 !!! warning "Emergency braking and collision warning are off"
@@ -135,7 +133,8 @@ camera. With experimental speed control every lead is camera-only. Cars
 whose radar sends no tracks (G46L, CX-5 2012–16, CX-9 2016–20) are
 camera-only either way.
 
-## key numbers
+<details markdown="1">
+<summary id="key-numbers">Quick reference: values and thresholds</summary>
 
 | Value | What it means |
 | --- | --- |
@@ -146,6 +145,8 @@ camera-only either way.
 | 1.024 m/s² | Braking that holds a stop. |
 | 1.45 m/s² | Most acceleration to break away. |
 | +2.0 / −3.5 m/s² | Limits the [panda](../help/glossary.md#panda) enforces. |
+
+</details>
 
 ## settings
 

@@ -1,7 +1,7 @@
 ---
 title: Steering and cruise controls
 type: reference
-description: Steering and cruise control can stay active separately. Learn which button turns each off before using zoompilot. { .zp-lede }
+description: Steering and cruise control can stay active separately. Learn which button turns each off before using zoompilot.
 ---
 
 # Steering and cruise controls

@@ -71,10 +71,14 @@ def main():
       body = body.replace("/tree/develop", "/tree/main").replace("/blob/develop", "/blob/main")
       body = body.replace("Non-Prebuilt Branches", "Prebuilt Branches")
       if relative in {"jetson.md", "macos-app.md", "linux-pc.md", "iphone-app.md", "android-app.md"}:
-        # The same setup sentence occurs in each source platform guide.
-        body = re.sub(r"Already on zoompilot\? Select\s+.*?Wait for installation, rebooting, and building to finish\.",
-                      "Already on zoompilot? Update the `main` release in **Settings > Software**. "
-                      "Wait for installation and restarting to finish.", body, flags=re.S)
+        # Keep the wiki's installation procedure in one place, including reset
+        # precautions; each platform guide only needs the prerequisite here.
+        body, count = re.subn(
+          r"1\. \*\*Install zoompilot\.\*\*.*?Wait for installation, rebooting, and building to finish\.",
+          "1. [Install zoompilot](../getting-started/install.md), or [update it](../using-zoompilot/updates.md) "
+          "if already installed. Wait for the restart to finish.", body, flags=re.S)
+        if count != 1:
+          raise SystemExit(f"Expected one comma installation step in {relative}; review the source before importing.")
       if relative == "README.md":
         body = body.replace("# Jetlink guides", """# Jetlink
 
@@ -103,7 +107,8 @@ for both devices. Choose your platform below for the full requirements.
   record = {"repository": "https://github.com/zoompilot/jetlink", "commit": commit,
             "adaptations": ["README links become index links", "root repository links pinned to source commit",
                             "Markdown enabled inside expandable sections", "driver introduction added to index",
-                            "comma install instructions target main prebuilt release"], "files": files}
+                            "comma install instructions target main prebuilt release",
+                            "platform guides link to wiki installation and update instructions"], "files": files}
   if args.check:
     if record != previous:
       raise SystemExit("Recorded import differs from regeneration.")

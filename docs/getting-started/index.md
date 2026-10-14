@@ -1,13 +1,12 @@
 ---
 title: Start here
 type: hub
-description: Choose the path that fits you. Both lead to the same installation and first-drive guide. { .zp-lede }
+description: Choose the path that fits you. Both lead to the same installation and first-drive guide.
 ---
 
 # Start here
 
-Choose the path that fits you. Both lead to the same installation and
-first-drive guide.
+Install zoompilot and prepare for your first drive.
 { .zp-lede }
 
 ## new to comma?
@@ -32,8 +31,7 @@ You can keep your supported comma device and car cable kit.
 
 ## after your first drive
 
-Try the [recommended optional settings](../settings/recommended.md) one at
-a time. You do not need to choose a different driving model or tune by hand.
+Try the [recommended optional settings](../settings/recommended.md) one at a time.
 
 [What is zoompilot?](what-is-zoompilot.md) ·
 [Safety and limitations](../safety.md) · [Need help?](../help/index.md)

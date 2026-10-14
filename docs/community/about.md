@@ -6,19 +6,11 @@ description: What this wiki is, who builds zoompilot, the projects it stands on,
 
 # About & credits
 
-## What this wiki is
+Community documentation for [zoompilot](https://zoompilot.ai), maintained
+in a public repository and published separately from the driving software.
+{ .zp-lede }
 
-This wiki is the central documentation source for
-[zoompilot](https://zoompilot.ai), a [fork](../help/glossary.md#fork) of [sunnypilot](../help/glossary.md#sunnypilot)
-that runs on every car sunnypilot supports, with extra work for Mazda.
-It is maintained as markdown in the open: the edit link on a page opens its wiki source. The wiki
-is published separately from the driving software.
-
-## Standing on the shoulders of
-
-zoompilot stands on sunnypilot, which stands on
-[openpilot](https://comma.ai) by comma.ai. Nearly everything here rides on
-their work.
+## upstream projects
 
 - [openpilot](https://github.com/commaai/openpilot) — the open source
   driver assistance system by comma.ai.
@@ -52,7 +44,5 @@ their work.
 
 ## Disclaimers
 
-- Mazda, comma.ai, and the sunnypilot project neither endorse zoompilot
-  nor have anything to do with it.
-- This wiki is community documentation, not an official Mazda, comma.ai,
-  or sunnypilot publication.
+Mazda, comma.ai, and the sunnypilot project do not endorse zoompilot.
+This manual is an independent community publication.

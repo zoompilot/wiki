@@ -6,8 +6,7 @@ description: The safety rules for driving with zoompilot, including the alpha lo
 
 # Safety
 
-Read this page in full before using zoompilot. It is the one page in
-this wiki every driver must read.
+Read these operating limits before your first drive.
 { .zp-lede }
 
 ## before you drive
