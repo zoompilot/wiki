@@ -99,3 +99,38 @@ comma four (mici_setup):
   idle time, add a caption card with the install URL. wiki pages can
   embed short mp4s hosted on Cloudflare Pages (25 MB per file limit) or
   a video host.
+
+## Feature demo (zoompilot.ai)
+
+`run_feature_demo.py` records the comma 4 feature tour on the zoompilot.ai
+home page (`screens/mici-demo.mp4`, `-poster.jpg`, `.webp` in the site
+repo). Unlike the install demos, it runs zoompilot's own mici UI from a
+zoompilot checkout.
+
+- Params live in a throwaway `OpenpilotPrefix`, set up like a fresh install
+  on a 2022 CX-5 that has driven once: CarParams (compatible EPS, alpha long
+  available), card's one-time torque seed, then the declared defaults.
+  Alpha long and Experimental Mode are on and Dynamic Experimental Control
+  is off, so Speed Assist and Lead Follow Assist are live.
+- Input is the same pyray swap as the install demo. Animations are driven by
+  the frame counter (`rl.get_time`, frame time and the touch timestamps are
+  patched), so the take is identical however fast the Mac renders. Swipes
+  are planned by running the UI's own scroll physics, so each card lands
+  centred.
+- The app's `RECORD=1` mode writes a 1440x644 60 fps take. A second pass
+  puts it in a device frame on a 1920x1080 canvas, adds the captions and
+  writes the mp4 (H.264, faststart), a 1440x810 poster and a 960x540 15 fps
+  animated webp.
+
+```sh
+cd <zoompilot checkout>
+.venv/bin/python <wiki>/contrib/demo/run_feature_demo.py . \
+  --work /tmp/zp-demo/feature --site <zoompilot-site>/screens
+```
+
+Add `--compose-only` to redo the framing and captions from the last take.
+Omit `--site` to leave the files in `--work`. The shot list, captions and
+timings are the `script()` function; the log prints each step's time.
+Needs ffmpeg and img2webp (`brew install ffmpeg webp`). Run
+`caffeinate -u -t 3` first if the window fails with `Failed to determine
+Monitor`.

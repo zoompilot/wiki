@@ -112,6 +112,8 @@ extra_javascript:
   - assets/js/torque-live.js
   - assets/js/settings-data.js
   - assets/js/settings-explorer.js
+  # comma 4 / comma 3X screenshot switch; exits on pages without device figures
+  - assets/js/device-switch.js
   - assets/js/vin-decoder.js
 
 extra:

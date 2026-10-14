@@ -1365,13 +1365,13 @@ html {
 }
 .md-typeset .settings-strip img {
   display: block;
-  height: 320px;
+  height: 240px;
   width: auto;
   max-width: none;
 }
 @media screen and (max-width: 44rem) {
   .md-typeset .settings-strip img {
-    height: 220px;
+    height: 180px;
   }
 }
 @media print {
@@ -1436,10 +1436,11 @@ body.zp-device-pick .md-typeset .settings-shot figcaption {
 /* tici panels are full-frame portrait captures, not sideways strips */
 .md-typeset .settings-shot {
   margin: 0.6rem 0 1.2rem;
+  max-width: 26rem;
   overflow: hidden;
   border: 1px solid var(--zp-hair);
   border-radius: 12px;
-  background: #000;
+  background: #292929;  /* the tici settings panel colour */
 }
 .md-typeset .settings-shot img {
   display: block;
@@ -1464,4 +1465,75 @@ body.zp-device-pick.zp-device-tici .md-typeset .settings-figure-mici {
   body.zp-device-pick.zp-device-tici .md-typeset .settings-figure-mici {
     display: block;
   }
+}
+
+/* ---- single-setting shots on feature pages ---- */
+/* One figure per device; device-switch.js shows the picked one and adds the
+   switch above the first figure. The caption is the settings path; the
+   device name in it only shows without JS, when both figures stack. */
+.md-typeset .zp-setting-shots {
+  margin: 0.4rem 0 1.4rem;
+}
+.md-typeset .zp-setting-shots .device-switch {
+  margin: 0 0 0.5rem;
+}
+.md-typeset figure.setting-shot {
+  display: block;
+  margin: 0 0 0.8rem;
+  width: 100%;  /* the theme shrink-wraps figures; the card widths are percentages */
+  max-width: 100%;
+  text-align: left;
+}
+.md-typeset figure.setting-shot .zp-shot-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.4rem;
+}
+.md-typeset figure.setting-shot img {
+  display: block;
+  margin: 0;
+  height: auto;
+  border: 1px solid var(--zp-hair);
+  border-radius: 12px;
+}
+/* comma 4 cards sit side by side at about their on-device size */
+.md-typeset figure.setting-shot.settings-figure-mici img {
+  flex: 0 1 calc((100% - 0.8rem) / 3);
+  min-width: 0;
+  max-width: 12rem;
+  background: #000;
+}
+@media screen and (max-width: 44rem) {
+  .md-typeset figure.setting-shot.settings-figure-mici img {
+    flex-basis: calc((100% - 0.4rem) / 2);
+  }
+}
+/* comma 3X rows stack, as in the list */
+.md-typeset figure.setting-shot.settings-figure-tici .zp-shot-imgs {
+  flex-direction: column;
+  gap: 0;
+  max-width: 30rem;
+  overflow: hidden;
+  border: 1px solid var(--zp-hair);
+  border-radius: 12px;
+  background: #292929;
+}
+.md-typeset figure.setting-shot.settings-figure-tici img {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+}
+.md-typeset figure.setting-shot figcaption {
+  margin: 0.35rem 0 0;
+  padding: 0;
+  max-width: none;
+  font-family: var(--md-code-font-family);
+  font-size: 0.64rem;
+  letter-spacing: 0.03em;
+  color: var(--md-default-fg-color--light);
+  text-align: left;
+}
+body.zp-device-pick .md-typeset figure.setting-shot .zp-shot-device {
+  display: none;
 }

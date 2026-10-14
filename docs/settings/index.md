@@ -42,10 +42,20 @@ Tune versions and defaults are listed below.
 
 <div id="zp-settings-controls" class="zp-explorer-controls" markdown="0"></div>
 <p id="zp-settings-count" class="zp-explorer-count" markdown="0"></p>
+<div data-device-switch markdown="0"></div>
 
 ## Steering
 
 On comma 4, open the relevant mads, lane change, blinker pause, or torque control submenu.
+
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Steering panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/steering.png" alt="The Steering settings panel on comma 4" width="4268" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/steering.png" alt="The Steering settings panel on comma 3X" width="1248" height="1031" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
 
 <div class="zp-panel-cards" data-panel="Steering"></div>
 
@@ -83,6 +93,15 @@ On comma 4, open the relevant mads, lane change, blinker pause, or torque contro
 
 On comma 4, experimental controls are inside alpha longitudinal, speed limits inside speed limit, and step sizes inside custom increments.
 
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Cruise panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/cruise.png" alt="The Cruise settings panel on comma 4" width="4268" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/cruise.png" alt="The Cruise settings panel on comma 3X" width="1248" height="1230" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
+
 <div class="zp-panel-cards" data-panel="Cruise"></div>
 
 <noscript markdown="1">
@@ -110,6 +129,15 @@ On comma 4, experimental controls are inside alpha longitudinal, speed limits in
 
 Choose the on-device model or set up an optional Jetlink connection.
 
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Models panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/models.png" alt="The Models settings panel on comma 4" width="4184" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/models.png" alt="The Models settings panel on comma 3X" width="1248" height="1121" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
+
 <div class="zp-panel-cards" data-panel="Models"></div>
 
 <noscript markdown="1">
@@ -131,6 +159,15 @@ Choose the on-device model or set up an optional Jetlink connection.
 
 Screen brightness and timeouts.
 
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Display panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/display.png" alt="The Display settings panel on comma 4" width="4268" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/display.png" alt="The Display settings panel on comma 3X" width="1248" height="755" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
+
 <div class="zp-panel-cards" data-panel="Display"></div>
 
 <noscript markdown="1">
@@ -146,6 +183,15 @@ Screen brightness and timeouts.
 </noscript>
 
 ## Visuals
+
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Visuals panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/visuals.png" alt="The Visuals settings panel on comma 4" width="3424" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/visuals.png" alt="The Visuals settings panel on comma 3X" width="1248" height="1907" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
 
 <div class="zp-panel-cards" data-panel="Visuals"></div>
 
@@ -171,6 +217,15 @@ Screen brightness and timeouts.
 
 ## Toggles
 
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Toggles panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/toggles.png" alt="The Toggles settings panel on comma 4" width="5112" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/toggles.png" alt="The Toggles settings panel on comma 3X" width="1248" height="1121" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
+
 <div class="zp-panel-cards" data-panel="Toggles"></div>
 
 <noscript markdown="1">
@@ -192,6 +247,15 @@ Screen brightness and timeouts.
 
 Wi-Fi, hotspot, and cellular. Join a Wi-Fi network from the same panel.
 
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Network panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/network.png" alt="The Network settings panel on comma 4" width="6800" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/network.png" alt="The Network settings panel on comma 3X" width="1248" height="768" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
+
 <div class="zp-panel-cards" data-panel="Network"></div>
 
 <noscript markdown="1">
@@ -208,6 +272,15 @@ Wi-Fi, hotspot, and cellular. Join a Wi-Fi network from the same panel.
 </noscript>
 
 ## Device
+
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Device panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/device.png" alt="The Device settings panel on comma 4" width="6672" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/device.png" alt="The Device settings panel on comma 3X" width="1248" height="1598" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
 
 <div class="zp-panel-cards" data-panel="Device"></div>
 
@@ -226,6 +299,15 @@ Wi-Fi, hotspot, and cellular. Join a Wi-Fi network from the same panel.
 
 ## Software
 
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Software panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/software.png" alt="The Software settings panel on comma 4" width="4184" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/software.png" alt="The Software settings panel on comma 3X" width="1248" height="535" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
+
 <div class="zp-panel-cards" data-panel="Software"></div>
 
 <noscript markdown="1">
@@ -241,6 +323,15 @@ Wi-Fi, hotspot, and cellular. Join a Wi-Fi network from the same panel.
 
 Backups, map downloads, and remote settings. Backup and restore are in the same panel.
 
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="sunnylink panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/sunnylink.png" alt="The sunnylink settings panel on comma 4" width="5872" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/sunnylink.png" alt="The sunnylink settings panel on comma 3X" width="1248" height="899" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
+
 <div class="zp-panel-cards" data-panel="sunnylink"></div>
 
 <noscript markdown="1">
@@ -253,6 +344,15 @@ Backups, map downloads, and remote settings. Backup and restore are in the same 
 </noscript>
 
 ## Developer
+
+<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Developer panel on comma 4, scrolls sideways">
+  <img src="../assets/settings/developer.png" alt="The Developer settings panel on comma 4" width="5068" height="488" loading="lazy">
+  <figcaption>comma 4</figcaption>
+</figure>
+<figure class="settings-shot settings-figure-tici">
+  <img src="../assets/settings/tici/developer.png" alt="The Developer settings panel on comma 3X" width="1248" height="1048" loading="lazy">
+  <figcaption>comma 3X</figcaption>
+</figure>
 
 <div class="zp-panel-cards" data-panel="Developer"></div>
 

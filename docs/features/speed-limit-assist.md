@@ -23,6 +23,21 @@ While parked, open **Settings → Cruise → Speed Limit**.
 Information is the default. Choose it to stop speed adjustments, or
 **Off** to disable assistance. Make changes while parked.
 
+<div class="zp-setting-shots" markdown="0">
+<figure class="setting-shot settings-figure-mici">
+  <div class="zp-shot-imgs">
+    <img src="../../assets/settings/features/mici/speed-limit.png" alt="speed limit mode, info" width="640" height="300" loading="lazy">
+  </div>
+  <figcaption><span class="zp-shot-device">comma 4: </span>Settings → Cruise → speed limit</figcaption>
+</figure>
+<figure class="setting-shot settings-figure-tici">
+  <div class="zp-shot-imgs">
+    <img src="../../assets/settings/features/tici/speed-limit.png" alt="Speed Limit, Info" width="1000" height="390" loading="lazy">
+  </div>
+  <figcaption><span class="zp-shot-device">comma 3X: </span>Settings → Cruise → Speed Limit</figcaption>
+</figure>
+</div>
+
 **The comma 4 does not show the same Information/Warning sign display
 as the comma 3X.** Assist prompts appear for requested speed changes.
 
