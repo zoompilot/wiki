@@ -6,7 +6,7 @@ zoompilot release notes, newest first. The release channel is
 <!-- The release history lives here; zoompilot.ai shows only the current
      release and links to this page. Add each release at the top. -->
 
-## Next release (in develop)
+## 2026.10.15-15 (2026-10-15)
 
 - **[jetlink](../jetlink/index.md) support!**
   - Run big models on a Mac, Jetson, NVIDIA Linux PC, iPhone/iPad or Android phone &lt;3
@@ -25,6 +25,7 @@ zoompilot release notes, newest first. The release channel is
   - “Driving Model Loading” shows while the model starts, instead of communication alerts.
   - Fewer Controls Mismatch alerts.
   - comma 3X: a slow boot no longer blocks engaging for the whole drive.
+  - Fixed a rare frozen screen at startup.
   - New zoompilot boot logo.
 - **comma 4.**
   - Long-press a setting for help.
@@ -35,6 +36,7 @@ zoompilot release notes, newest first. The release channel is
   - **Highway curves:** A new Slow for Curves tune replaces Decel Overshoot, matching Mazda cruise braking to reduce early or excessive slowdowns.
   - **Curve slowdowns:** Planning uses the whole model path for smoother slowing and earlier speed recovery. Speed-limit prompts no longer delay curve slowdowns.
   - **Nav speed limits:** The speed limit is read from the nav unit when the camera sees none.
+  - **ON button:** Pressing ON while cruise is in standby turns steering back on.
   - **2022 CX-5:** Improved steering tune, and steering starts from learned values.
   - **Older Mazdas:** Including the 2012-16 CX-5, they can now steer on the stock EPS above 45 kph. Untested on these cars, feedback welcome.
 - **Alpha longitudinal only.**
@@ -45,6 +47,7 @@ zoompilot release notes, newest first. The release channel is
   - **CX-9 and other Mazdas without Auto Hold:** Fixed alpha longitudinal. Stops release and resume again.
   - **Distance Controls:** Both follow distance buttons now work for driving personality (closer = aggressive, farther = relaxed).
   - **Auto High Beams:** Fixed when using alpha longitudinal.
+  - **Lead car icon:** Steadier on the dash.
   - **Remain parked:** Shows right away at startup.
   - **Cruise settings remembered:** DEC, custom ACC increments and Slow for Curves choices survive changes to Alpha Longitudinal.
   - **Speed-Limit Assist:** Automatically uses cruise-button control to change the dashboard set speed.
@@ -67,7 +70,7 @@ zoompilot release notes, newest first. The release channel is
   - **NZ & AUS:** zoompilot set speeds now match the dash and speed limit displays.
   - **Sunnylink:** Fixed backup and restore reading garbage setting names. Alpha longitudinal is read-only on sunnylink web.
   - **Upstream sunnypilot:** Added refresh and clear-cache buttons, fixed the Models UI freezing, and fixed the camera offset.
-  - **Upstream openpilot:** New alert icons.
+  - **Upstream openpilot:** New alert icons. Steering picks up the current curve when it engages.
 
 ## 2026.09.12-14 (2026-09-12)
 
