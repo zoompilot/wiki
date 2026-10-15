@@ -65,16 +65,11 @@ def main():
         return prefix + href + suffix
 
       body = re.sub(r'(\]\(|(?:href|src)=")(.*?)(\)|")', rewrite, body)
-      # This manual targets the release receiving the current software.
-      body = body.replace("zoompilot/develop", "zoompilot/main")
-      body = body.replace("`develop`", "`main`").replace("**develop**", "**main**")
-      body = body.replace("/tree/develop", "/tree/main").replace("/blob/develop", "/blob/main")
-      body = body.replace("Non-Prebuilt Branches", "Prebuilt Branches")
       if relative in {"jetson.md", "macos-app.md", "linux-pc.md", "iphone-app.md", "android-app.md"}:
         # Keep the wiki's installation procedure in one place, including reset
         # precautions; each platform guide only needs the prerequisite here.
         body, count = re.subn(
-          r"1\. \*\*Install zoompilot\.\*\*.*?Wait for installation, rebooting, and building to finish\.",
+          r"1\. \*\*Install zoompilot\.\*\*.*?Wait for installation.*?to finish\.",
           "1. [Install zoompilot](../getting-started/index.md#install), or [update it](../getting-started/driving.md#updates) "
           "if already installed. Wait for the restart to finish.", body, flags=re.S)
         if count != 1:
