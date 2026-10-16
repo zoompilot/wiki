@@ -6,6 +6,12 @@ zoompilot release notes, newest first. The release channel is
 <!-- The release history lives here; zoompilot.ai shows only the current
      release and links to this page. Add each release at the top. -->
 
+## 2026.10.16-16 (2026-10-16)
+
+- **Fixes bugs.**
+    - Fixes “sunnypilot unavailable” for AUS/NZ Mazdas.
+    - comma 3X: plugging a laptop in for jetlink no longer reboots the comma.
+
 ## 2026.10.15-15 (2026-10-15)
 
 - **[jetlink](../jetlink/index.md) support!**
