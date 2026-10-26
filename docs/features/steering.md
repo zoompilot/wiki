@@ -12,9 +12,9 @@ steering motor.
 
 ## speed-dependent steering
 
-Self-Tune learns your car's steering response and friction for each speed
-range and blends them as you drive. Steering adapts over the first few
-drives. It works only on cars with torque-based steering. Small and large driving models keep separate tunes.
+Self-Tune learns how much steering effort your car needs at each speed.
+It adapts as you drive, which can make steering smoother over the first
+few drives. It works only on cars with torque-based steering. Small and large driving models keep separate tunes.
 
 On a supported Mazda, torque control and Self-Tune are on by default. Leave them on: **Settings → Steering →
 torque control** (comma 3X: **Customize Torque Params**). Speed-dependent
@@ -55,20 +55,13 @@ hardware and firmware. [Check your car](../getting-started/supported-cars.md).
 If steering feels wrong, see
 [troubleshooting](../help/troubleshooting.md#steering-feels-weak-or-wobbly).
 
-## custom tune
+## do I need to tune it? { #custom-tune }
 
-Almost nobody needs this. Leave **Enable Custom Tuning** and **Manual
-Real-Time Tuning** off and let Self-Tune learn.
+I would leave custom tuning and Manual Real-Time Tuning off. Drive
+normally and let Self-Tune learn your car. Changing tuning values cannot
+raise the motor's torque limit.
 
-- **Enable Custom Tuning** starts from your own **Lateral Acceleration
-  Factor** and **Friction** instead of the car's defaults. Self-Tune still
-  learns from there. Higher lateral acceleration steers with less torque;
-  higher friction adds torque for small corrections.
-- **Manual Real-Time Tuning** steers with your values at every speed,
-  ignoring Self-Tune. Changes apply within seconds, even while driving.
-
-Both are under **Settings → Steering** (comma 4: **torque control →
-custom tune**). They can make steering worse; to undo, park and turn both
-off.
+If you are looking for the old speed-dependent switch, it now runs with
+Self-Tune. There is nothing extra to turn on.
 
 [How steering learns](../technical/steering.md#the-steering-tune)

@@ -1,7 +1,7 @@
 site_name: zoompilot wiki
 site_description: >-
-  The zoompilot owner’s manual. Check your car, install, learn the controls,
-  and set up optional features and Jetlink.
+  Your first drive with zoompilot, sensible defaults, optional features,
+  and help when you need it.
 site_url: https://zoompilot.ai/wiki/
 # The wiki's own repository. This is the only place its URL is written:
 # the header icon and the "Edit this page" links are built from it, and
@@ -45,7 +45,6 @@ theme:
     - content.tooltips
     - navigation.footer
     - navigation.indexes
-    - navigation.sections
     - navigation.tabs
     - navigation.top
     - navigation.tracking
@@ -133,18 +132,17 @@ nav:
   - Home: index.md
   - Start here:
       - getting-started/index.md
+      - Your first drive: getting-started/driving.md
       - Supported cars: getting-started/supported-cars.md
-      - Driving: getting-started/driving.md
       - Safety: safety.md
-  - Features:
+  - Using zoompilot:
       - features/index.md
-      - features/steering.md
-      - features/lane-changes.md
+      - Steering: features/steering.md
       - Slow for Curves: features/smart-cruise.md
-      - features/speed-limit-assist.md
-      - Experimental speed control: features/alpha-longitudinal.md
-      - features/sensors-and-alerts.md
-  - Settings: settings/index.md
+      - Speed-Limit Assist: features/speed-limit-assist.md
+      - Lane changes: features/lane-changes.md
+      - Sensors and alerts: features/sensors-and-alerts.md
+      - Alpha Longitudinal: features/alpha-longitudinal.md
   - Jetlink:
       - jetlink/index.md
       - Set up:
@@ -175,16 +173,18 @@ nav:
   - Help:
       - help/troubleshooting.md
       - help/faq.md
-      - help/glossary.md
-  - How it works:
-      - technical/index.md
-      - Overview: getting-started/how-it-works.md
-      - Steering: technical/steering.md
-      - Car identification: technical/car-identification.md
-      - Experimental speed control: technical/speed-control.md
-      - Set speed: technical/set-speed.md
-      - Slow for Curves: technical/slow-for-curves.md
-      - Experimental Mode assists: technical/experimental-mode-assists.md
-  - Community:
-      - community/index.md
       - Releases: releases/changelog.md
+      - Community: community/index.md
+  - Reference:
+      - reference/index.md
+      - Settings: settings/index.md
+      - Glossary: help/glossary.md
+      - How it works:
+          - technical/index.md
+          - Overview: getting-started/how-it-works.md
+          - Steering: technical/steering.md
+          - Car identification: technical/car-identification.md
+          - Alpha Longitudinal: technical/speed-control.md
+          - Set speed: technical/set-speed.md
+          - Slow for Curves: technical/slow-for-curves.md
+          - Experimental Mode assists: technical/experimental-mode-assists.md

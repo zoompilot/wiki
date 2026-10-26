@@ -8,7 +8,7 @@ source: zoompilot develop a7a6df8
 
 In Experimental Mode, set speed is a maximum. **Speed Assist** can raise
 the model's speed on a clear road; **Lead Follow Assist** can close an
-excess gap behind a steady car. Both are off by default.
+excess gap behind a steady car. Both default to on in the next release; earlier releases default to off.
 { .zp-lede }
 
 openpilot's planner takes the lowest of the model's acceleration, the
@@ -67,9 +67,9 @@ responding), your foot on either pedal, or a lane change.
 ## requirements and settings
 
 You need [experimental speed control](../features/alpha-longitudinal.md)
-(**Alpha Longitudinal**) and Experimental Mode on, and **Dynamic Experimental
-Control** off: while it is on, both assists do nothing and their switches are
-greyed out.
+(**Alpha Longitudinal**) and Experimental Mode on. Both assists are enabled
+by default in the next release. On older releases, **Dynamic Experimental
+Control** must be off or it disables the assists.
 
 Open **Settings → Cruise**. On comma 4 the switches are under **alpha longitudinal**;
 on comma 3X they are at the top of Cruise.
@@ -105,8 +105,8 @@ On-road feedback is welcome.
     `AUTHORITY_RISE / FALL = 0.5 / 4 per s` (a lead change or lost lead drops it to 0
     at once), `LEAD_JUMP = 3 m`, `LEAD_PROB = 0.8`, `LEAD_MIN_SPEED = 5 m/s`.
 
-    Both reset and pass the model through when off, outside e2e, or while DEC is
-    active. Engineering records:
+    Both reset and pass the model through when off or outside e2e. Older
+    releases also inhibit them while DEC is active. Engineering records:
     [e2e-set-speed.md](https://github.com/zoompilot/zoompilot/blob/develop/docs/zoompilot/e2e-set-speed.md),
     [e2e-lead-gap.md](https://github.com/zoompilot/zoompilot/blob/develop/docs/zoompilot/e2e-lead-gap.md)
     (partly stale: it still describes the older "Set Speed Nudge"). The measurements

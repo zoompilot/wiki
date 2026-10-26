@@ -10,8 +10,9 @@ speed afterward, so you don't have to brake and re-set cruise for every
 curve. Off by default.
 { .zp-lede }
 
-On Mazda it uses zoompilot's own curve planner. Other brands run
-sunnypilot's version unchanged.
+It works with Mazda radar cruise; you do not need Alpha Longitudinal.
+It changes the cruise speed for bends, while Mazda still handles following
+traffic. Other brands use sunnypilot's curve planner.
 
 ## turn it on
 
@@ -22,7 +23,8 @@ While parked, open **Settings → Cruise**:
 | Slow for Curves: Vision | The driving model's view of the road ahead. | No extra hardware. |
 | Slow for Curves: Map | Downloaded road maps. | Download your region through sunnylink first. |
 
-Use Vision, Map, or both. Map does not need Mazda's navigation SD card.
+I usually use Vision. You can use Map as well, but its usefulness depends
+on the map coverage around you. Map does not need Mazda's navigation SD card.
 Turn both off to disable curve slowdowns.
 
 <div class="zp-setting-shots" markdown="0">

@@ -30,8 +30,9 @@ npx wrangler pages dev site
 
 ## Editing
 
-The manual is organised around setup, daily use, features, settings,
-Jetlink, and help. Technical and community pages are secondary references.
+The manual starts with a new install and first drive. Using zoompilot,
+Jetlink and Help cover everyday choices; Reference holds the full settings
+list and technical explanations.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for writing and validation rules.
 
 Jetlink docs are imported from a reviewed source commit:

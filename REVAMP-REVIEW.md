@@ -90,3 +90,60 @@ zp-site-id, and zp-site-nav markup rather than Zensical title/tab classes.
 Wiki utility buttons are positioned outside that bar’s layout flow, so
 they cannot change its baseline or height. The theme header-title scroll
 component is not mounted for the fixed website wordmark.
+
+
+## 2026-10-26: new-install rewrite
+
+Prepared for the forthcoming release at the maintainer's request. The
+live-release install URL remains `zoompilot/main`; next-release defaults
+are explicitly marked in the guide, FAQ, settings data and fallback table.
+Remove that transitional wording only when the release ships.
+
+Source revisions reviewed:
+
+- Wiki starting point: `828c2ca84b49bf584219786f542a695f8eed67b9`.
+- zoompilot local source: `34900637a61e4e1fe0d5f9d32483e8ab3f4c79fa`.
+- `openpilot/common/params_keys.h`: ExperimentalMode,
+  ExperimentalModeSetSpeed and ExperimentalModeLeadGap default to true.
+- `openpilot/sunnypilot/system/params_migration_zp.py`: both assists are
+  enabled once on existing installs; subsequent user choices persist.
+- `openpilot/sunnypilot/selfdrive/selfdrived/selfdrived_zp.py`: the
+  follow-distance long press toggles Experimental Mode while openpilot
+  longitudinal control is active.
+- Maintainer clarification: UI and comma 4 home-screen long press also
+  toggle Experimental Mode; normal Mazda cruise is the recommendation
+  when the user does not want Experimental Mode.
+- Qualitative research: July-October Discord export, with findings and
+  message IDs in the zoompilot repository's
+  `docs/zoompilot/wiki-rewrite-research.md`. No private conversations or
+  route identifiers were copied into public guides.
+
+The homepage now serves people who have installed. Start here puts
+defaults and first-drive controls before installation. Using zoompilot
+explains optional features; Help addresses recurring support questions.
+Settings and technical explanations are grouped under Reference. Jetlink
+imports are unchanged, with sidebar sections collapsed by default.
+
+Custom tuning moved from the steering feature guide to technical reference.
+The Alpha guide retains the radar/AEB consequence, recommended Experimental
+Mode setup, both default assists, all three toggle methods, and the
+separate action required to restore Mazda radar cruise. Obsolete Alpha
+screenshots and the old Cruise panorama were removed from these pages
+rather than displayed as the new defaults. Detailed settings remain
+available as text, including older-release DEC behavior.
+
+This is an editorial review, not vehicle testing. No driving guarantees
+are inferred from Discord reports. The maintainer subsequently requested a commit and Wrangler deployment.
+
+Validation before deployment:
+
+- `zensical build --strict`: passed.
+- Built HTML local links and fragments: no missing targets.
+- `contrib/check-media.py site /wiki/`: 93 media paths, none broken.
+- Settings data JavaScript syntax: passed.
+- Chromium at 390px and 1440px: home, setup, driving, Alpha Longitudinal,
+  Reference and Settings render without page overflow or JavaScript errors.
+- Controls disclosure, settings search and device switch exercised;
+  the global search dialog opens and accepts the Alpha Longitudinal query.
+- Visually reviewed the mobile homepage and desktop Alpha Longitudinal page.
+- Removed the old `/reference/` redirect so the new reference page is reachable.

@@ -9,6 +9,40 @@ description: Fixes by symptom, resetting the car's modules, and sharing a drive 
 Find what you see below. Take control first and investigate while parked.
 { .zp-lede }
 
+## why is a setting greyed out? { #setting-unavailable }
+
+Park before changing driving settings. Some settings need the device to
+be offroad, not just the car stopped with cruise disengaged. Keep the
+comma connected to the car so it can identify the fitted hardware.
+
+- For steering tuning, check that torque control is on. Self-Tune is unavailable while Manual Real-Time Tuning is on.
+- On Mazda, Experimental Mode needs Alpha Longitudinal. Speed Assist and Lead Follow Assist need Experimental Mode.
+- On older releases with Dynamic Experimental Control, turn it off to use the two assists.
+- If Alpha Longitudinal is locked, try with the ignition off and the comma still powered. If your setup cannot do that, ask for help with your car, power setup and software version.
+
+Don't select another car to expose a setting. If you used Always Offroad,
+exit it before trying to drive; zoompilot cannot engage while it is on.
+
+## why does it ask me to help steer? { #steering-limit-alerts }
+
+A steering-limit alert means the car needs help making the turn. Holding
+the wheel is not enough; you may need to add steering yourself. This is
+different from a driver-attention warning, so read the exact alert.
+
+Self-Tune can improve how the available steering is used. It cannot give
+the motor more torque than it allows. Don't try to tune away an alert.
+If it appears on gentle bends or steering has changed unexpectedly,
+[share a drive](#share-a-drive).
+
+## why is my cruise speed changing?
+
+Slow for Curves lowers the set speed before bends and restores it after.
+Speed-Limit Assist can change it for a detected limit. Neither feature
+makes Mazda radar cruise stop for traffic lights or signs.
+
+If a change seems wrong, take over and note the time and location. Include
+which of those features were enabled when you ask for help.
+
 ## dashboard errors (cruise, LKAS, or radar)
 
 1. Take control and park safely.
@@ -40,7 +74,7 @@ If it still feels wrong, share a drive instead of changing tuning values.
 1. Read the alert. Calibration and model downloads must finish first.
 2. Check **Settings → Toggles → Enable sunnypilot** is on. It is
    zoompilot's master switch.
-3. Check the seatbelt, doors, lane-keeping switch, and normal cruise conditions.
+3. Check Always Offroad is off, along with the seatbelt, doors, lane-keeping switch, and normal cruise conditions.
 4. With alpha longitudinal, follow any **Remain parked** message until setup is ready.
 
 Note the exact message if it still won't engage.
@@ -123,6 +157,7 @@ For booting, Wi-Fi, comma connect, or uninstalling, see
 ## where to get more help
 
 Post in [Discord](https://discord.gg/jFWkHC2uhh) with your car, comma
-model, software version, the exact alert, whether you use alpha
+model, car year and country, software version, driving model, the exact
+alert, whether you use alpha
 longitudinal or Jetlink, and a route ID with the time of the problem.
 Help comes from the community.

@@ -72,12 +72,32 @@ setting changes this. [Driving zoompilot](../getting-started/driving.md).
 
 Slow for Curves and Speed Limit Assist change it when you turn them on.
 
-### What is Experimental Mode?
+### Should I turn on Alpha Longitudinal?
 
-The driving model plans acceleration and braking, including stops for
-lights and signs. It can make mistakes. On Mazda it needs
-[alpha longitudinal](../features/alpha-longitudinal.md), which disables
-automatic emergency braking and forward collision warning.
+Only if you want to try the driving model's gas and brake control in
+Experimental Mode. For ordinary cruise on Mazda, I usually keep radar
+cruise. You can use curve slowdowns and speed-limit assistance with it.
+[Alpha Longitudinal](../features/alpha-longitudinal.md) explains the
+choice and the loss of radar, AEB and collision warning.
+
+### Does turning Experimental Mode off bring radar back?
+
+No. Alpha Longitudinal remains active and the radar stays disabled.
+To return to Mazda radar cruise, disable Alpha Longitudinal itself while
+parked and let the change finish. Investigate any remaining radar fault
+before using assistance.
+
+### Do Speed Assist and Lead Follow Assist need setting up?
+
+In the next release they are on by default, along with Experimental Mode
+for Alpha Longitudinal. You can leave them on. On an older release, check
+the switches in Cruise and turn off Dynamic Experimental Control if it
+is present.
+
+### Is Firehose the driving model or the upload setting?
+
+Both names exist. The recommended Firehose **driving model** is selected
+under Models. Choosing it does not turn on a bulk-upload mode.
 
 ### Will it drain my car's battery?
 

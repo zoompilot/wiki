@@ -31,6 +31,9 @@ stop-and-go limits.
 Resume cruise with the car's normal resume control. Steer and brake
 yourself whenever you need to; don't wait for an alert or a button.
 
+<details markdown="1">
+<summary>Changing the steering controls, including the TJA button</summary>
+
 ### mads settings
 
 MADS (Modular Assistive Driving System) controls this, under
@@ -50,10 +53,24 @@ makes it the only steering switch:
 Leave it off unless you want separate controls. It can only be changed
 while parked.
 
+</details>
+
 ### other cars
 
 Buttons and minimum speeds vary, and your car may limit the MADS settings.
 Don't assume the Mazda table applies.
+
+## choosing cruise
+
+With the defaults, Mazda radar cruise handles gas and brakes.
+[Alpha Longitudinal](../features/alpha-longitudinal.md) is optional and
+lets the driving model control them in Experimental Mode, while disabling
+Mazda radar and AEB.
+
+With Alpha Longitudinal, the car's follow-distance button selects Driving
+Personality. A long press toggles Experimental Mode; it does not restore
+Mazda radar cruise. You can also toggle Experimental Mode in the UI or
+by long-pressing the home screen on comma 4.
 
 ## on screen
 
@@ -80,7 +97,10 @@ use. zoompilot adds:
 
 ## updates
 
-`zoompilot/main` is the release. Update from **Settings → Software** while
+`zoompilot/main` is the release I recommend. I test changes with other
+drivers before releasing them. `develop` is for testing upcoming work.
+
+Update from **Settings → Software** while
 parked on Wi-Fi; a normal update doesn't need a reset. If a Jetlink release
 changes the protocol, update the comma and Jetlink together
 ([Jetlink updates](../jetlink/releasing.md)).

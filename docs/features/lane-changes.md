@@ -15,6 +15,9 @@ Turn it on if lane changes feel abrupt. While parked, open **Settings →
 Steering → Lane Change Smoothing** and choose a pace: fast, medium, slow
 or extra slow. Every pace is slower than **Off**, the default.
 
+The pace changes how long the lane change takes once it starts. The
+blinker delay is a separate setting for how long it waits before starting.
+
 <div class="zp-setting-shots" markdown="0">
 <figure class="setting-shot settings-figure-mici">
   <div class="zp-shot-imgs">

@@ -5,10 +5,11 @@ built with Zensical (Material for MkDocs syntax) from `docs/`.
 
 ## Reader
 
-Someone installing zoompilot. They may be new to openpilot, or have run
-openpilot, sunnypilot or another fork. They want to know what zoompilot
-adds, whether it suits their car, how to install and set it up, and what
-each feature does and why they would turn it on.
+Someone who has just installed zoompilot. They want to know what is
+already configured, how to use the controls, which optional features suit
+them, and what to do when something is unexpected. The main site explains
+why to install; the wiki helps people use it. Installation and compatibility
+remain easy to find without dominating the introduction.
 
 ## Writing
 
@@ -38,8 +39,8 @@ each feature does and why they would turn it on.
 - **Fewer pages, fewer links.** Link only where the reader would go next.
   Never link the same page twice on a page or repeat the site navigation
   in body text. No "see also" lists or hub pages of links.
-- **Accuracy.** Check behaviour against the software being promoted
-  (installs use `zoompilot/main`), not an old wiki page or memory. Record
+- **Accuracy.** Check behaviour against the documented release, not an old wiki page or memory. Installs use
+  `zoompilot/main`. Clearly label forthcoming behavior until it ships. Record
   source revisions in REVAMP-REVIEW.md, not on reader pages.
 
 Use lists for steps and parallel choices, tables for comparisons, and

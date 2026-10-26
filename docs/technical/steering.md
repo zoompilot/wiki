@@ -128,3 +128,19 @@ Under Settings → Steering (comma 4: torque control and mads submenus), keep **
     [lateral-tune-roadmap.md](https://github.com/zoompilot/zoompilot/blob/develop/docs/zoompilot/lateral-tune-roadmap.md) ·
     [mads.md](https://github.com/zoompilot/zoompilot/blob/develop/docs/zoompilot/mads.md).
     The measurements and route data live in the private zoompilot-research repository.
+
+## custom tune
+
+Almost nobody needs this. Leave **Enable Custom Tuning** and **Manual
+Real-Time Tuning** off and let Self-Tune learn.
+
+- **Enable Custom Tuning** starts from your own **Lateral Acceleration
+  Factor** and **Friction** instead of the car's defaults. Self-Tune still
+  learns from there. Higher lateral acceleration steers with less torque;
+  higher friction adds torque for small corrections.
+- **Manual Real-Time Tuning** steers with your values at every speed,
+  ignoring Self-Tune. Changes apply within seconds, even while driving.
+
+Both are under **Settings → Steering** (comma 4: **torque control →
+custom tune**). They can make steering worse; to undo, park and turn both
+off.

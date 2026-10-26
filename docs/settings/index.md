@@ -5,7 +5,8 @@ type: reference
 
 # Settings reference
 
-Every setting by panel. For the settings I recommend, see
+Look up a setting here when you need it. You do not need to work through
+this list before driving. For the defaults I recommend, see
 [Start here](../getting-started/index.md#recommended-settings).
 { .zp-lede }
 
@@ -70,14 +71,10 @@ Many settings change only while parked (offroad).
 
 ## Cruise
 
-<figure class="settings-strip settings-figure-mici" tabindex="0" aria-label="Cruise panel on comma 4, scrolls sideways">
-  <img src="../assets/settings/cruise.png" alt="The Cruise settings panel on comma 4" width="4268" height="488" loading="lazy">
-  <figcaption>comma 4</figcaption>
-</figure>
-<figure class="settings-shot settings-figure-tici">
-  <img src="../assets/settings/tici/cruise.png" alt="The Cruise settings panel on comma 3X" width="1248" height="1230" loading="lazy">
-  <figcaption>comma 3X</figcaption>
-</figure>
+Experimental Mode and both assists default to on in the next release.
+Dynamic Experimental Control remains listed below only to help users on
+older releases. The [Alpha Longitudinal guide](../features/alpha-longitudinal.md)
+explains which setup to use.
 
 <div class="zp-panel-cards" data-panel="Cruise"></div>
 
@@ -86,10 +83,10 @@ Many settings change only while parked (offroad).
 | Setting | Default | What it does |
 | --- | --- | --- |
 | alpha longitudinal / Alpha Longitudinal | Off | In alpha longitudinal. zoompilot controls gas and brakes. Disables Mazda radar, automatic emergency braking, and forward collision warning. On Mazda, needs a compatible Mazda EPS (2022+). Offroad only; asks you to confirm. |
-| experimental mode / Experimental Mode | Off | In alpha longitudinal. The driving model controls gas and brakes, including stops for lights and signs. Set speed is a maximum. Greyed without alpha longitudinal on Mazda. |
-| speed assist / Experimental Mode Speed Assist | Off | In alpha longitudinal. Raises speed toward your set speed when the road ahead is clear. Needs Experimental Mode. Greyed while Dynamic Experimental Control is on. |
-| lead follow assist / Experimental Mode Lead Follow Assist | Off | In alpha longitudinal. Closes an overly long gap behind a steady car, never closer than chill mode. Needs Experimental Mode. Greyed while Dynamic Experimental Control is on. |
-| dynamic experimental control / Dynamic Experimental Control | Off | In alpha longitudinal. Switches between chill and Experimental Mode on its own: experimental for stops and slowdowns. Greyed until Experimental Mode is on. |
+| experimental mode / Experimental Mode | On in next release; Off in earlier releases | In alpha longitudinal. The driving model controls gas and brakes, including stops for lights and signs. Set speed is a maximum. Greyed without alpha longitudinal on Mazda. Toggle in the UI, by long-pressing the comma 4 home screen, or by long-pressing the car’s follow-distance button. Turning it off does not restore Mazda radar or AEB. |
+| speed assist / Experimental Mode Speed Assist | On in next release; Off in earlier releases | In alpha longitudinal. Raises speed toward your set speed when the road ahead is clear. Needs Experimental Mode. Older releases: turn Dynamic Experimental Control off to use this. |
+| lead follow assist / Experimental Mode Lead Follow Assist | On in next release; Off in earlier releases | In alpha longitudinal. Closes an overly long gap behind a steady car, never closer than chill mode. Needs Experimental Mode. Older releases: turn Dynamic Experimental Control off to use this. |
+| dynamic experimental control / Dynamic Experimental Control | Removed in next release | Older releases only. Switches between conventional cruise and Experimental Mode automatically. Turn it off to use Speed Assist and Lead Follow Assist. |
 | slow for curves: vision / Slow for Curves: Vision | Off | Slows for curves the camera sees, then resumes your set speed. Without alpha longitudinal, Mazda uses cruise-button control. Turn on while disengaged. |
 | slow for curves: map / Slow for Curves: Map | Off | Slows for curves in map data. Download maps in sunnylink first. Turn on while disengaged. |
 | speed limit mode / Speed Limit | info | In speed limit. Assist: press - or + to match a new limit. Info and warn show the sign on comma 3X only. |

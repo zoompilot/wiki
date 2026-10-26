@@ -158,26 +158,26 @@ window.ZP_SETTINGS = [
       {
         "name": "experimental mode / Experimental Mode",
         "values": "On / Off",
-        "def": "Off",
-        "note": "In alpha longitudinal. The driving model controls gas and brakes, including stops for lights and signs. Set speed is a maximum. Greyed without alpha longitudinal on Mazda."
+        "def": "On in next release; Off in earlier releases",
+        "note": "In alpha longitudinal. The driving model controls gas and brakes, including stops for lights and signs. Set speed is a maximum. Greyed without alpha longitudinal on Mazda. Toggle in the UI, by long-pressing the comma 4 home screen, or by long-pressing the car\u2019s follow-distance button. Turning it off does not restore Mazda radar or AEB."
       },
       {
         "name": "speed assist / Experimental Mode Speed Assist",
         "values": "On / Off",
-        "def": "Off",
-        "note": "In alpha longitudinal. Raises speed toward your set speed when the road ahead is clear. Needs Experimental Mode. Greyed while Dynamic Experimental Control is on."
+        "def": "On in next release; Off in earlier releases",
+        "note": "In alpha longitudinal. Raises speed toward your set speed when the road ahead is clear. Needs Experimental Mode. Older releases: turn Dynamic Experimental Control off to use this."
       },
       {
         "name": "lead follow assist / Experimental Mode Lead Follow Assist",
         "values": "On / Off",
-        "def": "Off",
-        "note": "In alpha longitudinal. Closes an overly long gap behind a steady car, never closer than chill mode. Needs Experimental Mode. Greyed while Dynamic Experimental Control is on."
+        "def": "On in next release; Off in earlier releases",
+        "note": "In alpha longitudinal. Closes an overly long gap behind a steady car, never closer than chill mode. Needs Experimental Mode. Older releases: turn Dynamic Experimental Control off to use this."
       },
       {
         "name": "dynamic experimental control / Dynamic Experimental Control",
         "values": "On / Off",
-        "def": "Off",
-        "note": "In alpha longitudinal. Switches between chill and Experimental Mode on its own: experimental for stops and slowdowns. Greyed until Experimental Mode is on."
+        "def": "Removed in next release",
+        "note": "Older releases only. Switches between conventional cruise and Experimental Mode automatically. Turn it off to use Speed Assist and Lead Follow Assist."
       },
       {
         "name": "slow for curves: vision / Slow for Curves: Vision",

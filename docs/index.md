@@ -1,7 +1,7 @@
 ---
-title: zoompilot manual
+title: Using zoompilot
 type: hub
-description: How to install, drive and tune zoompilot, with every feature, setting and fix in one place.
+description: Your first drive with zoompilot, the settings already chosen for you, and help when you need it.
 hide:
   - navigation
   - toc
@@ -12,10 +12,10 @@ hide:
 
 <div class="zoom-copy" markdown>
 
-# zoompilot manual
+# Using zoompilot
 
 <div class="zoom-tagline" markdown>
-How to install, drive and tune zoompilot.
+Just installed? Start with the defaults. Get to know the controls, then try the optional features.
 </div>
 
 <button class="zp-home-search" type="button" data-zp-open-search>Search the manual</button>
@@ -37,29 +37,46 @@ How to install, drive and tune zoompilot.
 
 </div>
 
+## you're already set up
+
+On a supported Mazda, the steering tune, Self-Tune and Firehose driving
+model are already selected. Drive normally and let the steering learn
+your car. Leave custom tuning and manual real-time tuning off.
+
+Mazda radar cruise still handles gas and brakes unless you choose Alpha
+Longitudinal. You can use curve slowdowns and speed-limit assistance with
+radar cruise too.
+
 <div class="zp-home-cards zp-home-cards--paths" markdown>
 
-- :material-car-side: [**I drive a Mazda**](getting-started/supported-cars.md)
-  Check your model, then set up.
-- :material-car-multiple: [**I drive another car**](features/steering.md)
-  What zoompilot adds to sunnypilot.
-- :material-cable-data: [**I want Jetlink**](jetlink/index.md)
-  Run big models on a computer or phone.
+- :material-steering: [**Your first drive**](getting-started/driving.md)
+  Turning steering and cruise on, taking over, and reading the screen.
+- :material-tune: [**Using the features**](features/index.md)
+  What is already on and what you might want to try.
+- :material-help-circle: [**Something isn't right**](help/troubleshooting.md)
+  Unavailable settings, unexpected alerts, and getting help.
 
 </div>
+
+## where to start
+
+Read the [first-drive setup](getting-started/index.md) for your car,
+including the differences on other brands. Before driving, read
+[Safety](safety.md).
+
+You don't need extra computing hardware to use zoompilot.
+[Jetlink](jetlink/index.md) is an optional way to run larger driving
+models on a connected computer or phone.
 
 <div class="zp-home-faq" markdown>
 
 <p class="zp-group">common questions</p>
 
-- [How do I install zoompilot?](getting-started/index.md#install)
-- [Which settings should I turn on?](getting-started/index.md#recommended-settings)
-- [What do the steering wheel buttons do?](getting-started/driving.md)
-- [Why did steering or cruise turn off?](help/troubleshooting.md)
+- [Should I turn on Alpha Longitudinal?](features/alpha-longitudinal.md)
+- [Why does it ask me to help steer?](help/troubleshooting.md#steering-limit-alerts)
+- [Why is a setting greyed out?](help/troubleshooting.md#setting-unavailable)
+- [How do I update?](getting-started/driving.md#updates)
 - [What changed in the latest release?](releases/changelog.md)
-- [How does zoompilot work?](getting-started/how-it-works.md)
+- [Still need to install?](getting-started/index.md#install)
 
 </div>
-
-Before your first drive, read the [safety page](safety.md).
-{ .zp-home-safety }

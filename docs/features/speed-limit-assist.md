@@ -64,20 +64,11 @@ limit.
 
 ## cruise-button control
 
-On the car's own cruise, zoompilot moves the dashboard set speed by
-sending the + and − presses your thumb would (ICBM).
+With Mazda radar cruise, zoompilot changes the set speed by sending the
+same + and − presses you would. Older guides call this ICBM. It starts
+automatically when a feature needs it; there is no separate switch.
 
-- **No switch.** It starts when a feature needs it: Slow for
-  Curves (on the car's own cruise), Speed-Limit Assist on Assist, or
-  custom increments. It starts or stops only while you are disengaged.
-  To stop it, turn off those features.
-- **Your set speed is kept.** zoompilot returns the dashboard to the speed
-  you chose after a curve or limit adjustment.
-- **Your presses win.** Press + or − yourself and that becomes your new
-  set speed.
+Press a cruise-speed button yourself to choose a new set speed. You can
+also set [custom button increments](../settings/index.md#cruise).
 
-**Custom increments** set how far a press moves the set speed: **Settings →
-Cruise → custom increments** (comma 3X: **Custom ACC Speed Increments**).
-Choose the step for a short press and for a held press.
-
-[Who controls the set speed](../technical/set-speed.md)
+[How set speed is managed](../technical/set-speed.md)

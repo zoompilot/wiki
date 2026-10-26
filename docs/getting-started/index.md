@@ -1,44 +1,81 @@
 ---
 title: Start here
 type: task
-description: zoompilot is a sunnypilot fork that runs on every car sunnypilot supports, with extra steering and cruise work for Mazda. Install it from `zoompilot/main`.
+description: Start with zoompilot's defaults, learn the controls, and choose any optional features after your first drive.
 ---
 
 # Start here
 
-zoompilot is a sunnypilot fork. It runs on every car sunnypilot supports,
-adds speed-dependent steering learning for torque-steering cars, and adds
-Mazda steering tuning and cruise work.
+On a supported Mazda, the steering settings are already chosen for you.
+You can leave them alone and get to know how the car drives.
 { .zp-lede }
 
-Read [Safety](../safety.md) before your first drive.
+## recommended settings
 
-## coming from openpilot, sunnypilot or another fork
+Keep torque control, Self-Tune and the Firehose driving model on. Leave
+custom tuning and Manual Real-Time Tuning off. Self-Tune learns how your
+car steers at different speeds as you use it normally; you don't need to
+teach it turns or run calibration maneuvers.
 
-Keep your comma and harness. What changes:
+Older Mazda steering motors still have a minimum steering speed. If
+something you expected is unavailable, [check your car's support](supported-cars.md)
+before changing settings or selecting another vehicle.
 
-| Area | On zoompilot |
-| --- | --- |
-| Steering | On torque-steering cars, Self-Tune learns how your car steers per speed range. Mazda also gets tuning matched to its steering hardware. |
-| Low-speed steering on Mazda | A compatible Mazda EPS (2022+) assists down to a stop. An older EPS stops below about 28 mph (45 km/h). |
-| Brake and CANCEL | End cruise but leave steering on (MADS, on by default). |
-| Cruise | Optional Slow for Curves and Speed-Limit Assist. Cruise-button control starts on its own when a feature needs it. |
-| Lane changes | Optional smoothing and road-edge blocking. |
-| Models | Firehose by default. Jetlink can run larger models. |
+### on another brand
 
-From sunnypilot: ICBM cruise-button control has no switch of its own,
-Smart Cruise is now Slow for Curves, and speed-dependent learning runs with
-Self-Tune.
+Your car keeps its sunnypilot support and vehicle-specific controls.
+Speed-dependent learning works with torque-based steering: check that
+**Settings → Steering → torque control** and **Self-Tune** are available
+and on. The Mazda button instructions and radar tradeoffs below do not
+apply to every brand.
+
+## first drive
+
+On a Mazda with default settings:
+
+- Turn main cruise on to enable steering once the car and device are ready.
+- Set a speed when you want Mazda radar cruise to handle gas and brakes.
+- Brake or press CANCEL to stop cruise. Steering stays on.
+- Turn main cruise off to turn both off.
+
+The optional TJA-button setting changes these controls. Read
+[Driving](driving.md) for the buttons and screen indicators, and
+[Safety](../safety.md) before your first drive. Be ready to help steer;
+learning cannot give the steering motor more torque than it allows.
+
+## optional features
+
+Try these when you have a feel for the defaults:
+
+- [Slow for Curves](../features/smart-cruise.md) lowers cruise speed before a bend and brings it back afterward. I usually use Vision; Map needs a region downloaded through sunnylink.
+- [Speed-Limit Assist](../features/speed-limit-assist.md) adjusts cruise to detected speed limits. I usually prefer to set my speed myself.
+- [Lane Change Smoothing](../features/lane-changes.md) makes lane changes less abrupt, at the pace you choose.
+
+All three are optional. You can keep Mazda radar cruise while using them.
+
+[Alpha Longitudinal](../features/alpha-longitudinal.md) is a separate
+choice: zoompilot takes over gas and brakes for Experimental Mode. It
+turns off Mazda radar, automatic emergency braking and forward collision
+warning. Leave it off if you want to keep Mazda radar cruise.
+
+## coming from another fork
+
+You can still use sunnylink for remote settings and maps. On comma 4,
+you can also change zoompilot's settings on the device; long-press a
+setting for its help text.
+
+Older guides call Slow for Curves “Smart Cruise.” Cruise-button control
+(ICBM) now starts when a feature needs it, and speed-dependent learning
+runs with Self-Tune. Neither needs a separate switch.
 
 ## what you need
 
-- A comma 3X or comma 4. Clones work only if they match that hardware, including the driver camera.
-- The harness for your car, from the [comma shop](https://comma.ai/shop). Mount it with [comma's setup guide](https://comma.ai/setup).
-- A car on the [supported cars](supported-cars.md) list.
+Already installed and driving? You can skip this part.
 
-Optional: a Mazda navigation SD card (speed limits from the car's sign
-recognition), maps downloaded through sunnylink (map-based curve slowdowns
-and speed limits), or a computer or phone for [Jetlink](../jetlink/index.md).
+You need a supported car, a comma 3X or comma 4, and the harness for your
+car. Use [comma's setup guide](https://comma.ai/setup) for mounting and
+hardware. Clones need to match the supported hardware, including the
+driver camera.
 
 ## install
 
@@ -66,35 +103,3 @@ uninstall/reset**, after saving any settings or recordings you want.
 <figcaption>comma 4: follow the custom software setup.</figcaption>
 </figure>
 </details>
-
-## recommended settings
-
-On a supported Mazda, MADS, torque control, Self-Tune and the Firehose
-model are on by default. Leave them on and keep custom tuning and Manual
-Real-Time Tuning off. Alpha Longitudinal is off by default: on Mazda it
-turns off automatic emergency braking and forward collision warning.
-
-After your first drive, turn these on one at a time, while parked:
-
-| Setting | Why |
-| --- | --- |
-| **Settings → Cruise → Slow for Curves: Vision** | Slows cruise for curves the camera sees, then resumes your set speed. [Limits](../features/smart-cruise.md). |
-| **Settings → Cruise → Slow for Curves: Map** | Slows for curves in map data. Download your region in sunnylink first. |
-| **Settings → Steering → Lane Change Smoothing** | Slower, smoother lane changes at the pace you pick. [Limits](../features/lane-changes.md). |
-| **Settings → Steering → Block Lane Change: Road Edge Detection** | Blocks lane changes toward a road edge the model sees. |
-
-[Speed-Limit Assist](../features/speed-limit-assist.md) and
-[experimental speed control](../features/alpha-longitudinal.md) are optional.
-
-## first drive
-
-What differs from stock on a Mazda with default settings:
-
-- **Main cruise switch on** turns steering on once the car and device are ready. Setting a speed starts cruise.
-- **Brake or CANCEL** ends cruise. Steering stays on.
-- **Main cruise switch off** turns both off. Practice this where it is safe.
-- The screen shows steering and cruise separately. A set speed does not mean steering is active.
-- Self-Tune adapts over the first few drives. Nothing to tune.
-
-[Driving](driving.md) covers brake behaviour and the Mazda TJA button
-option.

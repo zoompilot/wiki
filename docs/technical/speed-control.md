@@ -18,6 +18,9 @@ You set speed and engage with the steering-wheel buttons.
     radar, so both are off while zoompilot holds it. openpilot brakes at
     most 3.5 m/s² (about 0.36 g). Be ready to brake yourself.
 
+The timing and transition details below describe the source revision named
+in this page. For setup on your release, follow the feature guide above.
+
 ## which cars
 
 It needs a compatible Mazda [EPS](../help/glossary.md#eps) (2022+),
@@ -74,8 +77,8 @@ ignition.
   you exit.
 - **Reboot or power off:** goes ahead on any answer, or after 15 s.
 - **Ignition off:** the radar recovers on its own.
-- **Turning it off while driving:** Force Offroad, switch off, exit. The
-  car's cruise is back.
+- **Changing the setting:** park and use the procedure in the feature guide.
+  A successful radar hand-back is required before the car's cruise is available.
 
 ## stop-and-go
 
