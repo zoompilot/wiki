@@ -26,6 +26,7 @@ Mazda tweaks.
 | Cruise to slow before bends and return to your speed afterward | [Slow for Curves](smart-cruise.md) |
 | Cruise to follow detected speed limits | [Speed-Limit Assist](speed-limit-assist.md) |
 | Less abrupt lane changes | [Lane Change Smoothing](lane-changes.md) |
+| A gentle pull toward the middle of the lane | [Lane Center Assist](lane-center.md) (alpha) |
 
 These work with Mazda radar cruise. You don't need Alpha Longitudinal
 for them. Other brands keep sunnypilot's vehicle-specific support.
@@ -33,13 +34,13 @@ for them. Other brands keep sunnypilot's vehicle-specific support.
 ## model-controlled gas and brakes
 
 [Alpha Longitudinal](alpha-longitudinal.md) lets the driving model handle
-acceleration and braking in Experimental Mode. On Mazda it disables
+acceleration and braking. On Mazda it disables
 radar, automatic emergency braking and forward collision warning. Read
 the tradeoffs before enabling it; the steering improvements don't need it.
 
-Experimental Mode comes with Speed Assist and Lead Follow Assist enabled
-in the next release. They help it reach your set speed and follow a
-steady car at your chosen distance.
+[Set Speed Assist](alpha-longitudinal.md#set-speed-assist), on by
+default, helps the model reach your set speed and your chosen following
+distance.
 
 [Jetlink](../jetlink/index.md) runs larger driving models on a connected
 computer or phone. It's optional, and can also be used while keeping

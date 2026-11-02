@@ -16,8 +16,8 @@ be offroad, not just the car stopped with cruise disengaged. Keep the
 comma connected to the car so it can identify the fitted hardware.
 
 - For steering tuning, check that torque control is on. Self-Tune is unavailable while Manual Real-Time Tuning is on.
-- On Mazda, Experimental Mode needs Alpha Longitudinal. Speed Assist and Lead Follow Assist need Experimental Mode.
-- On older releases with Dynamic Experimental Control, turn it off to use the two assists.
+- On Mazda, Set Speed Assist needs Alpha Longitudinal.
+- Lane Center Assist is unavailable with the Default driving model.
 - If Alpha Longitudinal is locked, try with the ignition off and the comma still powered. If your setup cannot do that, ask for help with your car, power setup and software version.
 
 Don't select another car to expose a setting. If you used Always Offroad,

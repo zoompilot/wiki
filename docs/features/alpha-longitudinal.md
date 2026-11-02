@@ -1,7 +1,7 @@
 ---
 title: Alpha Longitudinal
 type: feature
-description: When to use Experimental Mode instead of Mazda radar cruise, what is already configured, and how to switch back.
+description: When to let the driving model handle gas and brakes instead of Mazda radar cruise, what Set Speed Assist does, and how to switch back.
 ---
 
 # Alpha Longitudinal
@@ -15,8 +15,8 @@ them, so be ready to brake.
 !!! danger "Mazda radar and emergency braking are disabled"
 
     Alpha Longitudinal turns off Mazda's radar, automatic emergency braking
-    (AEB) and forward collision warning. They stay off even if you turn
-    Experimental Mode off.
+    (AEB) and forward collision warning. They stay off for as long as
+    Alpha Longitudinal is on.
 
 I usually keep Mazda radar cruise for everyday driving. Slow for Curves
 and Speed-Limit Assist work with it too. Alpha Longitudinal is optional
@@ -35,52 +35,28 @@ unavailable; don't select a different vehicle to unlock it.
 2. Enable **Alpha Longitudinal** and read the confirmation.
 3. Let setup finish and follow any **Remain parked** message before driving.
 
-**In the next release**, Experimental Mode, Speed Assist and Lead Follow
-Assist are on by default. On an older release, check those switches in
-the same Cruise section. If it still has Dynamic Experimental Control,
-turn that off to use the assists.
+The driving model always drives in Experimental Mode; chill mode is gone,
+as in openpilot. [Set Speed Assist](#set-speed-assist) is on by default.
 
-## choose the driving behaviour
+## what to expect
 
-I recommend leaving Experimental Mode and both assists on. The model
-handles acceleration and braking, including attempts to stop for lights
-and signs. Your set speed is a maximum, not a promise that it will drive
-at that speed.
+The model handles gas and brakes, and tries to stop for lights and signs.
+Your set speed is a maximum. The model can miss a stop, follow poorly, or
+creep forward after stopping. Watch the road and be ready to take over.
 
-Performance depends on the driving model. It may miss a stop, follow
-poorly, or move forward again after stopping. Keep watching the road and
-be ready to take over.
+## set speed assist { #set-speed-assist }
 
-### speed assist
+The driving model cruises a few mph under your set speed and hangs back
+from the car ahead. **Set Speed Assist** closes both gaps at stock cruise
+pace, up to your set speed and your **Driving Personality** distance. The
+model still handles every slowdown, and stop-and-go below about 11 mph.
 
-Helps Experimental Mode reach your set speed on a clear road. It backs
-off for planned stops, bends and slowdowns. It does not force the model
-to reach the set speed in every situation.
+On by default. To switch it, hold the follow-distance button, long press
+home on the comma 4, or tap the onroad button on the 3X. An alert confirms
+each switch, and a gauge icon shows while it is on. The setting is in
+**Settings → Cruise** (comma 4: **alpha longitudinal**).
 
-### lead follow assist
-
-Helps close an unnecessarily large gap behind a steady car. Your
-**Driving Personality** sets the following distance. It backs off when
-the lead changes or slows; stop-and-go remains the model's job.
-
-### assist settings { #turn-on-the-assists }
-
-Both switches are in the same Cruise section. They need Experimental
-Mode. You can turn either off if you prefer; new installs on the next
-release already have them on.
-
-[How the assists work](../technical/experimental-mode-assists.md)
-
-## turning Experimental Mode off
-
-zoompilot keeps this choice. Use the Experimental Mode switch in the UI,
-long-press the home screen on comma 4, or long-press your car's
-follow-distance button.
-
-With Experimental Mode off, Alpha Longitudinal behaves more like ordinary
-cruise, using vision instead of Mazda's radar. If that is what you want,
-I would keep Mazda radar cruise rather than give up radar and AEB for it.
-Turning Experimental Mode off does **not** turn Alpha Longitudinal off.
+[How Set Speed Assist works](../technical/experimental-mode-assists.md){ #turn-on-the-assists }
 
 ## turn it off
 

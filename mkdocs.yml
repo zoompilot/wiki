@@ -141,6 +141,7 @@ nav:
       - Slow for Curves: features/smart-cruise.md
       - Speed-Limit Assist: features/speed-limit-assist.md
       - Lane changes: features/lane-changes.md
+      - Lane Center Assist: features/lane-center.md
       - Sensors and alerts: features/sensors-and-alerts.md
       - Alpha Longitudinal: features/alpha-longitudinal.md
   - Jetlink:
@@ -187,4 +188,4 @@ nav:
           - Alpha Longitudinal: technical/speed-control.md
           - Set speed: technical/set-speed.md
           - Slow for Curves: technical/slow-for-curves.md
-          - Experimental Mode assists: technical/experimental-mode-assists.md
+          - Set Speed Assist: technical/experimental-mode-assists.md

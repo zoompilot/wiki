@@ -87,12 +87,16 @@ To return to Mazda radar cruise, disable Alpha Longitudinal itself while
 parked and let the change finish. Investigate any remaining radar fault
 before using assistance.
 
-### Do Speed Assist and Lead Follow Assist need setting up?
+### Does Set Speed Assist need setting up?
 
-In the next release they are on by default, along with Experimental Mode
-for Alpha Longitudinal. You can leave them on. On an older release, check
-the switches in Cruise and turn off Dynamic Experimental Control if it
-is present.
+No. It is on by default with Alpha Longitudinal. Hold the follow-distance
+button to switch it off or on. It replaces the older Speed Assist and Lead
+Follow Assist, and chill mode is gone.
+
+### Where did the MADS settings go?
+
+They are the same settings with plainer names, under **Settings →
+Steering → When to Steer**. Your choices carried over.
 
 ### Is Firehose the driving model or the upload setting?
 

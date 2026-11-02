@@ -6,6 +6,31 @@ zoompilot release notes, newest first. The release channel is
 <!-- The release history lives here; zoompilot.ai shows only the current
      release and links to this page. Add each release at the top. -->
 
+## 2026.11.02-17 (2026-11-02)
+
+- **[Set Speed Assist](../features/alpha-longitudinal.md#set-speed-assist).** Reaches your set speed and following distance at stock cruise pace. On by default with alpha longitudinal.
+    - Hold the distance button, long press home on the comma 4, or tap the onroad button on the 3X to switch it.
+    - Replaces Speed Assist and Lead Follow Assist. Chill mode is gone, as in openpilot.
+- **[Lane Center Assist](../features/lane-center.md) (alpha).** Keeps the car centered in its lane, with a gauge under the torque bar. Off by default, in Models.
+- **Mazda.**
+    - Alpha longitudinal: smoother acceleration, earlier braking, fewer downshifts, quicker launches, faster start after ignition.
+    - Easier to override steering, same feel at every speed.
+    - 2017 Mazda 3 2.5 L and non-US 2026 CX-5 recognized automatically.
+    - A camera fault no longer shows as LKAS off.
+- **Steering.**
+    - MADS settings are now When to Steer, under Steering.
+    - Road edge lane change block: new silent option.
+- **comma 4.**
+    - Alpha longitudinal and Set Speed Assist live in Cruise, with icons on the home screen.
+    - Models adds lane turn desires, steer delay and camera offset.
+    - On/off toggles fold into their value pickers; off shows a grey pill.
+- **comma 3X.** comma 4 driver monitor and follow distance indicator, optional confidence ball (Visuals).
+- **Toyota TSS2.** Smooth Longitudinal (alpha).
+- **[jetlink](../jetlink/index.md).**
+    - Pick big models on the comma, jetlink or sunnylink; a pick on the comma stays picked.
+    - The comma no longer downloads models jetlink already has.
+    - The small model steers below 11 mph (Models).
+
 ## 2026.10.16-16 (2026-10-16)
 
 - **Fixes bugs.**

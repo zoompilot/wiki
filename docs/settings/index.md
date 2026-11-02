@@ -43,11 +43,11 @@ Many settings change only while parked (offroad).
 
 | Setting | Default | What it does |
 | --- | --- | --- |
-| enable mads / Modular Assistive Driving System (MADS) | On | In mads. Lets zoompilot steer while cruise is off. Off: steering and cruise engage together. Offroad only. |
-| main cruise toggle / Toggle with Main Cruise | On | In mads. Turning cruise main on also turns steering on. Greyed with MADS off or tja button on. |
-| unified engagement / Unified Engagement Mode (UEM) | On | In mads. Engaging cruise also turns steering on, and steering stays on after cruise cancels. Greyed with MADS off or tja button on. |
-| steering on brake / Steering Mode on Brake Pedal | remain | In mads. What steering does when you brake. Pause resumes when you let go. Greyed with MADS off. |
-| tja button / Mazda TJA Button | Off | In mads. Mazda only. The TJA button becomes the only steering switch; main cruise then controls cruise only. Turn on only if your car has the button. Offroad only. Greyed with MADS off. |
+| steer without cruise / Steer Without Cruise | On | In when to steer. Lets zoompilot steer while cruise is off. Off: steering and cruise engage and disengage together. Offroad only. |
+| steer when cruise on / Steer When Cruise On | On | In when to steer. Turning cruise on with its on/off button also turns steering on. Cars without a lane keep button need this on to steer. Greyed with steer without cruise off or tja button on. |
+| steer when cruise set / Steer When Cruise Set | On | In when to steer. Setting or resuming a cruise speed also turns steering on, and steering stays on until you switch it off or turn off the car. Greyed with steer without cruise off or tja button on. |
+| steering on brake / Steering on Brake | remain | In when to steer. What steering does when you press the brake. Pause resumes it when you let go. Greyed with steer without cruise off. |
+| tja button / Mazda TJA Button | Off | In when to steer. Mazda only. The TJA button becomes the only steering switch; the MRCC button then only controls cruise. Turn on only if your car has the button. Offroad only. Greyed with steer without cruise off. |
 | auto lane change / Auto Lane Change by Blinker | nudge | In lane change. Nudge: signal, then nudge the wheel. Nudgeless and timed modes change lanes on the blinker alone. Signal only when traffic allows. |
 | bsm delay / Auto Lane Change: Delay with Blind Spot | Off | In lane change. Waits an extra second after the blind spot clears. Needs blind spot monitoring and nudgeless or a timed mode. |
 | road edge block / Block Lane Change: Road Edge Detection | Off | In lane change. Blocks a lane change toward a road edge the model sees. |
@@ -71,10 +71,9 @@ Many settings change only while parked (offroad).
 
 ## Cruise
 
-Experimental Mode and both assists default to on in the next release.
-Dynamic Experimental Control remains listed below only to help users on
-older releases. The [Alpha Longitudinal guide](../features/alpha-longitudinal.md)
-explains which setup to use.
+With Alpha Longitudinal the driving model always drives in Experimental
+Mode, and Set Speed Assist is on. The [Alpha Longitudinal guide](../features/alpha-longitudinal.md)
+explains both.
 
 <div class="zp-panel-cards" data-panel="Cruise"></div>
 
@@ -83,10 +82,7 @@ explains which setup to use.
 | Setting | Default | What it does |
 | --- | --- | --- |
 | alpha longitudinal / Alpha Longitudinal | Off | In alpha longitudinal. zoompilot controls gas and brakes. Disables Mazda radar, automatic emergency braking, and forward collision warning. On Mazda, needs a compatible Mazda EPS (2022+). Offroad only; asks you to confirm. |
-| experimental mode / Experimental Mode | On in next release; Off in earlier releases | In alpha longitudinal. The driving model controls gas and brakes, including stops for lights and signs. Set speed is a maximum. Greyed without alpha longitudinal on Mazda. Toggle in the UI, by long-pressing the comma 4 home screen, or by long-pressing the car’s follow-distance button. Turning it off does not restore Mazda radar or AEB. |
-| speed assist / Experimental Mode Speed Assist | On in next release; Off in earlier releases | In alpha longitudinal. Raises speed toward your set speed when the road ahead is clear. Needs Experimental Mode. Older releases: turn Dynamic Experimental Control off to use this. |
-| lead follow assist / Experimental Mode Lead Follow Assist | On in next release; Off in earlier releases | In alpha longitudinal. Closes an overly long gap behind a steady car, never closer than chill mode. Needs Experimental Mode. Older releases: turn Dynamic Experimental Control off to use this. |
-| dynamic experimental control / Dynamic Experimental Control | Removed in next release | Older releases only. Switches between conventional cruise and Experimental Mode automatically. Turn it off to use Speed Assist and Lead Follow Assist. |
+| set speed assist / Set Speed Assist | On | In alpha longitudinal. Brings the driving model up to your set speed and following distance at stock cruise pace; the model still makes every slowdown. Switch it on the go by holding the follow-distance button, long-pressing the comma 4 home screen or tapping the comma 3X onroad button. |
 | slow for curves: vision / Slow for Curves: Vision | Off | Slows for curves the camera sees, then resumes your set speed. Without alpha longitudinal, Mazda uses cruise-button control. Turn on while disengaged. |
 | slow for curves: map / Slow for Curves: Map | Off | Slows for curves in map data. Download maps in sunnylink first. Turn on while disengaged. |
 | speed limit mode / Speed Limit | info | In speed limit. Assist: press - or + to match a new limit. Info and warn show the sign on comma 3X only. |
@@ -119,11 +115,11 @@ explains which setup to use.
 | small models / Small Model | Firehose (fm) | In select model. Runs on the comma. Keep the default for your first drive. Offroad only. |
 | big models / Big Model | Cinque Terre Model v2, or Jetlink's own default | In select model. Runs on a Chestnut board or over Jetlink. Offroad only. |
 | jetlink / Jetlink | off | Runs big models on a computer or phone plugged into the comma. USB for Mac, Jetson, Linux, or Android; iOS for iPhone or iPad. Turns off ADB. Offroad only. Hidden beside a Chestnut board. |
-| Use Lane Turn Desires | Off | comma 3X only. At low speed with the blinker on, plans the turn that way, so the car does not pick the wrong turn at a light. |
-| Adjust Lane Turn Speed | 19 mph | comma 3X only. Top speed for lane turn desires. Needs the toggle above and Show Advanced Controls. |
-| Live Learning Steer Delay | On | comma 3X only. Learns your car's steering response delay. |
-| Adjust Software Delay | 0.2 s | comma 3X only. Fixed delay when Live Learning is off. Needs Show Advanced Controls. |
-| Adjust Camera Offset | 0 m | comma 3X only. Shifts the model's center. Positive moves it left. Needs Show Advanced Controls. |
+| lane center assist / Lane Center Assist (Alpha) | off | A gentle nudge toward the middle of the lane on top of the model's steering, stronger when lane lines are clear. Debug ui (comma 4) shows the push in cm. Not available with the Default model. |
+| small model steer / Small Model Steering | under 11 mph (5 m/s) | With a big model, the small model steers below this speed. It is steadier when slow. Not available with the Default model. |
+| lane turn desires / Use Lane Turn Desires | off | With the blinker on below this speed (19 mph when on), plans the turn that way, so the car does not pick the wrong turn at a light. |
+| steer delay / Live Learning Steer Delay | live | Live learns your car's steering response delay. Or pick a fixed delay (0.2 s on comma 3X). |
+| camera offset / Adjust Camera Offset | 0 m | Shifts where the model thinks the camera sits. Positive moves it left. |
 
 </noscript>
 

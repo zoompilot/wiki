@@ -84,9 +84,9 @@ The EPS expects a steering message every 10 ms. If the stream breaks for about 0
 - **Refusal report.** After a refusal, zoompilot restarts from zero, which the panda accepts.
 - **Camera passthrough.** When zoompilot is not steering, the panda passes the camera's own messages through.
 
-## MADS on Mazda
+## When to Steer (MADS) on Mazda
 
-[MADS](../help/glossary.md#mads) keeps steering separate from cruise. Cancel and the brake stop cruise but leave steering on, unless **Steering Mode on Brake Pedal** says pause or disengage. The cruise main button turns both off.
+[MADS](../help/glossary.md#mads) keeps steering separate from cruise. Cancel and the brake stop cruise but leave steering on, unless **Steering on Brake** says pause or disengage. The cruise main button turns both off.
 
 **TJA button.** With **Mazda TJA Button** on, the TJA button switches steering and the main button controls only cruise. If a TJA press arms cruise that was off, zoompilot disarms it. While zoompilot steers with cruise off, the dash shows a white steering wheel.
 
@@ -94,7 +94,7 @@ The EPS expects a steering message every 10 ms. If the stream breaks for about 0
 
 ## settings
 
-Under Settings → Steering (comma 4: torque control and mads submenus), keep **Enforce Torque Lateral Control** on. **Customize Torque Params** holds **Self-Tune**, **Less Restrict Settings for Self-Tune (Beta)** (widens the bands to ±100%) and **Torque Control Tune Version**. **Enable Custom Tuning** and **Manual Real-Time Tuning** use [your own values](../features/steering.md#custom-tune) instead of learned ones. **Customize MADS** holds the two MADS settings above.
+Under Settings → Steering (comma 4: torque control and when to steer submenus), keep **Enforce Torque Lateral Control** on. **Customize Torque Params** holds **Self-Tune**, **Less Restrict Settings for Self-Tune (Beta)** (widens the bands to ±100%) and **Torque Control Tune Version**. **Enable Custom Tuning** and **Manual Real-Time Tuning** use [your own values](../features/steering.md#custom-tune) instead of learned ones. **When to Steer** holds the steering-engagement settings above.
 
 ??? info "For developers"
 

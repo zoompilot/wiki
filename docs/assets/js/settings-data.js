@@ -6,34 +6,34 @@ window.ZP_SETTINGS = [
     "anchor": "steering",
     "items": [
       {
-        "name": "enable mads / Modular Assistive Driving System (MADS)",
+        "name": "steer without cruise / Steer Without Cruise",
         "values": "On / Off",
         "def": "On",
-        "note": "In mads. Lets zoompilot steer while cruise is off. Off: steering and cruise engage together. Offroad only."
+        "note": "In when to steer. Lets zoompilot steer while cruise is off. Off: steering and cruise engage and disengage together. Offroad only."
       },
       {
-        "name": "main cruise toggle / Toggle with Main Cruise",
+        "name": "steer when cruise on / Steer When Cruise On",
         "values": "On / Off",
         "def": "On",
-        "note": "In mads. Turning cruise main on also turns steering on. Greyed with MADS off or tja button on."
+        "note": "In when to steer. Turning cruise on with its on/off button also turns steering on. Cars without a lane keep button need this on to steer. Greyed with steer without cruise off or tja button on."
       },
       {
-        "name": "unified engagement / Unified Engagement Mode (UEM)",
+        "name": "steer when cruise set / Steer When Cruise Set",
         "values": "On / Off",
         "def": "On",
-        "note": "In mads. Engaging cruise also turns steering on, and steering stays on after cruise cancels. Greyed with MADS off or tja button on."
+        "note": "In when to steer. Setting or resuming a cruise speed also turns steering on, and steering stays on until you switch it off or turn off the car. Greyed with steer without cruise off or tja button on."
       },
       {
-        "name": "steering on brake / Steering Mode on Brake Pedal",
+        "name": "steering on brake / Steering on Brake",
         "values": "remain / pause / disengage",
         "def": "remain",
-        "note": "In mads. What steering does when you brake. Pause resumes when you let go. Greyed with MADS off."
+        "note": "In when to steer. What steering does when you press the brake. Pause resumes it when you let go. Greyed with steer without cruise off."
       },
       {
         "name": "tja button / Mazda TJA Button",
         "values": "On / Off",
         "def": "Off",
-        "note": "In mads. Mazda only. The TJA button becomes the only steering switch; main cruise then controls cruise only. Turn on only if your car has the button. Offroad only. Greyed with MADS off."
+        "note": "In when to steer. Mazda only. The TJA button becomes the only steering switch; the MRCC button then only controls cruise. Turn on only if your car has the button. Offroad only. Greyed with steer without cruise off."
       },
       {
         "name": "auto lane change / Auto Lane Change by Blinker",
@@ -156,28 +156,10 @@ window.ZP_SETTINGS = [
         "note": "In alpha longitudinal. zoompilot controls gas and brakes. Disables Mazda radar, automatic emergency braking, and forward collision warning. On Mazda, needs a compatible Mazda EPS (2022+). Offroad only; asks you to confirm."
       },
       {
-        "name": "experimental mode / Experimental Mode",
+        "name": "set speed assist / Set Speed Assist",
         "values": "On / Off",
-        "def": "On in next release; Off in earlier releases",
-        "note": "In alpha longitudinal. The driving model controls gas and brakes, including stops for lights and signs. Set speed is a maximum. Greyed without alpha longitudinal on Mazda. Toggle in the UI, by long-pressing the comma 4 home screen, or by long-pressing the car\u2019s follow-distance button. Turning it off does not restore Mazda radar or AEB."
-      },
-      {
-        "name": "speed assist / Experimental Mode Speed Assist",
-        "values": "On / Off",
-        "def": "On in next release; Off in earlier releases",
-        "note": "In alpha longitudinal. Raises speed toward your set speed when the road ahead is clear. Needs Experimental Mode. Older releases: turn Dynamic Experimental Control off to use this."
-      },
-      {
-        "name": "lead follow assist / Experimental Mode Lead Follow Assist",
-        "values": "On / Off",
-        "def": "On in next release; Off in earlier releases",
-        "note": "In alpha longitudinal. Closes an overly long gap behind a steady car, never closer than chill mode. Needs Experimental Mode. Older releases: turn Dynamic Experimental Control off to use this."
-      },
-      {
-        "name": "dynamic experimental control / Dynamic Experimental Control",
-        "values": "On / Off",
-        "def": "Removed in next release",
-        "note": "Older releases only. Switches between conventional cruise and Experimental Mode automatically. Turn it off to use Speed Assist and Lead Follow Assist."
+        "def": "On",
+        "note": "In alpha longitudinal. Brings the driving model up to your set speed and following distance at stock cruise pace; the model still makes every slowdown. Switch it on the go by holding the follow-distance button, long-pressing the comma 4 home screen or tapping the comma 3X onroad button."
       },
       {
         "name": "slow for curves: vision / Slow for Curves: Vision",
@@ -258,34 +240,34 @@ window.ZP_SETTINGS = [
         "note": "Runs big models on a computer or phone plugged into the comma. USB for Mac, Jetson, Linux, or Android; iOS for iPhone or iPad. Turns off ADB. Offroad only. Hidden beside a Chestnut board."
       },
       {
-        "name": "Use Lane Turn Desires",
-        "values": "On / Off",
-        "def": "Off",
-        "note": "comma 3X only. At low speed with the blinker on, plans the turn that way, so the car does not pick the wrong turn at a light."
+        "name": "lane center assist / Lane Center Assist (Alpha)",
+        "values": "off / on / debug ui",
+        "def": "off",
+        "note": "A gentle nudge toward the middle of the lane on top of the model's steering, stronger when lane lines are clear. Debug ui (comma 4) shows the push in cm. Not available with the Default model."
       },
       {
-        "name": "Adjust Lane Turn Speed",
-        "values": "5\u201320 mph",
-        "def": "19 mph",
-        "note": "comma 3X only. Top speed for lane turn desires. Needs the toggle above and Show Advanced Controls."
+        "name": "small model steer / Small Model Steering",
+        "values": "off, or a speed",
+        "def": "under 11 mph (5 m/s)",
+        "note": "With a big model, the small model steers below this speed. It is steadier when slow. Not available with the Default model."
       },
       {
-        "name": "Live Learning Steer Delay",
-        "values": "On / Off",
-        "def": "On",
-        "note": "comma 3X only. Learns your car's steering response delay."
+        "name": "lane turn desires / Use Lane Turn Desires",
+        "values": "off, or a speed",
+        "def": "off",
+        "note": "With the blinker on below this speed (19 mph when on), plans the turn that way, so the car does not pick the wrong turn at a light."
       },
       {
-        "name": "Adjust Software Delay",
-        "values": "0.05\u20130.50 s, step 0.01",
-        "def": "0.2 s",
-        "note": "comma 3X only. Fixed delay when Live Learning is off. Needs Show Advanced Controls."
+        "name": "steer delay / Live Learning Steer Delay",
+        "values": "live, or a fixed delay",
+        "def": "live",
+        "note": "Live learns your car's steering response delay. Or pick a fixed delay (0.2 s on comma 3X)."
       },
       {
-        "name": "Adjust Camera Offset",
-        "values": "\u22120.35 to +0.35 m, step 0.01",
+        "name": "camera offset / Adjust Camera Offset",
+        "values": "-0.35 to 0.35 m",
         "def": "0 m",
-        "note": "comma 3X only. Shifts the model's center. Positive moves it left. Needs Show Advanced Controls."
+        "note": "Shifts where the model thinks the camera sits. Positive moves it left."
       }
     ]
   },

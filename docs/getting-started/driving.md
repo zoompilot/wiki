@@ -34,12 +34,19 @@ yourself whenever you need to; don't wait for an alert or a button.
 <details markdown="1">
 <summary>Changing the steering controls, including the TJA button</summary>
 
-### mads settings
+### when to steer { #mads-settings }
 
-MADS (Modular Assistive Driving System) controls this, under
-**Settings → Steering** (comma 4: the **mads** submenu). The table assumes
-the defaults. **Steering on brake** can be remain (default), pause or
-disengage; pause resumes steering when you let go of the brake.
+**Settings → Steering → When to Steer** controls this. The table assumes
+the defaults:
+
+- **Steer Without Cruise** (on): zoompilot can steer while cruise is off.
+  Off: steering and cruise engage and disengage together.
+- **Steer When Cruise On** (on): turning cruise on with its on/off button
+  also turns steering on.
+- **Steer When Cruise Set** (on): setting or resuming a cruise speed also
+  turns steering on.
+- **Steering on Brake** (remain): remain, pause or disengage. Pause
+  resumes steering when you let go of the brake.
 
 ### Mazda TJA button
 
@@ -57,7 +64,7 @@ while parked.
 
 ### other cars
 
-Buttons and minimum speeds vary, and your car may limit the MADS settings.
+Buttons and minimum speeds vary, and your car may limit the When to Steer settings.
 Don't assume the Mazda table applies.
 
 ## choosing cruise

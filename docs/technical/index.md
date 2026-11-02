@@ -13,7 +13,7 @@ code. For setup, use the [feature guides](../features/index.md).
 - [**How zoompilot works**](../getting-started/how-it-works.md)
   One drive, from camera to wheels.
 - [**Steering**](steering.md)
-  Torque limits, steering to a stop, the speed-based tune, and MADS.
+  Torque limits, steering to a stop, the speed-based tune, and When to Steer (MADS).
 - [**Car identification**](car-identification.md)
   How zoompilot knows your car and its EPS, and EPS swaps.
 - [**Experimental speed control**](speed-control.md)
@@ -22,8 +22,8 @@ code. For setup, use the [feature guides](../features/index.md).
   Who moves your set speed, and how zoompilot presses the cruise buttons.
 - [**Slow for Curves**](slow-for-curves.md)
   How it picks a curve speed and when it gives it back.
-- [**Experimental Mode assists**](experimental-mode-assists.md)
-  Speed Assist and Lead Follow Assist.
+- [**Set Speed Assist**](experimental-mode-assists.md)
+  How it brings the model up to your set speed and following distance.
 
 The full engineering record is in the
 [zoompilot repository](https://github.com/zoompilot/zoompilot/tree/develop/docs/zoompilot).

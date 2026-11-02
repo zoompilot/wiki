@@ -91,15 +91,16 @@ zoompilot is a fork of sunnypilot, which is a fork of openpilot.
 features raise or lower it.
 { #set-speed }
 
-**MADS**: Modular Assistive Driving System. Steering can stay engaged
-without cruise. On by default. With the default Mazda settings, the
+**MADS**: Modular Assistive Driving System, shown as **When to Steer**
+in settings. Steering can stay engaged without cruise. On by default. With the default Mazda settings, the
 brake pedal and CANCEL stop cruise but leave steering on, and main cruise
 off turns both off. The optional TJA-button setting makes TJA the
 separate steering switch.
 { #mads }
 
-**UEM**: unified engagement mode. Engaging cruise also turns on
-steering, and steering can stay on after cruise cancels.
+**UEM**: unified engagement mode, shown as **Steer When Cruise Set**.
+Setting or resuming cruise also turns on steering, and steering stays on
+after cruise cancels.
 { #uem }
 
 **ICBM**: Intelligent Cruise Button Management. zoompilot presses your
