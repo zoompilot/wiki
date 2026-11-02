@@ -48,8 +48,8 @@ FONT_DIR = OPENPILOT_DIR / "openpilot" / "selfdrive" / "assets" / "fonts"
 # the Mazda this demo stands for (opendbc mazda/interface.py, alpha long on)
 VERSION = "2026.003.000"             # sunnypilot/common/version.h
 GIT_BRANCH = "develop"
-GIT_COMMIT = "a7a6df8e882a4b3451277824fc80d36666fb3dde"
-GIT_COMMIT_DATE = "'1791995303 2026-10-14 11:28:23 -0500'"
+GIT_COMMIT = "f68e2a1ef5581a14ae568f5bffdf0eff6a910605"
+GIT_COMMIT_DATE = "'1793648400 2026-11-02 12:00:00 -0600'"
 
 
 def log(msg):
@@ -64,6 +64,7 @@ def record():
   os.environ["RECORD_QUALITY"] = "6"         # near-lossless take; compose re-encodes
   os.environ["FPS"] = str(FPS)
   os.environ["SCALE"] = repr(SCREEN_W / W)
+  os.environ["PRIME_TYPE"] = "0"             # paired, no prime: no "Finish setup" pairing card
   os.environ["OFFSCREEN"] = "1"              # no frame pacing: time below is per frame
   os.environ.pop("BIG", None)
   sys.path.insert(0, str(OPENPILOT_DIR))
@@ -151,8 +152,8 @@ def record():
     from openpilot.cereal import messaging
     from opendbc.car.structs import car
 
-    # what the params pass would derive, set before its first run: with
-    # has_longitudinal_control still False, that pass clears ExperimentalMode
+    # what the params pass would derive, set before its first run, so the
+    # alpha longitudinal rows and home icons show from the first frame
     ui_state.CP = messaging.log_from_bytes(ui_state.params.get("CarParamsPersistent"), car.CarParams)
     ui_state.has_longitudinal_control = True
 
@@ -242,6 +243,16 @@ def record():
       r = item.rect
       yield from tap(r.x + r.width / 2 + dx, r.y + r.height / 2 + dy)
       return before
+
+    def hold_home():
+      # the scripted finger's press and release reach home as a tap, so the hold is
+      # drawn and home's long press callback (ui_state.toggle_speed_assist) runs at 0.45 s
+      F.x, F.y, F.shown = W / 2, H / 2 - 20, True
+      yield from wait(0.45)
+      ui_state.toggle_speed_assist()
+      yield from wait(0.2)
+      F.shown = False
+      yield
 
     def open_item(item):
       before = yield from tap_item(item)
@@ -338,9 +349,16 @@ def record():
       yield from until(lambda: top() is main_layout, "home")
       yield from wait(0.35)
 
-      # 1. home
-      caption("zoompilot on the comma 4", 2.8)
-      yield from wait(2.5)
+      # 1. home: alpha longitudinal and Set Speed Assist icons; a long press switches Set Speed Assist
+      caption("zoompilot on the comma 4", 2.6)
+      yield from wait(2.6)
+      caption("Long press home to switch Set Speed Assist", 4.2)
+      yield from wait(0.4)
+      for _ in range(2):  # off, then back on
+        yield from hold_home()
+        log(f"{clock.frame / FPS:6.2f}s long press: set speed assist {ui_state.speed_assist}, top {type(top()).__name__}")
+        yield from wait(1.3)
+      yield from wait(0.2)
       settings = yield from open_item(main_layout._home_layout)
 
       # 2. steering > torque control
@@ -365,9 +383,17 @@ def record():
       yield from swipe_to(torque, find(torque, "self tune"))
       caption("Learns your steering at each speed", 3.1)
       yield from wait(2.8)
-
-      # 5. lane change smoothing: pick a pace
       yield from back()
+
+      # 5. when to steer
+      when = yield from open_item_after_swipe(steering, "when to steer")
+      caption("When to Steer: choose what turns steering on", 3.6)
+      yield from wait(1.0)
+      yield from swipe_to(when, find(when, "steer when cruise set"))
+      yield from wait(2.0)
+      yield from back()
+
+      # 6. lane change smoothing: pick a pace
       lane_change = yield from open_item_after_swipe(steering, "lane change")
       yield from swipe_to(lane_change, find(lane_change, "lane change smoothing"))
       caption("Smoother, slower lane changes", 3.6)
@@ -379,8 +405,11 @@ def record():
       yield from back()
       yield from back()
 
-      # 6. cruise: slow for curves
+      # 7. cruise: Set Speed Assist heads the panel, then slow for curves
       cruise = yield from open_item_after_swipe(settings, "cruise")
+      yield from swipe_to(cruise, find(cruise, "set speed assist"))
+      caption("Set Speed Assist: reaches your set speed and following distance", 4.0)
+      yield from wait(3.6)
       vision = find(cruise, "slow for curves: vision")
       yield from swipe_to(cruise, vision)
       caption("Slow for Curves: slows before a curve, then speeds back up", 4.5)
@@ -393,7 +422,7 @@ def record():
       yield from tap_item(curve_map)
       yield from wait(0.8)
 
-      # 7. speed limit assist
+      # 8. speed limit assist
       speed_limit = yield from open_item_after_swipe(cruise, "speed limit")
       caption("Speed Limit Assist sets cruise to the limit", 3.6)
       mode = find(speed_limit, "speed limit mode")
@@ -402,26 +431,17 @@ def record():
         yield from tap_item(mode, dx=-20, dy=10)
       yield from wait(1.2)
       yield from back()
-
-      # 8. alpha longitudinal: speed assist, lead follow assist
-      alpha = yield from open_item_after_swipe(cruise, "alpha longitudinal")
-      assist = find(alpha, "speed assist")
-      yield from swipe_to(alpha, assist)
-      caption("Speed Assist: reaches your set speed", 3.2)
-      yield from wait(0.5)
-      yield from tap_item(assist)
-      yield from wait(1.8)
-      lead = find(alpha, "lead follow assist")
-      yield from swipe_to(alpha, lead)
-      caption("Lead Follow Assist: keeps your chosen gap", 3.2)
-      yield from wait(0.5)
-      yield from tap_item(lead)
-      yield from wait(1.8)
-      yield from back()
       yield from back()
 
-      # 9. models > jetlink
+      # 9. models: lane center assist, then jetlink
       models = yield from open_item_after_swipe(settings, "models")
+      lane_center = find(models, "lane center assist", wait_visible=True)
+      yield from until(lambda: lane_center.is_visible, "lane center assist row")
+      yield from swipe_to(models, lane_center)
+      caption("Lane Center Assist: keeps your car centered in the lane", 3.8)
+      yield from wait(0.6)
+      yield from tap_item(lane_center, dx=-20, dy=10)  # off -> on
+      yield from wait(2.6)
       jetlink = find(models, "jetlink", wait_visible=True)
       yield from until(lambda: jetlink.is_visible, "jetlink row (shown once the params pass sees jetlink)")
       yield from swipe_to(models, jetlink)
@@ -485,8 +505,8 @@ def setup_params():
 
   params = Params()
   cp = car.CarParams.new_message(
-    brand="mazda", carFingerprint="MAZDA_CX5_2022", flags=int(MazdaFlags.EPS_HW),
-    enableBsm=True, steerControlType="torque",
+    brand="mazda", carFingerprint="MAZDA_CX5_2022", flags=int(MazdaFlags.EPS_HW | MazdaFlags.HAS_BSM),
+    steerControlType="torque",
     alphaLongitudinalAvailable=True, openpilotLongitudinalControl=True, pcmCruise=True,
   )
   params.put("CarParamsPersistent", cp.to_bytes(), block=True)
@@ -507,9 +527,9 @@ def setup_params():
   params.put("GitCommitDate", GIT_COMMIT_DATE, block=True)
 
   params.put_bool("AlphaLongitudinalEnabled", True, block=True)
-  params.put_bool("ExperimentalModeConfirmed", True, block=True)
-  params.put_bool("ExperimentalMode", True, block=True)
-  params.put_bool("DynamicExperimentalControl", False, block=True)
+  params.put_bool("ExperimentalModeSetSpeed", True, block=True)
+  # a tinygrad (modeld_v2) model is active, so Lane Center Assist can be turned on
+  params.put("ModelRunnerTypeCache", int(custom.ModelManagerSP.Runner.tinygrad), block=True)
   log("params: EnforceTorqueControl=%s LiveTorqueParamsToggle=%s TorqueControlTune=%s SpeedLimitMode=%s" % tuple(
     params.get(k) for k in ("EnforceTorqueControl", "LiveTorqueParamsToggle", "TorqueControlTune", "SpeedLimitMode")))
 

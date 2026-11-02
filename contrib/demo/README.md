@@ -110,8 +110,14 @@ zoompilot checkout.
 - Params live in a throwaway `OpenpilotPrefix`, set up like a fresh install
   on a 2022 CX-5 that has driven once: CarParams (compatible EPS, alpha long
   available), card's one-time torque seed, then the declared defaults.
-  Alpha long and Experimental Mode are on and Dynamic Experimental Control
-  is off, so Speed Assist and Lead Follow Assist are live.
+  Alpha long and Set Speed Assist are on, a tinygrad model is active so Lane
+  Center Assist can be turned on, and `PRIME_TYPE=0` keeps upstream's pairing
+  card off the first screen.
+- The home long press is shown as a held finger with home's own callback
+  (`ui_state.toggle_speed_assist`) run at 0.45 s: the scripted press and
+  release reach home as a tap.
+- Compose needs an ffmpeg that reads from a pipe; the zoompilot venv's does
+  not, so put Homebrew's first: `PATH=/opt/homebrew/bin:$PATH`.
 - Input is the same pyray swap as the install demo. Animations are driven by
   the frame counter (`rl.get_time`, frame time and the touch timestamps are
   patched), so the take is identical however fast the Mac renders. Swipes
