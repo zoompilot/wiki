@@ -46,7 +46,7 @@ creep forward after stopping. Watch the road and be ready to take over.
 
 ## set speed assist { #set-speed-assist }
 
-The driving model cruises a few mph under your set speed and hangs back
+The driving model often cruises under your set speed and hangs back
 from the car ahead. **Set Speed Assist** closes both gaps at stock cruise
 pace, up to your set speed and your **Driving Personality** distance. The
 model still handles every slowdown, and stop-and-go below about 11 mph.
