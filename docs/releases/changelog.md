@@ -6,7 +6,7 @@ zoompilot release notes, newest first. The release channel is
 <!-- The release history lives here; zoompilot.ai shows only the current
      release and links to this page. Add each release at the top. -->
 
-## 2026.11.02-17 (2026-11-02)
+## 2026.11.02-18 (2026-11-02)
 
 - **[Set Speed Assist](../features/alpha-longitudinal.md#set-speed-assist).** Reaches your set speed and following distance at stock cruise pace. On by default with alpha longitudinal.
     - Hold the distance button, long press home on the comma 4, or tap the onroad button on the 3X to switch it.

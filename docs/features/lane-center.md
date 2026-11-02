@@ -16,7 +16,7 @@ center on top of the model's steering. Alpha, off by default.
 - Yields when the model steers around a parked car or cyclist.
 - Leaves turns and lane changes to the model.
 
-Works on any car, with a small model or a [jetlink](../jetlink/index.md)
+Works on any car, with any small model or a [jetlink](../jetlink/index.md)
 big model.
 
 ## turn it on
@@ -26,7 +26,7 @@ big model.
 - comma 4: **lane center assist**: **off**, **on** or **debug ui**.
 - comma 3X: **Lane Center Assist (Alpha)**.
 
-Not available with the Default model.
+Works with any driving model, the Default model included.
 
 ## what you'll see
 

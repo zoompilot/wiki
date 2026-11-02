@@ -243,7 +243,7 @@ window.ZP_SETTINGS = [
         "name": "lane center assist / Lane Center Assist (Alpha)",
         "values": "off / on / debug ui",
         "def": "off",
-        "note": "A gentle nudge toward the middle of the lane on top of the model's steering, stronger when lane lines are clear. Debug ui (comma 4) shows the push in cm. Not available with the Default model."
+        "note": "A gentle nudge toward the middle of the lane on top of the model's steering, stronger when lane lines are clear. Debug ui (comma 4) shows the push in cm. Works with any driving model."
       },
       {
         "name": "small model steer / Small Model Steering",

@@ -115,7 +115,7 @@ explains both.
 | small models / Small Model | Firehose (fm) | In select model. Runs on the comma. Keep the default for your first drive. Offroad only. |
 | big models / Big Model | Cinque Terre Model v2, or Jetlink's own default | In select model. Runs on a Chestnut board or over Jetlink. Offroad only. |
 | jetlink / Jetlink | off | Runs big models on a computer or phone plugged into the comma. USB for Mac, Jetson, Linux, or Android; iOS for iPhone or iPad. Turns off ADB. Offroad only. Hidden beside a Chestnut board. |
-| lane center assist / Lane Center Assist (Alpha) | off | A gentle nudge toward the middle of the lane on top of the model's steering, stronger when lane lines are clear. Debug ui (comma 4) shows the push in cm. Not available with the Default model. |
+| lane center assist / Lane Center Assist (Alpha) | off | A gentle nudge toward the middle of the lane on top of the model's steering, stronger when lane lines are clear. Debug ui (comma 4) shows the push in cm. Works with any driving model. |
 | small model steer / Small Model Steering | under 11 mph (5 m/s) | With a big model, the small model steers below this speed. It is steadier when slow. Not available with the Default model. |
 | lane turn desires / Use Lane Turn Desires | off | With the blinker on below this speed (19 mph when on), plans the turn that way, so the car does not pick the wrong turn at a light. |
 | steer delay / Live Learning Steer Delay | live | Live learns your car's steering response delay. Or pick a fixed delay (0.2 s on comma 3X). |
