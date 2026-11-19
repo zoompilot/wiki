@@ -44,10 +44,9 @@ appear on both.
 The source and offset are next to the mode (comma 3X: source under
 **Customize Source**).
 
+- **Auto:** follows the car's sign and fills in from the map when the car has none. The default.
 - **Car:** on a supported Mazda, the car's speed-limit signs. Needs a navigation SD card.
 - **Map:** maps for your region, downloaded through sunnylink.
-- **Car-first or map-first:** uses the other source when the preferred one has no limit. Map-first is the default.
-- **Combined:** uses the lower limit when both have one.
 
 An offset adds a fixed amount or a percentage to the limit. Start with
 none.

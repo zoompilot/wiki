@@ -85,8 +85,9 @@ explains both.
 | set speed assist / Set Speed Assist | On | In alpha longitudinal. Brings the driving model up to your set speed and following distance at stock cruise pace; the model still makes every slowdown. Switch it on the go by holding the follow-distance button, long-pressing the comma 4 home screen or tapping the comma 3X onroad button. |
 | slow for curves: vision / Slow for Curves: Vision | Off | Slows for curves the camera sees, then resumes your set speed. Without alpha longitudinal, Mazda uses cruise-button control. Turn on while disengaged. |
 | slow for curves: map / Slow for Curves: Map | Off | Slows for curves in map data. Download maps in sunnylink first. Turn on while disengaged. |
+| curve speed / Curve Speed | Normal | How fast Slow for Curves takes turns. Gentle slows more, Sporty slows less. |
 | speed limit mode / Speed Limit | info | In speed limit. Assist: press - or + to match a new limit. Info and warn show the sign on comma 3X only. |
-| source / Speed Limit Source | map-first | In speed limit (comma 3X: Customize Source). Combined uses the lower. Car needs a nav SD card on Mazda. Map uses downloaded maps. Greyed with speed limit off. |
+| source / Speed Limit Source | Auto | In speed limit (comma 3X: Customize Source). Auto follows the car's sign and fills in from the map. Car needs a nav SD card on Mazda. Map uses downloaded maps. Greyed with speed limit off. |
 | offset type / Speed Limit Offset | none | In speed limit. Adds a fixed amount or a percentage to the limit. Greyed with speed limit off. |
 | offset value | 0 | In speed limit. km/h, mph, or %. Negative goes below the limit. Greyed until an offset type is set. |
 | enable custom increments / Custom ACC Speed Increments | Off | In custom increments. Sets how far + and - move your set speed. Mazda uses cruise-button control. Turn on while disengaged. |
@@ -116,7 +117,7 @@ explains both.
 | big models / Big Model | Cinque Terre Model v2, or Jetlink's own default | In select model. Runs on a Chestnut board or over Jetlink. Offroad only. |
 | jetlink / Jetlink | off | Runs big models on a computer or phone plugged into the comma. USB for Mac, Jetson, Linux, or Android; iOS for iPhone or iPad. Turns off ADB. Offroad only. Hidden beside a Chestnut board. |
 | lane center assist / Lane Center Assist (Alpha) | off | A gentle nudge toward the middle of the lane on top of the model's steering, stronger when lane lines are clear. Debug ui (comma 4) shows the push in cm. Works with any driving model. |
-| small model steer / Small Model Steering | under 11 mph (5 m/s) | With a big model, the small model steers below this speed. It is steadier when slow. Not available with the Default model. |
+| smooth big model | On | Smooths a big model's steering the way openpilot smooths small models'. Calms wiggle on straight roads. |
 | lane turn desires / Use Lane Turn Desires | off | With the blinker on below this speed (19 mph when on), plans the turn that way, so the car does not pick the wrong turn at a light. |
 | steer delay / Live Learning Steer Delay | live | Live learns your car's steering response delay. Or pick a fixed delay (0.2 s on comma 3X). |
 | camera offset / Adjust Camera Offset | 0 m | Shifts where the model thinks the camera sits. Positive moves it left. |

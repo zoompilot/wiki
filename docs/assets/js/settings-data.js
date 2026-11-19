@@ -174,6 +174,12 @@ window.ZP_SETTINGS = [
         "note": "Slows for curves in map data. Download maps in sunnylink first. Turn on while disengaged."
       },
       {
+        "name": "curve speed / Curve Speed",
+        "values": "gentle / normal / sporty",
+        "def": "normal",
+        "note": "How fast Slow for Curves takes turns. Gentle slows more, Sporty slows less."
+      },
+      {
         "name": "speed limit mode / Speed Limit",
         "values": "off / info / warn / assist",
         "def": "info",
@@ -181,9 +187,9 @@ window.ZP_SETTINGS = [
       },
       {
         "name": "source / Speed Limit Source",
-        "values": "car / map / car-first / map-first / combined",
-        "def": "map-first",
-        "note": "In speed limit (comma 3X: Customize Source). Combined uses the lower. Car needs a nav SD card on Mazda. Map uses downloaded maps. Greyed with speed limit off."
+        "values": "auto / car / map",
+        "def": "auto",
+        "note": "In speed limit (comma 3X: Customize Source). Auto follows the car's sign and fills in from the map. Car needs a nav SD card on Mazda. Map uses downloaded maps. Greyed with speed limit off."
       },
       {
         "name": "offset type / Speed Limit Offset",
@@ -246,10 +252,10 @@ window.ZP_SETTINGS = [
         "note": "A gentle nudge toward the middle of the lane on top of the model's steering, stronger when lane lines are clear. Debug ui (comma 4) shows the push in cm. Works with any driving model."
       },
       {
-        "name": "small model steer / Small Model Steering",
-        "values": "off, or a speed",
-        "def": "under 11 mph (5 m/s)",
-        "note": "With a big model, the small model steers below this speed. It is steadier when slow. Not available with the Default model."
+        "name": "smooth big model",
+        "values": "off / on",
+        "def": "on",
+        "note": "Smooths a big model's steering the way openpilot smooths small models'. Calms wiggle on straight roads."
       },
       {
         "name": "lane turn desires / Use Lane Turn Desires",

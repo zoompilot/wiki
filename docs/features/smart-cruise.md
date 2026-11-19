@@ -27,6 +27,9 @@ I usually use Vision. You can use Map as well, but its usefulness depends
 on the map coverage around you. Map does not need Mazda's navigation SD card.
 Turn both off to disable curve slowdowns.
 
+**Curve Speed**, under the two toggles, sets how fast the car takes
+curves: Gentle slows more, Sporty slows less. Normal is the default.
+
 <div class="zp-setting-shots" markdown="0">
 <figure class="setting-shot settings-figure-mici">
   <div class="zp-shot-imgs">
