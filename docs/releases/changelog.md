@@ -6,6 +6,23 @@ zoompilot release notes, newest first. The release channel is
 <!-- The release history lives here; zoompilot.ai shows only the current
      release and links to this page. Add each release at the top. -->
 
+## 2026.11.21-22 (2026-11-21)
+
+Synced with openpilot of 2026-11-20.
+
+- comma 3X: fixed “Low Communication Rate” errors caused by openpilot’s UI refactor.
+- **openpilot changes.**
+    - New driver monitoring model.
+    - Gentle slowdown for upcoming curves.
+    - Aggressive personality accelerates quicker again; here only with Set Speed Assist off.
+    - Fixed false excessive actuation alerts.
+    - comma 4: lane-wide stop bar; the wheel starts centered.
+- **[Slow for Curves](../features/smart-cruise.md).**
+    - zoompilot's curve planning now runs on every openpilot longitudinal car, not only Mazda.
+    - Banked curves are taken a little faster, off-camber ones slower.
+- [Set Speed Assist](../features/alpha-longitudinal.md#set-speed-assist): gentler pickup when engaging and when returning to your set speed.
+- [Auto lane change](../features/lane-changes.md): fixed so it only changes one lane per blinker cycle.
+
 ## 2026.11.19-20 (2026-11-19)
 
 Synced with openpilot of 2026-11-15 and sunnypilot of 2026-11-14. Updating installs AGNOS 20.6.
